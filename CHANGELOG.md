@@ -1,5 +1,13 @@
 
 
+
+## 0.2.0 (2020-05-23)
+
+### Feat
+
+- **anagrafica**: aggiunge i modelli SoggettoFiscale, Impresa e PersonaFisica
+- **common**: aggiunge l'app common
+
 ## 0.1.0 (2020-05-23)
 
 ### Feat
