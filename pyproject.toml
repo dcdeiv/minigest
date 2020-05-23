@@ -42,6 +42,7 @@ version_files = [
 [tool.poetry.dependencies]
 python = "^3.8"
 django = "^3.0.6"
+django-polymorphic = "^2.1.2"
 
 [tool.poetry.dev-dependencies]
 commitizen = "^1.22.0"

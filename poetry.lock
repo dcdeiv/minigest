@@ -127,6 +127,17 @@ argon2 = ["argon2-cffi (>=16.1.0)"]
 bcrypt = ["bcrypt"]
 
 [[package]]
+category = "main"
+description = "Seamless polymorphic inheritance for Django models"
+name = "django-polymorphic"
+optional = false
+python-versions = "*"
+version = "2.1.2"
+
+[package.dependencies]
+Django = ">=1.11"
+
+[[package]]
 category = "dev"
 description = "A platform independent file lock."
 name = "filelock"
@@ -414,7 +425,7 @@ python-versions = "*"
 version = "0.1.9"
 
 [metadata]
-content-hash = "d9c7a05ef06a6039d0171b486d8ecfc4b5a88572934c4a1d455e3aa5ba335e4f"
+content-hash = "f457b99a0cc766f7684c08d94410792d178f6b838a32c7091cea2acee590d95a"
 python-versions = "^3.8"
 
 [metadata.files]
@@ -460,6 +471,10 @@ distlib = [
 django = [
     {file = "Django-3.0.6-py3-none-any.whl", hash = "sha256:051ba55d42daa3eeda3944a8e4df2bc96d4c62f94316dea217248a22563c3621"},
     {file = "Django-3.0.6.tar.gz", hash = "sha256:9aaa6a09678e1b8f0d98a948c56482eac3e3dd2ddbfb8de70a868135ef3b5e01"},
+]
+django-polymorphic = [
+    {file = "django-polymorphic-2.1.2.tar.gz", hash = "sha256:6e08a76c91066635ccb7ef3ebbe9a0ad149febae6b30be2579716ec16d3c6461"},
+    {file = "django_polymorphic-2.1.2-py2.py3-none-any.whl", hash = "sha256:0a25058e95e5e99fe0beeabb8f4734effe242d7b5b77dca416fba9fd3062da6a"},
 ]
 filelock = [
     {file = "filelock-3.0.12-py3-none-any.whl", hash = "sha256:929b7d63ec5b7d6b71b0fa5ac14e030b3f70b75747cef1b10da9b879fef15836"},
