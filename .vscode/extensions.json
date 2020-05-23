@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "visualstudioexptteam.vscodeintellicode",
+    "editorconfig.editorconfig",
+    "bungcip.better-toml",
+    "ms-python.python",
+    "kevinglasson.cornflakes-linter",
+    "freakypie.code-python-isort",
+    "batisteo.vscode-django",
+    "bibhasdn.django-html"
+  ]
+}
