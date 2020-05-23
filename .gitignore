@@ -127,3 +127,8 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Progetto
+minigest.sqlite3
+minigest.sqlite3-journal
+static/
