@@ -1,6 +1,13 @@
 
 
 
+
+## 0.3.0 (2020-05-24)
+
+### Feat
+
+- **tributi**: aggiunge app tributi e modello IvaAliquota
+
 ## 0.2.0 (2020-05-23)
 
 ### Feat
