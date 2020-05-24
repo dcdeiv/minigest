@@ -9,3 +9,17 @@ Questo è un prodotto beta e quindi non è consigliabile utilizzarlo in un ambie
 ## Obiettivo
 
 L'obiettivo di **minigest** è di aiutare le piccole e medie imprese che non possono permettersi gestionali costosi, a mantenere la propria contabilità.
+
+## Documentazione
+
+Nella cartella [docs](./docs) viene raccolta tutta la documentazione riguardante questo progetto
+
+## Changelog
+
+Prima di aggiornare questo progetto alla versione più recente, controllare eventuali cambiamenti che potrebbero creare problemi (BREAKING CHANGES).
+
+Tali cambiamenti possono essere visionati nel file [CHANGELOG](./CHANGELOG.md)
+
+## Licenza
+
+Questo progetto è distribuito tramite licenza [MIT](./LICENSE) :heart:
