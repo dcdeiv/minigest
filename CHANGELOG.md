@@ -3,6 +3,15 @@
 
 
 
+
+## 0.5.0 (2020-05-25)
+
+### Feat
+
+- **docfisc**: aggiunge app docfisc
+- **dependencies**: aggiunge pydash e django-localflavor
+- **tributi**: aggiunge calcolo_imposta, calcolo_imponibile in helpers.iva
+
 ## 0.4.0 (2020-05-25)
 
 ### Feat
