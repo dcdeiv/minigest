@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     "common",
     "negozi",
     "tributi",
+    "docfisc",
 ]
 
 MIDDLEWARE = [
