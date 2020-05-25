@@ -1,7 +1,7 @@
-from django.contrib import admin
 from minigest.common.admin.fieldsets import FIELDSETS_INDIRIZZO
-
 from ..models import DomicilioFiscale, PersonaFisica
+
+from django.contrib import admin
 
 
 class ResidenzaAdminInline(admin.StackedInline):

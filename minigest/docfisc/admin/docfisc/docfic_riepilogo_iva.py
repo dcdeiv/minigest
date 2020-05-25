@@ -1,6 +1,6 @@
-from django.contrib import admin
-
 from ...models import DocFiscRiepilogoIva
+
+from django.contrib import admin
 
 
 class DocFiscRiepilogoIvaInline(admin.StackedInline):

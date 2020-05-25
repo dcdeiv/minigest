@@ -1,6 +1,6 @@
-from django.contrib import admin
-
 from ..models import Cassa, FondoCassa
+
+from django.contrib import admin
 
 
 class FondoCassaInline(admin.StackedInline):

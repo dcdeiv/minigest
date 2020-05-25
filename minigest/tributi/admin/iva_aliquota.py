@@ -1,6 +1,6 @@
-from django.contrib import admin
-
 from ..models import IvaAliquota
+
+from django.contrib import admin
 
 
 @admin.register(IvaAliquota)

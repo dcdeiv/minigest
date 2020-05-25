@@ -1,9 +1,9 @@
-from django.contrib import admin
-
 from ...models import DocumentoFiscale
 from .docfic_riepilogo_iva import DocFiscRiepilogoIvaInline
 from .pagamento import DocFiscPagamentoInline
 from .scadenza import DocFiscScadenzaInline
+
+from django.contrib import admin
 
 
 @admin.register(DocumentoFiscale)

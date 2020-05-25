@@ -1,6 +1,6 @@
-from django.contrib import admin
-
 from ..models import Incasso
+
+from django.contrib import admin
 
 
 @admin.register(Incasso)

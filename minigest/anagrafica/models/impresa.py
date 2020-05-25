@@ -1,7 +1,7 @@
 from django.core.validators import MinLengthValidator
 from django.db import models
-from minigest.common.models.fields import UpperCaseField
 
+from minigest.common.models.fields import UpperCaseField
 from ..helpers.impresa import bilancio, fatturato
 from .soggetto_fiscale import SoggettoFiscale
 

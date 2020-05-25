@@ -1,6 +1,6 @@
-from django.contrib import admin
-
 from ..models import TassoUfficialeRiferimento
+
+from django.contrib import admin
 
 
 @admin.register(TassoUfficialeRiferimento)

@@ -1,6 +1,6 @@
-from django.contrib import admin
-
 from ...models import DocFiscPagamento
+
+from django.contrib import admin
 
 
 class DocFiscPagamentoInline(admin.StackedInline):

@@ -1,4 +1,5 @@
 from django.db import models
+
 from minigest.common.models.abstract import IndirizzoAbstract
 
 

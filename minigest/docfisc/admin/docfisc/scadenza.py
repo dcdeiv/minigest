@@ -1,6 +1,6 @@
-from django.contrib import admin
-
 from ...models import DocFiscScadenza
+
+from django.contrib import admin
 
 
 class DocFiscScadenzaInline(admin.StackedInline):

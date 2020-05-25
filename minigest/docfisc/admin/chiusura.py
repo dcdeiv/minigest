@@ -1,6 +1,6 @@
-from django.contrib import admin
-
 from ..models import ChiusuraFiscale, ChiusuraRepartoIva
+
+from django.contrib import admin
 
 
 class ChiusuraRepartoInline(admin.StackedInline):

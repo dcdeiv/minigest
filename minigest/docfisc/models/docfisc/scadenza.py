@@ -1,5 +1,6 @@
 from django.core.validators import MinLengthValidator, MinValueValidator
 from django.db import models
+
 from localflavor.generic.countries.sepa import IBAN_SEPA_COUNTRIES
 from localflavor.generic.models import BICField, IBANField
 

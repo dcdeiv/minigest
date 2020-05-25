@@ -1,6 +1,6 @@
-from django.contrib import admin
-
 from ..models import InteressiLegali
+
+from django.contrib import admin
 
 
 @admin.register(InteressiLegali)

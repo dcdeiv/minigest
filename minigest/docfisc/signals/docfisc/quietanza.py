@@ -4,8 +4,8 @@ from django.conf import settings
 from django.core.exceptions import ObjectDoesNotExist
 from django.db.models.signals import post_delete, pre_save
 from django.dispatch import receiver
-from minigest.common.helpers import purge_empty_dirs
 
+from minigest.common.helpers import purge_empty_dirs
 from ...models import DocFiscPagamento
 
 
