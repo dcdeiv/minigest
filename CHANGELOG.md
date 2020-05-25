@@ -5,6 +5,20 @@
 
 
 
+
+## 0.7.0 (2020-05-25)
+
+### Feat
+
+- **fisco**: aggiunge TassoUfficialeRiferimento
+
+### Fix
+
+- aggiunge %
+- **fisco**: aggiunge RegimeFiscale, InteressiLegali
+- **common**: aggiunge stringifylist
+- **tributi**: aggiunge il calcolo del lordo
+
 ## 0.6.0 (2020-05-25)
 
 ### Refactor
