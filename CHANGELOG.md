@@ -4,6 +4,26 @@
 
 
 
+
+## 0.6.0 (2020-05-25)
+
+### Refactor
+
+- **minigest**: sposta tutte le applicazioni all'interno di minigest
+- **docs**: riporta la documentazione
+
+### Fix
+
+- **settings**: aggiusta i settings
+- **public**: aggiunge la cartella public
+- **gitignore**: ignora tutto il contenuto della cartella public
+- **minigest**: rigenera il progetto
+- **minigest**: elimina tutto il progetto
+
+### Feat
+
+- aggiunge gli helpers per il calcolo dei corrispettivi
+
 ## 0.5.0 (2020-05-25)
 
 ### Feat
