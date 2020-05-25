@@ -1,7 +1,8 @@
-from django.core.validators import RegexValidator
-from django.db import models
-
 from minigest.common.models.fields import UpperCaseField
+
+from django.core.validators import RegexValidator
+
+from django.db import models
 
 
 class Cassa(models.Model):

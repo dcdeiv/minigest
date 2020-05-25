@@ -1,6 +1,6 @@
-from django.db import models
-
 from ..helpers.iva.aliquota import qanno, qdata, qmese
+
+from django.db import models
 
 
 class IvaAliquotaQuerySet(models.QuerySet):

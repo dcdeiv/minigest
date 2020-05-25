@@ -1,10 +1,11 @@
 from decimal import Decimal
 
-from django.core.validators import MinValueValidator
-from django.db import models
-
 from ...helpers.chiusura import riepilogo_reparti
 from ...managers.chiusura import ChiusuraManager
+
+from django.core.validators import MinValueValidator
+
+from django.db import models
 
 
 class ChiusuraFiscale(models.Model):

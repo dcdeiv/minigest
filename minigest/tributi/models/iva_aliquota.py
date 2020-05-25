@@ -1,8 +1,9 @@
-from django.core.validators import MinValueValidator
-from django.db import models
-
 from ..choices.iva import IVA_ORDINARIA, IVA_TIPOLOGIA_CHOICES
 from ..managers import IvaAliquotaManager
+
+from django.core.validators import MinValueValidator
+
+from django.db import models
 
 
 class IvaAliquota(models.Model):

@@ -1,7 +1,8 @@
-from django.core.validators import MinLengthValidator
-from django.db import models
-
 from ..fields import UpperCaseField
+
+from django.core.validators import MinLengthValidator
+
+from django.db import models
 
 
 class IndirizzoAbstract(models.Model):

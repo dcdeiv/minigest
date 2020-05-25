@@ -1,9 +1,10 @@
-from django.core.validators import MinLengthValidator
-from django.db import models
-
 from ..managers import UtenteManager
 
+from django.core.validators import MinLengthValidator
+
 from django.contrib.auth.models import AbstractUser
+
+from django.db import models
 
 
 class Utente(AbstractUser):

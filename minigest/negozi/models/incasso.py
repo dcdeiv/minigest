@@ -1,9 +1,10 @@
 from decimal import Decimal
 
-from django.core.validators import MinValueValidator
-from django.db import models
-
 from .cassetto import CassettoContantiAbstract
+
+from django.core.validators import MinValueValidator
+
+from django.db import models
 
 
 class Incasso(CassettoContantiAbstract):

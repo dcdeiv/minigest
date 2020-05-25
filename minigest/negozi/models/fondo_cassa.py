@@ -1,8 +1,8 @@
 from decimal import Decimal
 
-from django.db import models
-
 from .cassetto import CassettoContantiAbstract
+
+from django.db import models
 
 
 class FondoCassa(CassettoContantiAbstract):

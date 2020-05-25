@@ -1,11 +1,12 @@
 from decimal import Decimal
 
-from django.core.validators import MinValueValidator
-from django.db import models
-
 from minigest.storage import CustomStorage
 from ...helpers.docfisc import dir_docfisc_xml, iva_aliquote, riepilogo_reparti
 from ...managers import DocFiscManager
+
+from django.core.validators import MinValueValidator
+
+from django.db import models
 
 
 class DocumentoFiscale(models.Model):

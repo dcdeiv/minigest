@@ -1,9 +1,10 @@
-from django.core.validators import RegexValidator
-from django.db import models
-
 from minigest.common.models.fields import UpperCaseField
 from ..helpers import oggi_aperto
 from ..managers import NegozioManager
+
+from django.core.validators import RegexValidator
+
+from django.db import models
 
 
 class Negozio(models.Model):

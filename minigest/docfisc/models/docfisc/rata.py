@@ -1,7 +1,8 @@
-from django.core.validators import MinValueValidator
-from django.db import models
-
 from ...managers import RataManager
+
+from django.core.validators import MinValueValidator
+
+from django.db import models
 
 
 class RataAbstract(models.Model):

@@ -1,10 +1,11 @@
-from django.core.validators import MinLengthValidator
-from django.db import models
-
 from polymorphic.models import PolymorphicModel
 
 from minigest.common.models.fields import UpperCaseField
 from ..helpers.impresa import pagamenti
+
+from django.core.validators import MinLengthValidator
+
+from django.db import models
 
 
 class SoggettoFiscale(PolymorphicModel):

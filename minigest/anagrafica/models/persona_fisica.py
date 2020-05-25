@@ -1,9 +1,11 @@
 from django.conf import settings
-from django.core.validators import MinLengthValidator
-from django.db import models
 
 from minigest.common.models.fields import UpperCaseField
 from .soggetto_fiscale import SoggettoFiscale
+
+from django.core.validators import MinLengthValidator
+
+from django.db import models
 
 
 class PersonaFisica(SoggettoFiscale):

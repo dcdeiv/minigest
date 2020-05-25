@@ -1,6 +1,6 @@
-from django.db import models
-
 from ..fields import UpperCaseField
+
+from django.db import models
 
 
 class CodiceAbstract(models.Model):

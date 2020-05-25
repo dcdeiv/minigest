@@ -1,10 +1,11 @@
-from django.core.validators import MinValueValidator
-from django.db import models
-
 from minigest.storage import CustomStorage
 from ...helpers.docfisc import dir_docfisc_quietanza
 from ...managers import DocFiscPagamentoManager
 from .rata import RataAbstract
+
+from django.core.validators import MinValueValidator
+
+from django.db import models
 
 
 class DocFiscPagamento(RataAbstract):
