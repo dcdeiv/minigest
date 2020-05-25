@@ -2,6 +2,7 @@ from common.models.fields import UpperCaseField
 from django.core.validators import MinLengthValidator
 from django.db import models
 
+from ..helpers.impresa import bilancio, fatturato
 from .soggetto_fiscale import SoggettoFiscale
 
 
@@ -195,6 +196,12 @@ class Impresa(SoggettoFiscale):
             return "Cod.Fisc.: {0}".format(cf)
         else:
             return "Identificativo fiscale assente"
+
+    def fatturato(self, dal=None, al=None):
+        return fatturato(self, dal, al)
+
+    def bilancio(self, dal=None, al=None):
+        return bilancio(self, dal, al)
 
     def __str__(self):
         return self.denominazione

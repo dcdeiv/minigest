@@ -3,6 +3,8 @@ from django.core.validators import MinLengthValidator
 from django.db import models
 from polymorphic.models import PolymorphicModel
 
+from ..helpers import pagamenti
+
 
 class SoggettoFiscale(PolymorphicModel):
     """
@@ -35,6 +37,9 @@ class SoggettoFiscale(PolymorphicModel):
     fax = models.CharField(
         blank=True, null=True, max_length=12, validators=[MinLengthValidator(5)]
     )
+
+    def pagamenti(self, dal=None, al=None):
+        return pagamenti(self, dal, al)
 
     class Meta:
         verbose_name_plural = "soggetti fiscali"

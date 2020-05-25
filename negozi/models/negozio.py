@@ -33,7 +33,14 @@ class Negozio(models.Model):
     def aperto(self, data=None):
         return oggi_aperto(self, data)
 
-    # metodi per calcolare i corrispettivi
+    def corrispettivi(self, dal=None, al=None):
+        return self.casse.chiusure(dal, al).corrispettivi()
+
+    def riepilogo(self, dal=None, al=None):
+        return self.casse.chiusure(dal, al).riepilogo()
+
+    def riepilogo_reparti(self, dal=None, al=None):
+        return self.casse.chiusure(dal, al).riepilogo_reparti()
 
     def __str__(self):
         return "{negozio}".format(negozio=self.codice_negozio)
