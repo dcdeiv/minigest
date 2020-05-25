@@ -13,8 +13,9 @@
   "cornflakes.linter.executablePath": ".venv/bin/flake8",
   "python.linting.flake8Enabled": true,
   "python.linting.flake8Path": ".venv/bin/flake8",
-  "python.sortImports.path": ".venv/bin/isort",
   "python.formatting.blackPath": ".venv/bin/black",
+  "python.sortImports.path": ".venv/bin/isort",
+  "python.pythonPath": ".venv/bin/python",
   "python.formatting.provider": "black",
   "python.linting.flake8Args": ["--exclude .git,__pycache__,.venv"]
 }
