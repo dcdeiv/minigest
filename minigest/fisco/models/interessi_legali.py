@@ -14,7 +14,7 @@ class InteressiLegali(models.Model):
     )
 
     def __str__(self):
-        return "Interessi legali al {0} ({1})".format(self.percentuale, self.data)
+        return "Interessi legali al {0}% ({1})".format(self.percentuale, self.data)
 
     class Meta:
         verbose_name = "Interessi legali"
