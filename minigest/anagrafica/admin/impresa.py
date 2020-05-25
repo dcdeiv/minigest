@@ -65,7 +65,7 @@ class ImpresaAdmin(admin.ModelAdmin):
                 "fields": (
                     ("id_fiscale_iva_paese", "id_fiscale_iva_codice",),
                     "codice_fiscale",
-                    # "regime_fiscale",
+                    "regime_fiscale",
                 )
             },
         ),

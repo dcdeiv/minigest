@@ -32,6 +32,7 @@ INSTALLED_APPS += [
     "minigest.docfisc",
     "minigest.negozi",
     "minigest.tributi",
+    "minigest.fisco",
 ]
 
 MIDDLEWARE = [

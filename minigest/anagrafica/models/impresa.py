@@ -69,6 +69,12 @@ class Impresa(SoggettoFiscale):
     )
 
     # RegimeFiscale 1.2.1.8
+    regime_fiscale = models.ForeignKey(
+        to="fisco.RegimeFiscale",
+        to_field="codice",
+        on_delete=models.PROTECT,
+        related_name="imprese",
+    )
 
     # AlboProfessionale 1.2.1.4
     albo_professionale = models.CharField(
