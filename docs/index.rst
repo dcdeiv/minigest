@@ -1,19 +1,16 @@
-.. minigest documentation master file, created by
-   sphinx-quickstart on Mon May 25 23:38:50 2020.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
-Welcome to minigest's documentation!
-====================================
+Documentazione di minigest
+==========================
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
+   dipendenze/index
 
 
-Indices and tables
-==================
+
+Indice
+======
 
 * :ref:`genindex`
 * :ref:`modindex`
