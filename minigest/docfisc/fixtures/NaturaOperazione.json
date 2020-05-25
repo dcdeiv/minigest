@@ -1,0 +1,190 @@
+[
+  {
+    "model": "docfisc.naturaoperazione",
+    "pk": 1,
+    "fields": { "codice": "N1", "descrizione": "escluse ex art. 15" }
+  },
+  {
+    "model": "docfisc.naturaoperazione",
+    "pk": 2,
+    "fields": {
+      "codice": "N2",
+      "descrizione": "non soggette  (codice non più valido a partire dal primo gennaio 2021)"
+    }
+  },
+  {
+    "model": "docfisc.naturaoperazione",
+    "pk": 3,
+    "fields": {
+      "codice": "N2.1",
+      "descrizione": "non soggette ad IVA ai sensi degli artt. da 7 a 7-septies del DPR 633/72"
+    }
+  },
+  {
+    "model": "docfisc.naturaoperazione",
+    "pk": 4,
+    "fields": { "codice": "N2.2", "descrizione": "non soggette - altri casi" }
+  },
+  {
+    "model": "docfisc.naturaoperazione",
+    "pk": 5,
+    "fields": {
+      "codice": "N3",
+      "descrizione": "non imponibili  (codice non più valido a partire dal primo gennaio 2021)"
+    }
+  },
+  {
+    "model": "docfisc.naturaoperazione",
+    "pk": 6,
+    "fields": {
+      "codice": "N3.1",
+      "descrizione": "non imponibili - esportazioni"
+    }
+  },
+  {
+    "model": "docfisc.naturaoperazione",
+    "pk": 7,
+    "fields": {
+      "codice": "N3.2",
+      "descrizione": "non imponibili - cessioni intracomunitarie"
+    }
+  },
+  {
+    "model": "docfisc.naturaoperazione",
+    "pk": 8,
+    "fields": {
+      "codice": "N3.3",
+      "descrizione": "non imponibili - cessioni verso San Marino"
+    }
+  },
+  {
+    "model": "docfisc.naturaoperazione",
+    "pk": 9,
+    "fields": {
+      "codice": "N3.4",
+      "descrizione": "non imponibili - operazioni assimilate alle cessioni all'esportazione"
+    }
+  },
+  {
+    "model": "docfisc.naturaoperazione",
+    "pk": 10,
+    "fields": {
+      "codice": "N3.5",
+      "descrizione": "non imponibili - a seguito di dichiarazioni d'intento"
+    }
+  },
+  {
+    "model": "docfisc.naturaoperazione",
+    "pk": 11,
+    "fields": {
+      "codice": "N3.6",
+      "descrizione": "non imponibili - altre operazioni che non concorrono alla formazione del plafond"
+    }
+  },
+  {
+    "model": "docfisc.naturaoperazione",
+    "pk": 12,
+    "fields": { "codice": "N4", "descrizione": "esenti" }
+  },
+  {
+    "model": "docfisc.naturaoperazione",
+    "pk": 13,
+    "fields": {
+      "codice": "N5",
+      "descrizione": "regime del margine / IVA non esposta in fattura"
+    }
+  },
+  {
+    "model": "docfisc.naturaoperazione",
+    "pk": 14,
+    "fields": {
+      "codice": "N6",
+      "descrizione": "inversione contabile (non più valido dal 2021 - operazioni per acquisti/importazione extra UE"
+    }
+  },
+  {
+    "model": "docfisc.naturaoperazione",
+    "pk": 15,
+    "fields": {
+      "codice": "N6.1",
+      "descrizione": "inversione contabile - cessione di rottami e altri materiali di recupero"
+    }
+  },
+  {
+    "model": "docfisc.naturaoperazione",
+    "pk": 16,
+    "fields": {
+      "codice": "N6.2",
+      "descrizione": "inversione contabile - cessione di oro e argento puro"
+    }
+  },
+  {
+    "model": "docfisc.naturaoperazione",
+    "pk": 17,
+    "fields": {
+      "codice": "N6.3",
+      "descrizione": "inversione contabile - subappalto nel settore edile"
+    }
+  },
+  {
+    "model": "docfisc.naturaoperazione",
+    "pk": 18,
+    "fields": {
+      "codice": "N6.4",
+      "descrizione": "inversione contabile - cessione di fabbricati"
+    }
+  },
+  {
+    "model": "docfisc.naturaoperazione",
+    "pk": 19,
+    "fields": { "codice": "TP03", "descrizione": "" }
+  },
+  {
+    "model": "docfisc.naturaoperazione",
+    "pk": 20,
+    "fields": {
+      "codice": "N6.5",
+      "descrizione": "inversione contabile - cessione di telefoni cellulari"
+    }
+  },
+  {
+    "model": "docfisc.naturaoperazione",
+    "pk": 21,
+    "fields": {
+      "codice": "N6.6",
+      "descrizione": "inversione contabile - cessione di prodotti elettronici"
+    }
+  },
+  {
+    "model": "docfisc.naturaoperazione",
+    "pk": 22,
+    "fields": {
+      "codice": "N6.7",
+      "descrizione": "inversione contabile - prestazioni comparto edile e settori connessi"
+    }
+  },
+  {
+    "model": "docfisc.naturaoperazione",
+    "pk": 23,
+    "fields": {
+      "codice": "N6.8",
+      "descrizione": "inversione contabile - operazioni settore energetico"
+    }
+  },
+  {
+    "model": "docfisc.naturaoperazione",
+    "pk": 24,
+    "fields": {
+      "codice": "N6.9",
+      "descrizione": "inversione contabile - altri casi"
+    }
+  },
+  {
+    "model": "docfisc.naturaoperazione",
+    "pk": 25,
+    "fields": {
+      "codice": "N7",
+      "descrizione": "IVA assolta in altro stato UE"
+    }
+  }
+]

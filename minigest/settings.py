@@ -25,6 +25,15 @@ INSTALLED_APPS = [
     "localflavor",
 ]
 
+# minigest applicazioni
+INSTALLED_APPS += [
+    "minigest.common",
+    "minigest.anagrafica",
+    "minigest.docfisc",
+    "minigest.negozi",
+    "minigest.tributi",
+]
+
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -69,6 +78,8 @@ DATABASES = {
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
+
+AUTH_USER_MODEL = "anagrafica.Utente"
 
 AUTH_PASSWORD_VALIDATORS = [
     {
