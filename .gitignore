@@ -135,4 +135,5 @@ minigest.sqlite3
 minigest.sqlite3-journal
 
 # Public
-!./public/.gitkeep
+public/
+!public/.gitkeep
