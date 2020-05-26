@@ -8,7 +8,9 @@ Questo è un prodotto beta e quindi non è consigliabile utilizzarlo in un ambie
 
 ## Obiettivo
 
-L'obiettivo di **minigest** è di aiutare le piccole e medie imprese che non possono permettersi gestionali costosi, a mantenere la propria contabilità.
+**minigest** è stato creato per venire in contro a tutte quelle piccole e medie imprese che non possono aspettare che il proprio commercialista gli generi i documenti necessari per mandare avanti la propria azienda!
+
+**minigest** ti aiuta a ricordare tutte le fatture emesse, le scadenze delle fatture, a salvare i pagamenti, le scadenze delle tasse, a calcolare il ravvedimento, gli interessi legali e le sanzioni. Ti calcola anche l'imposta da versare dandoti fin da subito l'ammontare dell'IVA che andrai a pagare!
 
 ## Documentazione
 
