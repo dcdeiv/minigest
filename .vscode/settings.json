@@ -17,11 +17,8 @@
   "python.sortImports.path": ".venv/bin/isort",
   "python.pythonPath": ".venv/bin/python3",
   "python.formatting.provider": "black",
-  "python.linting.flake8Args": [
-    "--exclude .git,__pycache__,.venv"
-  ],
+  "python.linting.flake8Args": ["--exclude .git,__pycache__,.venv"],
   "autoDocstring.docstringFormat": "sphinx",
   "autoDocstring.startOnNewLine": true,
-  "restructuredtext.confPath": "${workspaceFolder}/docs",
-  "editor.wordWrap": "bounded"
+  "restructuredtext.confPath": "${workspaceFolder}/docs"
 }
