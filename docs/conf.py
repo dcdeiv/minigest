@@ -18,11 +18,11 @@ release = "0.7.0"
 
 extensions = []
 
-templates_path = ["_templates"]
+# templates_path = ["_templates"]
 
 language = "it"
 
-exclude_patterns = []
+exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
 # -- Options for HTML output -------------------------------------------------
 
