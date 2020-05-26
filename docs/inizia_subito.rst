@@ -93,3 +93,63 @@ Creazione di un'Impresa
 La prima impresa che si deve creare, ma non è obbligatorio farlo, è la propria impresa. Accedete alla sezione `admin <http://localhost:8000/admin>`_ Vi compariranno tutte le applicazioni del progetto con i loro modelli. Alcuni modelli non saranno presenti perché non è necessario che lo siano. Li troverete comunque nella pagina del modello che li richiede.
 
 Cliccate su **Imprese** nella sezione **Anagrafica** e aggiungete la vostra azienda!
+
+Sarà obbligatorio tuttavia, in questo caso, aggiungere una **sede**, potete farlo direttamente dal modulo dell'Impresa.
+
+Creazione di un negozio
+***********************
+
+È possibile `creare un negozio <http://localhost:8000/admin/negozi/negozio/add/>`_ dalla sezione apposita in admin. Se avete un negozio potete farlo ora.
+
+Selezionate la vostra impresa, date un nome al vostro negozio nel campo Insegna e assegnate un codice negozio che sia solo vostro. Potete per esepio utilizzare il sistema di Google Buisiness, ovvero BRAND + NUMERO PROGRESSIVO, esempio: GOOGLE1
+
+Anche qui vi verrà richiesto di inserire la sede del vostro negozio, anche se coincide con la sede della vostra azienda!
+
+Potete a questo punto aggiungere gli orari standard di apertura, e le varianti degli orari. Per esempio, se quest'anno il 25 dicembre chiudete, potete specificarlo lì!
+
+Creazione di una Cassa
+**********************
+
+Sempre dallo stesso modulo negozio, potete aggiungere una cassa. Altimenti potete accedere al `modulo Cassa <http://localhost:8000/admin/negozi/cassa/add/>`_ nella sezione Negozi.
+
+Se accedete direttamente dal modulo apposito, selezionate la cassa che avete creato prima, assegnate un codice identificativo della cassa così come avete fatto col negozio, per esempio MA. Vi servirà per distinguere le casse che avete in negozio. Se più di una potete assegnare a una MA1 e all'altra MA2 e così via. Ovviamente il codice può essere qualsiasi cosa voi vogliate.
+
+L'ID registratore è l'ID del registratore fiscale così come assegnato dall'Agenzia delle Entrate. Potete salvarlo là così fate a meno di accedere ogni volta al sito dell'Agenzia delle Entrate e ricercarlo!
+
+A questo punto potete compilare il modulo **fondo cassa** che serve appunto per calcolare ogni giorno, o quando volete, l'incasso! Compilate i campi inserendo il numero dei pezzi che solitamente tenete nel cassetto contanti della cassa!
+
+Prova subito a `calcolare l'incasso <http://localhost:8000/admin/negozi/incasso/add/>`
+
+
+Documenti Fiscali
+*****************
+
+Chiusura Fiscale
+-------------
+
+Andiamo ora ad `aggiungere tutti i nostri corrispettivi <http://localhost:8000/admin/docfisc/chiusurafiscale/add/>`_. Purtroppo, per ora è possibile aggiungere i corrispettivi solo manualmente! Quindi chiusure/azzeramenti fiscali in mano e compilate tutti i campi!
+
+Selezionate la cassa da cui avete stampato la chiusura, e compilate il resto dei campi!
+
+Aggiungete almeno un **reparto iva**! Non c'è bisogno che vi ricordiate l'Aliquota IVA in vigore per quel giorno! Se avete caricato le fixtures IvaAliquota, il gestionale calcolerà l'imposta per voi. Tutto quello che dovete ricordare è se il reparto appartiene all'IVA ORDINARIA, RIDOTTA, MINIMA o ESENTE
+
+Fatture e altro
+---------------
+
+Aggiungiamo ora una `fattura <http://localhost:8000/admin/docfisc/documentofiscale/add/>`_
+
+Con fattura si intende la fattura, nota di credito e altro ancora!
+
+Potete aggiungere una fattura acquisto o una fattura di vendita. L'unica cosa che dovete ricordare è chi l'ha emessa e chi l'ha commissionata. Così se siete voi ad averla emessa sarà considerata una fattura di vendita, se invece siete voi ad averla commissionata sarà considerata una fattura acquisto!
+
+Per ora assegnate committente e cedente alla vostra stessa azienda (come se fosse un'autofattura), oppure, se avete voglia, potete aggiungere una nuova azienda, vostra fornitrice o cliente!
+
+Compilate il modulo come se fosse una normale fattura elettronica. Al campo **data ricezione SDI** inserite la data di ricezione da parte del sistema di intercambio! Parlate col vostro commercialista per sapere in che modo le contabilizza! A volte le contabilizzano alla data di emissione, altri alla data di invio, altri invece alla data di consegna! Basta che ricordiate queste cose o compilate quel campo di conseguenza! Quel campo verrà utilizzato per calcolare tutto il resto!
+
+Così come per la Chiusura Fiscale, anche qua dovrete compilare separatamente il totale di ogni repart IVA. Controllate in fondo alle vostre fatture e compilate di seguito! In questo caso, però dovrete ricordarvi l'ammontare dell'aliquota IVA a cui fa riferimento il reparto! Non è possibile calcolarla automaticamente perché ci sono troppe incognite e varianti. Selezionate l'aliquota in vigora a cui fa riferimento la fattura e passate alla sezione successiva.
+
+Potete aggiungere una o più scadenze, così come segnato sulla fattura.
+
+Ogni volta che invece avete pagato, una o più rate, a saldo o come acconto, salvate il vostro pagamento!
+
+Potete caricare il file xml della fattura e il file PDF della/e quientanza/e cosicché le possiate trovare più facilmente in futuro!
