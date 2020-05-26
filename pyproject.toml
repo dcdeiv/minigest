@@ -5,7 +5,7 @@ description = "Un mini gestionale pensato per aiutare a mantenere i conti di un'
 authors = ["Davide Di Criscito <davide.dicriscito@gmail.com>"]
 license = "MIT"
 readme = "README.md"
-repository = "https://github.com/dcdeiv/minigest"
+repository = "https://github.com/minigest/minigest"
 keywords = ["ERP", "django", "gestionale"]
 classifier = [
   "Environment :: Web Environment",

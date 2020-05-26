@@ -15,7 +15,7 @@
   "python.linting.flake8Path": ".venv/bin/flake8",
   "python.formatting.blackPath": ".venv/bin/black",
   "python.sortImports.path": ".venv/bin/isort",
-  "python.pythonPath": ".venv/bin/python",
+  "python.pythonPath": ".venv/bin/python3",
   "python.formatting.provider": "black",
   "python.linting.flake8Args": [
     "--exclude .git,__pycache__,.venv"
