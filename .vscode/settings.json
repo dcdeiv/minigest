@@ -21,5 +21,6 @@
     "--exclude .git,__pycache__,.venv"
   ],
   "autoDocstring.docstringFormat": "sphinx",
-  "autoDocstring.startOnNewLine": true
+  "autoDocstring.startOnNewLine": true,
+  "restructuredtext.confPath": "${workspaceFolder}/docs"
 }

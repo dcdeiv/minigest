@@ -10,6 +10,8 @@ project = "minigest"
 copyright = "2020, Davide Di Criscito"
 author = "Davide Di Criscito"
 
+master_doc = "index"
+
 # The full version, including alpha/beta/rc tags
 release = "0.7.0"
 
