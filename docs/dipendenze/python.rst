@@ -92,7 +92,7 @@ dare il seguente comando
 
 ::
 
-    poetry install
+    poetry install --no-dev
 
 Sul computer locale installare gli hook pre-commit:
 

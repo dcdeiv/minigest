@@ -12,7 +12,7 @@ L'obiettivo di **minigest** è di aiutare le piccole e medie imprese che non pos
 
 ## Documentazione
 
-Nella cartella [docs](./docs) viene raccolta tutta la documentazione riguardante questo progetto
+La documentazione risiede nella cartella [docs](./docs). Oppure leggila su [readthedocs](https://minigest.readthedocs.io/it/latest/)
 
 ## Changelog
 

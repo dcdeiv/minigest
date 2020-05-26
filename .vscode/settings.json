@@ -22,5 +22,6 @@
   ],
   "autoDocstring.docstringFormat": "sphinx",
   "autoDocstring.startOnNewLine": true,
-  "restructuredtext.confPath": "${workspaceFolder}/docs"
+  "restructuredtext.confPath": "${workspaceFolder}/docs",
+  "editor.wordWrap": "bounded"
 }
