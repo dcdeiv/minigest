@@ -6,4 +6,5 @@ urlpatterns = [
         "anagrafica/", include("minigest.anagrafica.rest.urls"), name="api-anagrafica"
     ),
     path("tributi/", include("minigest.tributi.rest.urls"), name="api-tributi"),
+    path("fisco/", include("minigest.fisco.rest.urls"), name="api-fisco"),
 ]
