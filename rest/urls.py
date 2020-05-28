@@ -2,43 +2,54 @@ from django.urls import include, path
 
 from rest_framework_nested import routers
 
-from . import viewsets
+from . import viewsets as vs
 
 """ DefaultRouter """
 router = routers.DefaultRouter()
 
 
 """ anagrafica """
-router.register(r"utenti", viewsets.UtenteVS)
-router.register(r"soggetti-fiscali", viewsets.SoggettoFiscaleVS)
-router.register(r"persone-fisiche", viewsets.PersonaFisicaVS)
-router.register(r"imprese", viewsets.ImpresaVS)
+router.register(r"utenti", vs.UtenteVS)
+router.register(r"soggetti-fiscali", vs.SoggettoFiscaleVS)
+router.register(r"persone-fisiche", vs.PersonaFisicaVS)
+router.register(r"imprese", vs.ImpresaVS)
 
 
 """ fisco """
-router.register(r"fisco/regime-fiscale", viewsets.RegimeFiscaleVS)
-router.register(r"fisco/interessi-legali", viewsets.InteressiLegaliVS)
-router.register(r"fisco/tur", viewsets.TurVS)
+router.register(r"fisco/regime-fiscale", vs.RegimeFiscaleVS)
+router.register(r"fisco/interessi-legali", vs.InteressiLegaliVS)
+router.register(r"fisco/tur", vs.TurVS)
 
 
 """ imprese """
 imprese = routers.NestedDefaultRouter(router, r"imprese", lookup="impresa")
-imprese.register(r"negozi", viewsets.NegozioVS, basename="impresa-negozi")
+imprese.register(r"negozi", vs.NegozioVS, basename="impresa-negozi")
 
 
 """ negozio """
 negozio = routers.NestedDefaultRouter(imprese, r"negozi", lookup="negozio")
-negozio.register(r"orari", viewsets.OrarioVS, basename="negozio-orari")
+negozio.register(r"orari", vs.OrarioVS, basename="negozio-orari")
 negozio.register(
-    r"orari-varianti", viewsets.OrarioVarianteVS, basename="negozio-orari-varianti"
+    r"orari-varianti", vs.OrarioVarianteVS, basename="negozio-orari-varianti"
 )
-negozio.register(r"sede", viewsets.NegozioSedeVS, basename="negozio-sede")
-negozio.register(r"casse", viewsets.CassaVS, basename="negozio-casse")
+negozio.register(r"sede", vs.NegozioSedeVS, basename="negozio-sede")
+negozio.register(r"casse", vs.CassaVS, basename="negozio-casse")
 
 """ negozio-cassa """
 casse = routers.NestedDefaultRouter(negozio, r"casse", lookup="cassa")
-casse.register(r"fondo", viewsets.FondoCassaVS, basename="casse-fondo")
-casse.register(r"incassi", viewsets.IncassoVS, basename="incassi")
+casse.register(r"fondo", vs.FondoCassaVS, basename="casse-fondo")
+casse.register(r"incassi", vs.IncassoVS, basename="casse-incassi")
+casse.register(
+    r"chiusure-fiscali", vs.ChiusuraFiscaleVS, basename="casse-chiusure-fiscali"
+)
+
+""" chiusure fiscali """
+chiusure_fiscali = routers.NestedDefaultRouter(
+    casse, r"chiusure-fiscali", lookup="chiusura"
+)
+chiusure_fiscali.register(
+    r"reparti-iva", vs.ChiusuraRepartoIvaVS, basename="chiusura-reparti-iva"
+)
 
 """ urlpatterns """
 urlpatterns = [
@@ -47,4 +58,5 @@ urlpatterns = [
     path("", include(imprese.urls)),
     path("", include(negozio.urls)),
     path("", include(casse.urls)),
+    path("", include(chiusure_fiscali.urls)),
 ]

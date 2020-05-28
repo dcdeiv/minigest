@@ -1,3 +1,5 @@
+from .docfisc.chiusura import ChiusuraFiscaleSerializer
+from .docfisc.chiusura_reparto import ChiusuraRepartoIvaSerializer
 from .domicilio_fiscale import DomicilioFiscaleSerializer, DomicilioStabileOrgSerializer
 from .fisco import InteressiLegaliSerializer, RegimeFiscaleSerializer, TurSerializer
 from .impresa import ImpresaSerializer
@@ -13,6 +15,8 @@ from .tributi import IvaAliquotaSerializer
 from .utente import UtenteSerializer
 
 __all__ = [
+    "ChiusuraFiscaleSerializer",
+    "ChiusuraRepartoIvaSerializer",
     "NegozioSerializer",
     "FondoCassaSerializer",
     "IncassoSerializer",
