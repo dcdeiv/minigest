@@ -71,6 +71,8 @@ class Impresa(SoggettoFiscale):
 
     # RegimeFiscale 1.2.1.8
     regime_fiscale = models.ForeignKey(
+        null=True,
+        blank=True,
         to="fisco.RegimeFiscale",
         to_field="codice",
         on_delete=models.PROTECT,
