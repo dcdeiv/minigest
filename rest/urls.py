@@ -22,7 +22,7 @@ router.register(r"fisco/tur", viewsets.TurVS)
 
 
 """ imprese """
-imprese = routers.NestedSimpleRouter(router, r"imprese", lookup="impresa")
+imprese = routers.NestedDefaultRouter(router, r"imprese", lookup="impresa")
 imprese.register(r"negozi", viewsets.NegozioVS, basename="impresa-negozi")
 
 
@@ -32,7 +32,13 @@ negozio.register(r"orari", viewsets.OrarioVS, basename="negozio-orari")
 negozio.register(
     r"orari-varianti", viewsets.OrarioVarianteVS, basename="negozio-orari-varianti"
 )
+negozio.register(r"sede", viewsets.NegozioSedeVS, basename="negozio-sede")
+negozio.register(r"casse", viewsets.CassaVS, basename="negozio-casse")
 
+""" negozio-cassa """
+casse = routers.NestedDefaultRouter(negozio, r"casse", lookup="cassa")
+casse.register(r"fondo", viewsets.FondoCassaVS, basename="casse-fondo")
+casse.register(r"incassi", viewsets.IncassoVS, basename="incassi")
 
 """ urlpatterns """
 urlpatterns = [
@@ -40,4 +46,5 @@ urlpatterns = [
     path("", include(router.urls)),
     path("", include(imprese.urls)),
     path("", include(negozio.urls)),
+    path("", include(casse.urls)),
 ]
