@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from ..models import PersonaFisica
+from ...models import PersonaFisica
 
 
 class PersonaFisicaSerializer(serializers.ModelSerializer):

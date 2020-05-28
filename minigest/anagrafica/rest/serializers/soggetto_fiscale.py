@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from rest_polymorphic.serializers import PolymorphicSerializer
 
-from ..models import Impresa, PersonaFisica, SoggettoFiscale
+from ...models import Impresa, PersonaFisica, SoggettoFiscale
 from ..serializers import ImpresaSerializer, PersonaFisicaSerializer
 
 

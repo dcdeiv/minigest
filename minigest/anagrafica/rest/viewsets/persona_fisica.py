@@ -1,6 +1,6 @@
 from rest_framework import viewsets
 
-from ..models import PersonaFisica
+from ...models import PersonaFisica
 from ..serializers import PersonaFisicaSerializer
 
 

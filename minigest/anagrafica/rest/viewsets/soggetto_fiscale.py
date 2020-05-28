@@ -1,6 +1,6 @@
 from rest_framework import viewsets
 
-from ..models import SoggettoFiscale
+from ...models import SoggettoFiscale
 from ..serializers import SoggettoFiscalePolymorphicSerializer
 
 

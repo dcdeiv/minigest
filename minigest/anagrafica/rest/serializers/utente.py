@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from ..models import Utente
+from ...models import Utente
 
 
 class UtenteSerializer(serializers.HyperlinkedModelSerializer):

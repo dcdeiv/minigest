@@ -1,6 +1,6 @@
 from rest_framework import generics, viewsets
 
-from ..models import IvaAliquota
+from ...models import IvaAliquota
 from ..serializers import IvaAliquotaSerializer
 
 

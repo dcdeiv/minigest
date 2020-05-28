@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from ..models import IvaAliquota
+from ...models import IvaAliquota
 
 
 class IvaAliquotaSerializer(serializers.HyperlinkedModelSerializer):

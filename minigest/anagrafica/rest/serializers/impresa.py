@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from ..models import Impresa
+from ...models import Impresa
 
 
 class ImpresaSerializer(serializers.ModelSerializer):
