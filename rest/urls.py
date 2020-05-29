@@ -51,6 +51,13 @@ chiusure_fiscali.register(
     r"reparti-iva", vs.ChiusuraRepartoIvaVS, basename="chiusura-reparti-iva"
 )
 
+
+""" docfisc """
+router.register(r"docfisc/codici", vs.DocFiscCodiceVS)
+router.register(r"docfisc/condizioni-pagamento", vs.DocFiscCondizionePagamentoVS)
+router.register(r"docfisc/modalita-pagamento", vs.DocFiscModalitaPagamentoliVS)
+router.register(r"docfisc/natura-operazioni", vs.DocFiscNaturaOperazioneVS)
+
 """ urlpatterns """
 urlpatterns = [
     path("auth/", include("rest_framework.urls"), name="api-auth"),

@@ -1,5 +1,9 @@
 from .docfisc.chiusura import ChiusuraFiscaleSerializer
 from .docfisc.chiusura_reparto import ChiusuraRepartoIvaSerializer
+from .docfisc.codice_documento import DocFiscCodiceSerializer
+from .docfisc.condizione_pagamento import DocFiscCondizionePagSerializer
+from .docfisc.modalita_pagamento import DocFiscModPagSerializer
+from .docfisc.natura_operazione import DocFiscNaturaOperazioneSerializer
 from .domicilio_fiscale import DomicilioFiscaleSerializer, DomicilioStabileOrgSerializer
 from .fisco import InteressiLegaliSerializer, RegimeFiscaleSerializer, TurSerializer
 from .impresa import ImpresaSerializer
@@ -17,6 +21,10 @@ from .utente import UtenteSerializer
 __all__ = [
     "ChiusuraFiscaleSerializer",
     "ChiusuraRepartoIvaSerializer",
+    "DocFiscCodiceSerializer",
+    "DocFiscCondizionePagSerializer",
+    "DocFiscModPagSerializer",
+    "DocFiscNaturaOperazioneSerializer",
     "NegozioSerializer",
     "FondoCassaSerializer",
     "IncassoSerializer",
