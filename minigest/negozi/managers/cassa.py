@@ -6,7 +6,7 @@ class CassaQuerySet(models.QuerySet):
         chiusure = self.none()
 
         for cassa in self.all():
-            chiusure = chiusure | cassa.chiusure.periodo(dal, al).prefetch_related("")
+            chiusure = chiusure | cassa.chiusure.periodo(dal, al)
 
         return chiusure
 
