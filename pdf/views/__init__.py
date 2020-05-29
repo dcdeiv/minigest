@@ -1,5 +1,5 @@
-from .registro_corrispettivi import RegistroCorrispettiviView
+from .registro_corrispettivi import RegistroCorrispettiviPdf
 
 __all__ = [
-    "RegistroCorrispettiviView",
+    "RegistroCorrispettiviPdf",
 ]

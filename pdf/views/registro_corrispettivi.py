@@ -1,6 +1,9 @@
 from datetime import date
 
+from django.conf import settings
 from django.views.generic import TemplateView
+
+from django_weasyprint import WeasyTemplateResponseMixin
 
 from minigest.negozi.models import Negozio
 
@@ -22,4 +25,14 @@ class RegistroCorrispettiviView(TemplateView):
         context["periodo"] = periodo
         context["negozio"] = negozio
         context["corrispettivi"] = negozio.corrispettivi(periodo)
+        context["riepilogo"] = negozio.riepilogo(periodo)
+        context["reparti"] = negozio.riepilogo_reparti(periodo)
         return context
+
+
+class RegistroCorrispettiviPdf(WeasyTemplateResponseMixin, RegistroCorrispettiviView):
+    pdf_attachment = False
+    pdf_stylesheets = [
+        settings.STATIC_ROOT + "pdf/docfisc.css",
+        settings.STATIC_ROOT + "pdf/table-striped.css",
+    ]

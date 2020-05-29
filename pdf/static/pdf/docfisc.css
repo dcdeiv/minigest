@@ -5,10 +5,11 @@
 html,
 body {
   font-family: "Fira Mono", monospace;
+  font-size: 10pt;
 }
 
 #intestazione {
-  margin-bottom: 16px;
+  margin-bottom: 24px;
 }
 
 #intestazione p.overline {
