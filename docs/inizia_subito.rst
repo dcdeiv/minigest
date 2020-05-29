@@ -56,13 +56,19 @@ Le fixture disponibili sono:
 - ModalitaPagamento
 - NaturaOperazione
 
-Le fixtures vanno caricate una per volta ed è possibile farlo dando il seguente comando nella root del progetto:
+Oppure per applicazione:
+
+- docfisc
+- tributi
+- fisco
+
+Puoi decidere se caricare le fixtures una per volta oppure tutte quante insieme dando il seguente comando:
 
 ::
 
     python manage.py loaddata IvaAliquota
 
-Sostituire **IvaAliquota** con una delle fixture che si vuole installare e continuare per tutte le fixtures disponibili!
+Sostituire **IvaAliquota** con una o più delle fixture che si vuole installare!
 
 Super User
 **********
