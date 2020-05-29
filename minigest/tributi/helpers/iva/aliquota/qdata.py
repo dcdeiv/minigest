@@ -21,7 +21,7 @@ def qdata(self, data=None):
         else:
             # Screma le aliquote se ce n'è' più di una
             # Controlla se nella data fornita ci sono aliquote
-            qaliquote = qreparto.filter(data__iexact=data)
+            qaliquote = qreparto.filter(data=data)
 
             # controlla se la queryset è vuota
             if len(qaliquote) == 0:
