@@ -1,4 +1,5 @@
 from minigest.common.models.fields import UpperCaseField
+from ..managers.cassa import CassaManager
 
 from django.core.validators import RegexValidator
 
@@ -6,6 +7,8 @@ from django.db import models
 
 
 class Cassa(models.Model):
+    objects = CassaManager()
+
     negozio = models.ForeignKey(
         to="negozi.Negozio",
         blank=False,
