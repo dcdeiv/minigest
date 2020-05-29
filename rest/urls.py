@@ -13,6 +13,7 @@ router.register(r"utenti", vs.UtenteVS)
 router.register(r"soggetti-fiscali", vs.SoggettoFiscaleVS)
 router.register(r"persone-fisiche", vs.PersonaFisicaVS)
 router.register(r"imprese", vs.ImpresaVS)
+router.register(r"tributi/iva/aliquote", vs.IvaAliquotaVS)
 
 
 """ fisco """
@@ -79,9 +80,16 @@ dfacquisti.register(r"pagamenti", vs.DocFiscPagamentoVS, basename="dfa-pagamenti
 dfacquisti.register(r"scadenze", vs.DocFiscScadenzaVS, basename="dfa-scadenze")
 
 
-""" urlpatterns """
+""" non-router patterns """
 urlpatterns = [
     path("auth/", include("rest_framework.urls"), name="api-auth"),
+    path("tributi/iva/aliquote/q/", vs.IvaAliquotaDataVS.as_view()),
+    path("tributi/iva/aliquote/q/<str:data>/", vs.IvaAliquotaDataVS.as_view()),
+]
+
+
+""" router patterns """
+urlpatterns += [
     path("", include(router.urls)),
     path("", include(imprese.urls)),
     path("", include(negozio.urls)),

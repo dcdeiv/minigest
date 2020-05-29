@@ -20,7 +20,7 @@ from .negozi.orario import OrarioVarianteVS, OrarioVS
 from .negozi.sede import NegozioSedeVS
 from .persona_fisica import PersonaFisicaVS
 from .soggetto_fiscale import SoggettoFiscaleVS
-from .tributi import IvaAliquotaVS
+from .tributi.iva_aliquota import IvaAliquotaDataVS, IvaAliquotaVS
 from .utente import UtenteVS
 
 __all__ = [
@@ -51,5 +51,6 @@ __all__ = [
     "PersonaFisicaVS",
     "SoggettoFiscaleVS",
     "IvaAliquotaVS",
+    "IvaAliquotaDataVS",
     "UtenteVS",
 ]
