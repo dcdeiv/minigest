@@ -79,8 +79,8 @@ class DocumentoFiscale(models.Model):
 
     @property
     def saldata(self):
-        scadenze = self.scadenze.totale()
-        pagamenti = self.pagamenti.totale()
+        scadenze = self.scadenze.totale() or Decimal(0)
+        pagamenti = self.pagamenti.totale() or Decimal(0)
 
         return pagamenti >= scadenze
 
