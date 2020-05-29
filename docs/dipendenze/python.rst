@@ -26,13 +26,19 @@ Ubuntu
 
 ::
 
-    sudo apt install python3 python3-pip python3-dev python3-venv python3-setuptools python3-wheel
+    sudo apt-get install python3 python3-pip python3-dev \
+    python3-venv python3-setuptools python3-wheel \
+    python3-cffi build-essential libcairo2 \
+    libpango-1.0-0 libpangocairo-1.0-0 libgdk-pixbuf2.0-0 \
+    libffi-dev shared-mime-info
 
 Window
 ------
 
 Scaricare la versione specificata nel file **pyproject.toml** e
 utilizzare il terminare python che viene installato
+
+Seguire le istruzioni a `questo link <https://weasyprint.readthedocs.io/en/latest/install.html#windows>`_ per l'installazione delle dipendenze WeasyPrint
 
 Installazione di Poetry
 ***********************
