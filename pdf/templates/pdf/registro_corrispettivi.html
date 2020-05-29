@@ -1,0 +1,17 @@
+{% extends "pdf/master/A4P.html" %}
+{% load static %}
+{% block stylesheets %}
+  <link rel="stylesheet" href="{% static 'pdf/docfisc.css' %}">
+{% endblock stylesheets %}
+{% block page_content %}
+<div id="intestazione">
+  <p class="overline">{{ periodo }}</p>
+  <h1>Registro dei Corrispettivi</h1>
+  <p class="sottotitolo">Negozio: {{ negozio.insegna }} - {{ negozio.sede }}</p>
+</div>
+
+<div id="main">
+  {{ corrispettivi }}
+</div>
+{% endblock page_content %}
+

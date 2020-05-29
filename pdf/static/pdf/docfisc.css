@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+@import url("https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&display=swap");
+
+html,
+body {
+  font-family: "Fira Mono", monospace;
+}
+
+#intestazione {
+  margin-bottom: 16px;
+}
+
+#intestazione p.overline {
+  margin: 0;
+}
+
+#intestazione h1 {
+  margin: 0;
+}
+
+#intestazione p.sottotitolo {
+  margin: 8px 0 0 0;
+}
