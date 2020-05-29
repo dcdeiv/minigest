@@ -1,9 +1,14 @@
-from .docfisc.chiusura import ChiusuraFiscaleVS
-from .docfisc.chiusura_reparto import ChiusuraRepartoIvaVS
+from .dfchiusura.chiusura import ChiusuraFiscaleVS
+from .dfchiusura.chiusura_reparto import ChiusuraRepartoIvaVS
 from .docfisc.codice_documento import DocFiscCodiceVS
 from .docfisc.condizione_pagamento import DocFiscCondizionePagamentoVS
+from .docfisc.dfacquisto import DocFiscAcquistoVS
+from .docfisc.dfvendita import DocFiscVenditaVS
 from .docfisc.modalita_pagamento import DocFiscModalitaPagamentoliVS
 from .docfisc.natura_operazione import DocFiscNaturaOperazioneVS
+from .docfisc.pagamento import DocFiscPagamentoVS
+from .docfisc.riepilogo_iva import DocFiscRiepilogoIvaVS
+from .docfisc.scadenza import DocFiscScadenzaVS
 from .domicilio_fiscale import DomicilioFiscaleVS, DomicilioStabileOrgVS
 from .fisco import InteressiLegaliVS, RegimeFiscaleVS, TurVS
 from .impresa import ImpresaVS
@@ -19,6 +24,11 @@ from .tributi import IvaAliquotaVS
 from .utente import UtenteVS
 
 __all__ = [
+    "DocFiscVenditaVS",
+    "DocFiscAcquistoVS",
+    "DocFiscRiepilogoIvaVS",
+    "DocFiscPagamentoVS",
+    "DocFiscScadenzaVS",
     "ChiusuraFiscaleVS",
     "ChiusuraRepartoIvaVS",
     "DocFiscCodiceVS",

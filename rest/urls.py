@@ -57,6 +57,27 @@ router.register(r"docfisc/codici", vs.DocFiscCodiceVS)
 router.register(r"docfisc/condizioni-pagamento", vs.DocFiscCondizionePagamentoVS)
 router.register(r"docfisc/modalita-pagamento", vs.DocFiscModalitaPagamentoliVS)
 router.register(r"docfisc/natura-operazioni", vs.DocFiscNaturaOperazioneVS)
+docfisc = routers.NestedDefaultRouter(router, r"imprese", lookup="impresa")
+
+
+""" docfisc vendita """
+docfisc.register(r"docfisc/vendita", vs.DocFiscVenditaVS, basename="impresa-dfv")
+dfvendita = routers.NestedDefaultRouter(docfisc, r"docfisc/vendita", lookup="docfisc")
+dfvendita.register(
+    r"riepiloghi-iva", vs.DocFiscRiepilogoIvaVS, basename="dfv-riepiloghi-iva"
+)
+dfvendita.register(r"pagamenti", vs.DocFiscPagamentoVS, basename="dfv-pagamenti")
+dfvendita.register(r"scadenze", vs.DocFiscScadenzaVS, basename="dfv-scadenze")
+
+""" docfisc acquisti """
+docfisc.register(r"docfisc/acquisti", vs.DocFiscAcquistoVS, basename="impresa-dfa")
+dfacquisti = routers.NestedDefaultRouter(docfisc, r"docfisc/acquisti", lookup="docfisc")
+dfacquisti.register(
+    r"riepiloghi-iva", vs.DocFiscRiepilogoIvaVS, basename="dfa-riepiloghi-iva"
+)
+dfacquisti.register(r"pagamenti", vs.DocFiscPagamentoVS, basename="dfa-pagamenti")
+dfacquisti.register(r"scadenze", vs.DocFiscScadenzaVS, basename="dfa-scadenze")
+
 
 """ urlpatterns """
 urlpatterns = [
@@ -66,4 +87,7 @@ urlpatterns = [
     path("", include(negozio.urls)),
     path("", include(casse.urls)),
     path("", include(chiusure_fiscali.urls)),
+    path("", include(docfisc.urls)),
+    path("", include(dfacquisti.urls)),
+    path("", include(dfvendita.urls)),
 ]

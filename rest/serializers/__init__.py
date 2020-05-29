@@ -1,9 +1,13 @@
-from .docfisc.chiusura import ChiusuraFiscaleSerializer
-from .docfisc.chiusura_reparto import ChiusuraRepartoIvaSerializer
+from .dfchiusura.chiusura import ChiusuraFiscaleSerializer
+from .dfchiusura.chiusura_reparto import ChiusuraRepartoIvaSerializer
 from .docfisc.codice_documento import DocFiscCodiceSerializer
 from .docfisc.condizione_pagamento import DocFiscCondizionePagSerializer
+from .docfisc.docfisc import DocFiscSerializer
 from .docfisc.modalita_pagamento import DocFiscModPagSerializer
 from .docfisc.natura_operazione import DocFiscNaturaOperazioneSerializer
+from .docfisc.pagamento import DocFiscPagamentoSerializer
+from .docfisc.riepilogo_iva import DocFiscRiepilogoIvaSerializer
+from .docfisc.scadenza import DocFiscScadenzaSerializer
 from .domicilio_fiscale import DomicilioFiscaleSerializer, DomicilioStabileOrgSerializer
 from .fisco import InteressiLegaliSerializer, RegimeFiscaleSerializer, TurSerializer
 from .impresa import ImpresaSerializer
@@ -21,10 +25,14 @@ from .utente import UtenteSerializer
 __all__ = [
     "ChiusuraFiscaleSerializer",
     "ChiusuraRepartoIvaSerializer",
+    "DocFiscSerializer",
     "DocFiscCodiceSerializer",
     "DocFiscCondizionePagSerializer",
     "DocFiscModPagSerializer",
     "DocFiscNaturaOperazioneSerializer",
+    "DocFiscRiepilogoIvaSerializer",
+    "DocFiscPagamentoSerializer",
+    "DocFiscScadenzaSerializer",
     "NegozioSerializer",
     "FondoCassaSerializer",
     "IncassoSerializer",
