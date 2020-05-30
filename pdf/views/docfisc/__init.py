@@ -1,4 +1,5 @@
 from .docfisc import DocumentoFiscalePdf, DocumentoFiscaleView
+from .pagamenti import DocFiscPagamentoPdf, DocFiscPagamentoView
 from .ricevuti import DocumentoFiscaleRicPdf, DocumentoFiscaleRicView
 
 __all__ = [
@@ -6,4 +7,6 @@ __all__ = [
     "DocumentoFiscaleRicView",
     "DocumentoFiscalePdf",
     "DocumentoFiscaleRicPdf",
+    "DocFiscPagamentoPdf",
+    "DocFiscPagamentoView",
 ]
