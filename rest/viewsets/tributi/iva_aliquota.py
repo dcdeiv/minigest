@@ -1,7 +1,7 @@
 from rest_framework import generics, viewsets
 
 from minigest.tributi.models import IvaAliquota
-from ...serializers import IvaAliquotaSerializer
+from rest.serializers import IvaAliquotaSerializer
 
 
 class IvaAliquotaVS(viewsets.ModelViewSet):

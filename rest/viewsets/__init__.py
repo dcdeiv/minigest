@@ -1,3 +1,5 @@
+from .anagrafica.domicilio_fiscale import DomicilioFiscaleVS
+from .anagrafica.domicilio_stabile import DomicilioStabileOrgVS
 from .anagrafica.impresa import ImpresaVS
 from .anagrafica.persona_fisica import PersonaFisicaVS
 from .anagrafica.soggetto_fiscale import SoggettoFiscaleVS
@@ -13,8 +15,9 @@ from .docfisc.natura_operazione import DocFiscNaturaOperazioneVS
 from .docfisc.pagamento import DocFiscPagamentoVS
 from .docfisc.riepilogo_iva import DocFiscRiepilogoIvaVS
 from .docfisc.scadenza import DocFiscScadenzaVS
-from .domicilio_fiscale import DomicilioFiscaleVS, DomicilioStabileOrgVS
-from .fisco import InteressiLegaliVS, RegimeFiscaleVS, TurVS
+from .fisco.interessi_legali import InteressiLegaliVS
+from .fisco.regime_fiscale import RegimeFiscaleVS
+from .fisco.tur import TurVS
 from .negozi.cassa import CassaVS
 from .negozi.fondo_cassa import FondoCassaVS
 from .negozi.incasso import IncassoVS

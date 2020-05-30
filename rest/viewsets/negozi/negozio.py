@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 
 from minigest.negozi.models import Negozio
-from ...serializers import NegozioSerializer
+from rest.serializers import NegozioSerializer
 
 
 class NegozioVS(viewsets.ModelViewSet):

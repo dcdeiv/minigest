@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 
 from minigest.negozi.models import Incasso
-from ...serializers import IncassoSerializer
+from rest.serializers import IncassoSerializer
 
 
 class IncassoVS(viewsets.ModelViewSet):

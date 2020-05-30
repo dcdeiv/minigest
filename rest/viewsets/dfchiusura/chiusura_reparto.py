@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 
 from minigest.docfisc.models import ChiusuraRepartoIva
-from ...serializers import ChiusuraRepartoIvaSerializer
+from rest.serializers import ChiusuraRepartoIvaSerializer
 
 
 class ChiusuraRepartoIvaVS(viewsets.ModelViewSet):
