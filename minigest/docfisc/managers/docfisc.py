@@ -30,6 +30,25 @@ class DocFiscQuerySet(models.QuerySet):
 
         return query
 
+    def ric_data(self, data):
+        return self.ricevute().filter(data_ricezione__icontains=data)
+
+    def ric_dal_al(self, dal, al):
+        return self.ricevute().filter(data_ricezione__range=(dal, al))
+
+    def ric_periodo(self, dal=None, al=None):
+        query = self.ricevute()
+
+        if al is None:
+            if dal is None:
+                query.all()
+            else:
+                query.ric_data(dal)
+        else:
+            query.ric_dal_al(dal, al)
+
+        return query
+
     def iva_aliquote(self):
         return iva_aliquote_queryset(self)
 
@@ -46,6 +65,9 @@ class DocFiscManager(models.Manager):
 
     def periodo(self, dal=None, al=None):
         return self.get_queryset().periodo(dal, al)
+
+    def ric_periodo(self, dal=None, al=None):
+        return self.get_queryset().ric_periodo(dal, al)
 
     def ricevute(self):
         return self.get_queryset().ricevute()
