@@ -1,0 +1,86 @@
+{% extends "pdf/master.html" %}
+{% load static %}
+
+{% block page_title %}DocFisc {{ ciclo|title }} - {{ periodo }}{% endblock page_title %}
+
+{% block stylesheets %}
+  <link rel="stylesheet" href="{% static 'pdf/docfisc.css' %}">
+  <link rel="stylesheet" href="{% static 'pdf/table-striped.css' %}">
+{% endblock stylesheets %}
+
+{% block style_media_print %}
+.header {
+  position: running(header);
+  text-align: center;
+  font-size: 8pt;
+}
+
+@page {
+  size: A4 landscape;
+  margin-right: 0.5cm;
+  margin-left: 0.5cm;
+
+  @top-center {
+    content: element(header);
+  }
+  @bottom-left {
+    content: "Documenti Fiscali {{ ciclo|title }}";
+    font-size: 8pt;
+  }
+  @bottom-right {
+    content: counter(page);
+    font-size: 8pt;
+  }
+}
+{% endblock style_media_print %}
+
+{% block page_content %}
+<div class="header">
+  <b style="font-size:10pt;">{{ impresa }}</b><br />
+  <span>{{ impresa.sede }}</span> &middot; <span>{{ impresa.id_fiscale }}</span>
+</div>
+
+<div id="intestazione">
+  <p class="overline">{{ periodo }}</p>
+  <h1>Documenti Fiscali {{ ciclo|title }}</h1>
+</div>
+
+<div id="content">
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align:left;width:55px;">Emiss.</th>
+        <th style="text-align:left;width:55px;">Ricez.</th>
+        <th style="text-align:left;width:40px;">Cod.</th>
+        <th style="text-align:left;">Committente</th>
+        <th style="text-align:right;">Totale</th>
+        <th style="text-align:right;">Imposta</th>
+        <th style="text-align:right;">Imponibile</th>
+      </tr>
+    </thead>
+
+    <tfoot>
+      <tr>
+        <th colspan="5" style="text-align:right;">{{ docfisc.riepilogo.totale }} €</th>
+        <th style="text-align:right;">{{ docfisc.riepilogo.imposta }} €</th>
+        <th style="text-align:right;">{{ docfisc.riepilogo.imponibile }} €</th>
+      </tr>
+    </tfoot>
+
+    <tbody>
+      {% for df in docfisc %}
+        <tr>
+          <td>{{ df.data|date:"m-d" }}</td>
+          <td>{{ df.data_ricezione|date:"m-d" }}</td>
+          <td>{{ df.codice_documento.codice }}</td>
+          <td>{{ df.committente }}</td>
+          <td style="text-align:right">{{ df.totale }} €</td>
+          <td style="text-align:right">{{ df.imposta }} €</td>
+          <td style="text-align:right">{{ df.imponibile }} €</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock page_content %}
+
