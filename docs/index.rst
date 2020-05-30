@@ -22,12 +22,7 @@ Attualmente è in fase beta e mancano ancora molte funzionalità, soprattutto, m
 
 .. toctree::
    :maxdepth: 1
-   :caption: API
+   :caption: Documentazione
 
    api
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Applicazioni
-
-   anagrafica/index
+   applicazioni
