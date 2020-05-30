@@ -4,6 +4,7 @@ from .anagrafica.impresa import Impresa
 from .anagrafica.persona_fisica import PersonaFisica
 from .anagrafica.soggetto_fiscale import SoggettoFiscale
 from .anagrafica.utente import Utente
+from .bilancio import Bilancio
 from .corrispettivi import Corrispettivi
 from .dfchiusura.chiusura import ChiusuraFiscale
 from .dfchiusura.chiusura_reparto import ChiusuraFiscaleRepartoIva
@@ -31,6 +32,7 @@ from .tributi.iva_aliquota import IvaAliquota
 from .tributi.iva_aliquota_data import IvaAliquotaData
 
 __all__ = [
+    "Bilancio",
     "Fatturato",
     "Corrispettivi",
     "DomicilioFiscale",

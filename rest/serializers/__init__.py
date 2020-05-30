@@ -4,6 +4,7 @@ from .anagrafica.impresa import ImpresaSerializer
 from .anagrafica.persona_fisica import PersonaFisicaSerializer
 from .anagrafica.soggetto_fiscale import SoggettoFiscalePolymorphicSerializer
 from .anagrafica.utente import UtenteSerializer
+from .bilancio import BilancioSerializer
 from .corrispettivi import CorrispettiviSerializer
 from .dfchiusura.chiusura import ChiusuraFiscaleSerializer
 from .dfchiusura.chiusura_reparto import ChiusuraRepartoIvaSerializer
@@ -28,6 +29,7 @@ from .negozi.sede import NegozioSedeSerializer
 from .tributi import IvaAliquotaSerializer
 
 __all__ = [
+    "BilancioSerializer",
     "FatturatoSerializer",
     "CorrispettiviSerializer",
     "ChiusuraFiscaleSerializer",

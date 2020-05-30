@@ -87,8 +87,16 @@ dfacquisti.register(r"scadenze", vs.DocumentoFiscaleScadenza, basename="dfa-scad
 """ non-router patterns """
 urlpatterns = [
     path("auth/", include("rest_framework.urls"), name="api-auth"),
+]
+
+""" tributi patterns """
+urlpatterns += [
     path("tributi/iva/aliquote/q/", vs.IvaAliquotaData.as_view()),
     path("tributi/iva/aliquote/q/<str:data>/", vs.IvaAliquotaData.as_view()),
+]
+
+""" corrispettivi """
+urlpatterns += [
     path(
         "imprese/<int:impresa>/negozi/<int:negozio>/corrispettivi/",
         vs.Corrispettivi.as_view(),
@@ -97,10 +105,19 @@ urlpatterns = [
         "imprese/<int:impresa>/negozi/<int:negozio>/corrispettivi/<str:data>/",
         vs.Corrispettivi.as_view(),
     ),
+]
+
+""" fatturato """
+urlpatterns += [
     path("imprese/<int:impresa>/fatturato/", vs.Fatturato.as_view(),),
     path("imprese/<int:impresa>/fatturato/<str:data>/", vs.Fatturato.as_view(),),
 ]
 
+""" bilancio """
+urlpatterns += [
+    path("imprese/<int:impresa>/bilancio/", vs.Bilancio.as_view(),),
+    path("imprese/<int:impresa>/bilancio/<str:data>/", vs.Bilancio.as_view(),),
+]
 
 """ router patterns """
 urlpatterns += [
