@@ -1,9 +1,9 @@
 from rest_framework import viewsets
 
-from minigest.fisco.models import TassoUfficialeRiferimento
+from minigest.fisco.models import TassoUfficialeRiferimento as tur
 from rest.serializers import TurSerializer
 
 
-class TurVS(viewsets.ModelViewSet):
-    queryset = TassoUfficialeRiferimento.objects.all()
+class TassoUfficialeRiferimento(viewsets.ModelViewSet):
+    queryset = tur.objects.all()
     serializer_class = TurSerializer

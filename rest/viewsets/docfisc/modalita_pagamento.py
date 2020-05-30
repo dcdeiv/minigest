@@ -1,9 +1,9 @@
 from rest_framework import viewsets
 
-from minigest.docfisc.models import ModalitaPagamento
+from minigest.docfisc.models import ModalitaPagamento as mp
 from rest.serializers import DocFiscModPagSerializer
 
 
-class DocFiscModalitaPagamentoliVS(viewsets.ModelViewSet):
-    queryset = ModalitaPagamento.objects.all()
+class ModalitàPagamento(viewsets.ModelViewSet):
+    queryset = mp.objects.all()
     serializer_class = DocFiscModPagSerializer

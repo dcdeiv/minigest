@@ -1,9 +1,9 @@
 from rest_framework import viewsets
 
-from minigest.fisco.models import InteressiLegali
+from minigest.fisco.models import InteressiLegali as il
 from rest.serializers import InteressiLegaliSerializer
 
 
-class InteressiLegaliVS(viewsets.ModelViewSet):
-    queryset = InteressiLegali.objects.all()
+class InteressiLegali(viewsets.ModelViewSet):
+    queryset = il.objects.all()
     serializer_class = InteressiLegaliSerializer

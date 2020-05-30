@@ -1,11 +1,11 @@
 from rest_framework import viewsets
 
-from minigest.docfisc.models import DocFiscPagamento
+from minigest.docfisc.models import DocFiscPagamento as dfp
 from rest.serializers import DocFiscPagamentoSerializer
 
 
-class DocFiscPagamentoVS(viewsets.ModelViewSet):
+class DocumentoFiscalePagamento(viewsets.ModelViewSet):
     serializer_class = DocFiscPagamentoSerializer
 
     def get_queryset(self):
-        return DocFiscPagamento.objects.filter(docfisc=self.kwargs["docfisc_pk"])
+        return dfp.objects.filter(docfisc=self.kwargs["docfisc_pk"])

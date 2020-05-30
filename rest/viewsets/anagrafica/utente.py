@@ -1,9 +1,9 @@
 from rest_framework import viewsets
 
-from minigest.anagrafica.models import Utente
+from minigest.anagrafica.models import Utente as u
 from rest.serializers import UtenteSerializer
 
 
-class UtenteVS(viewsets.ModelViewSet):
-    queryset = Utente.objects.all()
+class Utente(viewsets.ModelViewSet):
+    queryset = u.objects.all()
     serializer_class = UtenteSerializer

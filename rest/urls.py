@@ -2,46 +2,46 @@ from django.urls import include, path
 
 from rest_framework_nested import routers
 
-from . import viewsets as vs
+from rest import viewsets as vs
 
 """ DefaultRouter """
 router = routers.DefaultRouter()
 
 
 """ anagrafica """
-router.register(r"utenti", vs.UtenteVS)
-router.register(r"soggetti-fiscali", vs.SoggettoFiscaleVS)
-router.register(r"persone-fisiche", vs.PersonaFisicaVS)
-router.register(r"imprese", vs.ImpresaVS)
-router.register(r"tributi/iva/aliquote", vs.IvaAliquotaVS)
+router.register(r"utenti", vs.Utente)
+router.register(r"soggetti-fiscali", vs.SoggettoFiscale)
+router.register(r"persone-fisiche", vs.PersonaFisica)
+router.register(r"imprese", vs.Impresa)
+router.register(r"tributi/iva/aliquote", vs.IvaAliquota)
 
 
 """ fisco """
-router.register(r"fisco/regime-fiscale", vs.RegimeFiscaleVS)
-router.register(r"fisco/interessi-legali", vs.InteressiLegaliVS)
-router.register(r"fisco/tur", vs.TurVS)
+router.register(r"fisco/regime-fiscale", vs.RegimeFiscale)
+router.register(r"fisco/interessi-legali", vs.InteressiLegali)
+router.register(r"fisco/tur", vs.TassoUfficialeRiferimento)
 
 
 """ imprese """
 imprese = routers.NestedDefaultRouter(router, r"imprese", lookup="impresa")
-imprese.register(r"negozi", vs.NegozioVS, basename="impresa-negozi")
+imprese.register(r"negozi", vs.Negozio, basename="impresa-negozi")
 
 
 """ negozio """
 negozio = routers.NestedDefaultRouter(imprese, r"negozi", lookup="negozio")
-negozio.register(r"orari", vs.OrarioVS, basename="negozio-orari")
+negozio.register(r"orari", vs.Orario, basename="negozio-orari")
 negozio.register(
-    r"orari-varianti", vs.OrarioVarianteVS, basename="negozio-orari-varianti"
+    r"orari-varianti", vs.OrarioVariante, basename="negozio-orari-varianti"
 )
-negozio.register(r"sede", vs.NegozioSedeVS, basename="negozio-sede")
-negozio.register(r"casse", vs.CassaVS, basename="negozio-casse")
+negozio.register(r"sede", vs.SedeNegozio, basename="negozio-sede")
+negozio.register(r"casse", vs.Cassa, basename="negozio-casse")
 
 """ negozio-cassa """
 casse = routers.NestedDefaultRouter(negozio, r"casse", lookup="cassa")
-casse.register(r"fondo", vs.FondoCassaVS, basename="casse-fondo")
-casse.register(r"incassi", vs.IncassoVS, basename="casse-incassi")
+casse.register(r"fondo", vs.FondoCassa, basename="casse-fondo")
+casse.register(r"incassi", vs.Incasso, basename="casse-incassi")
 casse.register(
-    r"chiusure-fiscali", vs.ChiusuraFiscaleVS, basename="casse-chiusure-fiscali"
+    r"chiusure-fiscali", vs.ChiusuraFiscale, basename="casse-chiusure-fiscali"
 )
 
 """ chiusure fiscali """
@@ -49,42 +49,54 @@ chiusure_fiscali = routers.NestedDefaultRouter(
     casse, r"chiusure-fiscali", lookup="chiusura"
 )
 chiusure_fiscali.register(
-    r"reparti-iva", vs.ChiusuraRepartoIvaVS, basename="chiusura-reparti-iva"
+    r"reparti-iva", vs.ChiusuraFiscaleRepartoIva, basename="chiusura-reparti-iva"
 )
 
 
 """ docfisc """
-router.register(r"docfisc/codici", vs.DocFiscCodiceVS)
-router.register(r"docfisc/condizioni-pagamento", vs.DocFiscCondizionePagamentoVS)
-router.register(r"docfisc/modalita-pagamento", vs.DocFiscModalitaPagamentoliVS)
-router.register(r"docfisc/natura-operazioni", vs.DocFiscNaturaOperazioneVS)
+router.register(r"docfisc/codici", vs.CodiceDocumentoFiscale)
+router.register(r"docfisc/condizioni-pagamento", vs.CondizionePagamento)
+router.register(r"docfisc/modalita-pagamento", vs.ModalitàPagamento)
+router.register(r"docfisc/natura-operazioni", vs.NaturaOperazioneIVA)
 docfisc = routers.NestedDefaultRouter(router, r"imprese", lookup="impresa")
 
 
 """ docfisc vendita """
-docfisc.register(r"docfisc/vendita", vs.DocFiscVenditaVS, basename="impresa-dfv")
+docfisc.register(r"docfisc/vendita", vs.DocumentoFiscaleVendita, basename="impresa-dfv")
 dfvendita = routers.NestedDefaultRouter(docfisc, r"docfisc/vendita", lookup="docfisc")
 dfvendita.register(
-    r"riepiloghi-iva", vs.DocFiscRiepilogoIvaVS, basename="dfv-riepiloghi-iva"
+    r"riepiloghi-iva", vs.DocumentoFiscaleRiepilogoIVA, basename="dfv-riepiloghi-iva"
 )
-dfvendita.register(r"pagamenti", vs.DocFiscPagamentoVS, basename="dfv-pagamenti")
-dfvendita.register(r"scadenze", vs.DocFiscScadenzaVS, basename="dfv-scadenze")
+dfvendita.register(r"pagamenti", vs.DocumentoFiscalePagamento, basename="dfv-pagamenti")
+dfvendita.register(r"scadenze", vs.DocumentoFiscaleScadenza, basename="dfv-scadenze")
 
 """ docfisc acquisti """
-docfisc.register(r"docfisc/acquisti", vs.DocFiscAcquistoVS, basename="impresa-dfa")
+docfisc.register(
+    r"docfisc/acquisti", vs.DocumentoFiscaleAcquisto, basename="impresa-dfa"
+)
 dfacquisti = routers.NestedDefaultRouter(docfisc, r"docfisc/acquisti", lookup="docfisc")
 dfacquisti.register(
-    r"riepiloghi-iva", vs.DocFiscRiepilogoIvaVS, basename="dfa-riepiloghi-iva"
+    r"riepiloghi-iva", vs.DocumentoFiscaleRiepilogoIVA, basename="dfa-riepiloghi-iva"
 )
-dfacquisti.register(r"pagamenti", vs.DocFiscPagamentoVS, basename="dfa-pagamenti")
-dfacquisti.register(r"scadenze", vs.DocFiscScadenzaVS, basename="dfa-scadenze")
+dfacquisti.register(
+    r"pagamenti", vs.DocumentoFiscalePagamento, basename="dfa-pagamenti"
+)
+dfacquisti.register(r"scadenze", vs.DocumentoFiscaleScadenza, basename="dfa-scadenze")
 
 
 """ non-router patterns """
 urlpatterns = [
     path("auth/", include("rest_framework.urls"), name="api-auth"),
-    path("tributi/iva/aliquote/q/", vs.IvaAliquotaDataVS.as_view()),
-    path("tributi/iva/aliquote/q/<str:data>/", vs.IvaAliquotaDataVS.as_view()),
+    path("tributi/iva/aliquote/q/", vs.IvaAliquotaData.as_view()),
+    path("tributi/iva/aliquote/q/<str:data>/", vs.IvaAliquotaData.as_view()),
+    path(
+        "imprese/<int:impresa>/negozi/<int:negozio>/corrispettivi/",
+        vs.Corrispettivi.as_view(),
+    ),
+    path(
+        "imprese/<int:impresa>/negozi/<int:negozio>/corrispettivi/<str:data>/",
+        vs.Corrispettivi.as_view(),
+    ),
 ]
 
 

@@ -1,5 +1,10 @@
 from .anagrafica.domicilio_fiscale import DomicilioFiscaleSerializer
 from .anagrafica.domicilio_stabile import DomicilioStabileOrgSerializer
+from .anagrafica.impresa import ImpresaSerializer
+from .anagrafica.persona_fisica import PersonaFisicaSerializer
+from .anagrafica.soggetto_fiscale import SoggettoFiscalePolymorphicSerializer
+from .anagrafica.utente import UtenteSerializer
+from .corrispettivi import CorrispettiviSerializer
 from .dfchiusura.chiusura import ChiusuraFiscaleSerializer
 from .dfchiusura.chiusura_reparto import ChiusuraRepartoIvaSerializer
 from .docfisc.codice_documento import DocFiscCodiceSerializer
@@ -13,19 +18,16 @@ from .docfisc.scadenza import DocFiscScadenzaSerializer
 from .fisco.interessi_legali import InteressiLegaliSerializer
 from .fisco.regime_fiscale import RegimeFiscaleSerializer
 from .fisco.tur import TurSerializer
-from .impresa import ImpresaSerializer
 from .negozi.cassa import CassaSerializer
 from .negozi.fondo_cassa import FondoCassaSerializer
 from .negozi.incasso import IncassoSerializer
 from .negozi.negozio import NegozioSerializer
 from .negozi.orario import OrarioSerializer, OrarioVarianteSerializer
 from .negozi.sede import NegozioSedeSerializer
-from .persona_fisica import PersonaFisicaSerializer
-from .soggetto_fiscale import SoggettoFiscalePolymorphicSerializer
 from .tributi import IvaAliquotaSerializer
-from .utente import UtenteSerializer
 
 __all__ = [
+    "CorrispettiviSerializer",
     "ChiusuraFiscaleSerializer",
     "ChiusuraRepartoIvaSerializer",
     "DocFiscSerializer",

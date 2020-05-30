@@ -1,11 +1,11 @@
 from rest_framework import viewsets
 
-from minigest.negozi.models import Incasso
+from minigest.negozi.models import Incasso as i
 from rest.serializers import IncassoSerializer
 
 
-class IncassoVS(viewsets.ModelViewSet):
+class Incasso(viewsets.ModelViewSet):
     serializer_class = IncassoSerializer
 
     def get_queryset(self):
-        return Incasso.objects.filter(cassa=self.kwargs["cassa_pk"])
+        return i.objects.filter(cassa=self.kwargs["cassa_pk"])

@@ -1,9 +1,9 @@
 from rest_framework import viewsets
 
-from minigest.fisco.models import RegimeFiscale
+from minigest.fisco.models import RegimeFiscale as rf
 from rest.serializers import RegimeFiscaleSerializer
 
 
-class RegimeFiscaleVS(viewsets.ModelViewSet):
-    queryset = RegimeFiscale.objects.all()
+class RegimeFiscale(viewsets.ModelViewSet):
+    queryset = rf.objects.all()
     serializer_class = RegimeFiscaleSerializer

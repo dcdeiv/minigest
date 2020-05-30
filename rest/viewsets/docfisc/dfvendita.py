@@ -4,7 +4,7 @@ from minigest.docfisc.models import DocumentoFiscale as df
 from rest.serializers import DocFiscSerializer
 
 
-class DocFiscVenditaVS(viewsets.ModelViewSet):
+class DocumentoFiscaleVendita(viewsets.ModelViewSet):
     serializer_class = DocFiscSerializer
 
     def get_queryset(self):

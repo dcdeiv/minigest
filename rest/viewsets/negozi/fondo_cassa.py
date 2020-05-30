@@ -1,11 +1,11 @@
 from rest_framework import viewsets
 
-from minigest.negozi.models import FondoCassa
+from minigest.negozi.models import FondoCassa as fc
 from rest.serializers import FondoCassaSerializer
 
 
-class FondoCassaVS(viewsets.ModelViewSet):
+class FondoCassa(viewsets.ModelViewSet):
     serializer_class = FondoCassaSerializer
 
     def get_queryset(self):
-        return FondoCassa.objects.filter(cassa=self.kwargs["cassa_pk"])
+        return fc.objects.filter(cassa=self.kwargs["cassa_pk"])

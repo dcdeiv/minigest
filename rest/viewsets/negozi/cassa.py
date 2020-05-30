@@ -1,11 +1,11 @@
 from rest_framework import viewsets
 
-from minigest.negozi.models import Cassa
+from minigest.negozi.models import Cassa as c
 from rest.serializers import CassaSerializer
 
 
-class CassaVS(viewsets.ModelViewSet):
+class Cassa(viewsets.ModelViewSet):
     serializer_class = CassaSerializer
 
     def get_queryset(self):
-        return Cassa.objects.filter(negozio=self.kwargs["negozio_pk"])
+        return c.objects.filter(negozio=self.kwargs["negozio_pk"])

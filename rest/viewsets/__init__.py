@@ -1,59 +1,63 @@
-from .anagrafica.domicilio_fiscale import DomicilioFiscaleVS
-from .anagrafica.domicilio_stabile import DomicilioStabileOrgVS
-from .anagrafica.impresa import ImpresaVS
-from .anagrafica.persona_fisica import PersonaFisicaVS
-from .anagrafica.soggetto_fiscale import SoggettoFiscaleVS
-from .anagrafica.utente import UtenteVS
-from .dfchiusura.chiusura import ChiusuraFiscaleVS
-from .dfchiusura.chiusura_reparto import ChiusuraRepartoIvaVS
-from .docfisc.codice_documento import DocFiscCodiceVS
-from .docfisc.condizione_pagamento import DocFiscCondizionePagamentoVS
-from .docfisc.dfacquisto import DocFiscAcquistoVS
-from .docfisc.dfvendita import DocFiscVenditaVS
-from .docfisc.modalita_pagamento import DocFiscModalitaPagamentoliVS
-from .docfisc.natura_operazione import DocFiscNaturaOperazioneVS
-from .docfisc.pagamento import DocFiscPagamentoVS
-from .docfisc.riepilogo_iva import DocFiscRiepilogoIvaVS
-from .docfisc.scadenza import DocFiscScadenzaVS
-from .fisco.interessi_legali import InteressiLegaliVS
-from .fisco.regime_fiscale import RegimeFiscaleVS
-from .fisco.tur import TurVS
-from .negozi.cassa import CassaVS
-from .negozi.fondo_cassa import FondoCassaVS
-from .negozi.incasso import IncassoVS
-from .negozi.negozio import NegozioVS
-from .negozi.orario import OrarioVarianteVS, OrarioVS
-from .negozi.sede import NegozioSedeVS
-from .tributi.iva_aliquota import IvaAliquotaDataVS, IvaAliquotaVS
+from .anagrafica.domicilio_fiscale import DomicilioFiscale
+from .anagrafica.domicilio_stabile import DomicilioStabileOrganizzazione
+from .anagrafica.impresa import Impresa
+from .anagrafica.persona_fisica import PersonaFisica
+from .anagrafica.soggetto_fiscale import SoggettoFiscale
+from .anagrafica.utente import Utente
+from .corrispettivi import Corrispettivi
+from .dfchiusura.chiusura import ChiusuraFiscale
+from .dfchiusura.chiusura_reparto import ChiusuraFiscaleRepartoIva
+from .docfisc.codice_documento import CodiceDocumentoFiscale
+from .docfisc.condizione_pagamento import CondizionePagamento
+from .docfisc.dfacquisto import DocumentoFiscaleAcquisto
+from .docfisc.dfvendita import DocumentoFiscaleVendita
+from .docfisc.modalita_pagamento import ModalitàPagamento
+from .docfisc.natura_operazione import NaturaOperazioneIVA
+from .docfisc.pagamento import DocumentoFiscalePagamento
+from .docfisc.riepilogo_iva import DocumentoFiscaleRiepilogoIVA
+from .docfisc.scadenza import DocumentoFiscaleScadenza
+from .fisco.interessi_legali import InteressiLegali
+from .fisco.regime_fiscale import RegimeFiscale
+from .fisco.tur import TassoUfficialeRiferimento
+from .negozi.cassa import Cassa
+from .negozi.fondo_cassa import FondoCassa
+from .negozi.incasso import Incasso
+from .negozi.negozio import Negozio
+from .negozi.orario import Orario
+from .negozi.orario_variante import OrarioVariante
+from .negozi.sede import SedeNegozio
+from .tributi.iva_aliquota import IvaAliquota
+from .tributi.iva_aliquota_data import IvaAliquotaData
 
 __all__ = [
-    "DocFiscVenditaVS",
-    "DocFiscAcquistoVS",
-    "DocFiscRiepilogoIvaVS",
-    "DocFiscPagamentoVS",
-    "DocFiscScadenzaVS",
-    "ChiusuraFiscaleVS",
-    "ChiusuraRepartoIvaVS",
-    "DocFiscCodiceVS",
-    "DocFiscCondizionePagamentoVS",
-    "DocFiscModalitaPagamentoliVS",
-    "DocFiscNaturaOperazioneVS",
-    "CassaVS",
-    "FondoCassaVS",
-    "IncassoVS",
-    "NegozioVS",
-    "OrarioVS",
-    "OrarioVarianteVS",
-    "NegozioSedeVS",
-    "DomicilioFiscaleVS",
-    "DomicilioStabileOrgVS",
-    "InteressiLegaliVS",
-    "RegimeFiscaleVS",
-    "TurVS",
-    "ImpresaVS",
-    "PersonaFisicaVS",
-    "SoggettoFiscaleVS",
-    "IvaAliquotaVS",
-    "IvaAliquotaDataVS",
-    "UtenteVS",
+    "Corrispettivi",
+    "DomicilioFiscale",
+    "DomicilioStabileOrganizzazione",
+    "Impresa",
+    "PersonaFisica",
+    "SoggettoFiscale",
+    "Utente",
+    "ChiusuraFiscaleRepartoIva",
+    "ChiusuraFiscale",
+    "CodiceDocumentoFiscale",
+    "CondizionePagamento",
+    "DocumentoFiscaleAcquisto",
+    "DocumentoFiscaleVendita",
+    "ModalitàPagamento",
+    "NaturaOperazioneIVA",
+    "DocumentoFiscalePagamento",
+    "DocumentoFiscaleRiepilogoIVA",
+    "DocumentoFiscaleScadenza",
+    "InteressiLegali",
+    "RegimeFiscale",
+    "TassoUfficialeRiferimento",
+    "Cassa",
+    "FondoCassa",
+    "Incasso",
+    "Negozio",
+    "OrarioVariante",
+    "Orario",
+    "SedeNegozio",
+    "IvaAliquota",
+    "IvaAliquotaData",
 ]
