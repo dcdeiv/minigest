@@ -1,3 +1,7 @@
+from .anagrafica.impresa import ImpresaVS
+from .anagrafica.persona_fisica import PersonaFisicaVS
+from .anagrafica.soggetto_fiscale import SoggettoFiscaleVS
+from .anagrafica.utente import UtenteVS
 from .dfchiusura.chiusura import ChiusuraFiscaleVS
 from .dfchiusura.chiusura_reparto import ChiusuraRepartoIvaVS
 from .docfisc.codice_documento import DocFiscCodiceVS
@@ -11,17 +15,13 @@ from .docfisc.riepilogo_iva import DocFiscRiepilogoIvaVS
 from .docfisc.scadenza import DocFiscScadenzaVS
 from .domicilio_fiscale import DomicilioFiscaleVS, DomicilioStabileOrgVS
 from .fisco import InteressiLegaliVS, RegimeFiscaleVS, TurVS
-from .impresa import ImpresaVS
 from .negozi.cassa import CassaVS
 from .negozi.fondo_cassa import FondoCassaVS
 from .negozi.incasso import IncassoVS
 from .negozi.negozio import NegozioVS
 from .negozi.orario import OrarioVarianteVS, OrarioVS
 from .negozi.sede import NegozioSedeVS
-from .persona_fisica import PersonaFisicaVS
-from .soggetto_fiscale import SoggettoFiscaleVS
 from .tributi.iva_aliquota import IvaAliquotaDataVS, IvaAliquotaVS
-from .utente import UtenteVS
 
 __all__ = [
     "DocFiscVenditaVS",

@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 
 from minigest.anagrafica.models import PersonaFisica
-from ..serializers import PersonaFisicaSerializer
+from rest.serializers import PersonaFisicaSerializer
 
 
 class PersonaFisicaVS(viewsets.ModelViewSet):
