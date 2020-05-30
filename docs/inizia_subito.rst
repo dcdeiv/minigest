@@ -30,7 +30,10 @@ Con il flag **--no-dev** si evita di installare tutte le dipendenze di sviluppo 
 Creazione del Database
 **********************
 
-Minigest per ora utilizza un database sqlite. Ma è possibile, qualora si voglia, utilizzare qualsiasi altro database.
+Per come Minigest è stato creato ha bisogni di un database che possa supportare le query distinct. Quindi si è scelto di utilizzare un database postgres.
+Il progetto stesso ne utilizza uno chiamato test, con user test e password test. Solo per lo sviluppo!
+
+Per installare postgres leggi le istruzioni `qui <./dipendenze/postgres.rst>`_
 
 In ogni caso, per poter creare il database sarà necessario applicare tutte le **migrazioni** dei modelli di django!
 
