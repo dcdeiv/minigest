@@ -1,4 +1,3 @@
-
 ## 0.8.0 (2020-05-30)
 
 ### Feat
@@ -11,15 +10,15 @@
 - **docfisc**: aggiunge dei metodi al manager per scremare i documenti fiscali per data di ricezione SDI
 - **corrispettivi**: completa il registro dei corrispettivi
 - cambia database
-- **pdf**: inizializza l'app e il registro dei corrispettivi. bisogna cambiare il database'
+- **pdf**: inizializza l'app e il registro dei corrispettivi. bisogna cambiare il database
 - **pdf**: aggiunge gli url di pdf
 - installa pdf
 - **rest**: aggiunge gli api endpoint per la lista delle aliquote iva in vigore in una data fornita
 - **rest**: aggiunge i riepiloghi iva, le scadenze e i pagamenti per le fatture
-- **rest**: aggiunge gli api endpoint per i i codici dei documenti fiscali
+- **rest**: aggiunge gli api endpoint per i codici dei documenti fiscali
 - **rest**: aggiunge gli api endpoint per le chiusure fiscali e i suoi reparti iva
 - **rest**: aggiunge gli api endpoint per la sede del negozio, le casse, il fondo cassa e gli incassi
-- **rest**: crea un'applicazione estera per gestire le api
+- **rest**: crea un'applicazione esterna per gestire le api
 - **api**: aggiunge gli endpoint per i modelli in fisco
 - **api**: aggiunge gli api endpoint del domicilio fiscale e del domicilio della stabile organizzazione
 - **api**: aggiunge le api endpoint per i modelli maggiori di anagrafica
@@ -28,7 +27,7 @@
 
 ### Fix
 
-- **resto**: aggiunge il campo periodo
+- **rest**: aggiunge il campo periodo
 - **rest**: rimuove rappresentante_fiscale in personafisica
 - **settings**: aggiusta media_root e static_root
 - **tributi**: aggiusta il filtro
