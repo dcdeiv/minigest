@@ -1,5 +1,7 @@
 # MINIGEST
 
+[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
+
 Un mini gestionale pensato per aiutare a mantenere i conti di un'azienda
 
 ## Attenzione
