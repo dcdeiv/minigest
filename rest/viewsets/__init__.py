@@ -16,6 +16,7 @@ from .docfisc.natura_operazione import NaturaOperazioneIVA
 from .docfisc.pagamento import DocumentoFiscalePagamento
 from .docfisc.riepilogo_iva import DocumentoFiscaleRiepilogoIVA
 from .docfisc.scadenza import DocumentoFiscaleScadenza
+from .fatturato import Fatturato
 from .fisco.interessi_legali import InteressiLegali
 from .fisco.regime_fiscale import RegimeFiscale
 from .fisco.tur import TassoUfficialeRiferimento
@@ -30,6 +31,7 @@ from .tributi.iva_aliquota import IvaAliquota
 from .tributi.iva_aliquota_data import IvaAliquotaData
 
 __all__ = [
+    "Fatturato",
     "Corrispettivi",
     "DomicilioFiscale",
     "DomicilioStabileOrganizzazione",

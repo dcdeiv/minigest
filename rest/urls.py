@@ -97,6 +97,8 @@ urlpatterns = [
         "imprese/<int:impresa>/negozi/<int:negozio>/corrispettivi/<str:data>/",
         vs.Corrispettivi.as_view(),
     ),
+    path("imprese/<int:impresa>/fatturato/", vs.Fatturato.as_view(),),
+    path("imprese/<int:impresa>/fatturato/<str:data>/", vs.Fatturato.as_view(),),
 ]
 
 

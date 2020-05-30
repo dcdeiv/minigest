@@ -15,6 +15,7 @@ from .docfisc.natura_operazione import DocFiscNaturaOperazioneSerializer
 from .docfisc.pagamento import DocFiscPagamentoSerializer
 from .docfisc.riepilogo_iva import DocFiscRiepilogoIvaSerializer
 from .docfisc.scadenza import DocFiscScadenzaSerializer
+from .fatturato import FatturatoSerializer
 from .fisco.interessi_legali import InteressiLegaliSerializer
 from .fisco.regime_fiscale import RegimeFiscaleSerializer
 from .fisco.tur import TurSerializer
@@ -27,6 +28,7 @@ from .negozi.sede import NegozioSedeSerializer
 from .tributi import IvaAliquotaSerializer
 
 __all__ = [
+    "FatturatoSerializer",
     "CorrispettiviSerializer",
     "ChiusuraFiscaleSerializer",
     "ChiusuraRepartoIvaSerializer",
