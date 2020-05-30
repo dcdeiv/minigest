@@ -28,14 +28,19 @@ INSTALLED_APPS = [
 
 # minigest applicazioni
 INSTALLED_APPS += [
-    "rest",
-    "pdf",
     "minigest.common",
     "minigest.anagrafica",
     "minigest.docfisc",
     "minigest.negozi",
     "minigest.tributi",
     "minigest.fisco",
+]
+
+# clients
+INSTALLED_APPS += [
+    "rest",
+    "pdf",
+    "webclient",
 ]
 
 MIDDLEWARE = [
