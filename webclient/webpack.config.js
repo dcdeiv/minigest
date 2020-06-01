@@ -1,47 +1,102 @@
 const path = require("path");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const ManifestPlugin = require("webpack-manifest-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
-let configs = {
-  entry: "./src/index.js",
-  output: {
-    path: path.join(__dirname, "/static/webclient/bundle"),
-    filename: "main.js",
-  },
-  resolve: {
-    extensions: [".js", ".jsx"],
-  },
-  module: {
-    rules: [
-      {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: {
-          loader: "babel-loader",
-        },
-      },
-    ],
-  },
-  plugins: [new CleanWebpackPlugin(), new ManifestPlugin()],
-  devServer: {
-    publicPath: "/",
-    contentBase: [
-      path.join(__dirname, "templates/webclient/"),
-      path.join(__dirname, "static/webclient/"),
-    ],
-    hot: true,
-  },
+// Paths
+const resolvePath = (localPath) => path.resolve(__dirname, localPath);
+const paths = {
+  src: resolvePath("src"),
+  build: resolvePath("static/webclient"),
 };
 
-module.exports = function (env, argv) {
-  if (argv === "development") {
-    configs.plugins.join([
-      new HtmlWebpackPlugin({
-        template: path.resolve(__dirname, "templates/webclient/index.dev.html"),
-      }),
-    ]);
+// Configs
+function configs(env, argv) {
+  function isMode(mode) {
+    const envmode = "mode" in argv ? argv.mode : "production";
+    return mode === envmode;
   }
 
-  return configs;
-};
+  const isModeProd = isMode("production");
+  const isModeDev = isMode("development");
+
+  // module rules
+  const moduleRules = {
+    eslint: {
+      test: /\.(js|mjs|jsx|ts|tsx)$/,
+      include: paths.src,
+      exclude: /node_modules/,
+      enforce: "pre",
+      loader: require.resolve("eslint-loader"),
+      options: {
+        cache: true,
+      },
+    },
+    babel: {
+      test: /\.(js|mjs|jsx|ts|tsx)$/,
+      include: paths.src,
+      loader: require.resolve("babel-loader"),
+      options: {
+        cacheDirectory: true,
+        cacheCompression: false,
+        compact: isModeProd ? true : false,
+      },
+    },
+    html: {
+      test: /\.html$/,
+      use: [
+        {
+          loader: require.resolve("html-loader"),
+        },
+      ],
+    },
+  };
+
+  // plugins dev
+  const pluginsDev = [
+    new HtmlWebpackPlugin({
+      inject: true,
+      template: path.join(paths.src, "index.html"),
+      filename: "index.html",
+    }),
+  ];
+
+  // plugins prod
+  const pluginsProd = [new CleanWebpackPlugin()];
+
+  return {
+    mode:
+      argv.mode && argv.mode in ["production", "develpment"]
+        ? argv.mode
+        : "production",
+    entry: path.join(paths.src, "index.js"),
+    output: {
+      path: paths.build,
+      filename: "bundle.js",
+      publicPath: "",
+    },
+    optimization: {
+      minimize: false,
+    },
+    resolve: {
+      extensions: [".js", ".jsx"],
+      alias: {
+        "~": paths.src,
+      },
+    },
+    module: {
+      strictExportPresence: true,
+      rules: [
+        { parser: { requireEnsure: false } },
+        moduleRules.eslint,
+        moduleRules.babel,
+        isModeDev ? moduleRules.html : {},
+      ],
+    },
+    devServer: {
+      historyApiFallback: true,
+    },
+    plugins: isModeProd ? pluginsProd : pluginsProd.join(pluginsDev),
+  };
+}
+
+module.exports = configs;
