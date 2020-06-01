@@ -1,3 +1,4 @@
 {
-  "main.js": "/home/bpanjemj/Repos/minigest/webclient/static/webclient/bundlemain.js"
+  "main.js": "/static/webclient/bundle/main.js",
+  "vendors~main.js": "/static/webclient/bundle/vendors~main.chunk.js"
 }

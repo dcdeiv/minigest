@@ -4,10 +4,13 @@ const ManifestPlugin = require("webpack-manifest-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 // Paths
-const resolvePath = (localPath) => path.resolve(__dirname, localPath);
+const resolvePath = (localPaths) => {
+  const paths = Array.isArray(localPaths) ? localPaths.join("/") : localPaths;
+  return path.resolve(__dirname, paths);
+};
 const paths = {
-  src: resolvePath("src"),
-  build: resolvePath("static/webclient/bundle"),
+  src: "src",
+  build: "static/webclient/bundle",
 };
 
 // Configs
@@ -24,7 +27,7 @@ function configs(env, argv) {
   const moduleRules = {
     eslint: {
       test: /\.(js|mjs|jsx|ts|tsx)$/,
-      include: paths.src,
+      include: resolvePath(paths.src),
       exclude: /node_modules/,
       enforce: "pre",
       loader: require.resolve("eslint-loader"),
@@ -34,7 +37,7 @@ function configs(env, argv) {
     },
     babel: {
       test: /\.(js|mjs|jsx|ts|tsx)$/,
-      include: paths.src,
+      include: resolvePath(paths.src),
       loader: require.resolve("babel-loader"),
       options: {
         cacheDirectory: true,
@@ -56,7 +59,7 @@ function configs(env, argv) {
   const pluginsDev = [
     new HtmlWebpackPlugin({
       inject: true,
-      template: path.join(paths.src, "index.html"),
+      template: resolvePath([paths.src, "index.html"]),
       filename: "index.html",
     }),
   ];
@@ -65,26 +68,30 @@ function configs(env, argv) {
   const pluginsProd = [
     new ManifestPlugin({
       fileName: "asset-manifest.json",
-      publicPath: paths.build,
+      publicPath: "/" + paths.build + "/",
     }),
     new CleanWebpackPlugin(),
   ];
 
   return {
     mode: isModeProd ? "production" : "development",
-    entry: path.join(paths.src, "index.js"),
+    entry: { main: resolvePath([paths.src, "index.js"]) },
     output: {
-      path: paths.build,
-      filename: "main.js",
-      publicPath: "",
+      filename: "[name].js",
+      chunkFilename: "[name].chunk.js",
+      publicPath: paths.build,
+      path: resolvePath(paths.build),
     },
     optimization: {
       minimize: isModeProd ? true : false,
+      splitChunks: {
+        chunks: "all",
+      },
     },
     resolve: {
       extensions: [".js", ".jsx"],
       alias: {
-        "~": paths.src,
+        "~": resolvePath(paths.src),
       },
     },
     module: {
@@ -97,7 +104,9 @@ function configs(env, argv) {
       ],
     },
     plugins: isModeProd ? pluginsProd : pluginsProd.concat(pluginsDev),
+    devtool: "inline-source-map",
     devServer: {
+      port: 9000,
       hot: true,
       compress: true,
       historyApiFallback: {
