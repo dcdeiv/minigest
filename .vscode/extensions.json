@@ -9,6 +9,8 @@
     "batisteo.vscode-django",
     "bibhasdn.django-html",
     "lextudio.restructuredtext",
-    "njpwerner.autodocstring"
+    "njpwerner.autodocstring",
+    "esbenp.prettier-vscode",
+    "mgmcdermott.vscode-language-babel"
   ]
 }
