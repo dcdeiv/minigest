@@ -1,12 +1,13 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ManifestPlugin = require("webpack-manifest-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 // Paths
 const resolvePath = (localPath) => path.resolve(__dirname, localPath);
 const paths = {
   src: resolvePath("src"),
-  build: resolvePath("static/webclient"),
+  build: resolvePath("static/webclient/bundle"),
 };
 
 // Configs
@@ -61,21 +62,24 @@ function configs(env, argv) {
   ];
 
   // plugins prod
-  const pluginsProd = [new CleanWebpackPlugin()];
+  const pluginsProd = [
+    new ManifestPlugin({
+      fileName: "asset-manifest.json",
+      publicPath: paths.build,
+    }),
+    new CleanWebpackPlugin(),
+  ];
 
   return {
-    mode:
-      argv.mode && argv.mode in ["production", "develpment"]
-        ? argv.mode
-        : "production",
+    mode: isModeProd ? "production" : "development",
     entry: path.join(paths.src, "index.js"),
     output: {
       path: paths.build,
-      filename: "bundle.js",
+      filename: "main.js",
       publicPath: "",
     },
     optimization: {
-      minimize: false,
+      minimize: isModeProd ? true : false,
     },
     resolve: {
       extensions: [".js", ".jsx"],
@@ -92,10 +96,18 @@ function configs(env, argv) {
         isModeDev ? moduleRules.html : {},
       ],
     },
+    plugins: isModeProd ? pluginsProd : pluginsProd.concat(pluginsDev),
     devServer: {
-      historyApiFallback: true,
+      hot: true,
+      compress: true,
+      historyApiFallback: {
+        disableDotRule: true,
+      },
+      host: process.env.HOST || "127.0.0.1",
+      sockHost: process.env.WDS_SOCKET_HOST,
+      sockPath: process.env.WDS_SOCKET_PATH,
+      sockPort: process.env.WDS_SOCKET_PORT,
     },
-    plugins: isModeProd ? pluginsProd : pluginsProd.join(pluginsDev),
   };
 }
 
