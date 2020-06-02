@@ -10,6 +10,10 @@ PUBLIC_DIR = os.path.join(BASE_DIR, "public")
 if DEBUG:
     SECRET_KEY = "n1nt!$-+o!5za)btm!g#d&8w3k83x&x$b-3^nzrin6+^@5v206"
 
+CORS_ORIGIN_WHITELIST = [
+    "localhost:9000",  # webclient react app
+]
+
 
 ALLOWED_HOSTS = []
 
@@ -24,6 +28,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "localflavor",
     "rest_framework",
+    "cors_headers",
 ]
 
 # minigest applicazioni
@@ -44,6 +49,7 @@ INSTALLED_APPS += [
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
