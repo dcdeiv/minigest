@@ -2,6 +2,7 @@
   "name": "webclient",
   "version": "0.9.0",
   "private": true,
+  "homepage": "/static/webclient",
   "scripts": {
     "start": "craco start",
     "build": "craco build",

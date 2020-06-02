@@ -11,7 +11,7 @@ if DEBUG:
     SECRET_KEY = "n1nt!$-+o!5za)btm!g#d&8w3k83x&x$b-3^nzrin6+^@5v206"
 
 CORS_ORIGIN_WHITELIST = [
-    "localhost:9000",  # webclient react app
+    "http://localhost:9000",  # webclient react app
 ]
 
 
@@ -28,7 +28,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "localflavor",
     "rest_framework",
-    "cors_headers",
+    "corsheaders",
 ]
 
 # minigest applicazioni

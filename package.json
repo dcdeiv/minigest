@@ -5,6 +5,9 @@
     "packages/**",
     "webclient"
   ],
+  "scripts": {
+    "build": "yarn workspace webclient build"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged",
