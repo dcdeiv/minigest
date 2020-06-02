@@ -13,6 +13,6 @@ DATABASE = {
         "USER": "test",
         "PASSWORD": "test",
         "HOST": "db",
-        "PORT": "",
+        "PORT": "5432",
     },
 }
