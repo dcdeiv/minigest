@@ -1,5 +1,5 @@
-import React from "react";
+import NotFound from "./NotFound";
+import App from "./App";
 
-export default function App() {
-  return <h1>Webclient</h1>;
-}
+export default App;
+export { NotFound };
