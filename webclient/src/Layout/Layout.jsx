@@ -8,8 +8,10 @@ import {
   Typography,
   Drawer,
   IconButton,
+  Divider,
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
+import AppDrawer from "./Drawer";
 
 const drawerWidth = 250;
 
@@ -71,7 +73,7 @@ function Layout(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap>
-            minigest!
+            minigest
           </Typography>
         </Toolbar>
       </AppBar>
@@ -88,11 +90,10 @@ function Layout(props) {
               paper: classes.drawerPaper,
             }}
             ModalProps={{
-              keepMounted: true, // Better open performance on mobile.
+              keepMounted: true,
             }}
           >
-            <div className={classes.toolbar} />
-            <p>drawer</p>
+            <AppDrawer />
           </Drawer>
         </Hidden>
         <Hidden xsDown implementation="css">
@@ -103,7 +104,9 @@ function Layout(props) {
             variant="permanent"
             open
           >
-            <p>drawer</p>
+            <div className={classes.toolbar} />
+            <Divider />
+            <AppDrawer />
           </Drawer>
         </Hidden>
       </nav>
