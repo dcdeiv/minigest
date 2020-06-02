@@ -2,7 +2,6 @@ FROM python:3.8-alpine
 
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
-ENV DJANGO_SETTINGS_MODULE minigest.settings.docker
 ENV ROOT /var/www/minigest
 
 # Installa le dipendenze di cairo
@@ -29,10 +28,9 @@ COPY webclient ./webclient
 COPY manage.py ./manage.py
 
 # Collectstatic
-RUN python manage.py collectstatic --no-input --settings=$DJANGO_SETTINGS_MODULE
+RUN python manage.py collectstatic --no-input
 
-# Migrate
-RUN python manage.py migrate --settings=${DJANGO_SETTINGS_MODULE}
+EXPOSE 8000
 
 # Avvia django
-CMD [ "python", "manage.py", "--settings=${DJANGO_SETTINGS_MODULE}", "runserver" ]
+CMD [ "python", "manage.py", "runserver", "0.0.0.0:8000"]
