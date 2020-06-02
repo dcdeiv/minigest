@@ -1,5 +1,13 @@
 import axios from "axios";
 
-export default axios.create({
+const api = axios.create({
   baseURL: "/api/",
+  xsrfHeaderName: "X-CSRFTOKEN",
+  xsrfCookieName: "csrftoken",
 });
+
+if (process.env.NODE_ENV === `development`) {
+  api.defaults.withCredentials = true;
+}
+
+export default api;
