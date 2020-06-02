@@ -9,7 +9,8 @@
     "export": "poetry export -f requirements.txt > requirements.txt",
     "build:webclient": "yarn workspace webclient build",
     "build:docker": "sudo docker-compose build",
-    "docker:sh": "sudo docker run -it minigest_app sh"
+    "docker:sh": "sudo docker run -it minigest_app sh",
+    "docker:compose": "sudo docker-compose up -d --build"
   },
   "husky": {
     "hooks": {

@@ -3,21 +3,27 @@ version: "3.8"
 services:
   db:
     image: postgres:12-alpine
+    restart: always
     volumes:
-      - postgres_data:/var/lib/postgresql/data/
+      - db_volume:/var/lib/postgresql/data
     environment:
       - POSTGRES_DB=test
       - POSTGRES_USER=test
       - POSTGRES_PASSWORD=test
+
   app:
     build: .
-    command: python manage.py runserver 0.0.0.0:8000
-    volumes:
-      - .:/var/www/minigest
     ports:
       - 8000:8000
     environment:
       - DJANGO_SETTINGS_MODULE=minigest.settings.docker
+      - NODE_ENV=production
+    volumes:
+      - .:/var/www/minigest
+      - public:/var/www/minigest/public
+    depends_on:
+      - db
 
 volumes:
-  postgres_data:
+  db_volume:
+  public:
