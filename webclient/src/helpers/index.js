@@ -1,3 +1,4 @@
 import history from "./history";
+import api from "./axios";
 
-export { history };
+export { api, history };
