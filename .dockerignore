@@ -1,0 +1,10 @@
+*
+!minigest/
+!pdf/
+!public/
+!rest/
+!webclient/
+!Dockerfile
+.docker-compose.yaml
+!requirements.txt
+!manage.py

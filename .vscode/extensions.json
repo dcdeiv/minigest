@@ -11,6 +11,7 @@
     "lextudio.restructuredtext",
     "njpwerner.autodocstring",
     "esbenp.prettier-vscode",
-    "mgmcdermott.vscode-language-babel"
+    "mgmcdermott.vscode-language-babel",
+    "ms-azuretools.vscode-docker"
   ]
 }

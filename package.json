@@ -6,7 +6,10 @@
     "webclient"
   ],
   "scripts": {
-    "build": "yarn workspace webclient build"
+    "export": "poetry export -f requirements.txt > requirements.txt",
+    "build:webclient": "yarn workspace webclient build",
+    "build:docker": "sudo docker-compose build",
+    "docker:sh": "sudo docker run -it minigest_app sh"
   },
   "husky": {
     "hooks": {
