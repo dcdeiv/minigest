@@ -19,8 +19,8 @@ export default function DrawerTributi() {
       </ListItem>
       <Collapse in={open} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
-          <ListItemLink to="/tributi/iva">
-            <ListItemText primary="Iva" />
+          <ListItemLink to="/tributi/iva/aliquote">
+            <ListItemText primary="Iva Aliquote" />
           </ListItemLink>
         </List>
       </Collapse>

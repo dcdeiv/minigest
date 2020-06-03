@@ -4,5 +4,5 @@ import iva from "./iva";
 
 // RootReducer
 export default combineReducers({
-  iva: iva,
+  iva,
 });
