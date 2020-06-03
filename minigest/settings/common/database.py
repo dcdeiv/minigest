@@ -7,6 +7,6 @@ DATABASES = {
         "USER": os.environ.get("DB_DEFAULT_USER", "test"),
         "PASSWORD": os.environ.get("DB_DEFAULT_PW", "test"),
         "HOST": os.environ.get("DB_DEFAULT_HOST", "localhost"),
-        "PORT": 5432,
+        "PORT": os.environ.get("DB_DEFAULT_PORT", 5432),
     }
 }

@@ -1,5 +1,6 @@
 FROM python:3.8-alpine
 
+ARG network="host"
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 ENV ROOT /var/www/minigest
