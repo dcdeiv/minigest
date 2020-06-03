@@ -34,7 +34,7 @@ exclude = '''
 name = "cz_conventional_commits"
 version = "0.10.0"
 tag_format = "$major.$minor.$patch$prerelease"
-bump_message = "release $current_version → $new_version"
+bump_message = "docs:(release) $current_version → $new_version"
 version_files = [
     "pyproject.toml:version",
     "docs/conf.py:release",
