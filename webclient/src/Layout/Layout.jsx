@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import {
   Hidden,
@@ -48,8 +47,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Layout(props) {
-  const { window } = props;
+export default function Layout(props) {
+  const { window, children, title = "minigest" } = props;
   const classes = useStyles();
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const container =
@@ -73,7 +72,7 @@ function Layout(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap>
-            minigest
+            {title}
           </Typography>
         </Toolbar>
       </AppBar>
@@ -113,14 +112,8 @@ function Layout(props) {
 
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        {props.children}
+        {children}
       </main>
     </div>
   );
 }
-
-Layout.propTypes = {
-  window: PropTypes.func,
-};
-
-export default Layout;
