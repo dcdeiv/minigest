@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "minigest"
-version = "0.9.0"
+version = "0.10.0"
 description = "Un mini gestionale pensato per aiutare a mantenere i conti di un'azienda"
 authors = ["Davide Di Criscito <davide.dicriscito@gmail.com>"]
 license = "MIT"
@@ -32,7 +32,7 @@ exclude = '''
 
 [tool.commitizen]
 name = "cz_conventional_commits"
-version = "0.9.0"
+version = "0.10.0"
 tag_format = "$major.$minor.$patch$prerelease"
 bump_message = "release $current_version → $new_version"
 version_files = [
