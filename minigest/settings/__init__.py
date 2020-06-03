@@ -24,6 +24,10 @@ include(
     "common/database.py",
 )
 
+# CORS
+CSRF_COOKIE_NAME = "csrftoken"
+CORS_ORIGIN_ALLOW_ALL = False
+CORS_ALLOW_CREDENTIALS = True
 CORS_ORIGIN_WHITELIST = [
     "http://localhost:9000",  # webclient react app
 ]
