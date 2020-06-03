@@ -1,7 +1,15 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { Layout } from "~/Layout";
+import { action } from "~/store";
 
 export default function App() {
+  const dispatch = useDispatch();
+
+  React.useEffect(() => {
+    dispatch(action.init());
+  }, [dispatch]);
+
   return (
     <Layout>
       <h1>Webclient</h1>

@@ -1,0 +1,5 @@
+// Tutte le costanti del client
+
+export const IVA_ALIQUOTE_GET_START = "IVA_ALIQUOTE_GET_START";
+export const IVA_ALIQUOTE_GET_SUCCESS = "IVA_ALIQUOTE_GET_SUCCESS";
+export const IVA_ALIQUOTE_GET_FAIL = "IVA_ALIQUOTE_GET_FAIL";

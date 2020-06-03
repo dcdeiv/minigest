@@ -14,6 +14,7 @@ import { store } from "~/store";
 
 // App
 import App from "~/App";
+import { Accedi } from "~/Auth";
 import NotFound from "~/NotFound";
 
 ReactDOM.render(
@@ -24,6 +25,7 @@ ReactDOM.render(
         <Router history={history}>
           <Switch>
             <Route exact path="/" component={App} />
+            <Route exact path="/accedi" component={Accedi} />
             <Route component={NotFound} />
           </Switch>
         </Router>
