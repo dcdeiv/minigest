@@ -2,9 +2,8 @@
   "name": "webclient",
   "version": "0.10.0",
   "private": true,
-  "homepage": "/static/webclient",
   "scripts": {
-    "start": "craco start",
+    "start": "PORT=9000 craco start",
     "build": "craco build",
     "test": "craco test",
     "eject": "craco eject"
