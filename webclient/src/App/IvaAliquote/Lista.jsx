@@ -1,6 +1,7 @@
 import React from "react";
 import { isEmpty } from "lodash";
 import { Percentuale, LoadingSpinner, ListaVuota } from "~/Components";
+import { makeStyles } from "@material-ui/styles";
 import {
   TableContainer,
   Paper,
@@ -16,8 +17,24 @@ import {
   IconButton,
 } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
+import EditIcon from "@material-ui/icons/Edit";
+import { orange } from "@material-ui/core/colors";
+
+const useStyles = makeStyles((theme) => ({
+  tableCellIcon: {
+    width: 48,
+    textAlign: "center",
+  },
+  editButton: {
+    color: orange[500],
+    "&:hover": {
+      color: orange[700],
+    },
+  },
+}));
 
 export function Lista(props) {
+  const classes = useStyles();
   const {
     subject,
     results,
@@ -26,6 +43,9 @@ export function Lista(props) {
     search,
     searchValue,
     onSearch,
+    options,
+    editable,
+    onEdit,
   } = props;
   const [value, setValue] = React.useState({
     value: searchValue,
@@ -68,13 +88,6 @@ export function Lista(props) {
     onSearch(value.value);
   };
 
-  const descrizione = {
-    O: "Ordinaria",
-    R: "Ridotta",
-    M: "Minima",
-    E: "Esente",
-  };
-
   const Header = () => {
     if (search) {
       return (
@@ -100,7 +113,6 @@ export function Lista(props) {
           >
             <Grid item xs={9}>
               <TextField
-                autoFocus
                 id="search"
                 name="search"
                 label="Periodo"
@@ -155,6 +167,11 @@ export function Lista(props) {
               <TableCell>Data</TableCell>
               <TableCell>Descrizione</TableCell>
               <TableCell align="right">Aliquota</TableCell>
+              {editable && (
+                <TableCell className={classes.tableCellIcon}>
+                  <EditIcon />
+                </TableCell>
+              )}
             </TableRow>
           </TableHead>
 
@@ -162,10 +179,20 @@ export function Lista(props) {
             {results.map((aliquota) => (
               <TableRow key={aliquota.id}>
                 <TableCell>{aliquota.data}</TableCell>
-                <TableCell>{descrizione[aliquota.descrizione]}</TableCell>
+                <TableCell>{options[aliquota.descrizione]}</TableCell>
                 <TableCell align="right">
                   <Percentuale value={parseFloat(aliquota.aliquota)} />
                 </TableCell>
+                {editable && (
+                  <TableCell className={classes.tableCellIcon}>
+                    <IconButton
+                      className={classes.editButton}
+                      onClick={() => onEdit(aliquota)}
+                    >
+                      <EditIcon color="inherit" />
+                    </IconButton>
+                  </TableCell>
+                )}
               </TableRow>
             ))}
           </TableBody>
