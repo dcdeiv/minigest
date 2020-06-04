@@ -6,7 +6,7 @@ import { history } from "~/helpers";
 import { Dashboard } from "./Dashboard";
 import { NotFound } from "./NotFound";
 import { Accedi } from "./Auth";
-import { IvaAliquote } from "./Iva";
+import { IvaAliquote } from "./IvaAliquote";
 
 export default function App() {
   return (
