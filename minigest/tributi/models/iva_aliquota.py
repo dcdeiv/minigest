@@ -39,3 +39,7 @@ class IvaAliquota(models.Model):
     class Meta:
         verbose_name = "Aliquota IVA"
         verbose_name_plural = "Aliquote IVA"
+        ordering = (
+            "-data",
+            "-aliquota",
+        )
