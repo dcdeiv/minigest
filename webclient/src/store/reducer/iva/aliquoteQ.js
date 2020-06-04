@@ -9,22 +9,24 @@ export default function aliquoteQ(state = ivaAliquote, action) {
       return {
         ...state,
         getting: true,
+        getError: false,
       };
     }
 
     case C.IVA_ALIQUOTE_Q_GET_FAIL: {
       return {
         ...state,
+        getError: payload,
         getting: false,
-        error: payload,
       };
     }
 
     case C.IVA_ALIQUOTE_Q_GET_SUCCESS: {
       return {
         ...state,
-        getting: false,
         results: [...payload],
+        getError: false,
+        getting: false,
       };
     }
 

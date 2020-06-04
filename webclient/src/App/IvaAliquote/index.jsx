@@ -18,7 +18,6 @@ export function IvaAliquote(props) {
   }, [dispatch]);
 
   React.useEffect(() => {
-    console.log(periodo);
     dispatch(action.ivaAliquote.getQ(periodo));
   }, [dispatch, periodo]);
 

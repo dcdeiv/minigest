@@ -24,7 +24,7 @@ export const get = () => {
         dispatch(getSuccess(response.data));
       })
       .catch((error) => {
-        dispatch(getFail(error));
+        dispatch(getFail(error.message));
       });
   };
 };

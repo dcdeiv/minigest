@@ -26,7 +26,7 @@ export const getQ = (data = null) => {
         dispatch(getQsuccess(response.data));
       })
       .catch((error) => {
-        dispatch(getQfail(error));
+        dispatch(getQfail(error.message));
       });
   };
 };
