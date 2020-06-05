@@ -1,4 +1,24 @@
 
+
+## 0.12.0 (2020-06-05)
+
+### Feat
+
+- **webclient**: aggiunge e completa InteressiLegali, RegimeFiscale, Tur
+- **webclient**: aggiunge le azioni per interessiLegali, regimeFiscale e tur
+- **webclient**: aggiunge i reducer e le costanti per InteressiLegali, Tur, e RegimeFiscale
+- **webclient**: inizializza Tur, RegimeFiscale, InteressiLegali
+- **webclient**: aggiunge il drawer Fisco
+
+### Fix
+
+- **webclient**: aggiunsta l'api endpoint per tur
+- **webclient**: astrae l'endpoint
+- **webclient**: sposta lo span
+- **webclient**: miglioramenti vari
+- **webclient**: aggiunge il divider
+- **webclient**: aggiusta il drawer
+
 ## 0.11.0 (2020-06-05)
 
 ### Feat
