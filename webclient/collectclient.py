@@ -19,10 +19,11 @@ def index():
     if os.path.exists(INDEX_OLD):
         # Elimina il vecchio index.html
         os.remove(INDEX_OLD)
-    else:
-        shutil.move(INDEX_NEW, INDEX_OLD)
-        print("- index.html copiato!")
-        print("")
+
+    shutil.move(INDEX_NEW, INDEX_OLD)
+    print("- index.html copiato!")
+    print("")
+    return 1
 
 
 def asset_manifest():
@@ -152,6 +153,9 @@ def run():
 
             # Modifica del file precache-manifest
             precache_manifest()
+
+            # Modifica del file service-worker.js
+            service_worker()
 
             # Sposta e rinomina la cartella build in ./static/webclient
             collectstatics()
