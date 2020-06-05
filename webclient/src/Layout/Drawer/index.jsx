@@ -7,16 +7,17 @@ import { ListItemLink } from "~/Components";
 import DrawerTributi from "./Tributi";
 
 function AppDrawer(props) {
+  const { handleClose } = props;
   return (
     <React.Fragment>
       <List>
-        <ListItemLink to="/">
+        <ListItemLink to="/" handleClose={handleClose}>
           <ListItemIcon>
             <DashboardIcon />
           </ListItemIcon>
           <ListItemText>minigest</ListItemText>
         </ListItemLink>
-        <DrawerTributi />
+        <DrawerTributi handleClose={handleClose} />
       </List>
     </React.Fragment>
   );
