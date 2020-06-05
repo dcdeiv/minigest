@@ -1,5 +1,12 @@
 
 
+
+## 0.12.1 (2020-06-05)
+
+### Fix
+
+- **python**: aggiusta le dipendenze
+
 ## 0.12.0 (2020-06-05)
 
 ### Feat
