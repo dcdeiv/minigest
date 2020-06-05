@@ -16,6 +16,9 @@ classifier = [
   "Topic :: Office/Business"
 ]
 
+[tool.poetry.scripts]
+collectclient = "webclient.collectclient:run"
+
 [tool.black]
 line-length = 88
 exclude = '''
