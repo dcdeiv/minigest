@@ -2,11 +2,11 @@ import { findIndex } from "lodash";
 import { initialCURDresults } from "~/store/initials";
 import * as C from "~/constants";
 
-export default function aliquote(state = initialCURDresults, action) {
+export default function interessiLegali(state = initialCURDresults, action) {
   let { type, payload } = action;
 
   switch (type) {
-    case C.IVA_ALIQUOTE_GET_START: {
+    case C.INTERESSI_LEGALI_GET_START: {
       return {
         ...state,
         getting: true,
@@ -14,7 +14,7 @@ export default function aliquote(state = initialCURDresults, action) {
       };
     }
 
-    case C.IVA_ALIQUOTE_GET_FAIL: {
+    case C.INTERESSI_LEGALI_GET_FAIL: {
       return {
         ...state,
         getError: payload,
@@ -22,7 +22,7 @@ export default function aliquote(state = initialCURDresults, action) {
       };
     }
 
-    case C.IVA_ALIQUOTE_GET_SUCCESS: {
+    case C.INTERESSI_LEGALI_GET_SUCCESS: {
       return {
         ...state,
         results: [...payload],
@@ -31,7 +31,7 @@ export default function aliquote(state = initialCURDresults, action) {
       };
     }
 
-    case C.IVA_ALIQUOTE_POST_START: {
+    case C.INTERESSI_LEGALI_POST_START: {
       return {
         ...state,
         posting: true,
@@ -39,7 +39,7 @@ export default function aliquote(state = initialCURDresults, action) {
       };
     }
 
-    case C.IVA_ALIQUOTE_POST_FAIL: {
+    case C.INTERESSI_LEGALI_POST_FAIL: {
       return {
         ...state,
         postError: payload,
@@ -47,7 +47,7 @@ export default function aliquote(state = initialCURDresults, action) {
       };
     }
 
-    case C.IVA_ALIQUOTE_POST_SUCCESS: {
+    case C.INTERESSI_LEGALI_POST_SUCCESS: {
       return {
         ...state,
         results: [payload, ...state.results],
@@ -56,7 +56,7 @@ export default function aliquote(state = initialCURDresults, action) {
       };
     }
 
-    case C.IVA_ALIQUOTE_PUT_START: {
+    case C.INTERESSI_LEGALI_PUT_START: {
       return {
         ...state,
         putting: true,
@@ -64,7 +64,7 @@ export default function aliquote(state = initialCURDresults, action) {
       };
     }
 
-    case C.IVA_ALIQUOTE_PUT_FAIL: {
+    case C.INTERESSI_LEGALI_PUT_FAIL: {
       return {
         ...state,
         putError: payload,
@@ -72,7 +72,7 @@ export default function aliquote(state = initialCURDresults, action) {
       };
     }
 
-    case C.IVA_ALIQUOTE_PUT_SUCCESS: {
+    case C.INTERESSI_LEGALI_PUT_SUCCESS: {
       let { id } = payload;
       let index = findIndex(
         state.results,
@@ -89,7 +89,7 @@ export default function aliquote(state = initialCURDresults, action) {
       };
     }
 
-    case C.IVA_ALIQUOTE_REMOVE_START: {
+    case C.INTERESSI_LEGALI_REMOVE_START: {
       return {
         ...state,
         removing: true,
@@ -97,7 +97,7 @@ export default function aliquote(state = initialCURDresults, action) {
       };
     }
 
-    case C.IVA_ALIQUOTE_REMOVE_FAIL: {
+    case C.INTERESSI_LEGALI_REMOVE_FAIL: {
       return {
         ...state,
         removeError: payload,
@@ -105,7 +105,7 @@ export default function aliquote(state = initialCURDresults, action) {
       };
     }
 
-    case C.IVA_ALIQUOTE_REMOVE_SUCCESS: {
+    case C.INTERESSI_LEGALI_REMOVE_SUCCESS: {
       return {
         ...state,
         results: state.results.filter(
