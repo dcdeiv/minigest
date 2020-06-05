@@ -19,7 +19,7 @@ export const post = (object) => {
     dispatch(postStart);
 
     api
-      .post("/tributi/iva/aliquote/", object)
+      .post(C.IVA_ALIQUOTE_API_ENDPOINT, object)
       .then((response) => {
         dispatch(postSuccess(response.data));
       })

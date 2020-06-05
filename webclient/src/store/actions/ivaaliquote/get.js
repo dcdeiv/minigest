@@ -19,7 +19,7 @@ export const get = () => {
     dispatch(getStart);
 
     api
-      .get("/tributi/iva/aliquote/")
+      .get(C.IVA_ALIQUOTE_API_ENDPOINT)
       .then((response) => {
         dispatch(getSuccess(response.data));
       })

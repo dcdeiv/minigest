@@ -19,7 +19,7 @@ export const remove = (id) => {
     dispatch(removeStart);
 
     api
-      .delete(`/tributi/iva/aliquote/${id}/`)
+      .delete(`${C.IVA_ALIQUOTE_API_ENDPOINT}${id}/`)
       .then((response) => {
         dispatch(removeSuccess(id));
       })

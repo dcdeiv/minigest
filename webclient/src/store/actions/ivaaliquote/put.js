@@ -22,7 +22,7 @@ export const put = (object) => {
     dispatch(putStart);
 
     api
-      .put(`/tributi/iva/aliquote/${id}/`, object)
+      .put(`${C.IVA_ALIQUOTE_API_ENDPOINT}${id}/`, object)
       .then((response) => {
         dispatch(putSuccess(response.data));
       })
