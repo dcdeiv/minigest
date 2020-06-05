@@ -8,6 +8,7 @@ import DrawerTributi from "./Tributi";
 
 function AppDrawer(props) {
   const { handleClose } = props;
+
   return (
     <React.Fragment>
       <List>
@@ -15,7 +16,7 @@ function AppDrawer(props) {
           <ListItemIcon>
             <DashboardIcon />
           </ListItemIcon>
-          <ListItemText>minigest</ListItemText>
+          <ListItemText>Dashboard</ListItemText>
         </ListItemLink>
       </List>
       <Divider />

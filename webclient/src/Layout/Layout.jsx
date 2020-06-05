@@ -103,7 +103,6 @@ export default function Layout(props) {
             variant="permanent"
             open
           >
-            <div className={classes.toolbar} />
             <Divider />
             <AppDrawer />
           </Drawer>
