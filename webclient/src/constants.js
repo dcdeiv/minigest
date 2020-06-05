@@ -53,7 +53,7 @@ export const REGIME_FISCALE_REMOVE_SUCCESS = "REGIME_FISCALE_REMOVE_SUCCESS";
 export const REGIME_FISCALE_REMOVE_FAIL = "REGIME_FISCALE_REMOVE_FAIL";
 
 // TUR
-export const TUR_API_ENDPOINT = "/tributi/tur/";
+export const TUR_API_ENDPOINT = "/fisco/tur/";
 export const TUR_GET_START = "TUR_GET_START";
 export const TUR_GET_SUCCESS = "TUR_GET_SUCCESS";
 export const TUR_GET_FAIL = "TUR_GET_FAIL";
