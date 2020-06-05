@@ -3,6 +3,9 @@
 !minigest/
 !pdf/
 !public/
+public/.gitkeep
+public/static/
+public/media/
 !rest/
 !webclient/
 !Dockerfile
