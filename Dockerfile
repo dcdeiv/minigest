@@ -28,6 +28,9 @@ COPY public ./public
 COPY webclient ./webclient
 COPY manage.py ./manage.py
 
+# Cancella la cache python copiata dal repo
+RUN find . | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs rm -rf
+
 # Collectstatic
 RUN python manage.py collectstatic --no-input
 
