@@ -1,3 +1,40 @@
+
+## 0.11.0 (2020-06-05)
+
+### Feat
+
+- **webclient**: aggiunge tutte le azioni IvaAliquota e completa la sezione
+- **webclient**: aggiunge ConfirmDelete
+- **webclient**: aggiunge tutti i metodi per IvaAliquote
+- **webclient**: aggiunge il form
+- **webclient**: aggiunge MuiPickersUtilsProvider e imposta locale su it sia per moment che per intl
+- **webclient**: modifica la configurazione del logger
+- **webclient**: aggiunge il componente FabFixedContainer
+- **webclient**: aggiunge il componente FabFixed
+- **webclient**: aggiunge un form per la ricerca delle aliquote iva
+- **webclient**: aggiunge IvaAliquote
+- **webclient**: aggiunge ListaVuota, LoadingSpinner e Percentuale
+- fa in modo che Layout possa essere riutilizzato in più route e aggiunge la possibilità di cambiare il titolo nell'AppBar
+- inizializza Tributi e il Drawer per Tributi
+- aggiunge il reducer per le aliquote iva e aggiunge l'azione get e init
+- inizializza Auth
+
+### Fix
+
+- **webclient**: aggiusta le costanti REMOVE
+- **webclient**: aggiunge la validazione dell'input
+- **webclient**: aggiusta l'import a IvaAliquote
+- **minigest**: aggiunge ordering al modello IvaAliquote
+- elimina homepage e aggiusta port in start
+- **rest**: modifica il serializer
+- rimuove i permessi in !PRODUCTION
+- aggiusta i cors headers
+- **docker**: aggiusta la configurazione di docker
+
+### Refactor
+
+- **webclient**: sposta tutte i componenti route/pagina nella cartella App
+
 ## 0.10.0 (2020-06-03)
 
 ### Fix
