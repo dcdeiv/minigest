@@ -1,5 +1,5 @@
 import React from "react";
-import { List, ListItemIcon, ListItemText } from "@material-ui/core";
+import { List, ListItemIcon, ListItemText, Divider } from "@material-ui/core";
 import DashboardIcon from "@material-ui/icons/Dashboard";
 import { ListItemLink } from "~/Components";
 
@@ -17,8 +17,10 @@ function AppDrawer(props) {
           </ListItemIcon>
           <ListItemText>minigest</ListItemText>
         </ListItemLink>
-        <DrawerTributi handleClose={handleClose} />
       </List>
+      <Divider />
+      <DrawerTributi handleClose={handleClose} />
+      <Divider />
     </React.Fragment>
   );
 }
