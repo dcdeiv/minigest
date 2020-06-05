@@ -19,13 +19,13 @@ export default function DrawerTributi(props) {
         {open ? <ExpandLess /> : <ExpandMore />}
       </ListItem>
       <Collapse in={open} timeout="auto" unmountOnExit>
-        <List component="div" disablePadding>
-          <span onClick={handleClose}>
-            <ListItemLink to="/tributi/iva/aliquote" handleClose={handleClose}>
+        <span onClick={handleClose}>
+          <List component="div" disablePadding>
+            <ListItemLink to="/tributi/iva/aliquote">
               <ListItemText primary="Iva Aliquote" />
             </ListItemLink>
-          </span>
-        </List>
+          </List>
+        </span>
       </Collapse>
     </List>
   );
