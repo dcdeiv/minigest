@@ -3,15 +3,15 @@ import * as C from "~/constants";
 import { api } from "~/helpers";
 
 export const getStart = () => {
-  return actionCreator(C.IVA_ALIQUOTE_GET_START);
+  return actionCreator(C.REGIME_FISCALE_GET_START);
 };
 
 export const getFail = (data) => {
-  return actionCreator(C.IVA_ALIQUOTE_GET_FAIL, data);
+  return actionCreator(C.REGIME_FISCALE_GET_FAIL, data);
 };
 
 export const getSuccess = (data) => {
-  return actionCreator(C.IVA_ALIQUOTE_GET_SUCCESS, data);
+  return actionCreator(C.REGIME_FISCALE_GET_SUCCESS, data);
 };
 
 export const get = () => {
@@ -19,7 +19,7 @@ export const get = () => {
     dispatch(getStart);
 
     api
-      .get(C.IVA_ALIQUOTE_API_ENDPOINT)
+      .get(C.REGIME_FISCALE_API_ENDPOINT)
       .then((response) => {
         dispatch(getSuccess(response.data));
       })

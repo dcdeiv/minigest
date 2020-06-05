@@ -3,15 +3,15 @@ import * as C from "~/constants";
 import { api } from "~/helpers";
 
 export const putStart = () => {
-  return actionCreator(C.IVA_ALIQUOTE_PUT_START);
+  return actionCreator(C.TUR_PUT_START);
 };
 
 export const putFail = (data) => {
-  return actionCreator(C.IVA_ALIQUOTE_PUT_FAIL, data);
+  return actionCreator(C.TUR_PUT_FAIL, data);
 };
 
 export const putSuccess = (data) => {
-  return actionCreator(C.IVA_ALIQUOTE_PUT_SUCCESS, data);
+  return actionCreator(C.TUR_PUT_SUCCESS, data);
 };
 
 export const put = (object) => {
@@ -22,7 +22,7 @@ export const put = (object) => {
     dispatch(putStart);
 
     api
-      .put(`${C.IVA_ALIQUOTE_API_ENDPOINT}${id}/`, object)
+      .put(`${C.TUR_API_ENDPOINT}${id}/`, object)
       .then((response) => {
         dispatch(putSuccess(response.data));
       })

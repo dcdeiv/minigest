@@ -3,15 +3,15 @@ import * as C from "~/constants";
 import { api } from "~/helpers";
 
 export const removeStart = () => {
-  return actionCreator(C.IVA_ALIQUOTE_REMOVE_START);
+  return actionCreator(C.INTERESSI_LEGALI_REMOVE_START);
 };
 
 export const removeFail = (data) => {
-  return actionCreator(C.IVA_ALIQUOTE_REMOVE_FAIL, data);
+  return actionCreator(C.INTERESSI_LEGALI_REMOVE_FAIL, data);
 };
 
 export const removeSuccess = (data) => {
-  return actionCreator(C.IVA_ALIQUOTE_REMOVE_SUCCESS, data);
+  return actionCreator(C.INTERESSI_LEGALI_REMOVE_SUCCESS, data);
 };
 
 export const remove = (id) => {
@@ -19,7 +19,7 @@ export const remove = (id) => {
     dispatch(removeStart);
 
     api
-      .delete(`${C.IVA_ALIQUOTE_API_ENDPOINT}${id}/`)
+      .delete(`${C.INTERESSI_LEGALI_API_ENDPOINT}${id}/`)
       .then((response) => {
         dispatch(removeSuccess(id));
       })

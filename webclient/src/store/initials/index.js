@@ -1,1 +1,1 @@
-export * from "./ivaAliquote";
+export * from "./results";

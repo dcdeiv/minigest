@@ -1,14 +1,32 @@
 *
+__pycache__/
+
+# File e cartelle da non ignorare
 !configs/
 !minigest/
 !pdf/
+!rest/
+
+# Cartella public
 !public/
+
+# Ignora tutto quello che c'è dentro public
 public/.gitkeep
 public/static/
 public/media/
-!rest/
+
+# ignora tutti i file di react
 !webclient/
+webclient/public/
+webclient/src/
+webclient/collectclient.py
+webclient/craco.config.js
+webclient/package.json
+
+# File di docker
 !Dockerfile
 !.docker-compose.yaml
+
+# File di django
 !requirements.txt
 !manage.py

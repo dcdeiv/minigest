@@ -4,7 +4,7 @@ import { ListItemLink } from "~/Components";
 import ExpandLess from "@material-ui/icons/ExpandLess";
 import ExpandMore from "@material-ui/icons/ExpandMore";
 
-export default function DrawerTributi(props) {
+export default function (props) {
   const { handleClose } = props;
   const [open, setOpen] = React.useState(false);
 
@@ -15,14 +15,22 @@ export default function DrawerTributi(props) {
   return (
     <List>
       <ListItem button onClick={handleClick}>
-        <ListItemText primary="Tributi" />
+        <ListItemText primary="Fisco" />
         {open ? <ExpandLess /> : <ExpandMore />}
       </ListItem>
       <Collapse in={open} timeout="auto" unmountOnExit>
         <span onClick={handleClose}>
           <List component="div" disablePadding>
-            <ListItemLink to="/tributi/iva/aliquote">
-              <ListItemText primary="Iva Aliquote" />
+            <ListItemLink to="/fisco/interessi-legali">
+              <ListItemText primary="Interessi Legali" />
+            </ListItemLink>
+
+            <ListItemLink to="/fisco/regime-fiscale">
+              <ListItemText primary="Regime Fiscale" />
+            </ListItemLink>
+
+            <ListItemLink to="/fisco/tasso-ufficiale-riferimento">
+              <ListItemText primary="T.U.R." />
             </ListItemLink>
           </List>
         </span>

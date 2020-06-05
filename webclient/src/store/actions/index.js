@@ -1,7 +1,6 @@
 export { actionCreator } from "./creator";
 
-// Azione per popolare l'applicazione al primo avvio
-export { init } from "./init";
-
-// Altre azioni
+export { interessiLegali } from "./interessilegali";
 export { ivaAliquote } from "./ivaaliquote";
+export { regimeFiscale } from "./regimefiscale";
+export { tur } from "./tur";

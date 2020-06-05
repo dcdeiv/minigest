@@ -15,13 +15,13 @@ export const getQsuccess = (data) => {
 };
 
 export const getQ = (data = null) => {
-  let qdata = data ? `/${data}` : "";
+  let qdata = data ? `${data}/` : "";
 
   return (dispatch) => {
     dispatch(getQstart);
 
     api
-      .get(`/tributi/iva/aliquote/q${qdata}/`)
+      .get(`${C.IVA_ALIQUOTE_Q_API_ENDPOINT}${qdata}`)
       .then((response) => {
         dispatch(getQsuccess(response.data));
       })

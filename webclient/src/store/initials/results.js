@@ -1,4 +1,4 @@
-export const ivaAliquote = {
+export const initialCURDresults = {
   getting: true,
   getError: false,
   posting: false,
