@@ -18,7 +18,8 @@ import {
 } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
 import EditIcon from "@material-ui/icons/Edit";
-import { orange } from "@material-ui/core/colors";
+import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
+import { orange, red } from "@material-ui/core/colors";
 
 const useStyles = makeStyles((theme) => ({
   tableCellIcon: {
@@ -29,6 +30,12 @@ const useStyles = makeStyles((theme) => ({
     color: orange[500],
     "&:hover": {
       color: orange[700],
+    },
+  },
+  deleteButton: {
+    color: red[500],
+    "&:hover": {
+      color: red[700],
     },
   },
 }));
@@ -46,6 +53,7 @@ export function Lista(props) {
     options,
     editable,
     onEdit,
+    onDelete,
   } = props;
   const [value, setValue] = React.useState({
     value: searchValue,
@@ -168,9 +176,14 @@ export function Lista(props) {
               <TableCell>Descrizione</TableCell>
               <TableCell align="right">Aliquota</TableCell>
               {editable && (
-                <TableCell className={classes.tableCellIcon}>
-                  <EditIcon />
-                </TableCell>
+                <React.Fragment>
+                  <TableCell className={classes.tableCellIcon}>
+                    <EditIcon />
+                  </TableCell>
+                  <TableCell className={classes.tableCellIcon}>
+                    <DeleteForeverIcon />
+                  </TableCell>
+                </React.Fragment>
               )}
             </TableRow>
           </TableHead>
@@ -184,14 +197,24 @@ export function Lista(props) {
                   <Percentuale value={parseFloat(aliquota.aliquota)} />
                 </TableCell>
                 {editable && (
-                  <TableCell className={classes.tableCellIcon}>
-                    <IconButton
-                      className={classes.editButton}
-                      onClick={() => onEdit(aliquota)}
-                    >
-                      <EditIcon color="inherit" />
-                    </IconButton>
-                  </TableCell>
+                  <React.Fragment>
+                    <TableCell className={classes.tableCellIcon}>
+                      <IconButton
+                        className={classes.editButton}
+                        onClick={() => onEdit(aliquota)}
+                      >
+                        <EditIcon color="inherit" />
+                      </IconButton>
+                    </TableCell>
+                    <TableCell>
+                      <IconButton
+                        className={classes.deleteButton}
+                        onClick={() => onDelete(aliquota.id)}
+                      >
+                        <DeleteForeverIcon color="inherit" />
+                      </IconButton>
+                    </TableCell>
+                  </React.Fragment>
                 )}
               </TableRow>
             ))}

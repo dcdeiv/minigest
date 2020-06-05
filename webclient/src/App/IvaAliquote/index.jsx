@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Box } from "@material-ui/core";
 import { action } from "~/store";
 import { Layout } from "~/Layout";
-import { FabFixed, FabFixedContainer } from "~/Components";
+import { FabFixed, FabFixedContainer, ConfirmDelete } from "~/Components";
 import { Lista } from "./Lista";
 import { Form } from "./Form";
 
@@ -107,22 +107,25 @@ export function IvaAliquote(props) {
 
   const handleSubmit = () => {
     const formValues = values;
-    let newValues = {};
+    let object = {};
 
     forEach(formValues, (v, k) => {
       if (k === "id") {
-        newValues["id"] = v;
+        object["id"] = v;
       } else {
-        newValues[k] = v.value;
+        object[k] = v.value;
 
         if (k === "data") {
-          newValues[k] = moment(v.value).format("YYYY-MM-DD");
+          object[k] = moment(v.value).format("YYYY-MM-DD");
         }
       }
     });
 
-    // SALVA O MODIFICA UN'ALIQUOTA
-    // DA IMPLEMENTARE
+    if (object.id) {
+      dispatch(action.ivaAliquote.put(object));
+    } else {
+      dispatch(action.ivaAliquote.post(object));
+    }
 
     // Chiude il dialog
     handleClose();
@@ -135,10 +138,32 @@ export function IvaAliquote(props) {
     setFormError(!isEmpty(errorFormObj));
   }, [values]);
 
+  // Controlla l'eliminazione di un'aliquota
+  const [idAliquotaToDel, handleDelAliquota] = React.useState(0);
+
+  const handleReqDelete = (id) => {
+    handleDelAliquota(id);
+  };
+
+  const handleDelete = () => {
+    dispatch(action.ivaAliquote.remove(idAliquotaToDel));
+    handleDelAliquota(0);
+  };
+
   return (
     <Layout title="Aliquote IVA">
       <FabFixedContainer>
         <FabFixed onClick={handleOpen} />
+
+        <ConfirmDelete
+          id="conferma-rimozione-aliquota"
+          title="Sei sicuro di voler eliminare questa aliquota?"
+          content="Eliminando questa aliquota non sarà più possibile recuperarla"
+          status={idAliquotaToDel > 0}
+          handleUnset={() => handleDelAliquota(0)}
+          handleSubmit={handleDelete}
+        />
+
         <Form
           open={open}
           options={descrizione}
@@ -166,6 +191,7 @@ export function IvaAliquote(props) {
             options={descrizione}
             editable
             onEdit={handleReqEdit}
+            onDelete={handleReqDelete}
             {...aliquote}
           />
         </Box>
