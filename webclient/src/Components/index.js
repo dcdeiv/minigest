@@ -1,4 +1,5 @@
 import AdapterLink from "./AdapterLink";
+import ConfirmDelete from "./ConfirmDelete";
 import FabFixed from "./FabFixed";
 import FabFixedContainer from "./FabFixedContainer";
 import ListaVuota from "./ListaVuota";
@@ -9,6 +10,7 @@ import Transition from "./Transition";
 
 export {
   AdapterLink,
+  ConfirmDelete,
   FabFixed,
   FabFixedContainer,
   ListaVuota,
