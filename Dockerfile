@@ -32,6 +32,3 @@ COPY manage.py ./manage.py
 RUN python manage.py collectstatic --no-input
 
 EXPOSE 8000
-
-# Avvia django
-CMD [ "python", "manage.py", "runserver", "0.0.0.0:8000"]
