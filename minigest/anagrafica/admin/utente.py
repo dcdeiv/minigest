@@ -1,6 +1,5 @@
 from ..forms.utente import UtenteChangeForm, UtenteCreationForm
 from ..models import Utente
-from .relazione_aziendale import UtenteRelazioneAziendaleInline
 
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
@@ -8,7 +7,6 @@ from django.contrib.auth.admin import UserAdmin
 
 @admin.register(Utente)
 class UtenteAdmin(UserAdmin):
-    inlines = [UtenteRelazioneAziendaleInline]
     add_form = UtenteCreationForm
     form = UtenteChangeForm
     search_fields = ("email",)
@@ -27,7 +25,7 @@ class UtenteAdmin(UserAdmin):
     fieldsets = (
         ("Autenticazione", {"fields": ("email", "password",)}),
         ("Anagrafica", {"fields": ("cognome", "nome",)}),
-        ("Permessi", {"fields": ("is_staff", "is_active")}),
+        ("Permessi", {"fields": ("is_staff", "is_active",)}),
     )
 
     add_fieldsets = (
@@ -37,7 +35,6 @@ class UtenteAdmin(UserAdmin):
                 "classes": ("wide",),
                 "fields": (
                     "email",
-                    "titolo",
                     "nome",
                     "cognome",
                     "password1",

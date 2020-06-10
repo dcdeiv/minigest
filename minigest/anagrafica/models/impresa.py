@@ -1,3 +1,5 @@
+from django.conf import settings
+
 from minigest.common.models.fields import UpperCaseField
 from ..helpers.impresa import bilancio, fatturato
 from .soggetto_fiscale import SoggettoFiscale
@@ -18,6 +20,10 @@ class Impresa(SoggettoFiscale):
     - telefono
     - fax
     """
+
+    utenti = models.ManyToManyField(
+        settings.AUTH_USER_MODEL, blank=True, related_name="imprese",
+    )
 
     # Anagrafica 1.2.1.3.1
     denominazione = models.CharField(

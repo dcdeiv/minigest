@@ -7,3 +7,9 @@ class DomicilioStabileOrgSerializer(serializers.ModelSerializer):
     class Meta:
         model = DomicilioStabileOrganizzazione
         fields = "__all__"
+
+
+class ImpresaStabileOrganizzazioneSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = DomicilioStabileOrganizzazione
+        exclude = ("soggetto",)
