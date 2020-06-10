@@ -10,6 +10,7 @@ import {
   Divider,
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import AppDrawer from "./Drawer";
 
 const drawerWidth = 250;
@@ -36,7 +37,9 @@ const useStyles = makeStyles((theme) => ({
       display: "none",
     },
   },
-  // necessary for content to be below app bar
+  title: {
+    flexGrow: 1,
+  },
   toolbar: theme.mixins.toolbar,
   drawerPaper: {
     width: drawerWidth,
@@ -46,6 +49,16 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(3),
   },
 }));
+
+const ExitButton = () => (
+  <IconButton
+    color="inherit"
+    edge="end"
+    onClick={() => window.location.replace("/esci")}
+  >
+    <ExitToAppIcon />
+  </IconButton>
+);
 
 export default function Layout(props) {
   const { window, children, title = "minigest" } = props;
@@ -71,9 +84,10 @@ export default function Layout(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap>
+          <Typography variant="h6" className={classes.title}>
             {title}
           </Typography>
+          <ExitButton />
         </Toolbar>
       </AppBar>
 
