@@ -1,6 +1,19 @@
 
 
 
+## 0.14.0 (2020-06-10)
+
+### Fix
+
+- **minigest**: aggiusta le relazioni aziendali
+- **webclient**: migliorie al reducer auth. aggiunge il reducer utente. inizializza l'utente selezionato in auth
+
+### Feat
+
+- **minigest**: resetta le migrazioni
+- **rest**: aggiunge i campi per le relazioni tra azienda e utente
+- **minigest**: aggiunge il modello RelazioneAziendale per descrivere le relazioni tra azienda e utente
+
 ## 0.13.0 (2020-06-10)
 
 ### Feat
