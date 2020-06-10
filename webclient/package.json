@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "PORT=9000 craco start",
+    "start:django": "PUBLIC_URL=/static/webclient yarn start",
     "build": "PUBLIC_URL=/static/webclient craco build",
     "test": "craco test",
     "eject": "craco eject"
@@ -23,6 +24,7 @@
       "last 1 safari version"
     ]
   },
+  "proxy": "http://localhost:8000",
   "dependencies": {
     "@craco/craco": "^5.6.4",
     "@date-io/moment": "1.x",
@@ -37,6 +39,7 @@
     "lodash": "^4.17.15",
     "moment": "^2.26.0",
     "prop-types": "^15.7.2",
+    "query-string": "^6.13.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-intl": "^4.6.3",
