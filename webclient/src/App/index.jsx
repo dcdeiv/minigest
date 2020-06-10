@@ -23,7 +23,7 @@ export default function App() {
         <Route path="/fisco/interessi-legali" component={InteressiLegali} />
         <Route path="/fisco/tasso-ufficiale-riferimento" component={Tur} />
 
-        <Route path="/accedi" component={Accedi} />
+        <Route exact path="/accedi/" component={Accedi} />
         <Route component={NotFound} />
       </Switch>
     </Router>
