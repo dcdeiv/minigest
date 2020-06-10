@@ -1,6 +1,21 @@
 
 
 
+## 0.13.0 (2020-06-10)
+
+### Feat
+
+- **webclient**: costruisce il client
+- **webclient**: aggiunge il componente Splash
+- **webclient**: migliora le views
+- **auth**: aggiunge i reverse url per le views login e logout
+
+### Fix
+
+- **webclient**: migliora la gestione del login e logout
+- **webclient**: aggiunge il pulsante esci
+- **webclient**: modifica il baseURL per le api calls
+
 ## 0.12.1 (2020-06-05)
 
 ### Fix
