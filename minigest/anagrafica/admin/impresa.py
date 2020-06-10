@@ -1,5 +1,6 @@
 from minigest.common.admin.fieldsets import FIELDSETS_INDIRIZZO
 from ..models import DomicilioFiscale, DomicilioStabileOrganizzazione, Impresa
+from .relazione_aziendale import ImpresaRelazioneAziendaleInline
 
 from django.contrib import admin
 
@@ -32,7 +33,11 @@ class StabileOrganizzazioneAdminInline(admin.StackedInline):
 
 @admin.register(Impresa)
 class ImpresaAdmin(admin.ModelAdmin):
-    inlines = [SedeAdminInline, StabileOrganizzazioneAdminInline]
+    inlines = [
+        SedeAdminInline,
+        StabileOrganizzazioneAdminInline,
+        ImpresaRelazioneAziendaleInline,
+    ]
 
     ordering = (
         "denominazione",

@@ -1,5 +1,6 @@
 from ..forms.utente import UtenteChangeForm, UtenteCreationForm
 from ..models import Utente
+from .relazione_aziendale import UtenteRelazioneAziendaleInline
 
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
@@ -7,6 +8,7 @@ from django.contrib.auth.admin import UserAdmin
 
 @admin.register(Utente)
 class UtenteAdmin(UserAdmin):
+    inlines = [UtenteRelazioneAziendaleInline]
     add_form = UtenteCreationForm
     form = UtenteChangeForm
     search_fields = ("email",)
