@@ -1,5 +1,12 @@
 from django.urls import re_path
 
-from .views import CatchAllView
+from webclient import views
 
-urlpatterns = [re_path(r"", CatchAllView.as_view(), name="catchall")]
+from django.contrib.auth.views import logout_then_login
+
+app_name = "webclient"
+urlpatterns = [
+    re_path(r"^accedi/?$", views.LoginView.as_view(), name="accedi"),
+    re_path(r"^esci/?$", logout_then_login, name="esci"),
+    re_path(r"", views.CatchAllView.as_view(), name="catchall"),
+]
