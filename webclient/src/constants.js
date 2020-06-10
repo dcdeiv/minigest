@@ -1,13 +1,19 @@
 /* Tutte le costanti del client */
 
+// AUTH
+export const AUTH_API_ENDPOINT = "/accedi/";
+export const AUTH_LOGIN_SUCCESS = "AUTH_LOGIN_SUCCESS";
+export const AUTH_LOGIN_FAIL = "AUTH_LOGIN_FAIL";
+export const AUTH_UPDATE = "AUTH_UPDATE";
+
 // ALIQUOTE IVA Q (correnti)
-export const IVA_ALIQUOTE_Q_API_ENDPOINT = "/tributi/iva/aliquote/q/";
+export const IVA_ALIQUOTE_Q_API_ENDPOINT = "/api/tributi/iva/aliquote/q/";
 export const IVA_ALIQUOTE_Q_GET_START = "IVA_ALIQUOTE_Q_GET_START";
 export const IVA_ALIQUOTE_Q_GET_SUCCESS = "IVA_ALIQUOTE_Q_GET_SUCCESS";
 export const IVA_ALIQUOTE_Q_GET_FAIL = "IVA_ALIQUOTE_Q_GET_FAIL";
 
 // ALIQUOTE IVA
-export const IVA_ALIQUOTE_API_ENDPOINT = "/tributi/iva/aliquote/";
+export const IVA_ALIQUOTE_API_ENDPOINT = "/api/tributi/iva/aliquote/";
 export const IVA_ALIQUOTE_GET_START = "IVA_ALIQUOTE_GET_START";
 export const IVA_ALIQUOTE_GET_SUCCESS = "IVA_ALIQUOTE_GET_SUCCESS";
 export const IVA_ALIQUOTE_GET_FAIL = "IVA_ALIQUOTE_GET_FAIL";
@@ -22,7 +28,7 @@ export const IVA_ALIQUOTE_REMOVE_SUCCESS = "IVA_ALIQUOTE_REMOVE_SUCCESS";
 export const IVA_ALIQUOTE_REMOVE_FAIL = "IVA_ALIQUOTE_REMOVE_FAIL";
 
 // INTERESSI LEGALI
-export const INTERESSI_LEGALI_API_ENDPOINT = "/fisco/interessi-legali/";
+export const INTERESSI_LEGALI_API_ENDPOINT = "/api/fisco/interessi-legali/";
 export const INTERESSI_LEGALI_GET_START = "INTERESSI_LEGALI_GET_START";
 export const INTERESSI_LEGALI_GET_SUCCESS = "INTERESSI_LEGALI_GET_SUCCESS";
 export const INTERESSI_LEGALI_GET_FAIL = "INTERESSI_LEGALI_GET_FAIL";
@@ -38,7 +44,7 @@ export const INTERESSI_LEGALI_REMOVE_SUCCESS =
 export const INTERESSI_LEGALI_REMOVE_FAIL = "INTERESSI_LEGALI_REMOVE_FAIL";
 
 // REGIME FISCALE
-export const REGIME_FISCALE_API_ENDPOINT = "/fisco/regime-fiscale/";
+export const REGIME_FISCALE_API_ENDPOINT = "/api/fisco/regime-fiscale/";
 export const REGIME_FISCALE_GET_START = "REGIME_FISCALE_GET_START";
 export const REGIME_FISCALE_GET_SUCCESS = "REGIME_FISCALE_GET_SUCCESS";
 export const REGIME_FISCALE_GET_FAIL = "REGIME_FISCALE_GET_FAIL";
@@ -53,7 +59,7 @@ export const REGIME_FISCALE_REMOVE_SUCCESS = "REGIME_FISCALE_REMOVE_SUCCESS";
 export const REGIME_FISCALE_REMOVE_FAIL = "REGIME_FISCALE_REMOVE_FAIL";
 
 // TUR
-export const TUR_API_ENDPOINT = "/fisco/tur/";
+export const TUR_API_ENDPOINT = "/api/fisco/tur/";
 export const TUR_GET_START = "TUR_GET_START";
 export const TUR_GET_SUCCESS = "TUR_GET_SUCCESS";
 export const TUR_GET_FAIL = "TUR_GET_FAIL";
