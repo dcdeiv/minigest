@@ -4,6 +4,8 @@ import re
 import shutil
 
 CLIENT_DIR = os.path.dirname(os.path.abspath(__file__))
+ROOT_DIR = os.path.dirname(CLIENT_DIR)
+PUBLIC_STATIC_DIR = os.path.join(ROOT_DIR, "public/static")
 
 TEMPLATE_DIR = os.path.join(CLIENT_DIR, "templates/webclient")
 INDEX_OLD = os.path.join(TEMPLATE_DIR, "index.html")
@@ -44,7 +46,7 @@ def asset_manifest():
 
 
 def service_worker():
-    print(" - modifica di service-worker.js")
+    print("- modifica di service-worker.js")
 
     SERVICE_OUT = os.path.join(BUILD_DIR, "service-worker.js")
     SERVICE_BACKUP = os.path.join(BUILD_DIR, "service-worker-back.js")
@@ -126,6 +128,14 @@ def collectstatics():
     return 1
 
 
+def purgestatics():
+    print("- eliminazione della cartella static")
+    if os.path.isdir(PUBLIC_STATIC_DIR):
+        shutil.rmtree(PUBLIC_STATIC_DIR)
+
+    return 1
+
+
 def run():
     # Controlla che la cartella "build" esista
     if not os.path.isdir(BUILD_DIR):
@@ -159,3 +169,8 @@ def run():
 
             # Sposta e rinomina la cartella build in ./static/webclient
             collectstatics()
+
+            # Elimina la vecchia cartella STATIC
+            purgestatics()
+
+            return 1
