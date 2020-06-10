@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Login() {
   const dispatch = useDispatch();
-  const { status } = useSelector((state) => state.auth);
+  const { auth } = useSelector((state) => state.utente);
   const classes = useStyles();
   const [formError, setFormError] = React.useState(true);
   const [values, setValues] = React.useState({
@@ -92,7 +92,7 @@ export default function Login() {
       object[k] = o.value;
     });
 
-    dispatch(action.auth.login(object));
+    dispatch(action.utente.login(object));
   };
 
   return (
@@ -121,10 +121,10 @@ export default function Login() {
             </Box>
           </form>
 
-          {status.error && (
+          {auth.error && (
             <ThemeProvider theme={dialogTheme}>
               <Box mt={2}>
-                <Typography color="error">{status.message}</Typography>
+                <Typography color="error">{auth.message}</Typography>
               </Box>
             </ThemeProvider>
           )}

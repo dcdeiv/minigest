@@ -17,33 +17,20 @@ class LoginView(View):
 
         # AUTH context
         auth = {
-            "user": False,
-            "status": {
-                "error": True,
-                "message": "Accedi per visualizzare questa pagina!",
-            },
+            "id": False,
+            "error": True,
+            "message": "Accedi per visualizzare questa pagina!",
         }
 
         if user.is_authenticated:
             auth = {
-                "user": {
-                    "id": user.id,
-                    "email": user.email,
-                    "is_staff": user.is_staff,
-                },
-                "status": {
-                    "error": True,
-                    "message": "Il tuo account non può accedere a questa pagina!",
-                },
+                "id": user.id,
+                "error": True,
+                "message": "Il tuo account non può accedere a questa pagina!",
             }
 
         return render(
-            request,
-            "webclient/index.html",
-            context={
-                "user": json.dumps(auth["user"]),
-                "status": json.dumps(auth["status"]),
-            },
+            request, "webclient/index.html", context={"auth": json.dumps(auth),},
         )
 
     def post(self, request, *args, **kwargs):
@@ -54,22 +41,18 @@ class LoginView(View):
 
         if user is None:
             auth = {
-                "user": False,
-                "status": {"error": True, "message": "Credenziali non valide!"},
+                "id": False,
+                "error": True,
+                "message": "Credenziali non valide!",
             }
             status_code = 401
         else:
             login(request, user)
             auth = {
-                "user": {
-                    "id": user.id,
-                    "email": user.email,
-                    "is_staff": user.is_staff,
-                },
-                "status": {"error": False, "message": None},
+                "id": user.id,
+                "error": False,
+                "message": None,
             }
             status_code = 200
 
-        return JsonResponse(
-            {"user": auth["user"], "status": auth["status"]}, status=status_code
-        )
+        return JsonResponse(auth, status=status_code)

@@ -1,12 +1,12 @@
 import { combineReducers } from "redux";
 
-import auth from "./auth";
+import utente from "./utente";
 import iva from "./iva";
 import fisco from "./fisco";
 
 // RootReducer
 export default combineReducers({
-  auth,
+  utente,
   iva,
   fisco,
 });

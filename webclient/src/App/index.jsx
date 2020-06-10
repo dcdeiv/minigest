@@ -1,6 +1,8 @@
 import React from "react";
 import { Router, Switch, Route } from "react-router-dom";
 import { history } from "~/helpers";
+import { useSelector, useDispatch } from "react-redux";
+import { action } from "~/store";
 
 // App
 import { Dashboard } from "./Dashboard";
@@ -12,6 +14,15 @@ import { Tur } from "./Tur";
 import { InteressiLegali } from "./InteressiLegali";
 
 export default function App() {
+  const dispatch = useDispatch();
+  const { id } = useSelector((state) => state.utente.auth);
+
+  React.useEffect(() => {
+    if (id) {
+      dispatch(action.utente.get(id));
+    }
+  }, [id, dispatch]);
+
   return (
     <Router history={history}>
       <Switch>

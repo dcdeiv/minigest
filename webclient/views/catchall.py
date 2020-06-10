@@ -40,27 +40,20 @@ class CatchAllView(TemplateView):
 
         if user.is_authenticated:
             auth = {
-                "user": {
-                    "id": user.id,
-                    "email": user.email,
-                    "is_staff": user.is_staff,
-                },
-                "status": {"error": False, "message": None},
+                "id": user.id,
+                "error": False,
+                "message": None,
             }
         else:
             auth = {
-                "user": False,
-                "status": {
-                    "error": True,
-                    "message": "Accedi per visualizzare questa pagina!",
-                },
+                "id": False,
+                "error": True,
+                "message": "Accedi per visualizzare questa pagina!",
             }
 
-        # AUTH context
-        auth = {"user": 0, "status": {"error": False, "message": None}}
-
-        context["user"] = json.dumps(auth["user"])
-        context["status"] = json.dumps(auth["status"])
+        context["id"] = json.dumps(auth["id"])
+        context["error"] = json.dumps(auth["error"])
+        context["message"] = json.dumps(auth["message"])
 
         return context
 
