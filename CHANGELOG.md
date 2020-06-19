@@ -1,3 +1,9 @@
+## 0.15.1 (2020-06-19)
+
+### Fix
+
+- **git**: testa la nuova configurazione
+
 ## 0.15.0 (2020-06-19)
 
 ### Fix
