@@ -17,9 +17,9 @@
         "build": "yarn run build:step-1 && yarn run build:step-2",
         "build:push": "yarn build && git add -A && git commit -m 'build: build automatica' && git push",
         "build:dev": "yarn run build && yarn run collectstatic",
-        "docker:build": "sudo docker build -t dcdeiv/minigest:latest .",
-        "docker:compose": "sudo docker-compose up -d",
-        "docker:compose:build": "sudo docker-compose up -d --build"
+        "docker:build": "yarn build:dev &&sudo docker build -t dcdeiv/minigest:latest .",
+        "docker:compose": "yarn build:dev && sudo docker-compose up -d",
+        "docker:compose:build": "yarn build:dev && sudo docker-compose up -d --build"
     },
     "devDependencies": {
         "lerna": "^3.22.1"
