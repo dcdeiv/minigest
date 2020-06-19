@@ -32,7 +32,7 @@ def catchall_dev(request, upstream="http://localhost:9000"):
 
 
 class CatchAllView(TemplateView):
-    template_name = "webclient/index.html"
+    template_name = "www/index.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

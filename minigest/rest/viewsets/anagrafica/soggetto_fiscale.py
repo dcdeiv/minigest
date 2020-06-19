@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 
 from minigest.anagrafica.models import SoggettoFiscale as sf
-from rest.serializers import SoggettoFiscalePolymorphicSerializer
+from minigest.rest.serializers import SoggettoFiscalePolymorphicSerializer
 
 
 class SoggettoFiscale(viewsets.ModelViewSet):

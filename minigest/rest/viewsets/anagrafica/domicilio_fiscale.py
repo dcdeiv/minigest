@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 
 from minigest.anagrafica.models import DomicilioFiscale as df
-from rest.serializers import DomicilioFiscaleSerializer
+from minigest.rest.serializers import DomicilioFiscaleSerializer
 
 
 class DomicilioFiscale(viewsets.ModelViewSet):

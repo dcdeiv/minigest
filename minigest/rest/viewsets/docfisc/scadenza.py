@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 
 from minigest.docfisc.models import DocFiscScadenza as dfs
-from rest.serializers import DocFiscScadenzaSerializer
+from minigest.rest.serializers import DocFiscScadenzaSerializer
 
 
 class DocumentoFiscaleScadenza(viewsets.ModelViewSet):

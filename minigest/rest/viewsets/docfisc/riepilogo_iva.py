@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 
 from minigest.docfisc.models import DocFiscRiepilogoIva as dfri
-from rest.serializers import DocFiscRiepilogoIvaSerializer
+from minigest.rest.serializers import DocFiscRiepilogoIvaSerializer
 
 
 class DocumentoFiscaleRiepilogoIVA(viewsets.ModelViewSet):

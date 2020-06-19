@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 
 from minigest.docfisc.models import DocFiscPagamento as dfp
-from rest.serializers import DocFiscPagamentoSerializer
+from minigest.rest.serializers import DocFiscPagamentoSerializer
 
 
 class DocumentoFiscalePagamento(viewsets.ModelViewSet):

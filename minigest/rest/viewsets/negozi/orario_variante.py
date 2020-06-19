@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 
 from minigest.negozi.models import OrarioVariante as ov
-from rest.serializers import OrarioVarianteSerializer
+from minigest.rest.serializers import OrarioVarianteSerializer
 
 
 class OrarioVariante(viewsets.ModelViewSet):

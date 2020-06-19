@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 
 from minigest.negozi.models import Cassa as c
-from rest.serializers import CassaSerializer
+from minigest.rest.serializers import CassaSerializer
 
 
 class Cassa(viewsets.ModelViewSet):

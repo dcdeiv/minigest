@@ -4,7 +4,7 @@ from rest_framework import views
 from rest_framework.response import Response
 
 from minigest.negozi.models import Negozio
-from rest.serializers import CorrispettiviSerializer
+from minigest.rest.serializers import CorrispettiviSerializer
 
 
 class Corrispettivi(views.APIView):

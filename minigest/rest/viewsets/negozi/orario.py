@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 
 from minigest.negozi.models import Orario as o
-from rest.serializers import OrarioSerializer
+from minigest.rest.serializers import OrarioSerializer
 
 
 class Orario(viewsets.ModelViewSet):

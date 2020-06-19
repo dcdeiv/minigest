@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 
 from minigest.docfisc.models import CodiceDocumentoFiscale as cdf
-from rest.serializers import DocFiscCodiceSerializer
+from minigest.rest.serializers import DocFiscCodiceSerializer
 
 
 class CodiceDocumentoFiscale(viewsets.ModelViewSet):

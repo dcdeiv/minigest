@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 
 from minigest.docfisc.models import ChiusuraFiscale as cf
-from rest.serializers import ChiusuraFiscaleSerializer
+from minigest.rest.serializers import ChiusuraFiscaleSerializer
 
 
 class ChiusuraFiscale(viewsets.ModelViewSet):

@@ -4,7 +4,7 @@ from rest_framework import views
 from rest_framework.response import Response
 
 from minigest.anagrafica.models import Impresa
-from rest.serializers import FatturatoSerializer
+from minigest.rest.serializers import FatturatoSerializer
 
 
 class Fatturato(views.APIView):

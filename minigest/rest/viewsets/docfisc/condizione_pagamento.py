@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 
 from minigest.docfisc.models import CondizionePagamento as cp
-from rest.serializers import DocFiscCondizionePagSerializer
+from minigest.rest.serializers import DocFiscCondizionePagSerializer
 
 
 class CondizionePagamento(viewsets.ModelViewSet):

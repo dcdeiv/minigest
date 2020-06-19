@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 
 from minigest.anagrafica.models import DomicilioStabileOrganizzazione as dso
-from rest.serializers import DomicilioStabileOrgSerializer
+from minigest.rest.serializers import DomicilioStabileOrgSerializer
 
 
 class DomicilioStabileOrganizzazione(viewsets.ModelViewSet):

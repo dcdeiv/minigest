@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 
 from minigest.anagrafica.models import Impresa as i
-from rest.serializers import ImpresaSerializer
+from minigest.rest.serializers import ImpresaSerializer
 
 
 class Impresa(viewsets.ModelViewSet):

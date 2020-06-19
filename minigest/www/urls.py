@@ -1,4 +1,4 @@
-from django.urls import re_path
+from django.urls import path, re_path
 
 from minigest.www import views
 
@@ -6,7 +6,7 @@ from django.contrib.auth.views import logout_then_login
 
 app_name = "www"
 urlpatterns = [
-    re_path(r"^accedi/?$", views.LoginView.as_view(), name="accedi"),
-    re_path(r"^esci/?$", logout_then_login, name="esci"),
+    path("accedi/", views.LoginView.as_view(), name="accedi"),
+    path("esci/", logout_then_login, name="esci"),
     re_path(r"", views.CatchAllView.as_view(), name="catchall"),
 ]

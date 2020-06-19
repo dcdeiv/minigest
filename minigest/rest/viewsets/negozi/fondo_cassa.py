@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 
 from minigest.negozi.models import FondoCassa as fc
-from rest.serializers import FondoCassaSerializer
+from minigest.rest.serializers import FondoCassaSerializer
 
 
 class FondoCassa(viewsets.ModelViewSet):
