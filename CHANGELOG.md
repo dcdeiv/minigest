@@ -1,3 +1,9 @@
+## 0.15.0 (2020-06-19)
+
+### Fix
+
+- aggiunge public che prima veniva ignorato
+
 ## 0.14.1 (2020-06-19)
 
 ### Fix
