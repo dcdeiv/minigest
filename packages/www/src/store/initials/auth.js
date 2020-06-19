@@ -14,7 +14,7 @@ if (process.env.NODE_ENV === "development") {
   initialState = {
     id: window.auth.id === "false" ? false : JSON.parse(window.auth.id),
     error: window.auth.error === "false" ? false : true,
-    message: window.auth.message === "null" ? null : window.auth.message,
+    message: window.auth.message === "" ? null : window.auth.message,
   };
 }
 

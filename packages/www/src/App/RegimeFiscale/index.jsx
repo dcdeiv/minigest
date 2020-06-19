@@ -3,7 +3,6 @@ import { isEmpty, filter, forEach } from "lodash";
 import { useDispatch, useSelector } from "react-redux";
 import { Box } from "@material-ui/core";
 import { action } from "~/store";
-import { Layout } from "~/Layout";
 import { FabFixed, FabFixedContainer, ConfirmDelete } from "~/Components";
 import { Lista } from "./Lista";
 import { Form } from "./Form";
@@ -118,36 +117,34 @@ export function RegimeFiscale(props) {
   };
 
   return (
-    <Layout title="Regime Fiscale">
-      <FabFixedContainer>
-        <FabFixed onClick={handleOpen} />
+    <FabFixedContainer>
+      <FabFixed onClick={handleOpen} />
 
-        <ConfirmDelete
-          id="conferma-rimozione-rf"
-          title="Sei sicuro di voler eliminare questo regime fiscale?"
-          content="Eliminando questo regime fiscale non sarà più possibile recuperarlo"
-          status={idObjectToDel > 0}
-          handleUnset={() => handleDelObject(0)}
-          handleSubmit={handleDelete}
+      <ConfirmDelete
+        id="conferma-rimozione-rf"
+        title="Sei sicuro di voler eliminare questo regime fiscale?"
+        content="Eliminando questo regime fiscale non sarà più possibile recuperarlo"
+        status={idObjectToDel > 0}
+        handleUnset={() => handleDelObject(0)}
+        handleSubmit={handleDelete}
+      />
+
+      <Form
+        open={open}
+        values={values}
+        error={formError}
+        onClose={handleClose}
+        onChange={handleChange}
+        onSubmit={handleSubmit}
+      />
+
+      <Box>
+        <Lista
+          onEdit={handleReqEdit}
+          onDelete={handleReqDelete}
+          {...regimeFiscale}
         />
-
-        <Form
-          open={open}
-          values={values}
-          error={formError}
-          onClose={handleClose}
-          onChange={handleChange}
-          onSubmit={handleSubmit}
-        />
-
-        <Box>
-          <Lista
-            onEdit={handleReqEdit}
-            onDelete={handleReqDelete}
-            {...regimeFiscale}
-          />
-        </Box>
-      </FabFixedContainer>
-    </Layout>
+      </Box>
+    </FabFixedContainer>
   );
 }

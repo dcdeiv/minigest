@@ -30,9 +30,7 @@ export default function utente(state = initialState, action) {
     }
 
     default: {
-      return {
-        ...state,
-      };
+      return state;
     }
   }
 }

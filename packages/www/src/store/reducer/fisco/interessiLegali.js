@@ -115,9 +115,7 @@ export default function interessiLegali(state = initialCURDresults, action) {
     }
 
     default: {
-      return {
-        ...state,
-      };
+      return state;
     }
   }
 }

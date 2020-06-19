@@ -115,9 +115,7 @@ export default function tur(state = initialCURDresults, action) {
     }
 
     default: {
-      return {
-        ...state,
-      };
+      return state;
     }
   }
 }

@@ -21,9 +21,7 @@ export default function auth(state = initialAuthState, action) {
     }
 
     default: {
-      return {
-        ...state,
-      };
+      return state;
     }
   }
 }

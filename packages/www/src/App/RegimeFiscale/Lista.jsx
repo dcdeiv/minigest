@@ -1,6 +1,6 @@
 import React from "react";
 import { isEmpty } from "lodash";
-import { LoadingSpinner, ListaVuota } from "~/Components";
+import { LoadingSpinner, ListaVuota, TableCellIcon } from "~/Components";
 import { makeStyles } from "@material-ui/styles";
 import {
   TableContainer,
@@ -63,12 +63,12 @@ export function Lista(props) {
             <TableRow>
               <TableCell>Codice</TableCell>
               <TableCell>Descrizione</TableCell>
-              <TableCell className={classes.tableCellIcon}>
+              <TableCellIcon>
                 <EditIcon />
-              </TableCell>
-              <TableCell className={classes.tableCellIcon}>
+              </TableCellIcon>
+              <TableCellIcon>
                 <DeleteForeverIcon />
-              </TableCell>
+              </TableCellIcon>
             </TableRow>
           </TableHead>
 
@@ -77,22 +77,22 @@ export function Lista(props) {
               <TableRow key={rf.id}>
                 <TableCell>{rf.codice}</TableCell>
                 <TableCell>{rf.descrizione}</TableCell>
-                <TableCell className={classes.tableCellIcon}>
+                <TableCellIcon>
                   <IconButton
                     className={classes.editButton}
                     onClick={() => onEdit(rf)}
                   >
                     <EditIcon color="inherit" />
                   </IconButton>
-                </TableCell>
-                <TableCell>
+                </TableCellIcon>
+                <TableCellIcon>
                   <IconButton
                     className={classes.deleteButton}
                     onClick={() => onDelete(rf.id)}
                   >
                     <DeleteForeverIcon color="inherit" />
                   </IconButton>
-                </TableCell>
+                </TableCellIcon>
               </TableRow>
             ))}
           </TableBody>

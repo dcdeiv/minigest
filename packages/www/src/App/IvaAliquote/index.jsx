@@ -4,7 +4,6 @@ import { isEmpty, filter, forEach } from "lodash";
 import { useDispatch, useSelector } from "react-redux";
 import { Box } from "@material-ui/core";
 import { action } from "~/store";
-import { Layout } from "~/Layout";
 import { FabFixed, FabFixedContainer, ConfirmDelete } from "~/Components";
 import { Lista } from "./Lista";
 import { Form } from "./Form";
@@ -151,51 +150,49 @@ export function IvaAliquote(props) {
   };
 
   return (
-    <Layout title="Aliquote IVA">
-      <FabFixedContainer>
-        <FabFixed onClick={handleOpen} />
+    <FabFixedContainer>
+      <FabFixed onClick={handleOpen} />
 
-        <ConfirmDelete
-          id="conferma-rimozione-aliquota"
-          title="Sei sicuro di voler eliminare questa aliquota?"
-          content="Eliminando questa aliquota non sarà più possibile recuperarla"
-          status={idAliquotaToDel > 0}
-          handleUnset={() => handleDelAliquota(0)}
-          handleSubmit={handleDelete}
-        />
+      <ConfirmDelete
+        id="conferma-rimozione-aliquota"
+        title="Sei sicuro di voler eliminare questa aliquota?"
+        content="Eliminando questa aliquota non sarà più possibile recuperarla"
+        status={idAliquotaToDel > 0}
+        handleUnset={() => handleDelAliquota(0)}
+        handleSubmit={handleDelete}
+      />
 
-        <Form
-          open={open}
+      <Form
+        open={open}
+        options={descrizione}
+        values={values}
+        error={formError}
+        onClose={handleClose}
+        onChange={handleChange}
+        onSubmit={handleSubmit}
+      />
+
+      <Box mb={4}>
+        <Lista
+          subject="Aliquote Correnti"
+          search
+          searchValue={periodo}
+          onSearch={setPeriodo}
           options={descrizione}
-          values={values}
-          error={formError}
-          onClose={handleClose}
-          onChange={handleChange}
-          onSubmit={handleSubmit}
+          {...aliquoteQ}
         />
+      </Box>
 
-        <Box mb={4}>
-          <Lista
-            subject="Aliquote Correnti"
-            search
-            searchValue={periodo}
-            onSearch={setPeriodo}
-            options={descrizione}
-            {...aliquoteQ}
-          />
-        </Box>
-
-        <Box>
-          <Lista
-            subject={"Tutte le Aliquote"}
-            options={descrizione}
-            editable
-            onEdit={handleReqEdit}
-            onDelete={handleReqDelete}
-            {...aliquote}
-          />
-        </Box>
-      </FabFixedContainer>
-    </Layout>
+      <Box>
+        <Lista
+          subject={"Tutte le Aliquote"}
+          options={descrizione}
+          editable
+          onEdit={handleReqEdit}
+          onDelete={handleReqDelete}
+          {...aliquote}
+        />
+      </Box>
+    </FabFixedContainer>
   );
 }

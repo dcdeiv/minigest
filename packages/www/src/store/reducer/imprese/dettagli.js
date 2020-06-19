@@ -1,11 +1,18 @@
-import { initialCURDresults } from "~/store/initials";
 import * as C from "~/constants";
 
-export default function aliquoteQ(state = initialCURDresults, action) {
+const initialState = {
+  getting: true,
+  getError: false,
+  putting: false,
+  putError: false,
+  data: {},
+};
+
+export default function dettagli(state = initialState, action) {
   let { type, payload } = action;
 
   switch (type) {
-    case C.IVA_ALIQUOTE_Q_GET_START: {
+    case C.IMPRESE_DETTAGLI_GET_START: {
       return {
         ...state,
         getting: true,
@@ -13,7 +20,7 @@ export default function aliquoteQ(state = initialCURDresults, action) {
       };
     }
 
-    case C.IVA_ALIQUOTE_Q_GET_FAIL: {
+    case C.IMPRESE_DETTAGLI_GET_FAIL: {
       return {
         ...state,
         getError: payload,
@@ -21,10 +28,10 @@ export default function aliquoteQ(state = initialCURDresults, action) {
       };
     }
 
-    case C.IVA_ALIQUOTE_Q_GET_SUCCESS: {
+    case C.IMPRESE_DETTAGLI_GET_SUCCESS: {
       return {
         ...state,
-        results: [...payload],
+        data: payload,
         getError: false,
         getting: false,
       };

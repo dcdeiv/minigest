@@ -115,9 +115,7 @@ export default function regimeFiscale(state = initialCURDresults, action) {
     }
 
     default: {
-      return {
-        ...state,
-      };
+      return state;
     }
   }
 }

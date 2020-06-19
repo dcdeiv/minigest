@@ -3,4 +3,4 @@ import aliquote from "./aliquote";
 import aliquoteQ from "./aliquoteQ";
 
 // RootReducer
-export default combineReducers({ aliquote, aliquoteQ });
+export default combineReducers({ aliquote: aliquote, aliquoteQ: aliquoteQ });

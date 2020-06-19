@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Login() {
+export function Accedi(props) {
   const dispatch = useDispatch();
   const { auth } = useSelector((state) => state.utente);
   const classes = useStyles();

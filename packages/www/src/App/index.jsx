@@ -1,42 +1,72 @@
 import React from "react";
-import { Router, Switch, Route } from "react-router-dom";
-import { history } from "~/helpers";
+import { Switch, Route, useRouteMatch } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { action } from "~/store";
+import { LoadingApp, Layout, SplashError } from "~/Components";
 
 // App
-import { Dashboard } from "./Dashboard";
 import { NotFound } from "./NotFound";
-import { Accedi } from "./Auth";
+import { Dashboard } from "./Dashboard";
 import { IvaAliquote } from "./IvaAliquote";
 import { RegimeFiscale } from "./RegimeFiscale";
 import { Tur } from "./Tur";
 import { InteressiLegali } from "./InteressiLegali";
+import { Imprese } from "./Imprese";
 
 export default function App() {
   const dispatch = useDispatch();
-  const { id } = useSelector((state) => state.utente.auth);
+  let { id } = useSelector((state) => state.utente.auth);
+  let { getting, getError } = useSelector((state) => state.utente.utente);
+  let { path } = useRouteMatch();
 
+  // Scarica i dettagli dell'utente
   React.useEffect(() => {
     if (id) {
       dispatch(action.utente.get(id));
     }
   }, [id, dispatch]);
 
-  return (
-    <Router history={history}>
-      <Switch>
-        <Route exact path="/" component={Dashboard} />
-        <Route path="/tributi/iva/aliquote" component={IvaAliquote} />
+  if (getting) {
+    return <LoadingApp />;
+  } else {
+    if (getError || id === false) {
+      return (
+        <SplashError container={{ maxWidth: "xs" }}>{getError}</SplashError>
+      );
+    } else {
+      return (
+        <Layout>
+          <Switch>
+            <Route exact path={path} component={Dashboard} />
 
-        {/* FISCO */}
-        <Route path="/fisco/regime-fiscale" component={RegimeFiscale} />
-        <Route path="/fisco/interessi-legali" component={InteressiLegali} />
-        <Route path="/fisco/tasso-ufficiale-riferimento" component={Tur} />
+            {/* TRIBUTI */}
+            <Route
+              path={`${path}tributi/iva/aliquote`}
+              component={IvaAliquote}
+            />
 
-        <Route exact path="/accedi/" component={Accedi} />
-        <Route component={NotFound} />
-      </Switch>
-    </Router>
-  );
+            {/* FISCO */}
+            <Route
+              path={`${path}fisco/regime-fiscale`}
+              component={RegimeFiscale}
+            />
+            <Route
+              path={`${path}fisco/interessi-legali`}
+              component={InteressiLegali}
+            />
+            <Route
+              path={`${path}fisco/tasso-ufficiale-riferimento`}
+              component={Tur}
+            />
+
+            {/* IMPRESE */}
+            <Route path={`${path}imprese`} component={Imprese} />
+
+            {/* NOTFOUND */}
+            <Route path={path} component={NotFound} />
+          </Switch>
+        </Layout>
+      );
+    }
+  }
 }

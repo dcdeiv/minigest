@@ -1,6 +1,11 @@
 import React from "react";
 import { isEmpty } from "lodash";
-import { Percentuale, LoadingSpinner, ListaVuota } from "~/Components";
+import {
+  Percentuale,
+  LoadingSpinner,
+  ListaVuota,
+  TableCellIcon,
+} from "~/Components";
 import { makeStyles } from "@material-ui/styles";
 import {
   TableContainer,
@@ -19,10 +24,6 @@ import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 import { orange, red } from "@material-ui/core/colors";
 
 const useStyles = makeStyles((theme) => ({
-  tableCellIcon: {
-    width: 48,
-    textAlign: "center",
-  },
   editButton: {
     color: orange[500],
     "&:hover": {
@@ -61,12 +62,12 @@ export function Lista(props) {
             <TableRow>
               <TableCell>Data</TableCell>
               <TableCell align="right">Percentuale</TableCell>
-              <TableCell className={classes.tableCellIcon}>
+              <TableCellIcon>
                 <EditIcon />
-              </TableCell>
-              <TableCell className={classes.tableCellIcon}>
+              </TableCellIcon>
+              <TableCellIcon>
                 <DeleteForeverIcon />
-              </TableCell>
+              </TableCellIcon>
             </TableRow>
           </TableHead>
 
@@ -77,22 +78,22 @@ export function Lista(props) {
                 <TableCell align="right">
                   <Percentuale value={parseFloat(tasso.percentuale)} />
                 </TableCell>
-                <TableCell className={classes.tableCellIcon}>
+                <TableCellIcon>
                   <IconButton
                     className={classes.editButton}
                     onClick={() => onEdit(tasso)}
                   >
                     <EditIcon color="inherit" />
                   </IconButton>
-                </TableCell>
-                <TableCell>
+                </TableCellIcon>
+                <TableCellIcon>
                   <IconButton
                     className={classes.deleteButton}
                     onClick={() => onDelete(tasso.id)}
                   >
                     <DeleteForeverIcon color="inherit" />
                   </IconButton>
-                </TableCell>
+                </TableCellIcon>
               </TableRow>
             ))}
           </TableBody>

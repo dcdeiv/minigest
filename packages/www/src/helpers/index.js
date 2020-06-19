@@ -1,4 +1,5 @@
+import api from "./api";
 import history from "./history";
-import api from "./axios";
+import theme from "./theme";
 
-export { api, history };
+export { api, history, theme };
