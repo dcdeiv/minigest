@@ -7,5 +7,5 @@ APPS = [
     "minigest.pdf",
     "minigest.rest",
     "minigest.tributi",
-    "minigest.webclient",
+    "minigest.www",
 ]

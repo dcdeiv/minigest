@@ -1,6 +1,6 @@
 from django.urls import path
 
-from pdf import views as v
+from minigest.pdf import views as v
 
 """ registro dei corrispettivi """
 corrispettivi = [

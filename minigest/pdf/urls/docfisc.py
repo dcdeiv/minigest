@@ -1,6 +1,6 @@
 from django.urls import include, path
 
-from pdf import views as v
+from minigest.pdf import views as v
 
 vendita = [
     path(

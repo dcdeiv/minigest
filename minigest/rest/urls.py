@@ -2,7 +2,7 @@ from django.urls import include, path
 
 from rest_framework_nested import routers
 
-from rest import viewsets as vs
+from minigest.rest import viewsets as vs
 
 """ DefaultRouter """
 router = routers.DefaultRouter()
