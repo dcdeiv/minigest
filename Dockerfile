@@ -23,6 +23,7 @@ RUN pip install -r requirements.txt
 # Copia minigest
 COPY minigest ./minigest
 COPY public ./public
+COPY webapp ./webapp
 COPY manage.py ./manage.py
 
 # Cancella la cache python copiata dal repo
