@@ -17,7 +17,7 @@ classifier = [
 ]
 
 [tool.poetry.scripts]
-collectclient = "webclient.collectclient:run"
+collectclient = "collectclient:run"
 
 [tool.black]
 line-length = 88
@@ -40,6 +40,9 @@ tag_format = "$major.$minor.$patch$prerelease"
 bump_message = "docs:(release) $current_version → $new_version"
 version_files = [
     "pyproject.toml:version",
+    "docs/conf.py:release",
+    "lerna.json:version",
+    "packages/www/package.json:version"
 ]
 
 [tool.poetry.dependencies]
