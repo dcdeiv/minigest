@@ -1,0 +1,67 @@
+[
+  {
+    "model": "tributi.ivaaliquota",
+    "pk": 1,
+    "fields": { "data": "1973-01-01", "descrizione": "E", "aliquota": "0.00" }
+  },
+  {
+    "model": "tributi.ivaaliquota",
+    "pk": 2,
+    "fields": { "data": "1973-01-01", "descrizione": "M", "aliquota": "4.00" }
+  },
+  {
+    "model": "tributi.ivaaliquota",
+    "pk": 3,
+    "fields": { "data": "1973-01-01", "descrizione": "R", "aliquota": "10.00" }
+  },
+  {
+    "model": "tributi.ivaaliquota",
+    "pk": 4,
+    "fields": { "data": "1973-01-01", "descrizione": "O", "aliquota": "12.00" }
+  },
+  {
+    "model": "tributi.ivaaliquota",
+    "pk": 5,
+    "fields": { "data": "1977-02-08", "descrizione": "O", "aliquota": "14.00" }
+  },
+  {
+    "model": "tributi.ivaaliquota",
+    "pk": 6,
+    "fields": { "data": "1980-07-03", "descrizione": "O", "aliquota": "15.00" }
+  },
+  {
+    "model": "tributi.ivaaliquota",
+    "pk": 7,
+    "fields": { "data": "1980-11-01", "descrizione": "O", "aliquota": "14.00" }
+  },
+  {
+    "model": "tributi.ivaaliquota",
+    "pk": 8,
+    "fields": { "data": "1981-01-01", "descrizione": "O", "aliquota": "15.00" }
+  },
+  {
+    "model": "tributi.ivaaliquota",
+    "pk": 9,
+    "fields": { "data": "1982-08-05", "descrizione": "O", "aliquota": "18.00" }
+  },
+  {
+    "model": "tributi.ivaaliquota",
+    "pk": 10,
+    "fields": { "data": "1988-08-01", "descrizione": "O", "aliquota": "19.00" }
+  },
+  {
+    "model": "tributi.ivaaliquota",
+    "pk": 11,
+    "fields": { "data": "1997-10-01", "descrizione": "O", "aliquota": "20.00" }
+  },
+  {
+    "model": "tributi.ivaaliquota",
+    "pk": 12,
+    "fields": { "data": "2011-09-17", "descrizione": "O", "aliquota": "21.00" }
+  },
+  {
+    "model": "tributi.ivaaliquota",
+    "pk": 13,
+    "fields": { "data": "2013-10-01", "descrizione": "O", "aliquota": "22.00" }
+  }
+]

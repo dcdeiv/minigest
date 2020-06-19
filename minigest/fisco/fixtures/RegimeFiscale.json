@@ -1,0 +1,140 @@
+[
+  {
+    "model": "fisco.regimefiscale",
+    "pk": 1,
+    "fields": { "codice": "RF01", "descrizione": "ordinario" }
+  },
+  {
+    "model": "fisco.regimefiscale",
+    "pk": 2,
+    "fields": {
+      "codice": "RF02",
+      "descrizione": "contribuenti minimi (art.1, c.96-117, L. 244/07)"
+    }
+  },
+  {
+    "model": "fisco.regimefiscale",
+    "pk": 4,
+    "fields": {
+      "codice": "RF04",
+      "descrizione": "agricoltura e attivit\u00e0 connesse e pesca (artt.34 e 34-bis, DPR 633/72)"
+    }
+  },
+  {
+    "model": "fisco.regimefiscale",
+    "pk": 5,
+    "fields": {
+      "codice": "RF05",
+      "descrizione": "vendita sali e tabacchi (art.74, c.1, DPR. 633/72)"
+    }
+  },
+  {
+    "model": "fisco.regimefiscale",
+    "pk": 6,
+    "fields": {
+      "codice": "RF06",
+      "descrizione": "commercio fiammiferi (art.74, c.1, DPR  633/72)"
+    }
+  },
+  {
+    "model": "fisco.regimefiscale",
+    "pk": 7,
+    "fields": {
+      "codice": "RF07",
+      "descrizione": "editoria (art.74, c.1, DPR  633/72)"
+    }
+  },
+  {
+    "model": "fisco.regimefiscale",
+    "pk": 8,
+    "fields": {
+      "codice": "RF08",
+      "descrizione": "gestione servizi telefonia pubblica (art.74, c.1, DPR 633/72)"
+    }
+  },
+  {
+    "model": "fisco.regimefiscale",
+    "pk": 9,
+    "fields": {
+      "codice": "RF09",
+      "descrizione": "rivendita documenti di trasporto pubblico e di sosta (art.74, c.1, DPR  633/72)"
+    }
+  },
+  {
+    "model": "fisco.regimefiscale",
+    "pk": 10,
+    "fields": {
+      "codice": "RF10",
+      "descrizione": "intrattenimenti, giochi e altre attivit\u00e0 di cui alla tariffa allegata al DPR 640/72 (art.74, c.6, DPR 633/72)"
+    }
+  },
+  {
+    "model": "fisco.regimefiscale",
+    "pk": 11,
+    "fields": {
+      "codice": "RF11",
+      "descrizione": "agenzie viaggi e turismo (art.74-ter, DPR 633/72)"
+    }
+  },
+  {
+    "model": "fisco.regimefiscale",
+    "pk": 12,
+    "fields": {
+      "codice": "RF12",
+      "descrizione": "agriturismo (art.5, c.2, L. 413/91)"
+    }
+  },
+  {
+    "model": "fisco.regimefiscale",
+    "pk": 13,
+    "fields": {
+      "codice": "RF13",
+      "descrizione": "vendite a domicilio (art.25-bis, c.6, DPR  600/73)"
+    }
+  },
+  {
+    "model": "fisco.regimefiscale",
+    "pk": 14,
+    "fields": {
+      "codice": "RF14",
+      "descrizione": "Rivendita beni usati, oggetti d\u2019arte, d\u2019antiquariato o da collezione (art.36, DL 41/95)"
+    }
+  },
+  {
+    "model": "fisco.regimefiscale",
+    "pk": 15,
+    "fields": {
+      "codice": "RF15",
+      "descrizione": "agenzie di vendite all\u2019asta di oggetti d\u2019arte, antiquariato o da collezione (art.40-bis, DL 41/95)"
+    }
+  },
+  {
+    "model": "fisco.regimefiscale",
+    "pk": 16,
+    "fields": {
+      "codice": "RF16",
+      "descrizione": "IVA per cassa P.A. (art.6, c.5, DPR 633/72)"
+    }
+  },
+  {
+    "model": "fisco.regimefiscale",
+    "pk": 17,
+    "fields": {
+      "codice": "RF17",
+      "descrizione": "IVA per cassa (art. 32-bis, DL 83/2012)"
+    }
+  },
+  {
+    "model": "fisco.regimefiscale",
+    "pk": 18,
+    "fields": { "codice": "RF18", "descrizione": "altro" }
+  },
+  {
+    "model": "fisco.regimefiscale",
+    "pk": 19,
+    "fields": {
+      "codice": "RF19",
+      "descrizione": "regime forfettario (art.1, c.54-89, L. 190/2014)"
+    }
+  }
+]

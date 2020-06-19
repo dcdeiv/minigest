@@ -1,0 +1,17 @@
+[
+  {
+    "model": "docfisc.condizionepagamento",
+    "pk": 1,
+    "fields": { "codice": "TP01", "descrizione": "pagamento a rate" }
+  },
+  {
+    "model": "docfisc.condizionepagamento",
+    "pk": 2,
+    "fields": { "codice": "TP02", "descrizione": "pagamento completo" }
+  },
+  {
+    "model": "docfisc.condizionepagamento",
+    "pk": 3,
+    "fields": { "codice": "TP03", "descrizione": "anticipo" }
+  }
+]
