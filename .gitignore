@@ -57,9 +57,7 @@ env.bak/
 venv.bak/
 
 # Public
-public/
-!public/.gitkeep
-!packages/**/public/
+public/static/
 
 # node dependencies
 node_modules/
