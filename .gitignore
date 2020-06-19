@@ -59,7 +59,6 @@ venv.bak/
 # Public
 public/
 !public/.gitkeep
-!webclient/public
 !packages/**/public/
 
 # node dependencies
