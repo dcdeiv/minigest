@@ -22,10 +22,7 @@ RUN pip install -r requirements.txt
 
 # Copia minigest
 COPY minigest ./minigest
-COPY pdf ./pdf
-COPY rest ./rest
 COPY public ./public
-COPY webclient ./webclient
 COPY manage.py ./manage.py
 
 # Cancella la cache python copiata dal repo
