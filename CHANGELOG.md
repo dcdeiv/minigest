@@ -1,3 +1,28 @@
+## 0.14.1 (2020-06-19)
+
+### Fix
+
+- **minigest**: aggiusta gli errori
+- migliora gli scripts
+- **docker**: aggiorna docker
+- **docker**: modifica la configurazione
+- **git**: rimuove una regola non necessaria
+- **minigest**: aggiusta gli import
+- **git**: non ignora la cartella packages/www/public
+
+### Refactor
+
+- **www**: recupera dal branch dev
+- **docker**: recupera la configurazione docker
+- **recupera-i-settings**: n
+- **www**: recupera yarn.lock
+- **www**: sposta il client nella cartella packages
+- riaggiunge il client www
+- **minigest**: recupera il resto delle applicazioni
+- aggiunge manage.py
+- **webapp**: reinizializza il progetto django
+- inizializza il code refactor
+
 ## 0.14.0 (2020-06-10)
 
 ### Fix
