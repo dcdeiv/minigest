@@ -1,29 +1,28 @@
-# DA AGGIUSTARE
-
-
 import json
 import os
 import re
 import shutil
 
-CLIENT_DIR = os.path.dirname(os.path.abspath(__file__))
-ROOT_DIR = os.path.dirname(CLIENT_DIR)
+ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 PUBLIC_STATIC_DIR = os.path.join(ROOT_DIR, "public/static")
-
-TEMPLATE_DIR = os.path.join(CLIENT_DIR, "templates/webclient")
-INDEX_OLD = os.path.join(TEMPLATE_DIR, "index.html")
-
-STATIC_DIR = os.path.join(CLIENT_DIR, "static/webclient")
-
+CLIENT_DIR = os.path.join(ROOT_DIR, "packages/www")
+APP_DIR = os.path.join(ROOT_DIR, "minigest/www")
 BUILD_DIR = os.path.join(CLIENT_DIR, "build")
+TEMPLATES_DIR = os.path.join(APP_DIR, "templates/www")
+STATIC_DIR = os.path.join(APP_DIR, "static/www")
+
+INDEX_OLD = os.path.join(TEMPLATES_DIR, "index.html")
 INDEX_NEW = os.path.join(BUILD_DIR, "index.html")
 ASSET_MANIFEST = os.path.join(BUILD_DIR, "asset-manifest.json")
 
 
 def index():
-    if os.path.exists(INDEX_OLD):
-        # Elimina il vecchio index.html
-        os.remove(INDEX_OLD)
+    if os.path.exists(TEMPLATES_DIR):
+        if os.path.exists(INDEX_OLD):
+            # Elimina il vecchio index.html
+            os.remove(INDEX_OLD)
+    else:
+        os.makedirs(TEMPLATES_DIR)
 
     shutil.move(INDEX_NEW, INDEX_OLD)
     print("- index.html copiato!")
@@ -63,7 +62,7 @@ def service_worker():
     W_SERVICE = open(SERVICE_OUT, "wt")
 
     for line in R_SERVICE:
-        W_SERVICE.write(line.replace('"/static/webclient/index.html"', '"/index.html"'))
+        W_SERVICE.write(line.replace('"/static/www/index.html"', '"/index.html"'))
 
     print("- service-worker.js modificato!")
 
@@ -104,9 +103,7 @@ def precache_manifest():
         W_MANIFEST = open(MANIFEST_OUT, "wt")
 
         for line in R_MANIFEST:
-            W_MANIFEST.write(
-                line.replace('"/static/webclient/index.html"', '"/index.html"')
-            )
+            W_MANIFEST.write(line.replace('"/static/www/index.html"', '"/index.html"'))
 
         print(f"- {MANIFEST_NAME} modificato!")
 
@@ -124,7 +121,7 @@ def collectstatics():
         shutil.rmtree(STATIC_DIR)
 
     # Copia dei file
-    os.rename(BUILD_DIR, STATIC_DIR)
+    shutil.move(BUILD_DIR, STATIC_DIR)
 
     print("- copia dei file terminata!")
     print("")
@@ -144,7 +141,7 @@ def run():
     if not os.path.isdir(BUILD_DIR):
         messaggio = """
         Client non costruito!\n
-        Per costruirlo esegui il comando yarn run build:webclient
+        Per costruirlo esegui il comando yarn run build:www
         """
         print(messaggio)
     else:
@@ -152,8 +149,8 @@ def run():
         if not os.listdir(BUILD_DIR):
             messaggio = """
             Client non costruito!\n
-            Sembra che la cartella webclient/build sia vuota!
-            Sei sicuro di aver dato il comando yarn run build:webclient
+            Sembra che la cartella www/build sia vuota!
+            Sei sicuro di aver dato il comando yarn run build:www
             e che questo abbia finito?
             """
             print(messaggio)
@@ -170,7 +167,7 @@ def run():
             # Modifica del file service-worker.js
             service_worker()
 
-            # Sposta e rinomina la cartella build in ./static/webclient
+            # Sposta e rinomina la cartella build in ./static/www
             collectstatics()
 
             # Elimina la vecchia cartella STATIC

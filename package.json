@@ -1,7 +1,18 @@
 {
-  "name": "root",
-  "private": true,
-  "devDependencies": {
-    "lerna": "^3.22.1"
-  }
+    "name": "root",
+    "private": true,
+    "workspaces": [
+        "packages/**"
+    ],
+    "scripts": {
+        "runserver": "poetry run python manage.py runserver",
+        "bump": "cz bump --changelog",
+        "export": "poetry export -f requirements.txt > requirements.txt",
+        "makemigrations": "poetry run python manage.py makemigrations",
+        "build:www": "yarn workspace www build",
+        "collectclient": "poetry run collectclient"
+    },
+    "devDependencies": {
+        "lerna": "^3.22.1"
+    }
 }
