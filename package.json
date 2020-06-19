@@ -9,8 +9,17 @@
         "bump": "cz bump --changelog",
         "export": "poetry export -f requirements.txt > requirements.txt",
         "makemigrations": "poetry run python manage.py makemigrations",
-        "build:www": "yarn workspace www build",
-        "collectclient": "poetry run collectclient"
+        "build:webclient": "yarn workspace www build",
+        "collectclient": "poetry run collectclient",
+        "collectstatic": "poetry run python manage.py collectstatic --no-input",
+        "build:step-1": "yarn run export && yarn run makemigrations",
+        "build:step-2": "yarn run build:webclient && yarn run collectclient",
+        "build": "yarn run build:step-1 && yarn run build:step-2",
+        "build:push": "yarn build && git add -A && git commit -m 'build: build automatica' && git push",
+        "build:dev": "yarn run build && yarn run collectstatic",
+        "docker:build": "sudo docker build -t dcdeiv/minigest:latest .",
+        "docker:compose": "sudo docker-compose up -d",
+        "docker:compose:build": "sudo docker-compose up -d --build"
     },
     "devDependencies": {
         "lerna": "^3.22.1"
