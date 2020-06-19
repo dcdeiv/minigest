@@ -7,6 +7,8 @@ from django.contrib.auth.views import logout_then_login
 app_name = "www"
 urlpatterns = [
     path("accedi/", views.LoginView.as_view(), name="accedi"),
+    path("accedi", views.LoginView.as_view(), name="accedi-fallback"),
     path("esci/", logout_then_login, name="esci"),
-    re_path(r"", views.CatchAllView.as_view(), name="catchall"),
+    path("esci", logout_then_login, name="esci-fallback"),
+    re_path(r"", views.AppView.as_view(), name="app"),
 ]

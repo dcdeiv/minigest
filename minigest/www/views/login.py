@@ -29,7 +29,13 @@ class LoginView(View):
                 "message": "Il tuo account non può accedere a questa pagina!",
             }
 
-        return render(request, "www/index.html", context={"auth": json.dumps(auth),},)
+        context = {
+            "id": json.dumps(auth["id"]),
+            "error": json.dumps(auth["error"]),
+            "message": auth["message"],
+        }
+
+        return render(request, "www/index.html", context=context,)
 
     def post(self, request, *args, **kwargs):
         data = json.loads(request.body)
@@ -52,5 +58,7 @@ class LoginView(View):
                 "message": None,
             }
             status_code = 200
+
+        print()
 
         return JsonResponse(auth, status=status_code)

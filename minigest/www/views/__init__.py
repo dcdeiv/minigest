@@ -1,9 +1,7 @@
-from .catchall import catchall, catchall_dev, CatchAllView
+from .app import AppView
 from .login import LoginView
 
 __all__ = [
-    "catchall",
-    "catchall_dev",
-    "CatchAllView",
+    "AppView",
     "LoginView",
 ]
