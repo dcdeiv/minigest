@@ -1,11 +1,3 @@
-## 0.15.0 (2020-06-19)
-
-### Refactor
-
-- aggiunge manage.py
-- **webapp**: reinizializza il progetto django
-- inizializza il code refactor
-
 ## 0.14.0 (2020-06-10)
 
 ### Fix
