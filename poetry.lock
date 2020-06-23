@@ -216,14 +216,6 @@ wcwidth = "*"
 
 [[package]]
 category = "dev"
-description = "Pure Python cross-platform pyclean. Clean up your Python bytecode."
-name = "pyclean"
-optional = false
-python-versions = "*"
-version = "1.0.0"
-
-[[package]]
-category = "dev"
 description = "Python style guide checker"
 name = "pycodestyle"
 optional = false
@@ -333,7 +325,7 @@ python-versions = "*"
 version = "0.2.5"
 
 [metadata]
-content-hash = "6bbcf89ed29ff11c00468fe5ce9bb673fb1ffabda65e83dd86d471af51117347"
+content-hash = "7bf9ff41f00689132d8ea9d8d653f1ebbd6aeeda76447f8e92bb9944492f74d2"
 python-versions = "^3.8"
 
 [metadata.files]
@@ -439,10 +431,6 @@ pathspec = [
 prompt-toolkit = [
     {file = "prompt_toolkit-3.0.5-py3-none-any.whl", hash = "sha256:df7e9e63aea609b1da3a65641ceaf5bc7d05e0a04de5bd45d05dbeffbabf9e04"},
     {file = "prompt_toolkit-3.0.5.tar.gz", hash = "sha256:563d1a4140b63ff9dd587bda9557cffb2fe73650205ab6f4383092fb882e7dc8"},
-]
-pyclean = [
-    {file = "pyclean-1.0.0-py2-none-any.whl", hash = "sha256:2f20aeaa1713d26d73032f45328dd077bbdb0e00bd12ee8aa1b8cfb123c56c6b"},
-    {file = "pyclean-1.0.0.tar.gz", hash = "sha256:3a46276297f6971a3e1c67333df2b59f251761dec36dba7c0bda6bc9e6cad8c5"},
 ]
 pycodestyle = [
     {file = "pycodestyle-2.6.0-py2.py3-none-any.whl", hash = "sha256:2295e7b2f6b5bd100585ebcb1f616591b652db8a741695b3d8f5d28bdc934367"},
