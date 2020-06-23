@@ -1,7 +1,18 @@
-## Unreleased
+## 0.16.0 (2020-06-24)
+
+### Fix
+
+- **python**: elimina la cache
+
+### Refactor
+
+- **minigest**: ricopia tutti i file
+- **node**: ignora node_modules
 
 ### Feat
 
+- aggiunge lerna e i client
+- **webapp**: reinizializza il progetto django
 - **minigest**: inizializza l'applicazione
 - elimina tutto
 
