@@ -1,0 +1,12 @@
+{
+  "name": "root",
+  "private": true,
+  "license": "MIT",
+  "workspaces": [
+    "packages/**"
+  ],
+  "devDependencies": {
+    "lerna": "^3.22.1",
+    "prettier": "2.0.5"
+  }
+}

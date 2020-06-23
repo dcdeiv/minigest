@@ -21,7 +21,7 @@ name = "cz_conventional_commits"
 version = "0.15.1"
 tag_format = "$major.$minor.$patch$prerelease"
 bump_message = "docs:(release) $current_version → $new_version"
-version_files = ["pyproject.toml:version"]
+version_files = ["pyproject.toml:version", "lerna.json:version"]
 
 [tool.black]
 line-length = 88
