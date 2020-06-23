@@ -1,0 +1,74 @@
+[tool.poetry]
+name = "minigest"
+version = "0.15.1"
+description = "Un mini gestionale pensato per aiutare a mantenere i conti di un'azienda"
+authors = ["Davide Di Criscito <davide.dicriscito@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/dcdeiv/minigest"
+keywords = ["ERP", "django", "gestionale"]
+classifier = [
+    "Environment :: Web Environment",
+    "Framework :: Django",
+    "Framework :: Django :: 3.0",
+    "Intended Audience :: Developers",
+    "Natural Language :: Italian",
+    "Topic :: Office/Business"
+]
+
+[tool.commitizen]
+name = "cz_conventional_commits"
+version = "0.15.1"
+tag_format = "$major.$minor.$patch$prerelease"
+bump_message = "docs:(release) $current_version → $new_version"
+version_files = [
+    "pyproject.toml:version",
+    "docs/conf.py:release",
+    "lerna.json:version",
+    "packages/www/package.json:version"
+]
+
+[tool.black]
+line-length = 88
+exclude = '''
+/(
+    \.eggs
+  | \.git
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | dist
+  | minigest/migrations
+)/
+'''
+
+[tool.isort]
+virtual_env = ".venv"
+line-length = 88
+multi-line-output = 3
+include-trailing-comma = true
+force-grid-wrap = 0
+use-parentheses = true
+known_django = "django"
+known_third_party = "localflavor,polymorphic,pydash"
+known-first-party = "minigest"
+forced_separate = "django.core,django.contrib,django.db,django.utils"
+sections = "FUTURE,STDLIB,DJANGO,THIRDPARTY,FIRSTPARTY,LOCALFOLDER"
+no_lines_before = "LOCALFOLDER"
+reverse_relative = true
+order_by_type = false
+force_sort_within_sections = true
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+[tool.poetry.dev-dependencies]
+commitizen = "^1.23.0"
+black = "^19.10b0"
+flake8 = "^3.8.3"
+flake8-bugbear = "^20.1.4"
+isort = { extras = ["pyproject"], version = "^4.3.21" }
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
