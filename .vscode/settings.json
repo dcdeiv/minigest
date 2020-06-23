@@ -1,5 +1,20 @@
 {
   "editor.renderWhitespace": "boundary",
+  "editor.formatOnSave": true,
   "cornflakes.linter.executablePath": ".venv/bin/flake8",
-  "python.sortImports.path": ".venv/bin/isort"
+  "python.sortImports.path": ".venv/bin/isort",
+  "python.formatting.blackPath": ".venv/bin/black",
+  "python.formatting.provider": "black",
+  "[python]": {
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  },
+  "python.linting.ignorePatterns": [
+    ".vscode/*.py",
+    "**/site-packages/**/*.py",
+    ".venv/**/*.py",
+    ".pytest_cache/**/*.py",
+    "minigest/**/migrations/*.py"
+  ]
 }
