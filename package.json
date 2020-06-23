@@ -9,6 +9,7 @@
     "commit": "cz c",
     "changelog": "cz changelog",
     "release": "cz bump --changelog && git push",
+    "pyclean": "poetry run pyclean",
     "build": "yarn lerna exec yarn build"
   },
   "devDependencies": {
