@@ -1,4 +1,0 @@
-[flake8]
-exclude = */migrations/*,__pycache__
-ignore = E231, W503
-max-line-length = 88
