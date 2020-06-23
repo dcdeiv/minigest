@@ -1,3 +1,5 @@
 {
-    "editor.renderWhitespace": "boundary"
+  "editor.renderWhitespace": "boundary",
+  "cornflakes.linter.executablePath": ".venv/bin/flake8",
+  "python.sortImports.path": ".venv/bin/isort"
 }

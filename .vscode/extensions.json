@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "visualstudioexptteam.vscodeintellicode",
+    "editorconfig.editorconfig",
+    "bungcip.better-toml",
+    "bodil.prettier-toml",
+    "ms-python.python",
+    "kevinglasson.cornflakes-linter",
+  ]
+}
