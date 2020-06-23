@@ -1,0 +1,91 @@
+{% extends "pdf/master.html" %}
+{% load static %}
+{% load reparto %}
+
+{% block page_title %}Corrispettivi {{ periodo }}{% endblock page_title %}
+
+{% block stylesheets %}
+  <link rel="stylesheet" href="{% static 'pdf/docfisc.css' %}">
+  <link rel="stylesheet" href="{% static 'pdf/table-striped.css' %}">
+{% endblock stylesheets %}
+
+{% block style_media_print %}
+.header {
+  position: running(header);
+  text-align: center;
+  font-size: 8pt;
+}
+
+@page {
+  size: A4 portrait;
+  margin-right: 0.5cm;
+  margin-left: 0.5cm;
+
+  @top-center {
+    content: element(header);
+  }
+  @bottom-left {
+    content: "Corrispettivi {{ periodo }}";
+    font-size: 8pt;
+  }
+  @bottom-right {
+    content: counter(page);
+    font-size: 8pt;
+  }
+}
+{% endblock style_media_print %}
+
+{% block page_content %}
+<div class="header">
+  <b style="font-size:10pt;">{{ negozio.impresa }}</b><br />
+  <span>{{ negozio.impresa.sede }}</span> &middot; <span>{{ negozio.impresa.id_fiscale }}</span>
+</div>
+
+<div id="intestazione">
+  <p class="overline">{{ periodo }}</p>
+  <h1>Registro dei Corrispettivi</h1>
+  <p class="sottotitolo">Negozio: {{ negozio.insegna }} - {{ negozio.sede }}</p>
+</div>
+
+<div id="main">
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align:left; width:50px;">Data</th>
+        <th style="text-align:right">Totale</th>
+        {% for iva in corrispettivi.iva_aliquote reversed %}
+        <th style="text-align:right">
+          {{ iva }} %
+        </th>
+        {% endfor %}
+      </tr>
+    </thead>
+
+    <tfoot>
+      <tr>
+        <th colspan="2" style="text-align:right">{{ riepilogo.totale }} €</th>
+        {% for iva in corrispettivi.iva_aliquote reversed %}
+        <th style="text-align:right">
+          {{ reparti|reparto:iva|dettagli_reparto:"totale" }} €
+        </th>
+        {% endfor %}
+      </tr>
+    </tfoot>
+
+    <tbody>
+      {% for c in corrispettivi.corrispettivi %}
+      <tr>
+        <td>{{ c.data|slice:"5:" }}</td>
+        <td style="text-align:right">{{ c.totale }} €</td>
+        {% for iva in corrispettivi.iva_aliquote reversed %}
+        <td style="text-align:right">
+          {{ c.reparti|reparto:iva|dettagli_reparto:"totale" }} €
+        </td>
+        {% endfor %}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock page_content %}
+
