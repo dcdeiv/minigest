@@ -6,5 +6,9 @@
     "bodil.prettier-toml",
     "ms-python.python",
     "kevinglasson.cornflakes-linter",
+    "esbenp.prettier-vscode",
+    "mgmcdermott.vscode-language-babel",
+    "marquesmps.dockerfile-validator",
+    "ms-azuretools.vscode-docker"
   ]
 }
