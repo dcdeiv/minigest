@@ -7,6 +7,7 @@
   ],
   "scripts": {
     "commit": "poetry run cz c",
+    "pre-commit": "poetry run pre-commit run",
     "changelog": "poetry run cz changelog",
     "release": " poetry run cz bump --changelog && git push",
     "build:packages": "yarn lerna exec yarn build",
