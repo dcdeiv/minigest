@@ -12,8 +12,3 @@ repos:
     rev: stable
     hooks:
       - id: black
-  - repo: https://github.com/prettier/prettier
-    rev: "2.0.5"
-    hooks:
-      - id: prettier
-        files: ^packages/
