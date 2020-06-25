@@ -1,26 +1,35 @@
-# in ordine di apparizione
+# git
 .git
 .github
-.venv
+.gitignore
+
+# Editor
 .vscode
-dist
-*egg*
+.editorconfig
+
+# Node
 **/node_modules
 packages
+lerna.json
+package.json
+yarn.lock
+
+# Public
 public/static
 public/media
 !public/.gitkeep
 
-.editorconfig
-.gitignore
-CHANGELOG.md
+# Docker
 docker-compose.yml
-lerna.json
-package.json
+
+# Python
+dist
+.venv
+*egg*
+**/__pycache__
 poetry.lock
 pyproject.toml
 setup.cfg
-yarn.lock
 
 # misc
 .DS_Store
