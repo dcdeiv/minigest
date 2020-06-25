@@ -10,7 +10,8 @@ RUN apk --update --upgrade \
     add gcc musl-dev \
     jpeg-dev zlib-dev libffi-dev \
     cairo-dev pango-dev gdk-pixbuf-dev \
-    postgresql-dev gcc python3-dev musl-dev
+    postgresql-dev gcc python3-dev musl-dev \
+    font-noto
 
 # MINIGET
 WORKDIR ${ROOT}

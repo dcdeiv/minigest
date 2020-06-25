@@ -13,9 +13,11 @@ services:
         command: python manage.py runserver 0.0.0.0:8000
         volumes:
             - public:/var/www/minigest/public
+        environment:
+            - DB_DEFAULT_HOST=db
 
     db:
-        image: postgres:12.0-alpine
+        image: postgres:12-alpine
         volumes:
             - postgres_data:/var/lib/postgresql/data/
         environment:
