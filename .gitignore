@@ -1,6 +1,8 @@
 # Python
 .venv/
 **/__pycache__
+*egg*
+dist/
 
 # Node
 **/node_modules
