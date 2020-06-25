@@ -16,6 +16,9 @@ classifier = [
     "Topic :: Office/Business"
 ]
 
+[tool.poetry.scripts]
+collectclient = "collectclient:run"
+
 [tool.commitizen]
 name = "cz_conventional_commits"
 version = "0.15.1"
