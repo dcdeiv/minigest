@@ -3,28 +3,28 @@ version: "3.8"
 # Questo file non è adatto all'uso per un ambiente di produzione
 
 services:
-    app:
-        build: .
-        image: dcdeiv/minigest
-        ports:
-            - 8000:8000
-        depends_on:
-            - db
-        command: python manage.py runserver 0.0.0.0:8000
-        volumes:
-            - public:/var/www/minigest/public
-        environment:
-            - DB_DEFAULT_HOST=db
+  app:
+    build: .
+    image: dcdeiv/minigest
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - public:/var/www/minigest/public
+    environment:
+      - DB_DEFAULT_HOST=db
 
-    db:
-        image: postgres:12-alpine
-        volumes:
-            - postgres_data:/var/lib/postgresql/data/
-        environment:
-            - POSTGRES_USER=test
-            - POSTGRES_PASSWORD=test
-            - POSTGRES_DB=test
+  db:
+    image: postgres:12-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=test
+      - POSTGRES_PASSWORD=test
+      - POSTGRES_DB=test
 
 volumes:
-    public:
-    postgres_data:
+  public:
+  postgres_data:
