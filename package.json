@@ -6,9 +6,9 @@
     "packages/**"
   ],
   "scripts": {
-    "commit": "cz c",
-    "changelog": "cz changelog",
-    "release": "cz bump --changelog && git push",
+    "commit": "poetry run cz c",
+    "changelog": "poetry run cz changelog",
+    "release": " poetry run cz bump --changelog && git push",
     "build": "yarn lerna exec yarn build",
     "requirements": "poetry export -f requirements.txt > requirements.txt"
   },
