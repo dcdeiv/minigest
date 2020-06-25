@@ -4,6 +4,7 @@
     "editorconfig.editorconfig",
     "bungcip.better-toml",
     "bodil.prettier-toml",
+    "redhat.vscode-yaml",
     "ms-python.python",
     "kevinglasson.cornflakes-linter",
     "esbenp.prettier-vscode",
