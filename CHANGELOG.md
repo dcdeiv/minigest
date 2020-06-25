@@ -1,3 +1,10 @@
+## 0.16.0 (2020-06-25)
+
+### Feat
+
+- **minigest**: aggiorna il client
+- **minigest**: aggiunge la cartella public
+
 ## 0.16.0 (2020-06-24)
 
 ### Fix
