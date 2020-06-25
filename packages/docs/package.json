@@ -1,7 +1,8 @@
 {
-  "name": "ghpages",
+  "name": "docs",
   "version": "0.16.0",
   "private": true,
+  "homepage": "https://dcdeiv.github.io/minigest",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
