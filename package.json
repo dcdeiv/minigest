@@ -9,7 +9,8 @@
     "commit": "cz c",
     "changelog": "cz changelog",
     "release": "cz bump --changelog && git push",
-    "build": "yarn lerna exec yarn build"
+    "build": "yarn lerna exec yarn build",
+    "requirements": "poetry export -f requirements.txt > requirements.txt"
   },
   "devDependencies": {
     "lerna": "^3.22.1",
