@@ -1,0 +1,31 @@
+# in ordine di apparizione
+.git
+.github
+.venv
+.vscode
+dist
+*egg*
+**/node_modules
+packages
+public/static
+public/media
+!public/.gitkeep
+
+.editorconfig
+.gitignore
+CHANGELOG.md
+docker-compose.yml
+lerna.json
+package.json
+poetry.lock
+pyproject.toml
+setup.cfg
+yarn.lock
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.log*
