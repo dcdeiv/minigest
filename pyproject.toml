@@ -6,6 +6,7 @@ authors = ["Davide Di Criscito <davide.dicriscito@gmail.com>"]
 license = "MIT"
 readme = "README.md"
 repository = "https://github.com/dcdeiv/minigest"
+homepage = "https://dcdeiv.github.io/minigest"
 keywords = ["ERP", "django", "gestionale"]
 classifier = [
     "Environment :: Web Environment",
