@@ -2,15 +2,15 @@ import os
 
 from split_settings.tools import include
 
-DEBUG = True
-PRODUCTION = False
+DEBUG = os.environ.get("DEBUG", True)
+PRODUCTION = os.environ.get("PRODUCTION", False)
 
 # Progetto
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 PUBLIC_DIR = os.path.join(BASE_DIR, "public")
 
 SECRET_KEY = os.environ.get(
-    "MINIGEST_SECRET_KEY", "n1nt!$-+o!5za)btm!g#d&8w3k83x&x$b-3^nzrin6+^@5v206"
+    "SECRET_KEY", "n1nt!$-+o!5za)btm!g#d&8w3k83x&x$b-3^nzrin6+^@5v206"
 )
 
 # Include i componenti comuni

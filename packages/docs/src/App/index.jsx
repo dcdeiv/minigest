@@ -1,15 +1,20 @@
 import React from "react";
-import { Container, Box, Typography } from "@material-ui/core";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
+import { Layout } from "src/Components";
+
+// App
+import { Home } from "./Home";
+import { Installazione } from "./Installazione";
 
 export function App(props) {
   return (
-    <Box mt={4}>
-      <Container maxWidth="md">
-        <Typography component="h1" variant="h3" gutterBottom>
-          minigest
-        </Typography>
-        <Typography>in costruzione...</Typography>
-      </Container>
-    </Box>
+    <Router basename="/">
+      <Layout>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/installazione" component={Installazione} />
+        </Switch>
+      </Layout>
+    </Router>
   );
 }
