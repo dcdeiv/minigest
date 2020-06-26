@@ -120,7 +120,7 @@ export function Layout(props) {
             open
           >
             <Divider />
-            <AppDrawer />
+            <AppDrawer handleClose={() => true} />
           </Drawer>
         </Hidden>
       </nav>
