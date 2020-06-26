@@ -13,11 +13,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export function CodeBlock({ caption, children, ...rest }) {
+export function CodeBlock({ mb = 2, caption, children, ...rest }) {
   const classes = useStyles();
 
   return (
-    <Box mb={1} className={classes.root}>
+    <Box mb={mb} className={classes.root}>
       {caption && (
         <Box pl={2}>
           <Typography variant="overline">{caption}</Typography>
