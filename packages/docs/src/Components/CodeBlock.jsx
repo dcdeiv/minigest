@@ -5,7 +5,11 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => ({
   root: {
     fontFamily: "'Fira Mono', monospace",
-    fontSize: 12,
+  },
+  content: {
+    borderLeftStyle: "solid",
+    borderLeftWeight: theme.spacing(1),
+    borderLeftColor: theme.palette.secondary.main,
   },
 }));
 
@@ -14,8 +18,10 @@ export function CodeBlock(props) {
 
   return (
     <Box mb={1} className={classes.root}>
-      <Paper>
-        <Box p={1}>{props.children}</Box>
+      <Paper square>
+        <Box p={2} className={classes.content}>
+          {props.children}
+        </Box>
       </Paper>
     </Box>
   );
