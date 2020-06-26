@@ -1,5 +1,11 @@
 import React from "react";
-import { List, ListItem, ListItemIcon, ListItemText } from "@material-ui/core";
+import {
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  Divider,
+} from "@material-ui/core";
 import { ListItemLink } from "src/Components";
 
 // Icons
@@ -25,6 +31,9 @@ function AppDrawer(props) {
           </ListItemIcon>
           <ListItemText>Home</ListItemText>
         </ListItemLink>
+      </List>
+      <Divider />
+      <List>
         <ListItem
           button
           onClick={() => openLink("https://github.com/dcdeiv/minigest")}
@@ -53,6 +62,7 @@ function AppDrawer(props) {
           <ListItemText>Docker Image</ListItemText>
         </ListItem>
       </List>
+      <Divider />
     </React.Fragment>
   );
 }
