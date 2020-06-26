@@ -4,6 +4,7 @@ import { Layout } from "src/Components";
 
 // App
 import { Home } from "./Home";
+import { Installazione } from "./Installazione";
 
 export function App(props) {
   return (
@@ -11,6 +12,7 @@ export function App(props) {
       <Layout>
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route path="/installazione" component={Installazione} />
         </Switch>
       </Layout>
     </Router>
