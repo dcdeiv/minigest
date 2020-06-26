@@ -9,11 +9,14 @@ import {
   Button,
   Divider,
 } from "@material-ui/core";
+import { useHistory } from "react-router-dom";
 import { AppHeader } from "src/Components";
 import WidgetsIcon from "@material-ui/icons/Widgets";
 import DiscFullIcon from "@material-ui/icons/DiscFull";
 
 export function Home(props) {
+  const history = useHistory();
+
   return (
     <React.Fragment>
       <AppHeader>
@@ -46,7 +49,11 @@ export function Home(props) {
                 subheader="guida all'installazione di minigest attraverso PyPi"
               />
               <CardActions>
-                <Button variant="contained" color="primary">
+                <Button
+                  variant="contained"
+                  color="primary"
+                  onClick={() => history.push("/installazione/pypi")}
+                >
                   continua
                 </Button>
               </CardActions>
@@ -61,7 +68,11 @@ export function Home(props) {
                 subheader="guida all'installazione di minigest attraverso Docker"
               />
               <CardActions>
-                <Button variant="contained" color="primary">
+                <Button
+                  variant="contained"
+                  color="primary"
+                  onClick={() => history.push("/installazione/docker")}
+                >
                   continua
                 </Button>
               </CardActions>
