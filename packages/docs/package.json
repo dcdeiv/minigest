@@ -4,12 +4,11 @@
   "private": true,
   "homepage": "https://dcdeiv.github.io/minigest",
   "scripts": {
+    "commit": "poetry run cz c",
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "eject": "craco eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "eject": "craco eject"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -30,15 +29,11 @@
     "@craco/craco": "^5.6.4",
     "@material-ui/core": "^4.10.2",
     "@material-ui/icons": "^4.9.1",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1"
   },
   "devDependencies": {
-    "gh-pages": "^3.1.0",
     "prettier": "^2.0.5"
   }
 }
