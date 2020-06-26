@@ -2,11 +2,11 @@ import React from "react";
 import { Typography, Link } from "@material-ui/core";
 import { Section, HeaderSection } from "src/Components";
 
-export function Descrizione(props) {
+export function Introduzione(props) {
   return (
     <Section>
       <HeaderSection>
-        <Typography variant="h4">Descrizione</Typography>
+        <Typography variant="h4">Introduzione</Typography>
       </HeaderSection>
 
       <Typography gutterBottom>

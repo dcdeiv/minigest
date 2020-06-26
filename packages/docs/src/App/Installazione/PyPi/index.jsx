@@ -3,7 +3,7 @@ import { Typography, Divider, Box } from "@material-ui/core";
 import { AppHeader, CodeBlock } from "src/Components";
 
 // Sezioni
-import { Descrizione } from "./Descrizione";
+import { Introduzione } from "./Introduzione";
 import { Dipendenze } from "./Dipendenze";
 import { Applicazioni } from "./Applicazioni";
 import { Configurazione } from "./Configurazione";
@@ -24,7 +24,7 @@ export function PyPi(props) {
         </Box>
       </AppHeader>
 
-      <Descrizione id="installazione-pypi-descrizione" />
+      <Introduzione id="installazione-pypi-introduzione" />
 
       <Dipendenze id="installazione-pypi-dipendenze" />
 
