@@ -1,3 +1,9 @@
+## 0.16.3 (2020-06-26)
+
+### Fix
+
+- **webapp**: aggiunge le variabili ambientali DEBUD e PRODUCTION, rinomina MINIGEST_SECRET_KEY in SECRET_KEY
+
 ## 0.16.2 (2020-06-25)
 
 ## 0.16.1 (2020-06-25)
