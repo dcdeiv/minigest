@@ -23,11 +23,13 @@ export function Home(props) {
         <Typography variant="h1" gutterBottom>
           minigest
         </Typography>
-        <Typography>
+        <Typography gutterBottom>
           Minigest è un'applicazione scritta in python per il framework django,
-          completamente gratuita e distribuita con la licenza MIT. È rivolta a
-          tutte le piccole aziende che hanno bisogno di un programma che
-          permetta loro di visualizzare immediamente la loro situazione
+          completamente gratuita e distribuita con la licenza MIT.
+        </Typography>
+        <Typography>
+          È rivolta a tutte le piccole aziende che hanno bisogno di un programma
+          che permetta loro di visualizzare immediamente la loro situazione
           contabile, di tenere traccia dei pagamenti, degli acquisti, delle
           vendite e delle tasse e imposte da pagare.
         </Typography>
