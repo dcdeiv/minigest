@@ -6,7 +6,7 @@ module.exports = {
   reactScriptsVersion: "react-scripts",
   webpack: {
     alias: {
-      "~": resolvePath("src"),
+      src: resolvePath("src"),
     },
   },
 };
