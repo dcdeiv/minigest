@@ -11,13 +11,18 @@ const useStyles = makeStyles((theme) => ({
     borderLeftWeight: theme.spacing(1),
     borderLeftColor: theme.palette.secondary.main,
   },
+  typography: {
+    whiteSpace: "pre-wrap",
+    fontFamily: "inherit",
+    fontSize: 14,
+  },
 }));
 
-export function CodeBlock({ mb = 2, caption, children, ...rest }) {
+export function CodeBlock({ mt = 4, mb = 4, caption, children, ...rest }) {
   const classes = useStyles();
 
   return (
-    <Box mb={mb} className={classes.root}>
+    <Box mt={mt} mb={mb} className={classes.root} {...rest}>
       {caption && (
         <Box pl={2}>
           <Typography variant="overline">{caption}</Typography>
@@ -25,7 +30,7 @@ export function CodeBlock({ mb = 2, caption, children, ...rest }) {
       )}
       <Paper square>
         <Box p={2} className={classes.content}>
-          {children}
+          <Typography className={classes.typography}>{children}</Typography>
         </Box>
       </Paper>
     </Box>
