@@ -1,6 +1,6 @@
 import React from "react";
 import { Typography } from "@material-ui/core";
-import { AppHeader } from "src/Components";
+import { AppHeader, CodeBlock } from "src/Components";
 
 export function PyPi(props) {
   return (
@@ -9,6 +9,8 @@ export function PyPi(props) {
         <Typography variant="overline">Installazione</Typography>
         <Typography variant="h3">PyPi</Typography>
       </AppHeader>
+
+      <CodeBlock>pip install minigest</CodeBlock>
     </React.Fragment>
   );
 }
