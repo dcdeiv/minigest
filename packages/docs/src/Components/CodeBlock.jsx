@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Paper } from "@material-ui/core";
+import { Box, Paper, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
@@ -13,14 +13,19 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export function CodeBlock(props) {
+export function CodeBlock({ caption, children, ...rest }) {
   const classes = useStyles();
 
   return (
     <Box mb={1} className={classes.root}>
+      {caption && (
+        <Box pl={2}>
+          <Typography variant="overline">{caption}</Typography>
+        </Box>
+      )}
       <Paper square>
         <Box p={2} className={classes.content}>
-          {props.children}
+          {children}
         </Box>
       </Paper>
     </Box>
