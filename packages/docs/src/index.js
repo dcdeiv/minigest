@@ -2,14 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { IntlProvider } from "react-intl";
 import { ThemeProvider } from "@material-ui/core/styles";
-import { CssBaseLine } from "@material-ui/core";
+import { CssBaseline } from "@material-ui/core";
 import { App } from "./App";
-import { theme } from "./theme";
+import theme from "./theme";
 
 ReactDOM.render(
   <IntlProvider locale="it">
     <ThemeProvider theme={theme}>
-      <CssBaseLine />
+      <CssBaseline />
       <App />
     </ThemeProvider>
   </IntlProvider>,
