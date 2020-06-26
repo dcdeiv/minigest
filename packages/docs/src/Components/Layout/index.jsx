@@ -12,6 +12,7 @@ import {
   Box,
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
+import GitHubIcon from "@material-ui/icons/GitHub";
 import AppDrawer from "./Drawer";
 
 const drawerWidth = 250;
@@ -51,6 +52,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const GitHubButton = () => (
+  <IconButton
+    color="inherit"
+    edge="end"
+    onClick={() => window.open("https://github.com/dcdeiv/minigest", "_blank")}
+  >
+    <GitHubIcon />
+  </IconButton>
+);
+
 export function Layout(props) {
   const { window, children, title = "minigest" } = props;
   const classes = useStyles();
@@ -78,6 +89,7 @@ export function Layout(props) {
           <Typography variant="h6" className={classes.title}>
             {title}
           </Typography>
+          <GitHubButton />
         </Toolbar>
       </AppBar>
 
