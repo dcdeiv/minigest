@@ -4,6 +4,8 @@ import { AppHeader, CodeBlock } from "src/Components";
 
 // Sezioni
 import { Introduzione } from "./Introduzione";
+import { Tags } from "./Tags";
+import { Environment } from "./Environment";
 import { Compose } from "./Compose";
 
 export function Docker(props) {
@@ -17,11 +19,13 @@ export function Docker(props) {
           <Box mb={4}>
             <Divider />
           </Box>
-          <CodeBlock>docker pull dcdeiv/minigest</CodeBlock>
+          <CodeBlock>docker pull dcdeiv/minigest:latest</CodeBlock>
         </Box>
       </AppHeader>
 
       <Introduzione id="installazione-docker-introduzione" />
+      <Tags id="installazione-docker-tags" />
+      <Environment id="installazione-docker-environment" />
       <Compose id="installazione-docker-compose" />
     </React.Fragment>
   );

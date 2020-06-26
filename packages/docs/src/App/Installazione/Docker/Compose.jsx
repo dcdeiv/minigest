@@ -6,7 +6,7 @@ export function Compose(props) {
   return (
     <Section>
       <HeaderSection>
-        <Typography variant="h4" gutterBottmo>
+        <Typography variant="h4" gutterBottom>
           Compose
         </Typography>
         <Typography variant="subtitle1">
@@ -23,8 +23,6 @@ export function Compose(props) {
 
       <CodeBlock caption="docker-compose.yml" mt={2}>
         {`version: "3.8"
-
-# Questo file non è adatto all'uso per un ambiente di produzione
 
 services:
   app:
@@ -52,6 +50,47 @@ volumes:
   public:
   postgres_data:`}
       </CodeBlock>
+
+      <Section>
+        <Typography>
+          Comporre il container dalla cartella in cui avete salvato il vostro{" "}
+          <code>docker-compose.yml</code>.
+        </Typography>
+        <CodeBlock caption="shell" mt={2}>
+          docker-compose build
+        </CodeBlock>
+      </Section>
+
+      <Section>
+        <Typography>Eseguire le migrazioni</Typography>
+        <CodeBlock caption="shell" mt={2}>
+          docker-compose exec app python manage.py migrate
+        </CodeBlock>
+      </Section>
+
+      <Section>
+        <Typography>Creare il superuser</Typography>
+        <CodeBlock caption="shell" mt={2}>
+          docker-compose exec app python manage.py createsuperuser
+        </CodeBlock>
+      </Section>
+
+      <Section>
+        <Typography>Testare il container</Typography>
+        <CodeBlock caption="shell" mt={2}>
+          docker-compose up
+        </CodeBlock>
+      </Section>
+
+      <Section>
+        <Typography>
+          Se dal terminale non compaiono errori, si può far partire il container
+          in background e iniziare ad usare minigest!
+        </Typography>
+        <CodeBlock caption="shell" mt={2}>
+          docker-compose up -d
+        </CodeBlock>
+      </Section>
     </Section>
   );
 }
