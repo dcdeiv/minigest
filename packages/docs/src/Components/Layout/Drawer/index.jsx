@@ -1,40 +1,58 @@
 import React from "react";
-import { List, ListItemIcon, ListItemText, Divider } from "@material-ui/core";
+import { List, ListItem, ListItemIcon, ListItemText } from "@material-ui/core";
 import { ListItemLink } from "src/Components";
 
 // Icons
-import DashboardIcon from "@material-ui/icons/Dashboard";
-import BusinessIcon from "@material-ui/icons/Business";
-
-// Drawer Components
-import DrawerTributi from "./Tributi";
-import DrawerFisco from "./Fisco";
+import HomeIcon from "@material-ui/icons/Home";
+import GitHubIcon from "@material-ui/icons/GitHub";
+import WidgetsIcon from "@material-ui/icons/Widgets";
+import DiscFullIcon from "@material-ui/icons/DiscFull";
 
 function AppDrawer(props) {
   const { handleClose } = props;
+
+  const openLink = (link) => {
+    window.open(link, "_blank");
+    handleClose();
+  };
 
   return (
     <React.Fragment>
       <List>
         <ListItemLink to="/" handleClose={handleClose}>
           <ListItemIcon>
-            <DashboardIcon />
+            <HomeIcon />
           </ListItemIcon>
-          <ListItemText>Dashboard</ListItemText>
+          <ListItemText>Home</ListItemText>
         </ListItemLink>
-
-        <ListItemLink to="/imprese" handleClose={handleClose}>
+        <ListItem
+          button
+          onClick={() => openLink("https://github.com/dcdeiv/minigest")}
+        >
           <ListItemIcon>
-            <BusinessIcon />
+            <GitHubIcon />
           </ListItemIcon>
-          <ListItemText>Imprese</ListItemText>
-        </ListItemLink>
+          <ListItemText>Github</ListItemText>
+        </ListItem>
+        <ListItem
+          button
+          onClick={() => openLink("https://pypi.org/project/minigest/")}
+        >
+          <ListItemIcon>
+            <WidgetsIcon />
+          </ListItemIcon>
+          <ListItemText>PyPi Package</ListItemText>
+        </ListItem>
+        <ListItem
+          button
+          onClick={() => openLink("https://hub.docker.com/r/dcdeiv/minigest")}
+        >
+          <ListItemIcon>
+            <DiscFullIcon />
+          </ListItemIcon>
+          <ListItemText>Docker Image</ListItemText>
+        </ListItem>
       </List>
-      <Divider />
-      <DrawerTributi handleClose={handleClose} />
-      <Divider />
-      <DrawerFisco handleClose={handleClose} />
-      <Divider />
     </React.Fragment>
   );
 }
