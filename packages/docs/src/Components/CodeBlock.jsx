@@ -8,8 +8,9 @@ const useStyles = makeStyles((theme) => ({
   },
   content: {
     borderLeftStyle: "solid",
-    borderLeftWeight: theme.spacing(1),
+    borderLeftWidth: 3,
     borderLeftColor: theme.palette.secondary.main,
+    overflowX: "auto",
   },
   typography: {
     whiteSpace: "pre-wrap",

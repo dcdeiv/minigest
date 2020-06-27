@@ -6,6 +6,8 @@ import {
   TableBody,
   TableRow,
   TableCell,
+  Box,
+  Paper,
 } from "@material-ui/core";
 import { Section, HeaderSection } from "src/Components";
 
@@ -44,30 +46,39 @@ export function Environment(props) {
         </Typography>
       </HeaderSection>
 
-      <Table>
-        <TableHead>
-          <TableRow>
-            <TableCell>Nome</TableCell>
-            <TableCell>Default</TableCell>
-            <TableCell>Descrizione</TableCell>
-          </TableRow>
-        </TableHead>
-
-        <TableBody>
-          {Object.keys(envs).map((k, i) => {
-            let def = envs[k].def;
-            let desc = envs[k].desc;
-
-            return (
-              <TableRow key={i}>
-                <TableCell variant="head">{k}</TableCell>
-                <TableCell>{def}</TableCell>
-                <TableCell>{desc}</TableCell>
+      <Paper>
+        <Box style={{ overflowX: "auto" }}>
+          <Table style={{ whiteSpace: "nowrap" }}>
+            <TableHead>
+              <TableRow>
+                <TableCell>Nome</TableCell>
+                <TableCell>Default</TableCell>
+                <TableCell>Descrizione</TableCell>
               </TableRow>
-            );
-          })}
-        </TableBody>
-      </Table>
+            </TableHead>
+
+            <TableBody>
+              {Object.keys(envs).map((k, i) => {
+                let def = envs[k].def;
+                let desc = envs[k].desc;
+                let len = Object.keys(envs).length;
+                let noBorder = { borderBottom: 0 };
+                let styles = len === i + 1 ? noBorder : {};
+
+                return (
+                  <TableRow key={i}>
+                    <TableCell variant="head" style={styles}>
+                      {k}
+                    </TableCell>
+                    <TableCell style={styles}>{def}</TableCell>
+                    <TableCell style={styles}>{desc}</TableCell>
+                  </TableRow>
+                );
+              })}
+            </TableBody>
+          </Table>
+        </Box>
+      </Paper>
     </Section>
   );
 }

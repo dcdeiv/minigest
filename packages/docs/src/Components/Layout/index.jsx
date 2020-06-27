@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
   },
   content: {
     flexGrow: 1,
-    padding: theme.spacing(3),
+    maxWidth: "100%",
   },
 }));
 
@@ -127,9 +127,9 @@ export function Layout(props) {
 
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        <Container maxWidth="md">
-          <Box mt={2}>{children}</Box>
-        </Container>
+        <Box mt={2}>
+          <Container maxWidth="md">{children}</Container>
+        </Box>
       </main>
     </div>
   );
