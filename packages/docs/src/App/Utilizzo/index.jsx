@@ -9,7 +9,15 @@ import {
   ListItemText,
   Button,
 } from "@material-ui/core";
-import { AppHeader, ListItemLink } from "src/Components";
+import { AppHeader, ListItemLink, LoadingSpinner } from "src/Components";
+
+const steps = [
+  {
+    title: "Aggiungi un'impresa",
+    path: "imprese",
+    Component: React.lazy(() => import("./Sections/Imprese")),
+  },
+];
 
 export function Utilizzo(props) {
   const history = useHistory();
@@ -54,13 +62,27 @@ export function Utilizzo(props) {
 
           <Box mt={4} mb={4}>
             <List>
-              <ListItemLink to="/">
-                <ListItemText>Creazione della tua impresa</ListItemText>
-              </ListItemLink>
+              {steps.map((s, i) => {
+                return (
+                  <ListItemLink key={i} to={`${path}/${s.path}`}>
+                    <ListItemText>{s.title}</ListItemText>
+                  </ListItemLink>
+                );
+              })}
             </List>
           </Box>
         </React.Fragment>
       </Route>
+
+      {steps.map((s, i) => {
+        return (
+          <Route key={i} path={`${path}/${s.path}`}>
+            <React.Suspense fallback={<LoadingSpinner />}>
+              <s.Component />
+            </React.Suspense>
+          </Route>
+        );
+      })}
     </Switch>
   );
 }

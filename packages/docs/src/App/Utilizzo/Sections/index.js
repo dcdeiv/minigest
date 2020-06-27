@@ -1,1 +1,0 @@
-export { Preparazione } from "./Preparazione";
