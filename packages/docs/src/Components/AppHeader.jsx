@@ -1,13 +1,16 @@
 import React from "react";
 import { Box, Divider } from "@material-ui/core";
 
-export function AppHeader({ children, mb = 6, ...rest }) {
+export function AppHeader({ children, mb = 6, noDivider, ...rest }) {
   return (
     <Box mb={mb} {...rest}>
       {children}
-      <Box mt={2}>
-        <Divider />
-      </Box>
+
+      {!noDivider && (
+        <Box mt={2}>
+          <Divider />
+        </Box>
+      )}
     </Box>
   );
 }
