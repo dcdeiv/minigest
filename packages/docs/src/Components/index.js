@@ -5,4 +5,4 @@ export { CodeBlock } from "./CodeBlock";
 export { Image } from "./Image";
 export { ListItemLink } from "./ListItemLink";
 export { LoadingSpinner } from "./LoadingSpinner";
-export { Section, HeaderSection } from "./Section";
+export { Section, SectionSecondary, HeaderSection } from "./Section";

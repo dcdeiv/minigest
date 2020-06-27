@@ -9,6 +9,14 @@ export function Section({ children, mb = 4, ...rest }) {
   );
 }
 
+export function SectionSecondary({ children, mt = 4, ...rest }) {
+  return (
+    <Section mt={mt} {...rest}>
+      {children}
+    </Section>
+  );
+}
+
 export function HeaderSection({ children, mb = 2, ...rest }) {
   return (
     <Box mb={mb} {...rest}>
