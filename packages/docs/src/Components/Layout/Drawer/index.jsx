@@ -6,6 +6,7 @@ import HomeIcon from "@material-ui/icons/Home";
 // Drawer Components
 import { Pacchetti } from "./Pacchetti";
 import { Installazione } from "./Installazione";
+import { Utilizzo } from "./Utilizzo";
 
 function AppDrawer(props) {
   const { handleClose } = props;
@@ -25,6 +26,7 @@ function AppDrawer(props) {
       <Divider />
       <Installazione handleClose={handleClose} />
       <Divider />
+      <Utilizzo handleClose={handleClose} />
     </React.Fragment>
   );
 }
