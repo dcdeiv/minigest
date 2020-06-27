@@ -3,10 +3,7 @@ import { Box, Typography, Divider } from "@material-ui/core";
 import { AppHeader, CodeBlock } from "src/Components";
 
 // Sezioni
-import { Introduzione } from "./Introduzione";
-import { Tags } from "./Tags";
-import { Environment } from "./Environment";
-import { Compose } from "./Compose";
+import { Introduzione, Tags, Environment, Compose } from "./Sections";
 
 export function Docker(props) {
   return (

@@ -3,11 +3,13 @@ import { Typography, Divider, Box } from "@material-ui/core";
 import { AppHeader, CodeBlock } from "src/Components";
 
 // Sezioni
-import { Introduzione } from "./Introduzione";
-import { Dipendenze } from "./Dipendenze";
-import { Applicazioni } from "./Applicazioni";
-import { Configurazione } from "./Configurazione";
-import { Fine } from "./Fine";
+import {
+  Introduzione,
+  Dipendenze,
+  Applicazioni,
+  Configurazione,
+  Fine,
+} from "./Sections";
 
 export function PyPi(props) {
   return (
