@@ -5,6 +5,9 @@ import { Switch, Route, useRouteMatch } from "react-router-dom";
 import { Docker } from "./Docker";
 import { PyPi } from "./PyPi";
 
+// Widgets
+export { SetUpWidget } from "./Widget";
+
 export function Installazione(props) {
   let { path } = useRouteMatch();
 
