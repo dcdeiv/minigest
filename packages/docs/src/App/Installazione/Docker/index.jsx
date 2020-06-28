@@ -3,7 +3,7 @@ import { Box, Typography, Divider } from "@material-ui/core";
 import { AppHeader, CodeBlock } from "src/Components";
 
 // Sezioni
-import { Introduzione, Tags, Environment, Compose } from "./Sections";
+import { Introduzione, Tags, Environment, Compose, Fixtures } from "./Sections";
 
 export function Docker(props) {
   return (
@@ -24,6 +24,7 @@ export function Docker(props) {
       <Tags id="installazione-docker-tags" />
       <Environment id="installazione-docker-environment" />
       <Compose id="installazione-docker-compose" />
+      <Fixtures id="installazione-docker-fixtures" />
     </React.Fragment>
   );
 }

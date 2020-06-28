@@ -9,6 +9,7 @@ import {
   Applicazioni,
   Configurazione,
   Fine,
+  Fixtures,
 } from "./Sections";
 
 export function PyPi(props) {
@@ -27,14 +28,11 @@ export function PyPi(props) {
       </AppHeader>
 
       <Introduzione id="installazione-pypi-introduzione" />
-
       <Dipendenze id="installazione-pypi-dipendenze" />
-
       <Applicazioni id="installazione-pypi-applicazioni" />
-
       <Configurazione id="installazione-pypi-configurazione" />
-
       <Fine id="installazione-pypi-fine" />
+      <Fixtures id="installazione-pypi-fixtures" />
     </React.Fragment>
   );
 }
