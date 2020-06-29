@@ -1,3 +1,4 @@
+export { Albo } from "./Albo";
 export { Anagrafica } from "./Anagrafica";
 export { IdFiscali } from "./IdFiscali";
-export { Albo } from "./Albo";
+export { Sdi } from "./Sdi";
