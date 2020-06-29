@@ -92,6 +92,14 @@ class ImpresaAdmin(admin.ModelAdmin):
                 "fields": (
                     "rea_ufficio",
                     "rea_numero",
+                ),
+            },
+        ),
+        (
+            "Dati Societari",
+            {
+                "classes": ("collapse",),
+                "fields": (
                     "capitale_sociale",
                     "socio_unico",
                     "stato_liquidazione",
