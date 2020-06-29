@@ -3,7 +3,7 @@ import { Typography, Paper, Box } from "@material-ui/core";
 import { AppHeader, Section, CodeBlock } from "src/Components";
 
 // Partials
-import { Anagrafica, IdFiscali, Sdi } from "./Partials";
+import { Anagrafica, IdFiscali, Sdi, Albo } from "./Partials";
 
 export default function Impresa(props) {
   return (
@@ -58,6 +58,7 @@ export default function Impresa(props) {
         <Anagrafica />
         <IdFiscali />
         <Sdi />
+        <Albo />
       </Section>
     </React.Fragment>
   );

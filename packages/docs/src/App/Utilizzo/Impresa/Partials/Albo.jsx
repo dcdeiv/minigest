@@ -8,11 +8,9 @@ export function Albo(props) {
   return (
     <SectionSecondary>
       <AppHeader noDivider mb={2}>
-        <Typography variant="h6">Identificativi Fiscali</Typography>
+        <Typography variant="h6">Albo Professionale</Typography>
         <Typography variant="subtitle1">
-          In questa sezione è possibile aggiungere tutti gli identificativi
-          fiscali di un'impresa, per esempio il codice fiscale, la partita iva e
-          così via...
+          Campi da compilare qualora l'impresa sia un professionista.
         </Typography>
       </AppHeader>
 
@@ -29,7 +27,28 @@ export function Albo(props) {
             alt="Form impresa sezione identificativi fiscali"
           />
         </Grid>
-        <Grid item xs={12} sm={6}></Grid>
+        <Grid item xs={12} sm={6}>
+          <Typography gutterBottom>
+            Il form è abbastanza chiaro grazie a tutte le spiegazioni che potete
+            trovare sotto i campi:
+          </Typography>
+          <Typography gutterBottom>
+            nel campo <b>Albo Professionale</b> mettere il nome dell'albo
+            professionale a cui il professionista è iscritto;
+          </Typography>
+          <Typography gutterBottom>
+            il <b>Provincia Albo</b> inserire il codice a due cifre della
+            Provincia presso cui il professionista è iscritto;
+          </Typography>
+          <Typography gutterBottom>
+            il <b>numero dell'iscrizione all'albo</b> è per l'appunto il numero
+            fornito dall'albo in riferimento all'iscrizione;
+          </Typography>
+          <Typography gutterBottom>
+            e infine la <b>data di iscrizione</b> è proprio la data in cui il
+            professionista si è iscritto all'albo!
+          </Typography>
+        </Grid>
       </Grid>
     </SectionSecondary>
   );
