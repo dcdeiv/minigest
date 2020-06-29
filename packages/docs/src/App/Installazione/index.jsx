@@ -1,7 +1,7 @@
 import React from "react";
 import { Switch, Route, useRouteMatch } from "react-router-dom";
 import { Typography } from "@material-ui/core";
-import { AppHeader, Section, HeaderSection } from "src/Components";
+import { AppHeader } from "src/Components";
 
 // Routes
 import { Docker } from "./Docker";
