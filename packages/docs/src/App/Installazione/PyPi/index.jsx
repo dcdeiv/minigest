@@ -11,6 +11,7 @@ import {
   Fine,
   Fixtures,
 } from "./Sections";
+import { Completata } from "../Completata";
 
 export function PyPi(props) {
   return (
@@ -33,6 +34,7 @@ export function PyPi(props) {
       <Configurazione id="installazione-pypi-configurazione" />
       <Fine id="installazione-pypi-fine" />
       <Fixtures id="installazione-pypi-fixtures" />
+      <Completata id="installazione-pypi-next-steps" />
     </React.Fragment>
   );
 }

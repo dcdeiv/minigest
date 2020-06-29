@@ -4,6 +4,7 @@ import { AppHeader, CodeBlock } from "src/Components";
 
 // Sezioni
 import { Introduzione, Tags, Environment, Compose, Fixtures } from "./Sections";
+import { Completata } from "../Completata";
 
 export function Docker(props) {
   return (
@@ -25,6 +26,7 @@ export function Docker(props) {
       <Environment id="installazione-docker-environment" />
       <Compose id="installazione-docker-compose" />
       <Fixtures id="installazione-docker-fixtures" />
+      <Completata id="installazione-docker-next-steps" />
     </React.Fragment>
   );
 }

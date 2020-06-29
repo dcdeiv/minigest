@@ -1,7 +1,7 @@
 import React from "react";
 import { Switch, Route, useRouteMatch } from "react-router-dom";
 import { Typography } from "@material-ui/core";
-import { AppHeader } from "src/Components";
+import { AppHeader, Section, HeaderSection } from "src/Components";
 
 // Routes
 import { Docker } from "./Docker";
@@ -9,6 +9,7 @@ import { PyPi } from "./PyPi";
 
 // Widgets
 import { SetUpWidget } from "./Widget";
+import { Completata } from "./Completata";
 export { SetUpWidget };
 
 // Home
@@ -27,6 +28,7 @@ export function Installazione(props) {
           </AppHeader>
 
           <SetUpWidget />
+          <Completata />
         </React.Fragment>
       </Route>
       <Route path={`${path}/pypi`} component={PyPi} />
