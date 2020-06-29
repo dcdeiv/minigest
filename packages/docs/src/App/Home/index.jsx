@@ -1,7 +1,8 @@
 import React from "react";
 import { Typography, Divider } from "@material-ui/core";
 import { AppHeader } from "src/Components";
-import { SetUpWidget } from "./Installazione";
+import { SetUpWidget } from "src/App/Installazione";
+import { Utilizzo } from "./Utilizzo";
 
 export function Home(props) {
   return (
@@ -25,6 +26,8 @@ export function Home(props) {
       <SetUpWidget boxProps={{ mb: 3 }} />
 
       <Divider />
+
+      <Utilizzo />
     </React.Fragment>
   );
 }
