@@ -72,6 +72,8 @@ export default function Impresa(props) {
         <Societa />
         <RappresentanteFiscale />
         <Contatti />
+
+        {/* altro, utenti, sede, stabile org. */}
       </Section>
     </React.Fragment>
   );
