@@ -15,7 +15,7 @@ const steps = [
   {
     title: "Aggiungi un'impresa",
     path: "imprese",
-    Component: React.lazy(() => import("./Sections/Imprese")),
+    Component: React.lazy(() => import("./Impresa")),
   },
 ];
 
