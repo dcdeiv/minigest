@@ -11,8 +11,8 @@ export function IdFiscali(props) {
         <Typography variant="h6">Identificativi Fiscali</Typography>
         <Typography variant="subtitle1">
           In questa sezione è possibile aggiungere tutti gli identificativi
-          fiscali di un'impresa, per esempio il codice fiscale, la partita iva e
-          così via...
+          fiscali di un'impresa, per esempio il codice fiscale, la partita I.V.A
+          e così via...
         </Typography>
       </AppHeader>
 
@@ -33,33 +33,33 @@ export function IdFiscali(props) {
           <Typography gutterBottom>
             La <b>PARTITA I.V.A.</b> secondo le specifiche della fattura
             elettronica è composta da due campi: il primo campo riguarda il{" "}
-            <b>codice paese</b> e il secondo il <b>codice della partita iva</b>.
-            Quindi, se l'impresa ha sede in italia, il codice paese sarà{" "}
-            <b>IT</b>. Se estera, utilizzare il codice a due cifre del paese in
-            cui ha sede l'impresa o a in cui è stato assegnato il codice della
-            partita iva.
+            <b>codice paese</b> e il secondo il{" "}
+            <b>codice della partita I.V.A</b>. Quindi, se l'impresa ha sede in
+            Italia, il codice paese sarà <b>IT</b>. Se estera, utilizzare il
+            codice a due cifre del paese in cui ha sede l'impresa o a in cui è
+            stato assegnato il codice della partita I.V.A.
           </Typography>
           <Typography gutterBottom>
             Per quanto riguarda il <b>codice della partita I.V.A.</b> è
             possibile inserire fino a 28 caratteri. Rispettare comunque le
-            specifiche di ogni paese europeo. Per l'italia il massimo di
+            specifiche di ogni paese europeo. Per l'Italia il massimo di
             caratteri consentiti è 11! Se l'impresa non è all'interno
-            dell'Unione Europea e quindi non ha un codice partita iva, compilare
-            il campo inserendo undici volte la cifra 9.
+            dell'Unione Europea e quindi non ha un codice partita I.V.A,
+            compilare il campo inserendo undici volte la cifra 9.
           </Typography>
 
           <Typography gutterBottom>
-            Il <b>CODICE FISCALE</b>, così come i campi della partita iva, non è
-            obbligatorio fornirlo, tuttavia, uno tra la partita iva e il codice
-            fiscale, va fornito!
+            Il <b>CODICE FISCALE</b>, così come i campi della partita I.V.A, non
+            è obbligatorio fornirlo, tuttavia, uno tra la partita I.V.A e il
+            codice fiscale, va fornito!
           </Typography>
           <Typography gutterBottom>
             Il codice fiscale spesso coincide con quello dell soggetto giuridico
             titolare dell'impresa, come nei casi di professionisti o di ditte
             individuali. Altrimenti, spesso, le società hanno come codice
-            fiscale lo stesso codice assegnato alla partita IVA, ma non sempre,
-            nelle società più vecchie difatti il codice fiscale differisce dal
-            codice della partita iva.
+            fiscale lo stesso codice assegnato alla partita I.V.A, ma non
+            sempre, nelle società più vecchie difatti il codice fiscale
+            differisce dal codice della partita I.V.A.
           </Typography>
           <Typography>
             Come ultimo campo troviamo il <b>REGIME FISCALE</b>. Se avete
