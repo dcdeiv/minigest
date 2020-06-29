@@ -24,7 +24,7 @@ export function Albo(props) {
         <Grid item xs={12} sm={6}>
           <Image
             src={`${baseImageUrl}/albo_professionale.png`}
-            alt="Form impresa sezione identificativi fiscali"
+            alt="Form impresa sezione albo professionale"
           />
         </Grid>
         <Grid item xs={12} sm={6}>

@@ -26,7 +26,7 @@ export function Societa(props) {
         <Grid item xs={12} sm={6}>
           <Image
             src={`${baseImageUrl}/societa.png`}
-            alt="Form impresa sezione identificativi fiscali"
+            alt="Form impresa sezione dati societari"
           />
         </Grid>
         <Grid item xs={12} sm={6}>

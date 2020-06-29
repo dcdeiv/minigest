@@ -27,7 +27,7 @@ export function Rea(props) {
         <Grid item xs={12} sm={6}>
           <Image
             src={`${baseImageUrl}/rea.png`}
-            alt="Form impresa sezione identificativi fiscali"
+            alt="Form impresa sezione REA"
           />
         </Grid>
         <Grid item xs={12} sm={6}>

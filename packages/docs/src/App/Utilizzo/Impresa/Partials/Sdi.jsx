@@ -25,7 +25,7 @@ export function Sdi(props) {
         <Grid item xs={12} sm={6}>
           <Image
             src={`${baseImageUrl}/sdi.png`}
-            alt="Form impresa sezione identificativi fiscali"
+            alt="Form impresa sezione SDI"
           />
         </Grid>
         <Grid item xs={12} sm={6}>
