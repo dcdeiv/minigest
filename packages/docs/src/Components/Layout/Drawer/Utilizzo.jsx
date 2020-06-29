@@ -16,6 +16,9 @@ export function Utilizzo({ handleClose }) {
       <ListItemLink to="/utilizzo" handleClose={handleClose}>
         <ListItemText>Prima di iniziare</ListItemText>
       </ListItemLink>
+      <ListItemLink to="/utilizzo/imprese" handleClose={handleClose}>
+        <ListItemText>Imprese</ListItemText>
+      </ListItemLink>
     </List>
   );
 }
