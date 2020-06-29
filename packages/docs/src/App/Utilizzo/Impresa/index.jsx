@@ -11,6 +11,7 @@ import {
   Rea,
   Societa,
   RappresentanteFiscale,
+  Contatti,
 } from "./Partials";
 
 export default function Impresa(props) {
@@ -70,6 +71,7 @@ export default function Impresa(props) {
         <Rea />
         <Societa />
         <RappresentanteFiscale />
+        <Contatti />
       </Section>
     </React.Fragment>
   );
