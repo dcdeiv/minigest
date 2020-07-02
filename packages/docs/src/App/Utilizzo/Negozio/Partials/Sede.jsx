@@ -10,8 +10,8 @@ export function Sede(props) {
       <AppHeader noDivider mb={2}>
         <Typography variant="h6">Sede</Typography>
         <Typography variant="subtitle1">
-          In questa sezione è possibile aggiungere l'indirizzo della sede
-          dell'impresa. È possibile aggiungere un solo indirizzo di tipo sede!
+          In questa sezione è possibile aggiungere l'indirizzo della sede del
+          negozio. È possibile aggiungere un solo indirizzo di tipo sede!
         </Typography>
       </AppHeader>
 
@@ -45,8 +45,7 @@ export function Sede(props) {
             Il campo <b>COMUNE</b> inserire il comune dell'indirizzo della sede.
           </Typography>
           <Typography gutterBottom>
-            Se italiana, inserire anche la <b>PROVINCIA</b> in due cifre (es:
-            MI)
+            Inserire la <b>PROVINCIA</b> in due cifre (es: MI)
           </Typography>
           <Typography gutterBottom>
             Nel capo <b>Nazione</b> inserire il codice a due cifre della nazione
