@@ -9,6 +9,7 @@ import { ListItemLink } from "src/Components";
 
 // Icons
 import BusinessIcon from "@material-ui/icons/Business";
+import StorefrontIcon from '@material-ui/icons/Storefront';
 
 export function Utilizzo({ handleClose }) {
   return (
@@ -24,11 +25,17 @@ export function Utilizzo({ handleClose }) {
       <ListItemLink to="/utilizzo" handleClose={handleClose}>
         <ListItemText>Prima di iniziare</ListItemText>
       </ListItemLink>
-      <ListItemLink to="/utilizzo/imprese" handleClose={handleClose}>
+      <ListItemLink to="/utilizzo/impresa" handleClose={handleClose}>
         <ListItemIcon>
           <BusinessIcon />
         </ListItemIcon>
-        <ListItemText>Imprese</ListItemText>
+        <ListItemText>Impresa</ListItemText>
+      </ListItemLink>
+      <ListItemLink to="/utilizzo/negozio" handleClose={handleClose}>
+        <ListItemIcon>
+          <StorefrontIcon />
+        </ListItemIcon>
+        <ListItemText>Negozio</ListItemText>
       </ListItemLink>
     </List>
   );
