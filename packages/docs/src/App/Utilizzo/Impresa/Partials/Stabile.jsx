@@ -52,7 +52,7 @@ export function Stabile(props) {
             Nel campo <b>PROVINCIA</b> inserire il codice a due cifre dell
             provincia della sede della stabile organizzazione.
           </Typography>
-          <Typography gutterBotto>
+          <Typography gutterBottom>
             Nel campo <b>NAZIONE</b> Inserire IT.
           </Typography>
         </Grid>

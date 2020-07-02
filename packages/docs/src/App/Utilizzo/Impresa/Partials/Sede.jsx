@@ -48,7 +48,7 @@ export function Sede(props) {
             Se italiana, inserire anche la <b>PROVINCIA</b> in due cifre (es:
             MI)
           </Typography>
-          <Typography gutterBotto>
+          <Typography gutterBottom>
             Nel capo <b>Nazione</b> inserire il codice a due cifre della nazione
             della sede.
           </Typography>
