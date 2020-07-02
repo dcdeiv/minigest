@@ -25,7 +25,7 @@ export function Sede(props) {
         <Grid item xs={12} sm={6}>
           <Image
             src={`${baseImageUrl}/sede.png`}
-            alt="Form impresa sezione altro"
+            alt="Form negozio sezione sede"
           />
         </Grid>
         <Grid item xs={12} sm={6}>

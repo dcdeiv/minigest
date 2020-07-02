@@ -28,7 +28,7 @@ export function Stabile(props) {
         <Grid item xs={12} sm={6}>
           <Image
             src={`${baseImageUrl}/stabile.png`}
-            alt="Form impresa sezione altro"
+            alt="Form impresa sezione stabile organizzazione"
           />
         </Grid>
         <Grid item xs={12} sm={6}>
