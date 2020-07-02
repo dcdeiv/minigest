@@ -14,13 +14,20 @@ import { AppHeader, ListItemLink, LoadingSpinner } from "src/Components";
 
 // Icons
 import BusinessIcon from "@material-ui/icons/Business";
+import StorefrontIcon from "@material-ui/icons/Storefront";
 
 const steps = [
   {
-    title: "Aggiungi un'impresa",
-    path: "imprese",
+    title: "Impresa",
+    path: "impresa",
     Component: React.lazy(() => import("./Impresa")),
     Icon: BusinessIcon,
+  },
+  {
+    title: "Negozio",
+    path: "negozio",
+    Component: React.lazy(() => import("./Negozio")),
+    Icon: StorefrontIcon,
   },
 ];
 
