@@ -1,6 +1,14 @@
 import React from "react";
-import { List, ListSubheader, ListItemText } from "@material-ui/core";
+import {
+  List,
+  ListSubheader,
+  ListItemText,
+  ListItemIcon,
+} from "@material-ui/core";
 import { ListItemLink } from "src/Components";
+
+// Icons
+import BusinessIcon from "@material-ui/icons/Business";
 
 export function Utilizzo({ handleClose }) {
   return (
@@ -17,6 +25,9 @@ export function Utilizzo({ handleClose }) {
         <ListItemText>Prima di iniziare</ListItemText>
       </ListItemLink>
       <ListItemLink to="/utilizzo/imprese" handleClose={handleClose}>
+        <ListItemIcon>
+          <BusinessIcon />
+        </ListItemIcon>
         <ListItemText>Imprese</ListItemText>
       </ListItemLink>
     </List>
