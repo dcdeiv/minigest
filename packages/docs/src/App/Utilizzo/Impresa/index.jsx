@@ -12,6 +12,10 @@ import {
   Societa,
   RappresentanteFiscale,
   Contatti,
+  Altro,
+  Utenti,
+  Sede,
+  Stabile,
 } from "./Partials";
 
 export default function Impresa(props) {
@@ -72,8 +76,10 @@ export default function Impresa(props) {
         <Societa />
         <RappresentanteFiscale />
         <Contatti />
-
-        {/* altro, utenti, sede, stabile org. */}
+        <Altro />
+        <Utenti />
+        <Sede />
+        <Stabile />
       </Section>
     </React.Fragment>
   );
