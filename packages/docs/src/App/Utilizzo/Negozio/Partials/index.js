@@ -1,12 +1,1 @@
-export { Albo } from "./Albo";
-export { Altro } from "./Altro";
-export { Anagrafica } from "./Anagrafica";
-export { Contatti } from "./Contatti";
-export { IdFiscali } from "./IdFiscali";
-export { RappresentanteFiscale } from "./RappresentanteFisc";
-export { Rea } from "./Rea";
-export { Sdi } from "./Sdi";
 export { Sede } from "./Sede";
-export { Societa } from "./Societa";
-export { Stabile } from "./Stabile";
-export { Utenti } from "./Utenti";

@@ -2,7 +2,7 @@ import React from "react";
 import { Typography, Grid } from "@material-ui/core";
 import { AppHeader, SectionSecondary, Image } from "src/Components";
 
-const baseImageUrl = process.env.PUBLIC_URL + "/screenshots/impresa/form";
+const baseImageUrl = process.env.PUBLIC_URL + "/screenshots/negozio/form";
 
 export function Sede(props) {
   return (
