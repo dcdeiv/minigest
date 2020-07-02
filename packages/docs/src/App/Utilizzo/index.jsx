@@ -6,16 +6,21 @@ import {
   Paper,
   Divider,
   List,
+  ListItemIcon,
   ListItemText,
   Button,
 } from "@material-ui/core";
 import { AppHeader, ListItemLink, LoadingSpinner } from "src/Components";
+
+// Icons
+import BusinessIcon from "@material-ui/icons/Business";
 
 const steps = [
   {
     title: "Aggiungi un'impresa",
     path: "imprese",
     Component: React.lazy(() => import("./Impresa")),
+    Icon: BusinessIcon,
   },
 ];
 
@@ -65,6 +70,11 @@ export function Utilizzo(props) {
               {steps.map((s, i) => {
                 return (
                   <ListItemLink key={i} to={`${path}/${s.path}`}>
+                    {typeof s.Icon === "object" && (
+                      <ListItemIcon>
+                        <s.Icon />
+                      </ListItemIcon>
+                    )}
                     <ListItemText>{s.title}</ListItemText>
                   </ListItemLink>
                 );
