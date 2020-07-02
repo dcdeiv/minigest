@@ -23,7 +23,7 @@ export default function Impresa(props) {
     <React.Fragment>
       <AppHeader mb={4}>
         <Typography variant="overline">utilizzo</Typography>
-        <Typography variant="h3">Imprese</Typography>
+        <Typography variant="h3">Impresa</Typography>
         <Typography variant="subtitle1" gutterBottom>
           guida all'aggiunta di un'impresa (azienda)
         </Typography>
