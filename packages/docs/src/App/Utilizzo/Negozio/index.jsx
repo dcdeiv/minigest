@@ -3,7 +3,7 @@ import { Typography } from "@material-ui/core";
 import { AppHeader, Section, CodeBlock } from "src/Components";
 
 // Partials
-import { Sede } from "./Partials";
+import { Primo, Sede, Orari, OrariVarianti, Cassa } from "./Partials";
 
 export default function Negozio(props) {
   return (
@@ -32,7 +32,11 @@ export default function Negozio(props) {
           impresa!
         </Typography>
 
+        <Primo />
         <Sede />
+        <Orari />
+        <OrariVarianti />
+        <Cassa />
       </Section>
     </React.Fragment>
   );

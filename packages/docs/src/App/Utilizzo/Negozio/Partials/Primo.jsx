@@ -27,7 +27,26 @@ export function Primo(props) {
             alt="Form negozio sezione prima"
           />
         </Grid>
-        <Grid item xs={12} sm={6}></Grid>
+        <Grid item xs={12} sm={6}>
+          <Typography gutterBottom>
+            Nel campo <b>IMPRESA</b> selezionare l'azienda a cui si vuole
+            assegnare il negozio, per esempio l'impresa che avete inserito in
+            precedenza.
+          </Typography>
+          <Typography gutterBottom>
+            Il campo <b>INSEGNA</b> chiede che si aggiunga il nome variante del
+            negozio. Non aggiungere il nome dell'impresa ma il nome proprio del
+            negozio. Per esempio, se la tua azienda si chiama Il mio bar di
+            Mario Rossi, ma l'insegna al di fuori del negozio recita "Bananabar"
+            è opportuno scrivere l'ultimo e non il primo!
+          </Typography>
+          <Typography>
+            Nel campo <b>CODICE NEGOZIO</b> inserire un codice univoco interno
+            che rappresenti il vostro punto vendita. Seguire le istruzioni di
+            Google Buisiness! Il codice è composto dal nome del brand/insegna
+            più un numero. Esempio: GOOG1.
+          </Typography>
+        </Grid>
       </Grid>
     </SectionSecondary>
   );
