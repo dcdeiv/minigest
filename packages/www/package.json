@@ -3,8 +3,8 @@
   "version": "0.16.3",
   "private": true,
   "scripts": {
-    "start": "PORT=9000 craco start",
-    "start:django": "PUBLIC_URL=/static/www yarn start",
+    "commit": "poetry run cz c",
+    "start": "craco start",
     "build": "PUBLIC_URL=/static/www craco build",
     "test": "craco test",
     "eject": "craco eject"
