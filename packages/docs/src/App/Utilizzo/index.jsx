@@ -73,6 +73,11 @@ export function Utilizzo(props) {
           <Divider />
 
           <Box mt={4} mb={4}>
+            <Typography variant="h4">Guida per argomenti</Typography>
+            <Typography variant="subtitle1" gutterBottom>
+              Se è la prima volta che utilizzi <b>minigest</b> ti consiglio di
+              seguire questa guida passo per passo!
+            </Typography>
             <List>
               {steps.map((s, i) => {
                 return (
