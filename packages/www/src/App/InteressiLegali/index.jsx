@@ -3,8 +3,8 @@ import moment from "moment";
 import { isEmpty, filter, forEach } from "lodash";
 import { useDispatch, useSelector } from "react-redux";
 import { Box } from "@material-ui/core";
-import { action } from "~/store";
-import { FabFixed, FabFixedContainer, ConfirmDelete } from "~/Components";
+import { action } from "src/store";
+import { FabFixed, FabFixedContainer, ConfirmDelete } from "src/Components";
 import { Lista } from "./Lista";
 import { Form } from "./Form";
 

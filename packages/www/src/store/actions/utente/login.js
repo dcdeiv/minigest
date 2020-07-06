@@ -1,6 +1,6 @@
-import { actionCreator } from "~/store/actions";
-import * as C from "~/constants";
-import { api, history } from "~/helpers";
+import { actionCreator } from "src/store/actions";
+import * as C from "src/constants";
+import { api, history } from "src/helpers";
 
 export const loginSuccess = (data) => {
   return actionCreator(C.AUTH_LOGIN_SUCCESS, data);

@@ -1,6 +1,6 @@
 import React from "react";
 import { isEmpty } from "lodash";
-import { LoadingSpinner, ListaVuota, TableCellIcon } from "~/Components";
+import { LoadingSpinner, ListaVuota, TableCellIcon } from "src/Components";
 import { makeStyles } from "@material-ui/styles";
 import {
   TableContainer,

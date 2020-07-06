@@ -5,7 +5,7 @@ import {
   LoadingSpinner,
   ListaVuota,
   TableCellIcon,
-} from "~/Components";
+} from "src/Components";
 import { makeStyles } from "@material-ui/styles";
 import {
   TableContainer,

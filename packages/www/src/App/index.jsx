@@ -1,8 +1,8 @@
 import React from "react";
 import { Switch, Route, useRouteMatch } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { action } from "~/store";
-import { LoadingApp, Layout, SplashError } from "~/Components";
+import { action } from "src/store";
+import { LoadingApp, Layout, SplashError } from "src/Components";
 
 // App
 import { NotFound } from "./NotFound";

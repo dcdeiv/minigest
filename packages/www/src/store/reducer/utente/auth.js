@@ -1,5 +1,5 @@
-import { initialAuthState } from "~/store/initials";
-import * as C from "~/constants";
+import { initialAuthState } from "src/store/initials";
+import * as C from "src/constants";
 
 // Reducer
 export default function auth(state = initialAuthState, action) {

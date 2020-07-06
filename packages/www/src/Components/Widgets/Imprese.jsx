@@ -11,8 +11,8 @@ import {
   TableCell,
   IconButton,
 } from "@material-ui/core";
-import { TableCellIcon } from "~/Components";
-import { history } from "~/helpers";
+import { TableCellIcon } from "src/Components";
+import { history } from "src/helpers";
 import PageviewIcon from "@material-ui/icons/Pageview";
 
 export function Imprese(props) {

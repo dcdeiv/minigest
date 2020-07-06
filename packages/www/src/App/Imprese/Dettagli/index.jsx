@@ -7,8 +7,8 @@ import {
   PaperBox,
   FabFixedContainer,
   FabFixed,
-} from "~/Components";
-import { action } from "~/store";
+} from "src/Components";
+import { action } from "src/store";
 import {
   Container,
   Box,

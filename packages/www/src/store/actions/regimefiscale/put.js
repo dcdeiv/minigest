@@ -1,6 +1,6 @@
-import { actionCreator } from "~/store/actions";
-import * as C from "~/constants";
-import { api } from "~/helpers";
+import { actionCreator } from "src/store/actions";
+import * as C from "src/constants";
+import { api } from "src/helpers";
 
 export const putStart = () => {
   return actionCreator(C.REGIME_FISCALE_PUT_START);

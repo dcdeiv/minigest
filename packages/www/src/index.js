@@ -8,9 +8,9 @@ import { IntlProvider } from "react-intl";
 import { CssBaseline } from "@material-ui/core";
 import { ThemeProvider } from "@material-ui/core/styles";
 import { MuiPickersUtilsProvider } from "@material-ui/pickers";
-import { store } from "~/store";
-import { history, theme } from "~/helpers";
-import * as serviceWorker from "~/serviceWorker";
+import { store } from "src/store";
+import { history, theme } from "src/helpers";
+import * as serviceWorker from "src/serviceWorker";
 import "moment/locale/it";
 
 // Pages

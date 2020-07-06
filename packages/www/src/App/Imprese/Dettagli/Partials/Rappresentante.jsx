@@ -1,7 +1,7 @@
 import React from "react";
 import { isEmpty } from "lodash";
 import { Typography } from "@material-ui/core";
-import { PaperBox } from "~/Components";
+import { PaperBox } from "src/Components";
 
 export function Rappresentante(props) {
   let { rappresentante_fiscale } = props;

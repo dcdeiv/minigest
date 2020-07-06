@@ -1,5 +1,5 @@
-import { initialCURDresults } from "~/store/initials";
-import * as C from "~/constants";
+import { initialCURDresults } from "src/store/initials";
+import * as C from "src/constants";
 
 export default function aliquoteQ(state = initialCURDresults, action) {
   let { type, payload } = action;

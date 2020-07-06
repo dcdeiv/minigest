@@ -1,6 +1,6 @@
 import React from "react";
 import { List, ListItemIcon, ListItemText, Divider } from "@material-ui/core";
-import { ListItemLink } from "~/Components";
+import { ListItemLink } from "src/Components";
 
 // Icons
 import DashboardIcon from "@material-ui/icons/Dashboard";
