@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "minigest"
-version = "0.16.3"
+version = "0.17.0"
 description = "Un mini gestionale pensato per aiutare a mantenere i conti di un'azienda"
 authors = ["Davide Di Criscito <davide.dicriscito@gmail.com>"]
 license = "MIT"
@@ -22,9 +22,9 @@ collectclient = "collectclient:run"
 
 [tool.commitizen]
 name = "cz_conventional_commits"
-version = "0.16.3"
+version = "0.17.0"
 tag_format = "$major.$minor.$patch$prerelease"
-bump_message = "docs:(release) $current_version → $new_version"
+bump_message = "docs(release): $current_version → $new_version"
 version_files = [
     "pyproject.toml:version",
     "lerna.json:version",
