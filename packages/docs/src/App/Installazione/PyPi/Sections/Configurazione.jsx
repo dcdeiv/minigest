@@ -19,7 +19,7 @@ export function Configurazione(props) {
         La seguente configurazione può essere trovata anche nella cartella{" "}
         <Link
           color="secondary"
-          href="https://github.com/dcdeiv/minigest/tree/master/webapp/settings"
+          href="https://github.com/ctrlmaniac/minigest/tree/master/webapp/settings"
           rel="noopener noreferrer"
           target="_blank"
         >

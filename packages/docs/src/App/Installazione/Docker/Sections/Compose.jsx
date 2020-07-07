@@ -26,7 +26,7 @@ export function Compose(props) {
 
 services:
   app:
-    image: dcdeiv/minigest:latest
+    image: ctrlmaniac/minigest:latest
     ports:
       - 8000:8000
     depends_on:

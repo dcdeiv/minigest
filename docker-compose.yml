@@ -5,7 +5,7 @@ version: "3.8"
 services:
   app:
     build: .
-    image: dcdeiv/minigest
+    image: ctrlmaniac/minigest
     ports:
       - 8000:8000
     depends_on:

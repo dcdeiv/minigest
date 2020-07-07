@@ -18,7 +18,7 @@ export function Introduzione(props) {
         Un esempio di come può essere utilizzato <b>minigest</b> lo potete
         trovare nella cartella{" "}
         <Link
-          href="https://github.com/dcdeiv/minigest/tree/master/webapp"
+          href="https://github.com/ctrlmaniac/minigest/tree/master/webapp"
           target="_blank"
           rel="noopener noreferrer"
           color="secondary"

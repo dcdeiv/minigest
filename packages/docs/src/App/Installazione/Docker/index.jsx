@@ -17,7 +17,7 @@ export function Docker(props) {
           <Box mb={4}>
             <Divider />
           </Box>
-          <CodeBlock>docker pull dcdeiv/minigest:latest</CodeBlock>
+          <CodeBlock>docker pull ctrlmaniac/minigest:latest</CodeBlock>
         </Box>
       </AppHeader>
 

@@ -4,7 +4,7 @@ Un mini gestionale pensato per aiutare a mantenere i conti di un'azienda
 
 ---
 
-![PyPi Package](https://github.com/dcdeiv/minigest/workflows/PyPi%20Package/badge.svg)
+![PyPi Package](https://github.com/ctrlmaniac/minigest/workflows/PyPi%20Package/badge.svg)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
@@ -15,7 +15,7 @@ Un mini gestionale pensato per aiutare a mantenere i conti di un'azienda
 
 ## Documentazione
 
-La documentazione può essere trovata sul sito ufficiale di [minigest](https://dcdeiv.github.io/minigest).
+La documentazione può essere trovata sul sito ufficiale di [minigest](https://ctrlmaniac.github.io/minigest).
 Tuttavia è ancora in fase di sviluppo!
 
 ## Changelog

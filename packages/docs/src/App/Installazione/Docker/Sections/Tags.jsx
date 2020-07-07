@@ -13,7 +13,7 @@ export function Tags(props) {
         Per scaricare l'immagine docker di minigest sarà necessario scegliere un
         tag disponibile tra la{" "}
         <Link
-          href="https://hub.docker.com/r/dcdeiv/minigest/tags"
+          href="https://hub.docker.com/r/ctrlmaniac/minigest/tags"
           target="_blank"
           rel="noopener noreferrer"
           color="secondary"

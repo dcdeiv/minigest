@@ -16,5 +16,6 @@
     ".venv/**/*.py",
     ".pytest_cache/**/*.py",
     "minigest/**/migrations/*.py"
-  ]
+  ],
+  "python.pythonPath": "c:\\Users\\larapida\\Repos\\minigest\\.venv\\Scripts\\python.exe"
 }

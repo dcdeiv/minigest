@@ -2,7 +2,7 @@
   "name": "docs",
   "version": "0.16.3",
   "private": true,
-  "homepage": "https://dcdeiv.github.io/minigest",
+  "homepage": "https://ctrlmaniac.github.io/minigest",
   "scripts": {
     "commit": "poetry run cz c",
     "start": "craco start",
