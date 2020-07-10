@@ -24,6 +24,7 @@
     "stage": "yarn requirements && yarn build:www"
   },
   "devDependencies": {
+    "@yarnpkg/pnpify": "^2.1.0",
     "lerna": "^3.22.1",
     "prettier": "2.0.5"
   }

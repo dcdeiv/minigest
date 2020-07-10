@@ -17,5 +17,6 @@
     ".pytest_cache/**/*.py",
     "minigest/**/migrations/*.py"
   ],
-  "python.pythonPath": "c:\\Users\\larapida\\Repos\\minigest\\.venv\\Scripts\\python.exe"
+  "python.pythonPath": "c:\\Users\\larapida\\Repos\\minigest\\.venv\\Scripts\\python.exe",
+  "prettier.prettierPath": ".yarn/sdks/prettier/index.js"
 }

@@ -11,6 +11,14 @@ dist/
 # Node
 **/node_modules
 
+# Yarn
+.yarn/*
+!.yarn/cache
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+
 # Packages
 packages/**/build
 
