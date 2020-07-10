@@ -1,0 +1,19 @@
+exclude: "(^(.*)migrations\/(.*).py|manage.py|^(.*)__pycache__\/(.*).pyc)"
+repos:
+  - repo: https://github.com/commitizen-tools/commitizen
+    rev: master
+    hooks:
+      - id: commitizen
+        stages: [commit-msg]
+  - repo: https://gitlab.com/pycqa/flake8
+    rev: "3.7.9"
+    hooks:
+      - id: flake8
+  - repo: https://github.com/pre-commit/mirrors-isort
+    rev: v4.3.21
+    hooks:
+      - id: isort
+  - repo: https://github.com/psf/black
+    rev: stable
+    hooks:
+      - id: black

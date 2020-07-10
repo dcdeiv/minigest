@@ -1,0 +1,14 @@
+{
+  "recommendations": [
+    "editorconfig.editorconfig",
+    "vivaxy.vscode-conventional-commits",
+    "bungcip.better-toml",
+    "kevinglasson.cornflakes-linter",
+    "esbenp.prettier-vscode",
+    "bodil.prettier-toml",
+    "ms-python.python",
+    "batisteo.vscode-django",
+    "bibhasdn.django-html",
+    "ms-azuretools.vscode-docker"
+  ]
+}
