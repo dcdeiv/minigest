@@ -9,11 +9,14 @@ repos:
     rev: "3.7.9"
     hooks:
       - id: flake8
+        stages: [push]
   - repo: https://github.com/pre-commit/mirrors-isort
     rev: v4.3.21
     hooks:
       - id: isort
+        stages: [push]
   - repo: https://github.com/psf/black
     rev: stable
     hooks:
       - id: black
+        stages: [push]
