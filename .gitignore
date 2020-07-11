@@ -13,3 +13,6 @@ packages/**/node_modules
 # Build
 packages/**/lib
 packages/**/build
+
+# Logs
+*.log
