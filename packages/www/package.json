@@ -29,6 +29,7 @@
     "react-scripts": "3.4.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.10.4",
     "@craco/craco": "^5.6.4"
   }
 }
