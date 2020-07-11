@@ -1,0 +1,25 @@
+{
+  "private": true,
+  "name": "@minigest/helpers",
+  "version": "0.0.0",
+  "description": "Minigest helpers",
+  "author": "Davide Di Criscito <davide.dicriscito@gmail.com>",
+  "homepage": "https://github.com/ctrlmaniac/minigest",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "babel src -d lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ctrlmaniac/minigest.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ctrlmaniac/minigest/issues"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.4",
+    "@babel/core": "^7.10.4",
+    "@babel/preset-env": "^7.10.4"
+  }
+}
