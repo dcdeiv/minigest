@@ -15,8 +15,9 @@
     "url": "https://github.com/ctrlmaniac/minigest/issues"
   },
   "scripts": {
-    "build": "babel src -d lib --delete-dir-on-start",
-    "start": "babel src -d lib --watch"
+    "check": "eslint \"lib/**\"",
+    "start": "babel src -d lib --watch",
+    "build": "babel src -d lib --delete-dir-on-start"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.0"
@@ -25,7 +26,12 @@
     "@babel/cli": "^7.10.4",
     "@babel/core": "^7.10.4",
     "@babel/preset-env": "^7.10.4",
-    "@babel/preset-react": "^7.10.4"
+    "@babel/preset-react": "^7.10.4",
+    "babel-eslint": "8",
+    "eslint": "^7.4.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-react": "^7.20.3",
+    "prettier": "^2.0.5"
   },
   "publishConfig": {
     "directory": "lib"
