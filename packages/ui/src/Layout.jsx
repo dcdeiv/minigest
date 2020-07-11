@@ -1,24 +1,131 @@
 import React from "react";
-import { AppBar, Toolbar, Box } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import {
+  Hidden,
+  AppBar,
+  Toolbar,
+  Typography,
+  Drawer,
+  IconButton,
+  Divider,
+} from "@material-ui/core";
+import MenuIcon from "@material-ui/icons/Menu";
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 
-const useStyles = makeStyles((theme) => {
-  offset: theme.mixins.toolbar;
-});
+const drawerWidth = 250;
 
-export function Layout({ children }) {
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: "flex",
+  },
+  drawer: {
+    [theme.breakpoints.up("md")]: {
+      width: drawerWidth,
+      flexShrink: 0,
+    },
+  },
+  appBar: {
+    [theme.breakpoints.up("md")]: {
+      width: `calc(100% - ${drawerWidth}px)`,
+      marginLeft: drawerWidth,
+    },
+  },
+  menuButton: {
+    marginRight: theme.spacing(2),
+    [theme.breakpoints.up("md")]: {
+      display: "none",
+    },
+  },
+  title: {
+    flexGrow: 1,
+  },
+  toolbar: theme.mixins.toolbar,
+  drawerPaper: {
+    width: drawerWidth,
+  },
+  content: {
+    flexGrow: 1,
+    padding: theme.spacing(3),
+  },
+}));
+
+const ExitButton = () => (
+  <IconButton
+    color="inherit"
+    edge="end"
+    onClick={() => window.location.replace("/esci")}
+  >
+    <ExitToAppIcon />
+  </IconButton>
+);
+
+export default function Layout(props) {
+  const { window, children, drawer: AppDrawer, title = "minigest" } = props;
   const classes = useStyles();
+  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const container =
+    window !== undefined ? () => window().document.body : undefined;
+
+  const handleDrawerToggle = () => {
+    setMobileOpen(!mobileOpen);
+  };
 
   return (
-    <React.Fragment>
-      <AppBar>
-        <Toolbar>ciao</Toolbar>
+    <div className={classes.root}>
+      <AppBar position="fixed" className={classes.appBar}>
+        <Toolbar>
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="start"
+            onClick={handleDrawerToggle}
+            className={classes.menuButton}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h6" className={classes.title}>
+            {title}
+          </Typography>
+          <ExitButton />
+        </Toolbar>
       </AppBar>
 
-      <div>
-        <div className={classes.offset}></div>
+      <nav className={classes.drawer}>
+        <Hidden mdUp implementation="css">
+          <Drawer
+            container={container}
+            variant="temporary"
+            anchor="left"
+            open={mobileOpen}
+            onClose={handleDrawerToggle}
+            classes={{
+              paper: classes.drawerPaper,
+            }}
+            ModalProps={{
+              keepMounted: true,
+            }}
+          >
+            <AppDrawer handleClose={() => setMobileOpen(false)} />
+          </Drawer>
+        </Hidden>
+        <Hidden smDown implementation="css">
+          <Drawer
+            classes={{
+              paper: classes.drawerPaper,
+            }}
+            variant="permanent"
+            open
+          >
+            <Divider />
+            <AppDrawer />
+          </Drawer>
+        </Hidden>
+      </nav>
+
+      <main className={classes.content}>
+        <div className={classes.toolbar} />
         {children}
-      </div>
-    </React.Fragment>
+      </main>
+    </div>
   );
 }
