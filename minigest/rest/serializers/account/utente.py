@@ -13,5 +13,4 @@ class UtenteSerializer(serializers.ModelSerializer):
             "email",
             "cognome",
             "nome",
-            "imprese",
         ]
