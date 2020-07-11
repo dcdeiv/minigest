@@ -8,6 +8,14 @@ readme = "README.md"
 repository = "https://github.com/ctrlmaniac/minigest"
 homepage = "https://ctrlmaniac.github.io/minigest"
 keywords = ["ERP", "django", "gestionale"]
+classifiers = [
+  "Environment :: Web Environment",
+  "Framework :: Django",
+  "Framework :: Django :: 3.0",
+  "Intended Audience :: Developers",
+  "Natural Language :: Italian",
+  "Topic :: Office/Business"
+]
 
 [tool.commitizen]
 name = "cz_conventional_commits"
