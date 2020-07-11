@@ -15,7 +15,7 @@
     "url": "https://github.com/ctrlmaniac/minigest/issues"
   },
   "scripts": {
-    "check": "eslint \"lib/**\"",
+    "lint": "eslint \"src/**\"",
     "start": "babel src -d lib --watch",
     "build": "babel src -d lib --delete-dir-on-start"
   },
