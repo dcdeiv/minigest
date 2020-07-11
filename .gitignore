@@ -3,3 +3,7 @@
 
 # Python
 *.egg-info
+**/__pycache__
+
+# Databases
+*.sqlite3
