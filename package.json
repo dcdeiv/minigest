@@ -5,6 +5,8 @@
     "packages/*"
   ],
   "scripts": {
+    "clean": "yarn lerna clean --yes",
+    "postclean": "yarn install",
     "start:www": "yarn workspace @minigest/www start",
     "build": "yarn lerna exec yarn build --ignore=@minigest/docs",
     "build:docs": "yarn lerna exec yarn build --ignore=@minigest/www",
@@ -13,7 +15,6 @@
     "postcollectclient": "git add minigest && git commit -m 'feat(minigest): aggiorna www'"
   },
   "devDependencies": {
-    "@yarnpkg/pnpify": "^2.1.0",
     "lerna": "^3.22.1"
   }
 }
