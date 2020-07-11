@@ -1,8 +1,7 @@
 {
   "editor.renderWhitespace": "boundary",
-  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "python.formatting.provider": "black",
-  "conventionalCommits.scopes": [
-    "root"
-  ]
+  "editor.formatOnSave": true,
+  "conventionalCommits.scopes": ["root"]
 }
