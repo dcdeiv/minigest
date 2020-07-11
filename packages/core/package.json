@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "@minigest/helpers",
+  "name": "@minigest/core",
   "version": "0.1.0",
   "description": "Minigest helpers",
   "author": "Davide Di Criscito <davide.dicriscito@gmail.com>",
