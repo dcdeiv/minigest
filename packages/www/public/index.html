@@ -28,5 +28,12 @@
       javascript!</noscript
     >
     <div id="root"></div>
+    <script type="text/javascript">
+      var auth = {
+        id: "{{ id | escapejs }}",
+        error: "{{ error | escapejs }}",
+        message: "{{ message | escapejs }}",
+      };
+    </script>
   </body>
 </html>
