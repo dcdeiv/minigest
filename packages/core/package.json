@@ -8,7 +8,7 @@
   "license": "MIT",
   "main": "lib/index.js",
   "scripts": {
-    "build": "babel src -d lib"
+    "build": "babel src -d lib --delete-dir-on-start"
   },
   "repository": {
     "type": "git",
