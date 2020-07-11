@@ -4,7 +4,7 @@
     Altrimenti usa questa impostazione come riferimento per le app
     da installare
 """
-MINIGEST_APPS = ["minigest.account"]
+MINIGEST_APPS = ["minigest.account", "minigest.www"]
 
 """
     Dipendenze dell'applicazione minigest
