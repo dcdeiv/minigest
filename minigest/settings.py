@@ -12,4 +12,3 @@ MINIGEST_APPS = ["minigest.account"]
     tutte le dipendenze
 """
 MINIGEST_DEPENDENCIES = ["rest_framework"]
-
