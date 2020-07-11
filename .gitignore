@@ -8,6 +8,9 @@
 # Databases
 *.sqlite3
 
+# Node
+node_modules
+
 # Yarn v2
 .yarn/*
 !.yarn/cache
