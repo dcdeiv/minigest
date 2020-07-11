@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { ThemeProvider } from "@material-ui/core/styles";
-import { defaultTheme } from "@minigest/core";
 import { CssBaseline } from "@material-ui/core";
+import { defaultTheme } from "@minigest/ui";
 import { App } from "./App";
 import * as serviceWorker from "./serviceWorker";
 
