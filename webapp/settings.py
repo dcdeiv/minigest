@@ -1,6 +1,6 @@
 import os
 
-from minigest.settings import MINIGEST_APPS
+from minigest.settings import MINIGEST_APPS, MINIGEST_DEPENDENCIES
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -16,14 +16,18 @@ SECRET_KEY = os.environ.get(
 ALLOWED_HOSTS = ["localhost", "127.0.0.1", "[::1]"]
 
 
-INSTALLED_APPS = [
-    "django.contrib.admin",
-    "django.contrib.auth",
-    "django.contrib.contenttypes",
-    "django.contrib.sessions",
-    "django.contrib.messages",
-    "django.contrib.staticfiles",
-] + MINIGEST_APPS
+INSTALLED_APPS = (
+    [
+        "django.contrib.admin",
+        "django.contrib.auth",
+        "django.contrib.contenttypes",
+        "django.contrib.sessions",
+        "django.contrib.messages",
+        "django.contrib.staticfiles",
+    ]
+    + MINIGEST_DEPENDENCIES
+    + MINIGEST_APPS
+)
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",

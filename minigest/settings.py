@@ -5,3 +5,11 @@
     da installare
 """
 MINIGEST_APPS = ["minigest.account"]
+
+"""
+    Dipendenze dell'applicazione minigest
+    usa questo oggetto come riferimento per installare
+    tutte le dipendenze
+"""
+MINIGEST_DEPENDENCIES = ["rest_framework"]
+
