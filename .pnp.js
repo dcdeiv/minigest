@@ -1826,6 +1826,22 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["@craco/craco", [
+        ["virtual:8f656c72186fdd0c180d5b0425dcf1ded9ae2ebd1b54918793c874fb38589471d5311cd9c79f9dd6a4c520e7901737e980a1f9f12018df9ee908883e8dfe2c94#npm:5.6.4", {
+          "packageLocation": "./.yarn/$$virtual/@craco-craco-virtual-676b2cde9d/0/cache/@craco-craco-npm-5.6.4-e719d6caa7-30cf931da3.zip/node_modules/@craco/craco/",
+          "packageDependencies": [
+            ["@craco/craco", "virtual:8f656c72186fdd0c180d5b0425dcf1ded9ae2ebd1b54918793c874fb38589471d5311cd9c79f9dd6a4c520e7901737e980a1f9f12018df9ee908883e8dfe2c94#npm:5.6.4"],
+            ["cross-spawn", "npm:7.0.3"],
+            ["lodash", "npm:4.17.19"],
+            ["react-scripts", "virtual:8f656c72186fdd0c180d5b0425dcf1ded9ae2ebd1b54918793c874fb38589471d5311cd9c79f9dd6a4c520e7901737e980a1f9f12018df9ee908883e8dfe2c94#npm:3.4.1"],
+            ["webpack-merge", "npm:4.2.2"]
+          ],
+          "packagePeers": [
+            "react-scripts"
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["@csstools/convert-colors", [
         ["npm:1.4.0", {
           "packageLocation": "./.yarn/cache/@csstools-convert-colors-npm-1.4.0-43f8302fcb-c8c8e6b5b3.zip/node_modules/@csstools/convert-colors/",
@@ -3027,6 +3043,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./packages/www/",
           "packageDependencies": [
             ["@minigest/www", "workspace:packages/www"],
+            ["@craco/craco", "virtual:8f656c72186fdd0c180d5b0425dcf1ded9ae2ebd1b54918793c874fb38589471d5311cd9c79f9dd6a4c520e7901737e980a1f9f12018df9ee908883e8dfe2c94#npm:5.6.4"],
             ["react", "npm:16.13.1"],
             ["react-dom", "virtual:8f656c72186fdd0c180d5b0425dcf1ded9ae2ebd1b54918793c874fb38589471d5311cd9c79f9dd6a4c520e7901737e980a1f9f12018df9ee908883e8dfe2c94#npm:16.13.1"],
             ["react-scripts", "virtual:8f656c72186fdd0c180d5b0425dcf1ded9ae2ebd1b54918793c874fb38589471d5311cd9c79f9dd6a4c520e7901737e980a1f9f12018df9ee908883e8dfe2c94#npm:3.4.1"]
@@ -19125,6 +19142,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "packagePeers": [
             "webpack"
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["webpack-merge", [
+        ["npm:4.2.2", {
+          "packageLocation": "./.yarn/cache/webpack-merge-npm-4.2.2-f98139a8eb-038c6d8ba4.zip/node_modules/webpack-merge/",
+          "packageDependencies": [
+            ["webpack-merge", "npm:4.2.2"],
+            ["lodash", "npm:4.17.19"]
           ],
           "linkType": "HARD",
         }]
