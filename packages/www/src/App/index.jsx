@@ -1,102 +1,23 @@
 import React from "react";
+import { Switch, Route, useRouteMatch } from "react-router-dom";
 import { Layout } from "@minigest/ui";
-import { AppDrawer } from "src/Drawer";
-import Accedi from "./Accedi.jsx";
-export { Accedi };
+import { AppDrawer } from "src/Components";
 
+// External Routes
+import Accedi from "./Accedi.jsx";
+
+// Route
+import { Home } from "./Home.jsx";
+
+export { Accedi };
 export function App() {
+  let { path } = useRouteMatch();
+
   return (
     <Layout drawer={AppDrawer}>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
-        eligendi pariatur possimus, in neque officia! Ea assumenda, sunt unde id
-        nobis praesentium eum tempore maiores doloremque dolor quisquam voluptas
-        eligendi?
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
-        eligendi pariatur possimus, in neque officia! Ea assumenda, sunt unde id
-        nobis praesentium eum tempore maiores doloremque dolor quisquam voluptas
-        eligendi?
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
-        eligendi pariatur possimus, in neque officia! Ea assumenda, sunt unde id
-        nobis praesentium eum tempore maiores doloremque dolor quisquam voluptas
-        eligendi?
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
-        eligendi pariatur possimus, in neque officia! Ea assumenda, sunt unde id
-        nobis praesentium eum tempore maiores doloremque dolor quisquam voluptas
-        eligendi?
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
-        eligendi pariatur possimus, in neque officia! Ea assumenda, sunt unde id
-        nobis praesentium eum tempore maiores doloremque dolor quisquam voluptas
-        eligendi?
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
-        eligendi pariatur possimus, in neque officia! Ea assumenda, sunt unde id
-        nobis praesentium eum tempore maiores doloremque dolor quisquam voluptas
-        eligendi?
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
-        eligendi pariatur possimus, in neque officia! Ea assumenda, sunt unde id
-        nobis praesentium eum tempore maiores doloremque dolor quisquam voluptas
-        eligendi?
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
-        eligendi pariatur possimus, in neque officia! Ea assumenda, sunt unde id
-        nobis praesentium eum tempore maiores doloremque dolor quisquam voluptas
-        eligendi?
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
-        eligendi pariatur possimus, in neque officia! Ea assumenda, sunt unde id
-        nobis praesentium eum tempore maiores doloremque dolor quisquam voluptas
-        eligendi?
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
-        eligendi pariatur possimus, in neque officia! Ea assumenda, sunt unde id
-        nobis praesentium eum tempore maiores doloremque dolor quisquam voluptas
-        eligendi?
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
-        eligendi pariatur possimus, in neque officia! Ea assumenda, sunt unde id
-        nobis praesentium eum tempore maiores doloremque dolor quisquam voluptas
-        eligendi?
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
-        eligendi pariatur possimus, in neque officia! Ea assumenda, sunt unde id
-        nobis praesentium eum tempore maiores doloremque dolor quisquam voluptas
-        eligendi?
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
-        eligendi pariatur possimus, in neque officia! Ea assumenda, sunt unde id
-        nobis praesentium eum tempore maiores doloremque dolor quisquam voluptas
-        eligendi?
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
-        eligendi pariatur possimus, in neque officia! Ea assumenda, sunt unde id
-        nobis praesentium eum tempore maiores doloremque dolor quisquam voluptas
-        eligendi?
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
-        eligendi pariatur possimus, in neque officia! Ea assumenda, sunt unde id
-        nobis praesentium eum tempore maiores doloremque dolor quisquam voluptas
-        eligendi?
-      </p>
+      <Switch>
+        <Route exact path={path} component={Home} />
+      </Switch>
     </Layout>
   );
 }
