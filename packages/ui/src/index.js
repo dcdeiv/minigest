@@ -4,5 +4,8 @@ export { Layout };
 import NotFound from "./NotFound.jsx";
 export { NotFound };
 
-import theme from "./theme";
+import Splash from "./Splash.jsx";
+export { Splash };
+
+import theme from "./theme.js";
 export { theme };
