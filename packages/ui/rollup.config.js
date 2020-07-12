@@ -23,6 +23,7 @@ export default {
     peerDepsExternal(),
     resolve(),
     babel({
+      babelHelpers: "bundled",
       exclude: "node_modules/**",
     }),
     commonjs(),
