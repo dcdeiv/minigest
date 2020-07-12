@@ -1,5 +1,5 @@
 import React from "react";
-import { List, ListItemIcon, ListItemText } from "@material-ui/core";
+import { Divider, List, ListItemIcon, ListItemText } from "@material-ui/core";
 import { ListItemLink } from "src/Components";
 
 // Icons
@@ -18,6 +18,9 @@ export default function AppDrawer(props) {
           </ListItemIcon>
           <ListItemText primary="Dashboard" />
         </ListItemLink>
+      </List>
+      <Divider />
+      <List>
         <ListItemLink to="/profilo" handleClose={handleClose}>
           <ListItemIcon>
             <FaceIcon />
@@ -25,6 +28,7 @@ export default function AppDrawer(props) {
           <ListItemText primary="Profilo" />
         </ListItemLink>
       </List>
+      <Divider />
     </React.Fragment>
   );
 }
