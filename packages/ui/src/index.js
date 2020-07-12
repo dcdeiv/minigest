@@ -1,6 +1,9 @@
 import Layout from "./Layout.jsx";
 export { Layout };
 
+import LoadingApp from "./LoadingApp.jsx";
+export { LoadingApp };
+
 import MessageBox from "./MessageBox.jsx";
 export { MessageBox };
 
