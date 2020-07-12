@@ -6,6 +6,7 @@
     "start": "craco start",
     "build": "PUBLIC_URL=/static/www craco build"
   },
+  "proxy": "localhost:8000",
   "eslintConfig": {
     "extends": "react-app"
   },
