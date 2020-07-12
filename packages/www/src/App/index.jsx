@@ -1,6 +1,8 @@
 import React from "react";
 import { Layout } from "@minigest/ui";
 import { AppDrawer } from "src/Drawer";
+import Accedi from "./Accedi.jsx";
+export { Accedi };
 
 export function App() {
   return (

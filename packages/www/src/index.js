@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Provider as ReduxProvider } from "react-redux";
 import {
   BrowserRouter as Router,
   Switch,
@@ -13,25 +14,36 @@ import { CssBaseline } from "@material-ui/core";
 import { theme, NotFound } from "@minigest/ui";
 
 // Local
-import { App } from "./App";
+import { App, Accedi } from "./App";
+import { store } from "src/state";
 import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
-  <ThemeProvider theme={theme}>
-    <CssBaseline />
-    <Router>
-      <Switch>
-        {/* ESCI */}
-        <Route path="/esci">
-          <Redirect to="/esci/" />
-        </Route>
+  <ReduxProvider store={store}>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Router>
+        <Switch>
+          {/* ACCEDI */}
+          <Route strict path="/accedi/" component={Accedi} />
+          <Route path="/accedi">
+            <Redirect to="/accedi/" />
+          </Route>
 
-        <Route exact path="/" component={App} />
+          {/* ESCI */}
+          <Route path="/esci">
+            <Redirect to="/esci/" />
+          </Route>
 
-        <Route path="*" component={NotFound} />
-      </Switch>
-    </Router>
-  </ThemeProvider>,
+          {/* APP */}
+          <Route exact path="/" component={App} />
+
+          {/* 404 */}
+          <Route path="*" component={NotFound} />
+        </Switch>
+      </Router>
+    </ThemeProvider>
+  </ReduxProvider>,
   document.getElementById("root")
 );
 
