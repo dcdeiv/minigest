@@ -1,23 +1,19 @@
 import React from "react";
-import { Switch, Route, useRouteMatch } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { Typography } from "@material-ui/core";
 import { Layout, LoadingApp, MessageBox, Splash } from "@minigest/ui";
 import { AppDrawer } from "src/Components";
 import { action } from "src/state";
 
-// External Routes
-import Accedi from "./Accedi.jsx";
-
 // Route
-import { Home } from "./Home.jsx";
+import { Dashboard } from "./Dashboard";
+import { Profilo } from "./Profilo";
 
-export { Accedi };
-export function App() {
+export default function App() {
   const dispatch = useDispatch();
   let { id } = useSelector((state) => state.utente.auth);
   let { getting, getError } = useSelector((state) => state.utente.utente);
-  let { path } = useRouteMatch();
 
   // Scarica i dettagli dell'utente
   React.useEffect(() => {
@@ -41,7 +37,11 @@ export function App() {
       return (
         <Layout drawer={AppDrawer}>
           <Switch>
-            <Route exact path={path} component={Home} />
+            {/* Dashboard */}
+            <Route exact path="/" component={Dashboard} />
+
+            {/* Profilo */}
+            <Route path="/profilo" component={Profilo} />
           </Switch>
         </Layout>
       );

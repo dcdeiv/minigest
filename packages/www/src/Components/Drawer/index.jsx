@@ -4,6 +4,7 @@ import { ListItemLink } from "src/Components";
 
 // Icons
 import DashboardIcon from "@material-ui/icons/Dashboard";
+import FaceIcon from "@material-ui/icons/Face";
 
 export default function AppDrawer(props) {
   let { handleClose = () => true } = props;
@@ -16,6 +17,12 @@ export default function AppDrawer(props) {
             <DashboardIcon />
           </ListItemIcon>
           <ListItemText primary="Dashboard" />
+        </ListItemLink>
+        <ListItemLink to="/profilo" handleClose={handleClose}>
+          <ListItemIcon>
+            <FaceIcon />
+          </ListItemIcon>
+          <ListItemText primary="Profilo" />
         </ListItemLink>
       </List>
     </React.Fragment>
