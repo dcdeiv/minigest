@@ -1,6 +1,6 @@
 import { createMuiTheme } from "@material-ui/core/styles";
 
-export const theme = createMuiTheme({
+const theme = createMuiTheme({
   common: {
     white: "#F8F8F8",
     black: "#2B2B2B",
@@ -9,3 +9,5 @@ export const theme = createMuiTheme({
     type: "dark",
   },
 });
+
+export default theme;

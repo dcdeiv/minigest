@@ -59,8 +59,8 @@ const ExitButton = () => (
   </IconButton>
 );
 
-export default function Layout(props) {
-  const { window, children, drawer: AppDrawer, title = "minigest" } = props;
+const Layout = function (props) {
+  const { window, drawer: AppDrawer, title = "minigest" } = props;
   const classes = useStyles();
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const container =
@@ -124,8 +124,10 @@ export default function Layout(props) {
 
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        {children}
+        {props.children}
       </main>
     </div>
   );
-}
+};
+
+export default Layout;
