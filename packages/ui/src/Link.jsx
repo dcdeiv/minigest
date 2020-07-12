@@ -1,6 +1,6 @@
 import React from "react";
 import { Link as RouterLink } from "react-router-dom";
-import { Link as MaterialLink } from "@materia-ui/core";
+import { Link as MaterialLink } from "@material-ui/core";
 
 export default function Link(props) {
   let { children, ...rest } = props;
