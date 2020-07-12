@@ -8,6 +8,7 @@
     "clean": "yarn lerna clean --yes",
     "postclean": "yarn install",
     "start:www": "yarn workspace @minigest/www start",
+    "start:www:dev": "yarn lerna exec yarn start --ignore=@minigest/docs",
     "build": "yarn lerna exec yarn build --ignore=@minigest/docs",
     "build:docs": "yarn lerna exec yarn build --ignore=@minigest/www",
     "precollectclient": "yarn run build",
