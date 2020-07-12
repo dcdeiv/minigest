@@ -1,6 +1,9 @@
 import Layout from "./Layout.jsx";
 export { Layout };
 
+import MessageBox from "./MessageBox.jsx";
+export { MessageBox };
+
 import NotFound from "./NotFound.jsx";
 export { NotFound };
 
