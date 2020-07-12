@@ -1,6 +1,6 @@
 import os
 
-from minigest.settings import MINIGEST_APPS, MINIGEST_DEPENDENCIES
+from minigest.settings import MINIGEST_APPS, MINIGEST_DEPENDENCIES, MINIGEST_MIDDLEWARE
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -11,6 +11,15 @@ PRODUCTION = os.environ.get("PRODUCTION", False)
 SECRET_KEY = os.environ.get(
     "SECRET_KEY", "n1nt!$-+o!5za)btm!g#d&8w3k83x&x$b-3^nzrin6+^@5v206"
 )
+
+# CORS
+CSRF_COOKIE_NAME = "csrftoken"
+CORS_ORIGIN_ALLOW_ALL = False
+CORS_ALLOW_CREDENTIALS = True
+if DEBUG and not PRODUCTION:
+    CORS_ORIGIN_WHITELIST = [
+        "http://localhost:3000",  # webclient react app
+    ]
 
 
 ALLOWED_HOSTS = ["localhost", "127.0.0.1", "[::1]"]
@@ -29,7 +38,7 @@ INSTALLED_APPS = (
     + MINIGEST_APPS
 )
 
-MIDDLEWARE = [
+MIDDLEWARE = MINIGEST_MIDDLEWARE + [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",

@@ -11,4 +11,13 @@ MINIGEST_APPS = ["minigest.account", "minigest.www"]
     usa questo oggetto come riferimento per installare
     tutte le dipendenze
 """
-MINIGEST_DEPENDENCIES = ["rest_framework"]
+MINIGEST_DEPENDENCIES = ["corsheaders","rest_framework"]
+
+"""
+    django-cors-headers
+    inserisci il middleware `corsheaders.middleware.CorsMiddleware`
+    nella sezione MIDDLEWARE in settings dell'applicazione
+    posiziona il middleware il più in alto possibile,
+    e comunque sopra `django.middleware.common.CommonMiddleware` o Whitenoise
+"""
+MINIGEST_MIDDLEWARE = ["corsheaders.middleware.CorsMiddleware"]
