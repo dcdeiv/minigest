@@ -19,6 +19,7 @@
     "url": "https://github.com/ctrlmaniac/minigest/issues"
   },
   "scripts": {
+    "commit": "poetry run cz c",
     "lint": "eslint \"src/**\"",
     "build": "rollup -c"
   },
