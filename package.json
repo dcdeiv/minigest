@@ -13,7 +13,7 @@
     "build:docs": "yarn lerna exec yarn build --ignore=@minigest/www",
     "precollectclient": "yarn run build",
     "collectclient": "poetry run collectclient",
-    "postcollectclient": "git add minigest && git commit -m 'feat(minigest): aggiorna www'"
+    "postcollectclient": "git add minigest && git commit -m \"feat(minigest): aggiorna www\""
   },
   "devDependencies": {
     "lerna": "^3.22.1"
