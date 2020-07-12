@@ -1,15 +1,25 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { ThemeProvider } from "@material-ui/core/styles";
 import { CssBaseline } from "@material-ui/core";
-import { theme } from "@minigest/ui";
+
+// Contrib
+import { theme, NotFound } from "@minigest/ui";
+
+// Local
 import { App } from "./App";
 import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>
     <CssBaseline />
-    <App />
+    <Router>
+      <Switch>
+        <Route exact path="/" component={App} />
+        <Route path="*" component={NotFound} />
+      </Switch>
+    </Router>
   </ThemeProvider>,
   document.getElementById("root")
 );
