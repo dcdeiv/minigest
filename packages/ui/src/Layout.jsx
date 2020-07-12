@@ -11,6 +11,7 @@ import {
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+import NotFound from "./NotFound.jsx";
 
 const drawerWidth = 250;
 
@@ -124,6 +125,7 @@ const Layout = function (props) {
 
       <main className={classes.content}>
         <div className={classes.toolbar} />
+        {props.children || <NotFound />}
         {props.children}
       </main>
     </div>
