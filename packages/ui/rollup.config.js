@@ -21,7 +21,9 @@ export default {
   ],
   plugins: [
     peerDepsExternal(),
-    resolve(),
+    resolve({
+      extensions: [".mjs", ".js", ".jsx", ".json"],
+    }),
     babel({
       babelHelpers: "bundled",
       exclude: "node_modules/**",
