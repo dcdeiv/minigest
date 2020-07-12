@@ -1,17 +1,23 @@
-import Layout from "./Layout.jsx";
+import AppContent from "./AppContent";
+export { AppContent };
+
+import AppHeader from "./AppHeader";
+export { AppHeader };
+
+import Layout from "./Layout";
 export { Layout };
 
-import LoadingApp from "./LoadingApp.jsx";
+import LoadingApp from "./LoadingApp";
 export { LoadingApp };
 
-import MessageBox from "./MessageBox.jsx";
+import MessageBox from "./MessageBox";
 export { MessageBox };
 
-import NotFound from "./NotFound.jsx";
+import NotFound from "./NotFound";
 export { NotFound };
 
-import Splash from "./Splash.jsx";
+import Splash from "./Splash";
 export { Splash };
 
-import theme from "./theme.js";
+import theme from "./theme";
 export { theme };
