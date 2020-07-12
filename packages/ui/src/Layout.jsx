@@ -126,7 +126,6 @@ const Layout = function (props) {
       <main className={classes.content}>
         <div className={classes.toolbar} />
         {props.children || <NotFound />}
-        {props.children}
       </main>
     </div>
   );
