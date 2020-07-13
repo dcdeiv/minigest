@@ -84,6 +84,9 @@ DATABASES = {
 
 AUTH_USER_MODEL = "account.Utente"
 
+LOGIN_URL = "www:accedi"
+LOGOUT_REDIRECT_URL = "www:accedi"
+
 AUTH_PASSWORD_VALIDATORS = [
     {
         "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",  # noqa E501
