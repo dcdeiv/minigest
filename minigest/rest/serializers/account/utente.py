@@ -14,3 +14,4 @@ class UtenteSerializer(serializers.ModelSerializer):
             "cognome",
             "nome",
         ]
+        read_only_fields = ["id", "is_staff", "is_authenticated"]
