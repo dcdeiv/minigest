@@ -48,7 +48,9 @@ export function FormInfo(props) {
   };
 
   const handleSubmit = function () {
-    let newValues = {};
+    let newValues = {
+      id: user.id,
+    };
 
     forEach(values, (o) => {
       let { name, value } = o;

@@ -3,6 +3,8 @@ import * as C from "src/constants";
 const initialState = {
   getting: true,
   getError: false,
+  putting: false,
+  putError: false,
   dettagli: {},
 };
 
@@ -26,6 +28,34 @@ export default function utente(state = initialState, action) {
         dettagli: {},
         getError: payload,
         getting: false,
+      };
+    }
+
+    case C.USER_PUT_START: {
+      return {
+        ...state,
+        putting: true,
+        putError: false,
+      };
+    }
+
+    case C.USER_PUT_FAIL: {
+      return {
+        ...state,
+        putError: payload,
+        putting: false,
+      };
+    }
+
+    case C.USER_PUT_SUCCESS: {
+      return {
+        ...state,
+        putError: false,
+        dettagli: {
+          ...state.dettagli,
+          ...payload,
+        },
+        putting: false,
       };
     }
 

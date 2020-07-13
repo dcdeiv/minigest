@@ -1,4 +1,5 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import {
   Typography,
   Card,
@@ -10,13 +11,15 @@ import {
   Button,
 } from "@material-ui/core";
 import { Table } from "@minigest/ui";
+import { action } from "src/state";
 import { FormInfo } from "../Form";
 
 export function Info({ user }) {
+  const dispatch = useDispatch();
   const [open, setOpen] = React.useState(true);
 
   const handleSubmit = function (values) {
-    console.log(values);
+    dispatch(action.utente.put(values));
   };
 
   return (
