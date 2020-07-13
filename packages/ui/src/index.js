@@ -19,5 +19,8 @@ export { NotFound };
 import Splash from "./Splash";
 export { Splash };
 
+import Table from "./Table";
+export { Table };
+
 import theme from "./theme";
 export { theme };
