@@ -5,6 +5,7 @@
     "packages/*"
   ],
   "scripts": {
+    "commit": "poetry run cz c",
     "clean": "yarn lerna clean --yes",
     "postclean": "yarn install",
     "start:www": "yarn workspace @minigest/www start",
