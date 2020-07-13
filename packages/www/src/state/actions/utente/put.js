@@ -22,7 +22,7 @@ export const put = (object) => {
     dispatch(putStart());
 
     api
-      .put(`${C.USER_API_ENDPOINT}${id}/`, object)
+      .patch(`${C.USER_API_ENDPOINT}${id}/`, object)
       .then((response) => {
         dispatch(putSuccess(response.data));
       })
