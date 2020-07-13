@@ -20,6 +20,20 @@ export default function auth(state = initialAuthState, action) {
       };
     }
 
+    case C.AUTH_PWCHANGE_SUCCESS: {
+      return {
+        ...state,
+        pwchangeSuccess: "Password cambiata con successo!",
+      };
+    }
+
+    case C.AUTH_PWCHANGE_FAIL: {
+      return {
+        ...state,
+        pwchangeError: payload,
+      };
+    }
+
     default: {
       return state;
     }

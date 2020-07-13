@@ -1,6 +1,7 @@
 import { loginSuccess, loginFail, login } from "./login";
 import { getSuccess, getFail, get } from "./get";
-import { putStart, putSuccess, putFail, put } from "./put";
+import { put } from "./put";
+import { pwchange } from "./pwchange";
 
 export const utente = {
   loginSuccess,
@@ -9,8 +10,6 @@ export const utente = {
   getSuccess,
   getFail,
   get,
-  putStart,
-  putSuccess,
-  putFail,
   put,
+  pwchange,
 };

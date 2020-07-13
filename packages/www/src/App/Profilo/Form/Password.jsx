@@ -9,7 +9,7 @@ import {
 import { forEach } from "lodash";
 
 export function FormPassword(props) {
-  const { userId, open, onClose, onSubmit } = props;
+  const { open, onClose, onSubmit } = props;
   const inputStyle = {
     variant: "outlined",
     fullWidth: true,
@@ -19,7 +19,7 @@ export function FormPassword(props) {
 
   // Valori form
   const [values, setValues] = React.useState({
-    nome: {
+    old_password: {
       ...inputStyle,
       autoFocus: open,
       id: "form-old-password",
@@ -27,7 +27,7 @@ export function FormPassword(props) {
       name: "old_password",
       value: "",
     },
-    cognome: {
+    new_password: {
       ...inputStyle,
       id: "form-new-password",
       label: "Nuova password",
@@ -49,9 +49,7 @@ export function FormPassword(props) {
   };
 
   const handleSubmit = function () {
-    let newValues = {
-      id: userId,
-    };
+    let newValues = {};
 
     forEach(values, (o) => {
       let { name, value } = o;
@@ -59,6 +57,19 @@ export function FormPassword(props) {
     });
 
     onSubmit(newValues);
+
+    setValues({
+      ...values,
+      old_password: {
+        ...values.old_password,
+        value: "",
+      },
+      new_password: {
+        ...values.new_password,
+        value: "",
+      },
+    });
+
     onClose();
   };
 

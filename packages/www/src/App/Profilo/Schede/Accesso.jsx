@@ -26,7 +26,7 @@ export function Accesso({ dettagli: user }) {
   // password
   const [formPasswordOpen, setFormPasswordOpen] = React.useState(false);
   const handleFormPasswordSubmit = function (values) {
-    console.log(values);
+    dispatch(action.utente.pwchange(values));
   };
 
   return (
@@ -39,7 +39,6 @@ export function Accesso({ dettagli: user }) {
       />
 
       <FormPassword
-        userId={user.id}
         open={formPasswordOpen}
         onClose={() => setFormPasswordOpen(false)}
         onSubmit={handleFormPasswordSubmit}

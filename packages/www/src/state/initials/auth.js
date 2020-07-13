@@ -2,6 +2,8 @@ let initialState = {
   id: false,
   error: false,
   message: null,
+  pwchangeError: false,
+  pwChangeSuccess: false,
 };
 
 if (process.env.NODE_ENV === "development") {

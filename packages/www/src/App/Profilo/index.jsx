@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Typography, Grid } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/Styles";
+import { makeStyles } from "@material-ui/core/styles";
 import { AppHeader, AppContent } from "@minigest/ui";
 import { Info, Accesso } from "./Schede";
 
