@@ -27,6 +27,12 @@ export const put = (object) => {
         dispatch(putSuccess(response.data));
       })
       .catch((error) => {
+        if (error.response) {
+          console.log(error.response);
+        } else if (error.request) {
+          console.log(error.request);
+        }
+
         dispatch(putFail(error.message));
       });
   };

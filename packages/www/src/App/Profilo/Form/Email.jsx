@@ -8,7 +8,7 @@ import {
 } from "@material-ui/core";
 import { forEach } from "lodash";
 
-export function FormInfo(props) {
+export function FormEmail(props) {
   const { user, open, onClose, onSubmit } = props;
   const inputStyle = {
     variant: "outlined",
@@ -18,20 +18,14 @@ export function FormInfo(props) {
 
   // Valori form
   const [values, setValues] = React.useState({
-    nome: {
+    email: {
       ...inputStyle,
       autoFocus: open,
-      id: "form-info-nome",
-      label: "Nome",
-      name: "nome",
-      value: user.nome || "",
-    },
-    cognome: {
-      ...inputStyle,
-      id: "form-info-cognome",
-      label: "Cognome",
-      name: "cognome",
-      value: user.cognome || "",
+      type: "email",
+      id: "form-email",
+      label: "Email",
+      name: "email",
+      value: user.email || "",
     },
   });
 

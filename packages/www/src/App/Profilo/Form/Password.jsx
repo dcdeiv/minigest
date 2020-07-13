@@ -8,12 +8,13 @@ import {
 } from "@material-ui/core";
 import { forEach } from "lodash";
 
-export function FormInfo(props) {
-  const { user, open, onClose, onSubmit } = props;
+export function FormPassword(props) {
+  const { userId, open, onClose, onSubmit } = props;
   const inputStyle = {
     variant: "outlined",
     fullWidth: true,
     margin: "normal",
+    type: "password",
   };
 
   // Valori form
@@ -21,17 +22,17 @@ export function FormInfo(props) {
     nome: {
       ...inputStyle,
       autoFocus: open,
-      id: "form-info-nome",
-      label: "Nome",
-      name: "nome",
-      value: user.nome || "",
+      id: "form-old-password",
+      label: "Password attuale",
+      name: "old_password",
+      value: "",
     },
     cognome: {
       ...inputStyle,
-      id: "form-info-cognome",
-      label: "Cognome",
-      name: "cognome",
-      value: user.cognome || "",
+      id: "form-new-password",
+      label: "Nuova password",
+      name: "new_password",
+      value: "",
     },
   });
 
@@ -49,7 +50,7 @@ export function FormInfo(props) {
 
   const handleSubmit = function () {
     let newValues = {
-      id: user.id,
+      id: userId,
     };
 
     forEach(values, (o) => {

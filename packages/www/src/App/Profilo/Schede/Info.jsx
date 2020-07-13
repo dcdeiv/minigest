@@ -16,7 +16,7 @@ import { FormInfo } from "../Form";
 
 export function Info({ user }) {
   const dispatch = useDispatch();
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
 
   const handleSubmit = function (values) {
     dispatch(action.utente.put(values));
