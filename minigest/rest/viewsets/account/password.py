@@ -1,10 +1,8 @@
-from rest_framework import generics, status
+from rest_framework import generics, status, permissions
 from rest_framework.response import Response
 
 from minigest.account.models import Utente
 from minigest.rest.serializers import PasswordChangeSerializer
-
-# from rest_framework.permissions import IsAuthenticated
 
 
 class PasswordChange(generics.UpdateAPIView):
@@ -14,7 +12,7 @@ class PasswordChange(generics.UpdateAPIView):
 
     serializer_class = PasswordChangeSerializer
     model = Utente
-    # permission_classes = (IsAuthenticated,)
+    permission_classes = (permissions.IsAuthenticated,)
 
     def get_object(self, queryset=None):
         obj = self.request.user
