@@ -5,7 +5,7 @@
   "scripts": {
     "commit": "poetry run cz c",
     "start": "craco start",
-    "build": "PUBLIC_URL=/static/www craco build"
+    "build": "craco build"
   },
   "proxy": "http://localhost:8000",
   "eslintConfig": {
