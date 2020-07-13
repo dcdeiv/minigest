@@ -35,7 +35,7 @@ export function Profilo() {
           spacing={2}
         >
           <Grid item xs={12} sm={6}>
-            <Info dettagli={user} />
+            <Info user={user} />
           </Grid>
 
           <Grid item xs={12} sm={6}>
