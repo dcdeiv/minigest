@@ -96,6 +96,17 @@ AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",},
 ]
 
+# Django Rest Framework
+REST_PERM_PROD = ["rest_framework.permissions.IsAuthenticated"]
+REST_PERM_DEV = ["rest_framework.permissions.AllowAny"]
+REST_PERM = REST_PERM_PROD if PRODUCTION else REST_PERM_DEV
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    "DEFAULT_PERMISSION_CLASSES": REST_PERM
+}
+
 
 # Internationalization
 LANGUAGE_CODE = "it"
