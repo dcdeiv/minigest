@@ -1,3 +1,4 @@
 from .utente import UtenteSerializer
+from .password import PasswordChangeSerializer
 
-__all__ = ["UtenteSerializer"]
+__all__ = ["UtenteSerializer", "PasswordChangeSerializer"]

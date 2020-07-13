@@ -1,3 +1,3 @@
-from .account import Utente
+from .account import Utente, PasswordChange
 
-__all__ = ["Utente"]
+__all__ = ["Utente", "PasswordChange"]

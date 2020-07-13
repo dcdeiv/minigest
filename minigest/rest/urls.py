@@ -7,15 +7,15 @@ from minigest.rest import viewsets as vs
 router = routers.DefaultRouter()
 
 
-""" anagrafica """
+""" Account """
 router.register(r"utenti", vs.Utente)
 
 
-""" non-router patterns """
+""" non-router patters """
 urlpatterns = [
     path("auth/", include("rest_framework.urls"), name="api-auth"),
+    path("auth/password-change/", vs.PasswordChange.as_view())
 ]
-
 
 """ router patterns """
 urlpatterns += [
