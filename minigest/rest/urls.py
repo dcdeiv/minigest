@@ -14,7 +14,7 @@ router.register(r"utenti", vs.Utente)
 """ non-router patters """
 urlpatterns = [
     path("auth/", include("rest_framework.urls"), name="api-auth"),
-    path("auth/password-change/", vs.PasswordChange.as_view())
+    path("auth/password-change/", vs.PasswordChange.as_view()),
 ]
 
 """ router patterns """

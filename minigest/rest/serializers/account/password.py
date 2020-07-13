@@ -1,11 +1,13 @@
-from django.contrib.auth.password_validation import validate_password
 from rest_framework import serializers
+
+from django.contrib.auth.password_validation import validate_password
 
 
 class PasswordChangeSerializer(serializers.Serializer):
     """
     Serializer for password change endpoint.
     """
+
     old_password = serializers.CharField(required=True)
     new_password = serializers.CharField(required=True)
 
