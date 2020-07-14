@@ -1,0 +1,25 @@
+name: Deploy DOCS
+
+on:
+  push:
+    tags:
+      - "@minigest/docs@[0-9]+.[0-9]+.[0-9]+*"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: install yarn packages
+        uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: install
+      - name: build docs project
+        uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: workspace docs build
+      - name: deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./packages/docs/build
