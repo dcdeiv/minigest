@@ -1,6 +1,6 @@
 {
   "name": "@minigest/ui",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Minigest UI library",
   "author": "Davide Di Criscito <davide.dicriscito@gmail.com>",
   "homepage": "https://github.com/ctrlmaniac/minigest#readme",
@@ -23,7 +23,6 @@
     "lint": "eslint \"src/**\"",
     "build": "rollup -c"
   },
-  "dependencies": {},
   "peerDependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
