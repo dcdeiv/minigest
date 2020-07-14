@@ -33,7 +33,6 @@ def index():
     shutil.move(INDEX_NEW, INDEX_OLD)
     print("- index.html copiato!")
     print("")
-    return 1
 
 
 def asset_manifest():
@@ -50,7 +49,6 @@ def asset_manifest():
         f.truncate()
     print("- asset-manifest.json modificato!")
     print("")
-    return 1
 
 
 def service_worker():
@@ -70,12 +68,14 @@ def service_worker():
     for line in R_SERVICE:
         W_SERVICE.write(line.replace('"/static/www/index.html"', '"/index.html"'))
 
+    R_SERVICE.close()
+    W_SERVICE.close()
+
     print("- service-worker.js modificato!")
 
     # eliminazione del backup
     print("- eliminazione del backup\n")
     os.remove(SERVICE_BACKUP)
-    return 1
 
 
 def precache_manifest():
@@ -111,12 +111,14 @@ def precache_manifest():
         for line in R_MANIFEST:
             W_MANIFEST.write(line.replace('"/static/www/index.html"', '"/index.html"'))
 
+        R_MANIFEST.close()
+        W_MANIFEST.close()
+
         print(f"- {MANIFEST_NAME} modificato!")
 
         # eliminazione del backup
         print("- eliminazione del backup\n")
         os.remove(MANIFEST_BACKUP)
-        return 1
 
 
 def collectstatics():
@@ -131,15 +133,12 @@ def collectstatics():
 
     print("- copia dei file terminata!")
     print("")
-    return 1
 
 
 def purgestatics():
     print("- eliminazione della cartella static")
     if os.path.isdir(PUBLIC_STATIC_DIR):
         shutil.rmtree(PUBLIC_STATIC_DIR)
-
-    return 1
 
 
 def run():
@@ -178,5 +177,3 @@ def run():
 
             # Elimina la vecchia cartella STATIC
             purgestatics()
-
-            return 1
