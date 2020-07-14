@@ -60,7 +60,7 @@ const ExitButton = () => (
 );
 
 const Layout = function (props) {
-  const { window, drawer: AppDrawer, title = "minigest" } = props;
+  const { window, drawer: AppDrawer, title = "minigest", action } = props;
   const classes = useStyles();
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const container =
@@ -86,7 +86,7 @@ const Layout = function (props) {
           <Typography variant="h6" className={classes.title}>
             {title}
           </Typography>
-          <ExitButton />
+          {action || <ExitButton />}
         </Toolbar>
       </AppBar>
 
