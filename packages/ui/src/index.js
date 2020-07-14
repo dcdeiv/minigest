@@ -4,6 +4,9 @@ export { AppContent };
 import AppHeader from "./AppHeader";
 export { AppHeader };
 
+import CodeBlock from "./CodeBlock";
+export { CodeBlock };
+
 import Layout from "./Layout";
 export { Layout };
 
