@@ -23,14 +23,24 @@ export default function auth(state = initialAuthState, action) {
     case C.AUTH_PWCHANGE_SUCCESS: {
       return {
         ...state,
-        pwchangeSuccess: "Password cambiata con successo!",
+        pwChangeSuccess: payload,
+        pwChangeError: false,
       };
     }
 
     case C.AUTH_PWCHANGE_FAIL: {
       return {
         ...state,
-        pwchangeError: payload,
+        pwChangeSuccess: false,
+        pwChangeError: payload,
+      };
+    }
+
+    case C.AUTH_PWCHANGE_END: {
+      return {
+        ...state,
+        pwChangeSuccess: false,
+        pwChangeError: false,
       };
     }
 

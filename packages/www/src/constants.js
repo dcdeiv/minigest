@@ -9,6 +9,7 @@ export const AUTH_LOGIN_FAIL = "AUTH_LOGIN_FAIL";
 export const AUTH_PWCHANGE_API_ENDPOINT = "/api/auth/password-change/";
 export const AUTH_PWCHANGE_SUCCESS = "AUTH_PWCHANGE_SUCCESS";
 export const AUTH_PWCHANGE_FAIL = "AUTH_PWCHANGE_FAIL";
+export const AUTH_PWCHANGE_END = "AUTH_PWCHANGE_END";
 
 // USER
 export const USER_API_ENDPOINT = "/api/utenti/";

@@ -1,9 +1,10 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { Typography, Grid } from "@material-ui/core";
+import { Typography, Grid, Chip, Box } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { AppHeader, AppContent } from "@minigest/ui";
 import { Info, Accesso } from "./Schede";
+import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 
 const useStyles = makeStyles((theme) => ({
   alertNome: {
@@ -25,6 +26,12 @@ export function Profilo() {
             visualizzarli!
           </Typography>
         ) : null}
+
+        {user.is_staff && (
+          <Box mt={4}>
+            <Chip label="Staff" color="secondary" icon={<CheckCircleIcon />} />
+          </Box>
+        )}
       </AppHeader>
       <AppContent>
         <Grid

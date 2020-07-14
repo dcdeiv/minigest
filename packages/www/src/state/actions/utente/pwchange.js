@@ -2,30 +2,33 @@ import { actionCreator } from "src/state/actions";
 import * as C from "src/constants";
 import { api } from "src/helpers";
 
-export const pwchangeSuccess = (data) => {
-  return actionCreator(C.AUTH_PWCHANGE_SUCCESS);
+export const pwChangeSuccess = (data) => {
+  return actionCreator(C.AUTH_PWCHANGE_SUCCESS, data);
 };
 
-export const pwchangeFail = (data) => {
+export const pwChangeFail = (data) => {
   return actionCreator(C.AUTH_PWCHANGE_FAIL, data);
 };
 
-export const pwchange = (passwords) => {
+export const pwChange = (passwords) => {
   return (dispatch) => {
     api
       .put(C.AUTH_PWCHANGE_API_ENDPOINT, passwords)
       .then((response) => {
-        console.log(response);
-        dispatch(pwchangeSuccess());
+        dispatch(pwChangeSuccess(response.data));
       })
       .catch((error) => {
-        if (error.response) {
-          console.log(error.response);
-        } else if (error.request) {
-          console.log(error.request);
-        }
-
-        dispatch(pwchangeFail(error.message));
+        dispatch(pwChangeFail(error.message));
       });
+  };
+};
+
+export const pwChangeDismiss = (data) => {
+  const action = () => {
+    return actionCreator(C.AUTH_PWCHANGE_END);
+  };
+
+  return (dispatch) => {
+    dispatch(action());
   };
 };

@@ -1,5 +1,6 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { isEmpty } from "lodash";
+import { useDispatch, useSelector } from "react-redux";
 import {
   Typography,
   Card,
@@ -13,6 +14,7 @@ import {
 import { Table } from "@minigest/ui";
 import { FormEmail, FormPassword } from "../Form";
 import { action } from "src/state";
+import { PwChangeDismiss } from "./PwChangeDismiss";
 
 export function Accesso({ dettagli: user }) {
   const dispatch = useDispatch();
@@ -26,8 +28,27 @@ export function Accesso({ dettagli: user }) {
   // password
   const [formPasswordOpen, setFormPasswordOpen] = React.useState(false);
   const handleFormPasswordSubmit = function (values) {
-    dispatch(action.utente.pwchange(values));
+    dispatch(action.utente.pwChange(values));
   };
+
+  // password dialog
+  let { pwChangeSuccess, pwChangeError } = useSelector(
+    (state) => state.utente.auth
+  );
+  const [
+    pwChangeDialogDismissOpen,
+    setPwChangeDialogDismissOpen,
+  ] = React.useState(false);
+  const handleDismissPwChange = () => {
+    setPwChangeDialogDismissOpen(false);
+    setTimeout(() => dispatch(action.utente.pwChangeDismiss()), 500);
+  };
+
+  React.useEffect(() => {
+    if (!isEmpty(pwChangeSuccess) || !isEmpty(pwChangeError)) {
+      setPwChangeDialogDismissOpen(true);
+    }
+  }, [pwChangeError, pwChangeSuccess]);
 
   return (
     <React.Fragment>
@@ -42,6 +63,13 @@ export function Accesso({ dettagli: user }) {
         open={formPasswordOpen}
         onClose={() => setFormPasswordOpen(false)}
         onSubmit={handleFormPasswordSubmit}
+      />
+
+      <PwChangeDismiss
+        open={pwChangeDialogDismissOpen}
+        response={pwChangeSuccess || pwChangeError}
+        handleClose={handleDismissPwChange}
+        error={!isEmpty(pwChangeError)}
       />
 
       <Card>
