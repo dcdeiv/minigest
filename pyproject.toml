@@ -23,8 +23,8 @@ collectclient = "collectclient:run"
 [tool.commitizen]
 name = "cz_conventional_commits"
 version = "0.0.0"
-tag_format = "$major.$minor.$patch$prerelease"
-bump_message = "docs(release): $current_version → $new_version"
+tag_format = "minigest@$major.$minor.$patch$prerelease"
+bump_message = "chore(minigest): $new_version"
 version_files = ["pyproject.toml:version"]
 
 [tool.black]
