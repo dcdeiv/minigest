@@ -17,6 +17,12 @@
     "postcollectclient": "git add minigest && git commit -m \"feat(minigest): aggiorna www\""
   },
   "devDependencies": {
+    "cz-conventional-changelog": "^3.2.0",
     "lerna": "^3.22.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   }
 }
