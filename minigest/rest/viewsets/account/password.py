@@ -26,7 +26,7 @@ class PasswordChange(generics.UpdateAPIView):
             # Check old password
             if not self.object.check_password(serializer.data.get("old_password")):
                 return Response(
-                    {"old_password": ["Wrong password."]},
+                    {"old_password": ["Password errata!"]},
                     status=status.HTTP_400_BAD_REQUEST,
                 )
             # set_password also hashes the password that the user will get
@@ -35,7 +35,7 @@ class PasswordChange(generics.UpdateAPIView):
             response = {
                 "status": "success",
                 "code": status.HTTP_200_OK,
-                "message": "Password updated successfully",
+                "message": "Password modificata con successo!",
                 "data": [],
             }
 
