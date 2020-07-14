@@ -16,7 +16,7 @@
     "collectclient": "poetry run collectclient",
     "postcollectclient": "git add minigest && git commit -m \"feat(minigest): aggiorna www\"",
     "minigestlock": "poetry export -f requirements.txt > requirements.txt",
-    "postminigestlock": "git add requirements.txt && git -m \"build(minigest): fissa le dipendenze\""
+    "postminigestlock": "git add requirements.txt && git commit -m \"build(minigest): fissa le dipendenze\""
   },
   "devDependencies": {
     "cz-conventional-changelog": "^3.2.0",
