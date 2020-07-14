@@ -12,8 +12,14 @@ node_modules
 packages/**/node_modules
 
 # Build
+dist
 packages/**/lib
 packages/**/build
 
 # Logs
 *.log
+
+# Minigest
+public/static
+public/media
+!packages/**/public

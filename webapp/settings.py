@@ -3,6 +3,8 @@ import os
 from minigest.settings import MINIGEST_APPS, MINIGEST_DEPENDENCIES, MINIGEST_MIDDLEWARE
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+PUBLIC_DIR = os.path.join(BASE_DIR, "public")
+
 
 DEBUG = os.environ.get("DEBUG", True)
 PRODUCTION = os.environ.get("PRODUCTION", False)
@@ -11,6 +13,7 @@ PRODUCTION = os.environ.get("PRODUCTION", False)
 SECRET_KEY = os.environ.get(
     "SECRET_KEY", "n1nt!$-+o!5za)btm!g#d&8w3k83x&x$b-3^nzrin6+^@5v206"
 )
+
 
 # CORS
 CSRF_COOKIE_NAME = "csrftoken"
@@ -120,3 +123,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = "/static/"
+
+STATIC_ROOT = os.path.join(PUBLIC_DIR, "static/")
+MEDIA_ROOT = os.path.join(PUBLIC_DIR, "media/")
