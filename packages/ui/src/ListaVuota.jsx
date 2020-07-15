@@ -1,0 +1,35 @@
+import React from "react";
+import { Box, Typography } from "@material-ui/core";
+import { makeStyles } from "@material-ui/styles";
+import SentimentVeryDissatisfiedIcon from "@material-ui/icons/SentimentVeryDissatisfied";
+import SentimentVerySatisfiedIcon from "@material-ui/icons/SentimentVerySatisfied";
+
+const useStyles = makeStyles(() => ({
+  box: {
+    textAlign: "center",
+  },
+}));
+
+export default function ListaVuota(props) {
+  const { happy = false, message = "Qui non c'è niente!" } = props;
+  const classes = useStyles();
+
+  const Icon = (props) =>
+    happy ? (
+      <SentimentVerySatisfiedIcon {...props} />
+    ) : (
+      <SentimentVeryDissatisfiedIcon {...props} />
+    );
+
+  return (
+    <Box p={2} className={classes.box}>
+      <Box mb={1}>
+        <Icon fontSize="large" />
+      </Box>
+
+      <Typography variant="h6" component="h6">
+        {message}
+      </Typography>
+    </Box>
+  );
+}
