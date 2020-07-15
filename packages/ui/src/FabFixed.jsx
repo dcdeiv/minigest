@@ -1,7 +1,7 @@
 import React from "react";
 import cslx from "clsx";
 import { Fab } from "@material-ui/core";
-import { makeStyles } from "@material-ui/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import EditIcon from "@material-ui/icons/Edit";
 import AddIcon from "@material-ui/icons/Add";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
@@ -10,27 +10,27 @@ import PrintIcon from "@material-ui/icons/Print";
 import orange from "@material-ui/core/colors/orange";
 import red from "@material-ui/core/colors/red";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   fab: {
     position: "fixed",
     zIndex: 10,
     bottom: theme.spacing(2),
-    right: theme.spacing(2)
+    right: theme.spacing(2),
   },
   edit: {
     color: theme.palette.common.black,
     backgroundColor: orange[500],
     "&:hover": {
-      backgroundColor: orange[600]
-    }
+      backgroundColor: orange[600],
+    },
   },
   remove: {
     color: theme.palette.common.white,
     backgroundColor: red[500],
     "&:hover": {
-      backgroundColor: red[600]
-    }
-  }
+      backgroundColor: red[600],
+    },
+  },
 }));
 
 export default function FabFixed({ type, onClick, disabled, submit }, ...rest) {

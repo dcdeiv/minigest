@@ -1,7 +1,7 @@
 import React from "react";
 import { isEmpty } from "lodash";
 import { Container, Box, Paper } from "@material-ui/core";
-import { makeStyles } from "@material-ui/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import { red, orange } from "@material-ui/core/colors";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 
@@ -21,11 +21,12 @@ const warningTheme = createMuiTheme({
   },
 });
 
-const useStyles = makeStyles({
+// eslint-disable-next-line no-unused-vars
+const useStyles = makeStyles((theme) => ({
   box: {
     textAlign: "center",
   },
-});
+}));
 
 export default function MessageBox(props) {
   const { container = {}, children, variant = "error" } = props;

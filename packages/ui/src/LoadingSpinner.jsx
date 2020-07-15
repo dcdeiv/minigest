@@ -1,8 +1,9 @@
 import React from "react";
 import { Box, CircularProgress } from "@material-ui/core";
-import { makeStyles } from "@material-ui/styles";
+import { makeStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles(() => ({
+// eslint-disable-next-line no-unused-vars
+const useStyles = makeStyles((theme) => ({
   box: {
     textAlign: "center",
   },

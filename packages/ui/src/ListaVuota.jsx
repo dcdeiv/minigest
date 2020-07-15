@@ -1,10 +1,11 @@
 import React from "react";
 import { Box, Typography } from "@material-ui/core";
-import { makeStyles } from "@material-ui/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import SentimentVeryDissatisfiedIcon from "@material-ui/icons/SentimentVeryDissatisfied";
 import SentimentVerySatisfiedIcon from "@material-ui/icons/SentimentVerySatisfied";
 
-const useStyles = makeStyles(() => ({
+// eslint-disable-next-line no-unused-vars
+const useStyles = makeStyles((theme) => ({
   box: {
     textAlign: "center",
   },
