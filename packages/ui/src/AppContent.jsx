@@ -7,16 +7,21 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: theme.spacing(3),
     paddingBottom: theme.spacing(3),
   },
-  content: {},
+  rootFabFixed: {
+    paddingTop: theme.spacing(3),
+    marginBottom: 80,
+  },
 }));
 
 export default function AppContent(props) {
-  let { children, container } = props;
+  let { children, container, fabFixed } = props;
 
   const classes = useStyles();
 
+  const defaultRootClass = fabFixed ? classes.rootFabFixed : classes.root;
+
   return (
-    <Box className={classes.root}>
+    <Box className={defaultRootClass}>
       <Container {...container}>{children}</Container>
     </Box>
   );

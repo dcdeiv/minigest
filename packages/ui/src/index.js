@@ -13,9 +13,6 @@ export { ConfirmDelete };
 import FabFixed from "./FabFixed";
 export { FabFixed };
 
-import FabFixedContainer from "./FabFixedContainer";
-export { FabFixedContainer };
-
 import Layout from "./Layout";
 export { Layout };
 
