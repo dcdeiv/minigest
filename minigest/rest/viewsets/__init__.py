@@ -4,7 +4,6 @@ from .fisco.interessi_legali import InteressiLegali
 from .fisco.regime_fiscale import RegimeFiscale
 from .fisco.tur import TassoUfficialeRiferimento
 
-
 __all__ = [
     "Utente",
     "PasswordChange",
