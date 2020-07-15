@@ -6,6 +6,9 @@ import { ListItemLink } from "src/Components";
 import DashboardIcon from "@material-ui/icons/Dashboard";
 import FaceIcon from "@material-ui/icons/Face";
 
+// Sezioni
+import Fisco from "./Fisco";
+
 export default function AppDrawer(props) {
   let { handleClose = () => true } = props;
 
@@ -28,6 +31,8 @@ export default function AppDrawer(props) {
           <ListItemText primary="Profilo" />
         </ListItemLink>
       </List>
+      <Divider />
+      <Fisco handleClose={handleClose} />
       <Divider />
     </React.Fragment>
   );

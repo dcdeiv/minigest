@@ -9,6 +9,7 @@ import { action } from "src/state";
 // Route
 import { Dashboard } from "./Dashboard";
 import { Profilo } from "./Profilo";
+import { Fisco } from "./Fisco";
 
 export default function App() {
   const dispatch = useDispatch();
@@ -42,6 +43,9 @@ export default function App() {
 
             {/* Profilo */}
             <Route path="/profilo" component={Profilo} />
+
+            {/* Fisco */}
+            <Route path="/fisco" component={Fisco} />
           </Switch>
         </Layout>
       );
