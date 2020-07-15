@@ -1,6 +1,10 @@
 import React from "react";
-import { AppHeader, AppContent } from "@minigest/ui";
+import { AppHeader, AppContent, CodeBlock } from "@minigest/ui";
 import { Typography } from "@material-ui/core";
+
+// Sezioni
+import { Introduzione, Tags, Environment } from "./Sections";
+import { Next } from "../Next";
 
 export function Docker() {
   return (
@@ -8,13 +12,19 @@ export function Docker() {
       <AppHeader>
         <Typography variant="overline">Installazione</Typography>
         <Typography variant="h3">Docker</Typography>
-        <Typography variant="subtitle1">
-          guida all'installazione di minigest attraverso docker
-        </Typography>
+
+        <CodeBlock mb={0}>docker pull ctrlmaniac/minigest:latest</CodeBlock>
       </AppHeader>
 
       <AppContent>
-        <Typography>contenuto</Typography>
+        <Introduzione />
+        <Tags />
+        <Environment />
+        {/** SEZIONI
+         * - compose
+         * - fixtures
+         */}
+        <Next />
       </AppContent>
     </React.Fragment>
   );

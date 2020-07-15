@@ -10,6 +10,7 @@ import {
   Configurazione,
   Fine,
 } from "./Sections";
+import { Next } from "../Next";
 
 export function PyPi() {
   return (
@@ -29,8 +30,8 @@ export function PyPi() {
         <Fine />
         {/** SEZIONI:
          * - fixtures
-         * - completata
          */}
+        <Next />
       </AppContent>
     </React.Fragment>
   );
