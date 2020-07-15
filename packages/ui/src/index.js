@@ -7,6 +7,9 @@ export { AppHeader };
 import CodeBlock from "./CodeBlock";
 export { CodeBlock };
 
+import ConfirmDelete from "./ConfirmDelete";
+export { ConfirmDelete };
+
 import Layout from "./Layout";
 export { Layout };
 
