@@ -11,11 +11,18 @@ router = routers.DefaultRouter()
 router.register(r"utenti", vs.Utente)
 
 
+""" Fisco """
+router.register(r"fisco/regime-fiscale", vs.RegimeFiscale)
+router.register(r"fisco/interessi-legali", vs.InteressiLegali)
+router.register(r"fisco/tur", vs.TassoUfficialeRiferimento)
+
+
 """ non-router patters """
 urlpatterns = [
     path("auth/", include("rest_framework.urls"), name="api-auth"),
     path("auth/password-change/", vs.PasswordChange.as_view()),
 ]
+
 
 """ router patterns """
 urlpatterns += [

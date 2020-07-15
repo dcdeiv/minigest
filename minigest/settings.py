@@ -4,14 +4,19 @@
     Altrimenti usa questa impostazione come riferimento per le app
     da installare
 """
-MINIGEST_APPS = ["minigest.account", "minigest.www"]
+MINIGEST_APPS = [
+    "minigest.common",
+    "minigest.account",
+    "minigest.fisco",
+    "minigest.www",
+]
 
 """
     Dipendenze dell'applicazione minigest
     usa questo oggetto come riferimento per installare
     tutte le dipendenze
 """
-MINIGEST_DEPENDENCIES = ["corsheaders","rest_framework"]
+MINIGEST_DEPENDENCIES = ["corsheaders", "rest_framework"]
 
 """
     django-cors-headers

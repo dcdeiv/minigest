@@ -1,0 +1,360 @@
+[
+  {
+    "model": "fisco.interessilegali",
+    "pk": 1,
+    "fields": { "data": "1999-01-01", "percentuale": "2.50" }
+  },
+  {
+    "model": "fisco.interessilegali",
+    "pk": 2,
+    "fields": { "data": "2001-01-01", "percentuale": "3.50" }
+  },
+  {
+    "model": "fisco.interessilegali",
+    "pk": 3,
+    "fields": { "data": "2002-01-01", "percentuale": "3.00" }
+  },
+  {
+    "model": "fisco.interessilegali",
+    "pk": 4,
+    "fields": { "data": "2004-01-01", "percentuale": "2.50" }
+  },
+  {
+    "model": "fisco.interessilegali",
+    "pk": 5,
+    "fields": { "data": "2008-01-01", "percentuale": "3.00" }
+  },
+  {
+    "model": "fisco.interessilegali",
+    "pk": 6,
+    "fields": { "data": "2010-01-01", "percentuale": "1.00" }
+  },
+  {
+    "model": "fisco.interessilegali",
+    "pk": 7,
+    "fields": { "data": "2011-01-01", "percentuale": "1.50" }
+  },
+  {
+    "model": "fisco.interessilegali",
+    "pk": 8,
+    "fields": { "data": "2012-01-01", "percentuale": "2.50" }
+  },
+  {
+    "model": "fisco.interessilegali",
+    "pk": 9,
+    "fields": { "data": "2014-01-01", "percentuale": "1.00" }
+  },
+  {
+    "model": "fisco.interessilegali",
+    "pk": 10,
+    "fields": { "data": "2015-01-01", "percentuale": "0.50" }
+  },
+  {
+    "model": "fisco.interessilegali",
+    "pk": 11,
+    "fields": { "data": "2016-01-01", "percentuale": "0.20" }
+  },
+  {
+    "model": "fisco.interessilegali",
+    "pk": 12,
+    "fields": { "data": "2017-01-01", "percentuale": "0.10" }
+  },
+  {
+    "model": "fisco.interessilegali",
+    "pk": 13,
+    "fields": { "data": "2018-01-01", "percentuale": "0.30" }
+  },
+  {
+    "model": "fisco.interessilegali",
+    "pk": 14,
+    "fields": { "data": "2019-01-01", "percentuale": "0.80" }
+  },
+  {
+    "model": "fisco.interessilegali",
+    "pk": 15,
+    "fields": { "data": "2020-01-01", "percentuale": "0.05" }
+  },
+  {
+    "model": "fisco.regimefiscale",
+    "pk": 1,
+    "fields": { "codice": "RF01", "descrizione": "ordinario" }
+  },
+  {
+    "model": "fisco.regimefiscale",
+    "pk": 2,
+    "fields": {
+      "codice": "RF02",
+      "descrizione": "contribuenti minimi (art.1, c.96-117, L. 244/07)"
+    }
+  },
+  {
+    "model": "fisco.regimefiscale",
+    "pk": 4,
+    "fields": {
+      "codice": "RF04",
+      "descrizione": "agricoltura e attivit\u00e0 connesse e pesca (artt.34 e 34-bis, DPR 633/72)"
+    }
+  },
+  {
+    "model": "fisco.regimefiscale",
+    "pk": 5,
+    "fields": {
+      "codice": "RF05",
+      "descrizione": "vendita sali e tabacchi (art.74, c.1, DPR. 633/72)"
+    }
+  },
+  {
+    "model": "fisco.regimefiscale",
+    "pk": 6,
+    "fields": {
+      "codice": "RF06",
+      "descrizione": "commercio fiammiferi (art.74, c.1, DPR  633/72)"
+    }
+  },
+  {
+    "model": "fisco.regimefiscale",
+    "pk": 7,
+    "fields": {
+      "codice": "RF07",
+      "descrizione": "editoria (art.74, c.1, DPR  633/72)"
+    }
+  },
+  {
+    "model": "fisco.regimefiscale",
+    "pk": 8,
+    "fields": {
+      "codice": "RF08",
+      "descrizione": "gestione servizi telefonia pubblica (art.74, c.1, DPR 633/72)"
+    }
+  },
+  {
+    "model": "fisco.regimefiscale",
+    "pk": 9,
+    "fields": {
+      "codice": "RF09",
+      "descrizione": "rivendita documenti di trasporto pubblico e di sosta (art.74, c.1, DPR  633/72)"
+    }
+  },
+  {
+    "model": "fisco.regimefiscale",
+    "pk": 10,
+    "fields": {
+      "codice": "RF10",
+      "descrizione": "intrattenimenti, giochi e altre attivit\u00e0 di cui alla tariffa allegata al DPR 640/72 (art.74, c.6, DPR 633/72)"
+    }
+  },
+  {
+    "model": "fisco.regimefiscale",
+    "pk": 11,
+    "fields": {
+      "codice": "RF11",
+      "descrizione": "agenzie viaggi e turismo (art.74-ter, DPR 633/72)"
+    }
+  },
+  {
+    "model": "fisco.regimefiscale",
+    "pk": 12,
+    "fields": {
+      "codice": "RF12",
+      "descrizione": "agriturismo (art.5, c.2, L. 413/91)"
+    }
+  },
+  {
+    "model": "fisco.regimefiscale",
+    "pk": 13,
+    "fields": {
+      "codice": "RF13",
+      "descrizione": "vendite a domicilio (art.25-bis, c.6, DPR  600/73)"
+    }
+  },
+  {
+    "model": "fisco.regimefiscale",
+    "pk": 14,
+    "fields": {
+      "codice": "RF14",
+      "descrizione": "Rivendita beni usati, oggetti d\u2019arte, d\u2019antiquariato o da collezione (art.36, DL 41/95)"
+    }
+  },
+  {
+    "model": "fisco.regimefiscale",
+    "pk": 15,
+    "fields": {
+      "codice": "RF15",
+      "descrizione": "agenzie di vendite all\u2019asta di oggetti d\u2019arte, antiquariato o da collezione (art.40-bis, DL 41/95)"
+    }
+  },
+  {
+    "model": "fisco.regimefiscale",
+    "pk": 16,
+    "fields": {
+      "codice": "RF16",
+      "descrizione": "IVA per cassa P.A. (art.6, c.5, DPR 633/72)"
+    }
+  },
+  {
+    "model": "fisco.regimefiscale",
+    "pk": 17,
+    "fields": {
+      "codice": "RF17",
+      "descrizione": "IVA per cassa (art. 32-bis, DL 83/2012)"
+    }
+  },
+  {
+    "model": "fisco.regimefiscale",
+    "pk": 18,
+    "fields": { "codice": "RF18", "descrizione": "altro" }
+  },
+  {
+    "model": "fisco.regimefiscale",
+    "pk": 19,
+    "fields": {
+      "codice": "RF19",
+      "descrizione": "regime forfettario (art.1, c.54-89, L. 190/2014)"
+    }
+  },
+  {
+    "model": "fisco.tassoufficialeriferimento",
+    "pk": 1,
+    "fields": { "data": "2003-06-06", "percentuale": "2.00" }
+  },
+  {
+    "model": "fisco.tassoufficialeriferimento",
+    "pk": 2,
+    "fields": { "data": "2005-12-06", "percentuale": "2.25" }
+  },
+  {
+    "model": "fisco.tassoufficialeriferimento",
+    "pk": 3,
+    "fields": { "data": "2006-03-08", "percentuale": "2.50" }
+  },
+  {
+    "model": "fisco.tassoufficialeriferimento",
+    "pk": 4,
+    "fields": { "data": "2006-06-15", "percentuale": "2.75" }
+  },
+  {
+    "model": "fisco.tassoufficialeriferimento",
+    "pk": 5,
+    "fields": { "data": "2006-08-09", "percentuale": "3.00" }
+  },
+  {
+    "model": "fisco.tassoufficialeriferimento",
+    "pk": 6,
+    "fields": { "data": "2006-10-11", "percentuale": "3.25" }
+  },
+  {
+    "model": "fisco.tassoufficialeriferimento",
+    "pk": 7,
+    "fields": { "data": "2006-12-13", "percentuale": "3.50" }
+  },
+  {
+    "model": "fisco.tassoufficialeriferimento",
+    "pk": 8,
+    "fields": { "data": "2007-03-14", "percentuale": "3.75" }
+  },
+  {
+    "model": "fisco.tassoufficialeriferimento",
+    "pk": 9,
+    "fields": { "data": "2007-06-13", "percentuale": "4.00" }
+  },
+  {
+    "model": "fisco.tassoufficialeriferimento",
+    "pk": 10,
+    "fields": { "data": "2008-07-09", "percentuale": "4.25" }
+  },
+  {
+    "model": "fisco.tassoufficialeriferimento",
+    "pk": 11,
+    "fields": { "data": "2008-10-15", "percentuale": "3.75" }
+  },
+  {
+    "model": "fisco.tassoufficialeriferimento",
+    "pk": 12,
+    "fields": { "data": "2008-11-12", "percentuale": "3.25" }
+  },
+  {
+    "model": "fisco.tassoufficialeriferimento",
+    "pk": 13,
+    "fields": { "data": "2008-12-10", "percentuale": "2.50" }
+  },
+  {
+    "model": "fisco.tassoufficialeriferimento",
+    "pk": 14,
+    "fields": { "data": "2009-01-21", "percentuale": "2.00" }
+  },
+  {
+    "model": "fisco.tassoufficialeriferimento",
+    "pk": 15,
+    "fields": { "data": "2009-03-11", "percentuale": "1.50" }
+  },
+  {
+    "model": "fisco.tassoufficialeriferimento",
+    "pk": 16,
+    "fields": { "data": "2009-04-08", "percentuale": "1.25" }
+  },
+  {
+    "model": "fisco.tassoufficialeriferimento",
+    "pk": 17,
+    "fields": { "data": "2009-05-13", "percentuale": "1.00" }
+  },
+  {
+    "model": "fisco.tassoufficialeriferimento",
+    "pk": 18,
+    "fields": { "data": "2011-04-13", "percentuale": "1.25" }
+  },
+  {
+    "model": "fisco.tassoufficialeriferimento",
+    "pk": 19,
+    "fields": { "data": "2011-07-13", "percentuale": "1.50" }
+  },
+  {
+    "model": "fisco.tassoufficialeriferimento",
+    "pk": 20,
+    "fields": { "data": "2011-11-09", "percentuale": "1.25" }
+  },
+  {
+    "model": "fisco.tassoufficialeriferimento",
+    "pk": 21,
+    "fields": { "data": "2011-12-14", "percentuale": "1.00" }
+  },
+  {
+    "model": "fisco.tassoufficialeriferimento",
+    "pk": 22,
+    "fields": { "data": "2012-07-11", "percentuale": "0.75" }
+  },
+  {
+    "model": "fisco.tassoufficialeriferimento",
+    "pk": 23,
+    "fields": { "data": "2013-05-08", "percentuale": "0.50" }
+  },
+  {
+    "model": "fisco.tassoufficialeriferimento",
+    "pk": 24,
+    "fields": { "data": "2013-11-13", "percentuale": "0.25" }
+  },
+  {
+    "model": "fisco.tassoufficialeriferimento",
+    "pk": 25,
+    "fields": { "data": "2014-06-11", "percentuale": "0.15" }
+  },
+  {
+    "model": "fisco.tassoufficialeriferimento",
+    "pk": 26,
+    "fields": { "data": "2014-09-10", "percentuale": "0.05" }
+  },
+  {
+    "model": "fisco.tassoufficialeriferimento",
+    "pk": 27,
+    "fields": { "data": "2015-12-09", "percentuale": "0.05" }
+  },
+  {
+    "model": "fisco.tassoufficialeriferimento",
+    "pk": 28,
+    "fields": { "data": "2016-03-16", "percentuale": "0.00" }
+  },
+  {
+    "model": "fisco.tassoufficialeriferimento",
+    "pk": 29,
+    "fields": { "data": "2019-09-18", "percentuale": "0.00" }
+  }
+]
