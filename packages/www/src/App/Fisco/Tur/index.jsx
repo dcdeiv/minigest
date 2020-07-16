@@ -10,7 +10,7 @@ export function Tur() {
   const dispatch = useDispatch();
   let { tur } = useSelector((state) => state.fisco);
 
-  // Aggiorna la lista dei tassi ufficiali di riferimento
+  // Aggiorna la lista degli interessi legali
   React.useEffect(() => {
     dispatch(action.tur.get());
   }, [dispatch]);

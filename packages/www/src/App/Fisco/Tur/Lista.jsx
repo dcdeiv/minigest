@@ -58,7 +58,7 @@ export function Lista(props) {
               <TableCellIcon>
                 <IconButton
                   className={classes.editButton}
-                  onClick={() => onEdit(o.id)}
+                  onClick={() => onEdit(o)}
                 >
                   <EditIcon />
                 </IconButton>

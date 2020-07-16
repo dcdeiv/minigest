@@ -26,8 +26,7 @@ export const remove = (id) => {
       })
       .catch((error) => {
         dispatch(removeFail(error.message));
+        dispatch(get());
       });
-
-    dispatch(get());
   };
 };
