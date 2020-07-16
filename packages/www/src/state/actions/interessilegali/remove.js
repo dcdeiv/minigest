@@ -1,7 +1,6 @@
 import { actionCreator } from "src/state/actions";
 import * as C from "src/constants";
 import { api } from "src/helpers";
-import { get } from "./get";
 
 export const removeStart = () => {
   return actionCreator(C.INTERESSI_LEGALI_REMOVE_START);
@@ -26,7 +25,6 @@ export const remove = (id) => {
       })
       .catch((error) => {
         dispatch(removeFail(error.message));
-        dispatch(get());
       });
   };
 };

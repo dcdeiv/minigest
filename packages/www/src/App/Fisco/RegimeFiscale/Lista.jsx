@@ -37,8 +37,8 @@ export function Lista(props) {
       <Table box={{ p: 2 }}>
         <TableHead>
           <TableRow>
-            <TableCell style={{ width: 150 }}>Codice</TableCell>
-            <TableCell>Descrizione</TableCell>
+            <TableCell style={{ width: 150 }}>Data</TableCell>
+            <TableCell>Percentuale</TableCell>
             <TableCellIcon>
               <EditIcon />
             </TableCellIcon>
@@ -56,7 +56,7 @@ export function Lista(props) {
               <TableCellIcon>
                 <IconButton
                   className={classes.editButton}
-                  onClick={() => onEdit(o.id)}
+                  onClick={() => onEdit(o)}
                 >
                   <EditIcon />
                 </IconButton>

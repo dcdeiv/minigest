@@ -10,7 +10,7 @@ export function RegimeFiscale() {
   const dispatch = useDispatch();
   let { regimeFiscale } = useSelector((state) => state.fisco);
 
-  // Aggiorna la lista dei regimi fiscali
+  // Aggiorna la lista degli interessi legali
   React.useEffect(() => {
     dispatch(action.regimeFiscale.get());
   }, [dispatch]);

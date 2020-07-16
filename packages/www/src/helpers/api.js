@@ -11,14 +11,4 @@ if (process.env.NODE_ENV === "development") {
   api.defaults.withCredentials = true;
 }
 
-api.interceptors.response.use(
-  (response) => {
-    // Respinge tutte le risposte che non sono json
-    return response.headers["content-type"] === "application/json"
-      ? response
-      : Promise.reject(new Error("Risorsa non trovata!"));
-  },
-  (error) => Promise.reject(error)
-);
-
 export default api;
