@@ -1,11 +1,19 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { isEmpty } from "lodash";
 import { useSelector } from "react-redux";
-import { Typography } from "@material-ui/core";
 import { LoadingSpinner, MessageBox, ListaVuota } from "@minigest/ui";
+import { action } from "src/state";
+import { Content } from "./Content";
 
 export function InteressiLegali() {
+  const dispatch = useDispatch();
   let { interessiLegali } = useSelector((state) => state.fisco);
+
+  // Aggiorna la lista degli interessi legali
+  React.useEffect(() => {
+    dispatch(action.interessiLegali.get());
+  }, [dispatch]);
 
   if (interessiLegali.getting) {
     return <LoadingSpinner />;
@@ -16,7 +24,7 @@ export function InteressiLegali() {
       if (isEmpty(interessiLegali.results)) {
         return <ListaVuota />;
       } else {
-        return <Typography>eccoci!</Typography>;
+        return <Content data={interessiLegali.results} />;
       }
     }
   }

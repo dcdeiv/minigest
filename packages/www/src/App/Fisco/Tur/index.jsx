@@ -1,11 +1,19 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { isEmpty } from "lodash";
 import { useSelector } from "react-redux";
-import { Typography } from "@material-ui/core";
 import { LoadingSpinner, MessageBox, ListaVuota } from "@minigest/ui";
+import { action } from "src/state";
+import { Content } from "./Content";
 
 export function Tur() {
+  const dispatch = useDispatch();
   let { tur } = useSelector((state) => state.fisco);
+
+  // Aggiorna la lista dei tassi ufficiali di riferimento
+  React.useEffect(() => {
+    dispatch(action.tur.get());
+  }, [dispatch]);
 
   if (tur.getting) {
     return <LoadingSpinner />;
@@ -16,7 +24,7 @@ export function Tur() {
       if (isEmpty(tur.results)) {
         return <ListaVuota />;
       } else {
-        return <Typography>eccoci!</Typography>;
+        return <Content data={tur.results} />;
       }
     }
   }

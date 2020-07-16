@@ -1,11 +1,19 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { isEmpty } from "lodash";
 import { useSelector } from "react-redux";
-import { Typography } from "@material-ui/core";
 import { LoadingSpinner, MessageBox, ListaVuota } from "@minigest/ui";
+import { action } from "src/state";
+import { Content } from "./Content";
 
 export function RegimeFiscale() {
+  const dispatch = useDispatch();
   let { regimeFiscale } = useSelector((state) => state.fisco);
+
+  // Aggiorna la lista dei regimi fiscali
+  React.useEffect(() => {
+    dispatch(action.regimeFiscale.get());
+  }, [dispatch]);
 
   if (regimeFiscale.getting) {
     return <LoadingSpinner />;
@@ -16,7 +24,7 @@ export function RegimeFiscale() {
       if (isEmpty(regimeFiscale.results)) {
         return <ListaVuota />;
       } else {
-        return <Typography>eccoci!</Typography>;
+        return <Content data={regimeFiscale.results} />;
       }
     }
   }
