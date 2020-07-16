@@ -4,6 +4,15 @@ export { AppContent };
 import AppHeader from "./AppHeader";
 export { AppHeader };
 
+import AppSection from "./AppSection";
+export { AppSection };
+
+import AppSectionHeader from "./AppSection";
+export { AppSectionHeader };
+
+import AppSectionNested from "./AppSection";
+export { AppSectionNested };
+
 import CodeBlock from "./CodeBlock";
 export { CodeBlock };
 
