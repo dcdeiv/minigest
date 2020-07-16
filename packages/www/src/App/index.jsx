@@ -10,6 +10,7 @@ import { action } from "src/state";
 import { Dashboard } from "./Dashboard";
 import { Profilo } from "./Profilo";
 import { Fisco } from "./Fisco";
+import { Tributi } from "./Tributi";
 
 export default function App() {
   const dispatch = useDispatch();
@@ -46,6 +47,9 @@ export default function App() {
 
             {/* Fisco */}
             <Route path="/fisco" component={Fisco} />
+
+            {/* Tributi */}
+            <Route path="/tributi" component={Tributi} />
           </Switch>
         </Layout>
       );
