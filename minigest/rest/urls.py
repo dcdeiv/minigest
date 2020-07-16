@@ -16,6 +16,9 @@ router.register(r"fisco/regime-fiscale", vs.RegimeFiscale)
 router.register(r"fisco/interessi-legali", vs.InteressiLegali)
 router.register(r"fisco/tur", vs.TassoUfficialeRiferimento)
 
+""" Tributi """
+router.register(r"tributi/iva/aliquote", vs.IvaAliquota)
+
 
 """ non-router patters """
 urlpatterns = [
@@ -23,6 +26,11 @@ urlpatterns = [
     path("auth/password-change/", vs.PasswordChange.as_view()),
 ]
 
+""" tributi patterns """
+urlpatterns += [
+    path("tributi/iva/aliquote/q/", vs.IvaAliquotaData.as_view()),
+    path("tributi/iva/aliquote/q/<str:data>/", vs.IvaAliquotaData.as_view()),
+]
 
 """ router patterns """
 urlpatterns += [
