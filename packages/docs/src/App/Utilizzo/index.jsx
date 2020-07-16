@@ -1,8 +1,7 @@
 import React from "react";
 import { Switch, Route, useRouteMatch, useHistory } from "react-router-dom";
 import { Typography, Box, Paper, Button } from "@material-ui/core";
-import { AppHeader, AppContent } from "@minigest/ui";
-import { AppSection } from "src/Components";
+import { AppHeader, AppContent, AppSection } from "@minigest/ui";
 
 export function Utilizzo(props) {
   const history = useHistory();

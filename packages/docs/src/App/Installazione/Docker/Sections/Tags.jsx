@@ -1,6 +1,6 @@
 import React from "react";
 import { Typography, Link } from "@material-ui/core";
-import { AppSection, AppSectionHeader } from "src/Components";
+import { AppSection, AppSectionHeader } from "@minigest/ui";
 
 export function Tags(props) {
   return (

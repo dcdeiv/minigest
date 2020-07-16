@@ -1,15 +1,13 @@
 import React from "react";
 import {
   Typography,
-  Table,
   TableHead,
   TableBody,
   TableRow,
   TableCell,
-  Box,
   Paper,
 } from "@material-ui/core";
-import { AppSection, AppSectionHeader } from "src/Components";
+import { Table, AppSection, AppSectionHeader } from "@minigest/ui";
 
 const envs = {
   DEBUG: {
@@ -35,37 +33,35 @@ export function Environment(props) {
       </AppSectionHeader>
 
       <Paper>
-        <Box style={{ overflowX: "auto" }}>
-          <Table style={{ whiteSpace: "nowrap" }}>
-            <TableHead>
-              <TableRow>
-                <TableCell>Nome</TableCell>
-                <TableCell>Default</TableCell>
-                <TableCell>Descrizione</TableCell>
-              </TableRow>
-            </TableHead>
+        <Table style={{ whiteSpace: "nowrap" }}>
+          <TableHead>
+            <TableRow>
+              <TableCell>Nome</TableCell>
+              <TableCell>Default</TableCell>
+              <TableCell>Descrizione</TableCell>
+            </TableRow>
+          </TableHead>
 
-            <TableBody>
-              {Object.keys(envs).map((k, i) => {
-                let def = envs[k].def;
-                let desc = envs[k].desc;
-                let len = Object.keys(envs).length;
-                let noBorder = { borderBottom: 0 };
-                let styles = len === i + 1 ? noBorder : {};
+          <TableBody>
+            {Object.keys(envs).map((k, i) => {
+              let def = envs[k].def;
+              let desc = envs[k].desc;
+              let len = Object.keys(envs).length;
+              let noBorder = { borderBottom: 0 };
+              let styles = len === i + 1 ? noBorder : {};
 
-                return (
-                  <TableRow key={i}>
-                    <TableCell variant="head" style={styles}>
-                      {k}
-                    </TableCell>
-                    <TableCell style={styles}>{def}</TableCell>
-                    <TableCell style={styles}>{desc}</TableCell>
-                  </TableRow>
-                );
-              })}
-            </TableBody>
-          </Table>
-        </Box>
+              return (
+                <TableRow key={i}>
+                  <TableCell variant="head" style={styles}>
+                    {k}
+                  </TableCell>
+                  <TableCell style={styles}>{def}</TableCell>
+                  <TableCell style={styles}>{desc}</TableCell>
+                </TableRow>
+              );
+            })}
+          </TableBody>
+        </Table>
       </Paper>
     </AppSection>
   );

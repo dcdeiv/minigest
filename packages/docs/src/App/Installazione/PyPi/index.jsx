@@ -9,6 +9,7 @@ import {
   Applicazioni,
   Configurazione,
   Fine,
+  Fixtures,
 } from "./Sections";
 import { Next } from "../Next";
 
@@ -28,9 +29,7 @@ export function PyPi() {
         <Applicazioni />
         <Configurazione />
         <Fine />
-        {/** SEZIONI:
-         * - fixtures
-         */}
+        <Fixtures />
         <Next />
       </AppContent>
     </React.Fragment>

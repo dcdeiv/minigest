@@ -1,6 +1,7 @@
 import React from "react";
 import { Typography, Link } from "@material-ui/core";
-import { AppSection, AppSectionHeader, AdapterLink } from "src/Components";
+import { AppSection, AppSectionHeader } from "@minigest/ui";
+import { AdapterLink } from "src/Components";
 
 export function Introduzione(props) {
   return (

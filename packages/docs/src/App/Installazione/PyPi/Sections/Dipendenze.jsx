@@ -1,7 +1,7 @@
 import React from "react";
 import { Typography, Link } from "@material-ui/core";
-import { AppSection, AppSectionHeader, AdapterLink } from "src/Components";
-import { CodeBlock } from "@minigest/ui";
+import { CodeBlock, AppSection, AppSectionHeader } from "@minigest/ui";
+import { AdapterLink } from "src/Components";
 
 export function Dipendenze() {
   return (

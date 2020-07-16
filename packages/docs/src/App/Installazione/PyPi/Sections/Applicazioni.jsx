@@ -1,6 +1,6 @@
 import React from "react";
 import { CodeBlock } from "@minigest/ui";
-import { AppSection, AppSectionHeader } from "src/Components";
+import { AppSection, AppSectionHeader } from "@minigest/ui";
 import { Typography } from "@material-ui/core";
 
 export function Applicazioni() {

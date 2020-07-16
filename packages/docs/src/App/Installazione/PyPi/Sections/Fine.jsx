@@ -1,7 +1,11 @@
 import React from "react";
 import { Typography } from "@material-ui/core";
-import { CodeBlock } from "@minigest/ui";
-import { AppSection, AppSectionNested, AppSectionHeader } from "src/Components";
+import {
+  CodeBlock,
+  AppSection,
+  AppSectionNested,
+  AppSectionHeader,
+} from "@minigest/ui";
 
 export function Fine(props) {
   return (

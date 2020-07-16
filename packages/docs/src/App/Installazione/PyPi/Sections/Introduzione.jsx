@@ -1,6 +1,6 @@
 import React from "react";
-import { Typography, Link, Paper, Box, Container } from "@material-ui/core";
-import { AppSection, AppSectionHeader } from "src/Components";
+import { Typography, Link, Paper, Box } from "@material-ui/core";
+import { AppSection, AppSectionHeader } from "@minigest/ui";
 
 export function Introduzione() {
   return (
@@ -28,19 +28,17 @@ export function Introduzione() {
         .
       </Typography>
 
-      <Container maxWidth="md">
-        <Box mt={4}>
-          <Paper>
-            <Box p={2}>
-              <Typography>
-                <b>ATTENZIONE!</b> È importante sapere che minigest sovrascrive
-                il modello django <em>User</em>, quindi va installato prima di
-                eseguire la primissima migrazione dei modelli!
-              </Typography>
-            </Box>
-          </Paper>
-        </Box>
-      </Container>
+      <Box mt={4}>
+        <Paper>
+          <Box p={2}>
+            <Typography>
+              <b>ATTENZIONE!</b> È importante sapere che minigest sovrascrive il
+              modello django <em>User</em>, quindi va installato prima di
+              eseguire la primissima migrazione dei modelli!
+            </Typography>
+          </Box>
+        </Paper>
+      </Box>
     </AppSection>
   );
 }

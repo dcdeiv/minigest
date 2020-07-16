@@ -3,7 +3,7 @@ import { AppHeader, AppContent, CodeBlock } from "@minigest/ui";
 import { Typography } from "@material-ui/core";
 
 // Sezioni
-import { Introduzione, Tags, Environment } from "./Sections";
+import { Introduzione, Tags, Environment, Fixtures } from "./Sections";
 import { Next } from "../Next";
 
 export function Docker() {
@@ -22,8 +22,8 @@ export function Docker() {
         <Environment />
         {/** SEZIONI
          * - compose
-         * - fixtures
          */}
+        <Fixtures />
         <Next />
       </AppContent>
     </React.Fragment>
