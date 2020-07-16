@@ -16,7 +16,7 @@ export const removeSuccess = (data) => {
 
 export const remove = (id) => {
   return (dispatch) => {
-    dispatch(removeStart);
+    dispatch(removeStart());
 
     api
       .delete(`${C.REGIME_FISCALE_API_ENDPOINT}${id}/`)

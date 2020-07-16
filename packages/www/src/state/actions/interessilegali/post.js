@@ -16,7 +16,7 @@ export const postSuccess = (data) => {
 
 export const post = (object) => {
   return (dispatch) => {
-    dispatch(postStart);
+    dispatch(postStart());
 
     api
       .post(C.INTERESSI_LEGALI_API_ENDPOINT, object)

@@ -19,7 +19,7 @@ export const put = (object) => {
   delete object["id"];
 
   return (dispatch) => {
-    dispatch(putStart);
+    dispatch(putStart());
 
     api
       .put(`${C.INTERESSI_LEGALI_API_ENDPOINT}${id}/`, object)

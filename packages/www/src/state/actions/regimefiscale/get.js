@@ -16,7 +16,7 @@ export const getSuccess = (data) => {
 
 export const get = () => {
   return (dispatch) => {
-    dispatch(getStart);
+    dispatch(getStart());
 
     api
       .get(C.REGIME_FISCALE_API_ENDPOINT)
