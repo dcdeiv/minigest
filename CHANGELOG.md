@@ -1,3 +1,35 @@
+## 0.2.0 (2020-07-16)
+
+### Feat
+
+- **minigest**: aggiorna www
+- **www**: aggiunge la sezione RegimeFiscale e aggiusta le api
+- **docs**: aggiunge le fixtures
+- **ui**: aggiunge AppSection, AppHeader, AppSectionNested
+- **www**: completa la sezione Tur
+- **www**: completa la sezione degli interessi legali
+- **www**: aggiunge la tabella dei risultati in InteressiLegali, RegimeFiscale e Tur
+- **www**: inizializza le route di Fisco: InteressiLegali, Tur, RegimeFiscale
+- **ui**: aggiunge react-intl, ListaVuota, LoadingSpinner, Percentuale, TableCellIcon
+- **ui**: aggiunge FabFixed e FabFixedContainer
+- **ui**: aggiunge ConfirmDelete
+- **www**: aggiunge lo state per interessi legali, tasso ufficiale di riferimento e regime fiscale
+- **minigest**: aggiunge l'app fisco e common
+- **docs**: completa la sezione docker e inizializza Utilizzo
+- **docs**: inizializza la documentazione e aggiunge la guida installazione pypi
+- **ui**: aggiunge CodeBlock
+
+### Fix
+
+- **ui**: aggiusta l'overflow del content di Layout
+- **www**: aggiusta le azioni
+- **ui**: aggiusta gli import
+- **ui**: elimina FabFixedContainer spostando la configurazione in AppContent
+- **www**: aggiusta l'import a pwChange
+- **minigest**: aggiusta l'import della viewset Utente
+- **minigest**: migliora gli import
+- **ui**: aggiunge la possibilità di cambiare l'azione secondaria della toolbar
+
 ## 0.1.0 (2020-07-14)
 
 ### Feat
