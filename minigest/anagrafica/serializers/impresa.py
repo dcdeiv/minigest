@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
 from minigest.anagrafica.models import Impresa
-from minigest.rest.serializers.fisco.regime_fiscale import RegimeFiscaleSerializer
+from minigest.fisco.serializers import RegimeFiscaleSerializer
 from .domicilio_fiscale import ImpresaSedeSerializer
 from .domicilio_stabile import ImpresaStabileOrganizzazioneSerializer
 

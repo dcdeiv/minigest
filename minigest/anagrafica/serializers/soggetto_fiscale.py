@@ -2,7 +2,7 @@ from rest_framework import serializers
 from rest_polymorphic.serializers import PolymorphicSerializer
 
 from minigest.anagrafica.models import Impresa, PersonaFisica, SoggettoFiscale
-from minigest.rest.serializers import ImpresaSerializer, PersonaFisicaSerializer
+from minigest.anagrafica.serializers import ImpresaSerializer, PersonaFisicaSerializer
 
 
 class SoggettoFiscaleSerializer(serializers.ModelSerializer):
