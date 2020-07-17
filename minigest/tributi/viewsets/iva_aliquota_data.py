@@ -1,6 +1,6 @@
 from rest_framework import generics
 
-from minigest.rest.serializers import IvaAliquotaSerializer
+from minigest.tributi.serializers import IvaAliquotaSerializer
 from minigest.tributi.models import IvaAliquota
 
 

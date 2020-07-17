@@ -2,7 +2,7 @@ from rest_framework import generics, permissions, status
 from rest_framework.response import Response
 
 from minigest.account.models import Utente
-from minigest.rest.serializers import PasswordChangeSerializer
+from minigest.account.serializers import PasswordChangeSerializer
 
 
 class PasswordChange(generics.UpdateAPIView):

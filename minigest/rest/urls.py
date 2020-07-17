@@ -1,35 +1,42 @@
 from django.urls import include, path
 from rest_framework_nested import routers
 
-from minigest.rest import viewsets as vs
+# viewsets
+from minigest.account.viewsets import Utente, PasswordChange
+from minigest.fisco.viewsets import RegimeFiscale
+from minigest.fisco.viewsets import InteressiLegali
+from minigest.fisco.viewsets import TassoUfficialeRiferimento
+from minigest.tributi.viewsets import IvaAliquota
+from minigest.tributi.viewsets import IvaAliquotaData
 
+# routers
 """ DefaultRouter """
 router = routers.DefaultRouter()
 
 
 """ Account """
-router.register(r"utenti", vs.Utente)
+router.register(r"utenti", Utente)
 
 
 """ Fisco """
-router.register(r"fisco/regime-fiscale", vs.RegimeFiscale)
-router.register(r"fisco/interessi-legali", vs.InteressiLegali)
-router.register(r"fisco/tur", vs.TassoUfficialeRiferimento)
+router.register(r"fisco/regime-fiscale", RegimeFiscale)
+router.register(r"fisco/interessi-legali", InteressiLegali)
+router.register(r"fisco/tur", TassoUfficialeRiferimento)
 
 """ Tributi """
-router.register(r"tributi/iva/aliquote", vs.IvaAliquota)
+router.register(r"tributi/iva/aliquote", IvaAliquota)
 
 
 """ non-router patters """
 urlpatterns = [
     path("auth/", include("rest_framework.urls"), name="api-auth"),
-    path("auth/password-change/", vs.PasswordChange.as_view()),
+    path("auth/password-change/", PasswordChange.as_view()),
 ]
 
 """ tributi patterns """
 urlpatterns += [
-    path("tributi/iva/aliquote/q/", vs.IvaAliquotaData.as_view()),
-    path("tributi/iva/aliquote/q/<str:data>/", vs.IvaAliquotaData.as_view()),
+    path("tributi/iva/aliquote/q/", IvaAliquotaData.as_view()),
+    path("tributi/iva/aliquote/q/<str:data>/", IvaAliquotaData.as_view()),
 ]
 
 """ router patterns """

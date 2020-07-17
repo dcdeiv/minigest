@@ -1,6 +1,6 @@
 from rest_framework import viewsets
 
-from minigest.rest.serializers import IvaAliquotaSerializer
+from minigest.tributi.serializers import IvaAliquotaSerializer
 from minigest.tributi.models import IvaAliquota as ia
 
 
