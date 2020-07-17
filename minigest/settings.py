@@ -17,6 +17,10 @@ MINIGEST_APPS = [
     Dipendenze dell'applicazione minigest
     usa questo oggetto come riferimento per installare
     tutte le dipendenze
+
+    ATTENZIONE: una dipendenza importante è 'polymorphic'
+    questa dipendenza va installata manualmente e va
+    messa al di sopra di 'django.contrib.contenttypes'
 """
 MINIGEST_DEPENDENCIES = ["corsheaders", "rest_framework"]
 
