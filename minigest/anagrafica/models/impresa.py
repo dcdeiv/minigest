@@ -32,16 +32,17 @@ class Impresa(SoggettoFiscale):
 
     # Anagrafica 1.2.1.3.1
     denominazione = models.CharField(
-        null=False,
-        blank=False,
+        null=True,
+        blank=True,
+        default=None,
         max_length=80,
         help_text="la denominazione dell'impresa o il nome e cognome",
     )
 
     # Anagrafica 1.2.1.3.5
     codice_eori = models.CharField(
-        blank=True,
         null=True,
+        blank=True,
         default=None,
         max_length=17,
         validators=[MinLengthValidator(13)],
@@ -50,8 +51,8 @@ class Impresa(SoggettoFiscale):
 
     # IdFiscaleIVA 1.2.1.1.1
     id_fiscale_iva_paese = UpperCaseField(
-        blank=True,
         null=True,
+        blank=True,
         default=None,
         max_length=2,
         validators=[MinLengthValidator(2)],
@@ -61,8 +62,8 @@ class Impresa(SoggettoFiscale):
 
     # IdFiscaleIVA 1.2.1.1.2
     id_fiscale_iva_codice = UpperCaseField(
-        blank=True,
         null=True,
+        blank=True,
         default=None,
         max_length=28,
         validators=[MinLengthValidator(1)],
@@ -92,8 +93,8 @@ class Impresa(SoggettoFiscale):
     # ProvinciaAlbo 1.2.1.5
     albo_provincia = UpperCaseField(
         verbose_name="Provincia Albo",
-        blank=True,
         null=True,
+        blank=True,
         default=None,
         max_length=2,
         validators=[MinLengthValidator(2)],
@@ -122,8 +123,8 @@ class Impresa(SoggettoFiscale):
     # IscrizioneREA 1.2.4.1
     rea_ufficio = UpperCaseField(
         verbose_name="Ufficio REA",
-        blank=True,
         null=True,
+        blank=True,
         default=None,
         max_length=2,
         validators=[MinLengthValidator(2)],
@@ -185,7 +186,11 @@ class Impresa(SoggettoFiscale):
     )
 
     pec = models.EmailField(
-        blank=True, null=True, max_length=256, validators=[MinLengthValidator(7)]
+        null=True,
+        blank=True,
+        default=None,
+        max_length=256,
+        validators=[MinLengthValidator(7)],
     )
 
     @property

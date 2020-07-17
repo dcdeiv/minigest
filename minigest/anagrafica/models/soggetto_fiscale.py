@@ -27,9 +27,9 @@ class SoggettoFiscale(PolymorphicModel):
         help_text="titolo onorifico",
     )
 
-    nome = models.CharField(null=False, max_length=60,)
+    nome = models.CharField(null=True, blank=True, default=None, max_length=60,)
 
-    cognome = models.CharField(null=False, max_length=60,)
+    cognome = models.CharField(null=True, blank=True, default=None, max_length=60,)
 
     codice_fiscale = UpperCaseField(
         null=False, blank=False, max_length=16, validators=[MinLengthValidator(11)],
@@ -53,4 +53,8 @@ class SoggettoFiscale(PolymorphicModel):
 
     fax = models.CharField(
         blank=True, null=True, max_length=12, validators=[MinLengthValidator(5)]
+    )
+
+    rappresentante_fiscale = models.OneToOneField(
+        to="self", on_delete=models.SET_NULL, null=True, blank=True, default=None,
     )
