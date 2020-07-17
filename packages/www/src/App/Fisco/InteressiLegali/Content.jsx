@@ -63,7 +63,6 @@ export function Content({ data }) {
   };
 
   const handleDelete = () => {
-    console.log(deletableObject);
     dispatch(action.interessiLegali.remove(deletableObject));
     setDeletableObject(0);
   };

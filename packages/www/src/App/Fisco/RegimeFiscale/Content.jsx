@@ -62,7 +62,6 @@ export function Content({ data }) {
   };
 
   const handleDelete = () => {
-    console.log(deletableObject);
     dispatch(action.regimeFiscale.remove(deletableObject));
     setDeletableObject(0);
   };

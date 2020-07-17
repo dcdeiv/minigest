@@ -1,9 +1,10 @@
 import React from "react";
 import { Typography } from "@material-ui/core";
-import { AppHeader, AppContent } from "@minigest/ui";
+import { AppHeader, AppContent, AppSection } from "@minigest/ui";
 
 // Componenti
 import { IvaAliquoteCorrenti } from "./Correnti";
+import { ListaCompleta } from "./ListaCompleta";
 
 export function IvaAliquote(props) {
   return (
@@ -14,7 +15,10 @@ export function IvaAliquote(props) {
         </Typography>
       </AppHeader>
       <AppContent fabFixed>
-        <IvaAliquoteCorrenti />
+        <AppSection>
+          <IvaAliquoteCorrenti />
+        </AppSection>
+        <ListaCompleta />
       </AppContent>
     </React.Fragment>
   );
