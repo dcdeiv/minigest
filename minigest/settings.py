@@ -9,6 +9,7 @@ MINIGEST_APPS = [
     "minigest.account",
     "minigest.fisco",
     "minigest.tributi",
+    "minigest.anagrafica",
     "minigest.www",
 ]
 
