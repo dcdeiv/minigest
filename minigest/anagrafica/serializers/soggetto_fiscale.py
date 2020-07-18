@@ -7,13 +7,22 @@ from minigest.anagrafica.models import Impresa, PersonaFisica
 class ImpresaPolymorphicSerializer(serializers.ModelSerializer):
     class Meta:
         model = Impresa
-        fields = ["id"]
+        fields = [
+            "id",
+            "titolo",
+            "nome",
+            "cognome",
+            "denominazione",
+            "id_fiscale_iva_paese",
+            "id_fiscale_iva_codice",
+            "codice_fiscale",
+        ]
 
 
 class PersonaFisicaPolymorphicSerializer(serializers.ModelSerializer):
     class Meta:
         model = PersonaFisica
-        fields = ["id"]
+        fields = ["id", "titolo", "nome", "cognome", "codice_fiscale"]
 
 
 class SoggettoFiscaleSerializer(PolymorphicSerializer):
