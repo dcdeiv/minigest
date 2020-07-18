@@ -9,3 +9,9 @@ export const initialCURDresults = {
   removeError: false,
   results: [],
 };
+
+export const retrieveResulst = {
+  getting: true,
+  getError: false,
+  results: [],
+};
