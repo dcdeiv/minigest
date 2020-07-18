@@ -1,11 +1,11 @@
 import { retrieveResults } from "src/state/initials";
 import * as C from "src/constants";
 
-export default function soggettiFiscali(state = retrieveResults, action) {
+export default function impreseList(state = retrieveResults, action) {
   let { type, payload } = action;
 
   switch (type) {
-    case C.SOGGETTI_FISCALI_LIST_START: {
+    case C.IMPRESE_LIST_START: {
       return {
         ...state,
         getting: true,
@@ -13,7 +13,7 @@ export default function soggettiFiscali(state = retrieveResults, action) {
       };
     }
 
-    case C.SOGGETTI_FISCALI_LIST_FAIL: {
+    case C.IMPRESE_LIST_FAIL: {
       return {
         ...state,
         getError: payload,
@@ -21,7 +21,7 @@ export default function soggettiFiscali(state = retrieveResults, action) {
       };
     }
 
-    case C.SOGGETTI_FISCALI_LIST_SUCCESS: {
+    case C.IMPRESE_LIST_SUCCESS: {
       return {
         ...state,
         results: [...payload],

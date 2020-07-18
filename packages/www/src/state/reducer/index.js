@@ -5,6 +5,7 @@ import utente from "./utente";
 import fisco from "./fisco";
 import iva from "./iva";
 import soggettiFiscali from "./soggettiFiscali";
+import imprese from "./imprese";
 
 // RootReducer
 export default combineReducers({
@@ -12,4 +13,5 @@ export default combineReducers({
   fisco: fisco,
   iva: iva,
   soggettiFiscali: soggettiFiscali,
+  imprese: imprese,
 });
