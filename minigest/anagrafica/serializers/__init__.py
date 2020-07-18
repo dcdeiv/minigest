@@ -6,7 +6,6 @@ from .impresa import ImpresaRelazioneSerializer
 from .impresa import ImpresaSerializer
 from .persona_fisica import PersonaFisicaSerializer
 from .soggetto_fiscale import SoggettoFiscaleSerializer
-from .soggetto_fiscale import SoggettoFiscalePolymorphicSerializer
 
 __all__ = [
     "DomicilioFiscaleSerializer",
@@ -16,5 +15,4 @@ __all__ = [
     "ImpresaRelazioneSerializer",
     "PersonaFisicaSerializer",
     "SoggettoFiscaleSerializer",
-    "SoggettoFiscalePolymorphicSerializer",
 ]

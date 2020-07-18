@@ -1,21 +1,25 @@
 from rest_framework import serializers
 from rest_polymorphic.serializers import PolymorphicSerializer
 
-from minigest.anagrafica.models import Impresa, PersonaFisica, SoggettoFiscale
-from minigest.anagrafica.serializers import ImpresaSerializer, PersonaFisicaSerializer
+from minigest.anagrafica.models import Impresa, PersonaFisica
 
 
-class SoggettoFiscaleSerializer(serializers.ModelSerializer):
+class ImpresaPolymorphicSerializer(serializers.ModelSerializer):
     class Meta:
-        model = SoggettoFiscale
-        fields = ["id", "resourcetype"]
+        model = Impresa
+        fields = ["id"]
 
 
-class SoggettoFiscalePolymorphicSerializer(PolymorphicSerializer):
+class PersonaFisicaPolymorphicSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = PersonaFisica
+        fields = ["id"]
+
+
+class SoggettoFiscaleSerializer(PolymorphicSerializer):
     model_serializer_mapping = {
-        SoggettoFiscale: SoggettoFiscaleSerializer,
-        Impresa: ImpresaSerializer,
-        PersonaFisica: PersonaFisicaSerializer,
+        Impresa: ImpresaPolymorphicSerializer,
+        PersonaFisica: PersonaFisicaPolymorphicSerializer,
     }
 
     def to_resource_type(self, model_or_instance):
