@@ -1,7 +1,7 @@
-import { initialCURDresults } from "src/state/initials";
+import { initialCURDdetails } from "src/state/initials";
 import * as C from "src/constants";
 
-export default function impreseDettagli(state = initialCURDresults, action) {
+export default function impreseDettagli(state = initialCURDdetails, action) {
   let { type, payload } = action;
 
   switch (type) {
@@ -24,7 +24,7 @@ export default function impreseDettagli(state = initialCURDresults, action) {
     case C.IMPRESE_GET_SUCCESS: {
       return {
         ...state,
-        results: [...payload],
+        dettagli: payload,
         getError: false,
         getting: false,
       };

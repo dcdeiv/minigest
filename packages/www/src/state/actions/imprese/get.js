@@ -19,8 +19,9 @@ export const get = (id) => {
     dispatch(getStart());
 
     api
-      .get(`${C.IMPRESE_API_ENDPOINT}/${id}/`)
+      .get(`${C.IMPRESE_API_ENDPOINT}${id}/`)
       .then((response) => {
+        console.log(response);
         dispatch(getSuccess(response.data));
       })
       .catch((error) => {
