@@ -22,7 +22,7 @@ export function Imprese() {
           <LeTueImprese />
         </AppContent>
       </Route>
-      <Route path={`${path}/dettagli`} component={Dettagli} />
+      <Route path={`${path}/dettagli/:id`} component={Dettagli} />
     </Switch>
   );
 }
