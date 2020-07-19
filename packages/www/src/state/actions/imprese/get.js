@@ -21,7 +21,6 @@ export const get = (id) => {
     api
       .get(`${C.IMPRESE_API_ENDPOINT}${id}/`)
       .then((response) => {
-        console.log(response);
         dispatch(getSuccess(response.data));
       })
       .catch((error) => {
