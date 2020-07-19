@@ -9,6 +9,7 @@ import {
   ListItemIcon,
   ListItemText,
   Typography,
+  Box,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { LoadingSpinner } from "@minigest/ui";
@@ -42,11 +43,17 @@ export function LeTueImprese() {
       />
       <CardContent className={classes.cardContent}>
         {utente.getting ? (
-          <LoadingSpinner />
+          <Box pb={2}>
+            <LoadingSpinner />
+          </Box>
         ) : utente.getError ? (
-          <Typography>{utente.getError}</Typography>
+          <Box pt={2} pb={2}>
+            <Typography>{utente.getError}</Typography>
+          </Box>
         ) : isEmpty(utente.imprese) ? (
-          <Typography>Non hai imprese assegnate</Typography>
+          <Box pt={2} pb={2}>
+            <Typography>Non hai imprese assegnate</Typography>
+          </Box>
         ) : (
           <List>
             {utente.imprese.map((o, i) => {
