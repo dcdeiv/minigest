@@ -28,6 +28,9 @@ class ImpresaSerializer(serializers.ModelSerializer):
         model = Impresa
         fields = (
             "id",
+            "titolo",
+            "nome",
+            "cognome",
             "denominazione",
             "id_fiscale_iva_paese",
             "id_fiscale_iva_codice",
