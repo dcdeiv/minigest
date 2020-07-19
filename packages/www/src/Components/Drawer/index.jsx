@@ -9,6 +9,7 @@ import FaceIcon from "@material-ui/icons/Face";
 // Sezioni
 import Fisco from "./Fisco";
 import Tributi from "./Tributi";
+import Anagrafica from "./Anagrafica";
 
 export default function AppDrawer(props) {
   let { handleClose = () => true } = props;
@@ -32,6 +33,8 @@ export default function AppDrawer(props) {
           <ListItemText primary="Profilo" />
         </ListItemLink>
       </List>
+      <Divider />
+      <Anagrafica handleClose={handleClose} />
       <Divider />
       <Fisco handleClose={handleClose} />
       <Divider />

@@ -11,6 +11,7 @@ import { Dashboard } from "./Dashboard";
 import { Profilo } from "./Profilo";
 import { Fisco } from "./Fisco";
 import { Tributi } from "./Tributi";
+import { Imprese } from "./Imprese";
 
 export default function App() {
   const dispatch = useDispatch();
@@ -50,6 +51,9 @@ export default function App() {
 
             {/* Tributi */}
             <Route path="/tributi" component={Tributi} />
+
+            {/* Imprese */}
+            <Route path="/imprese" component={Imprese} />
           </Switch>
         </Layout>
       );
