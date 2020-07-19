@@ -19,6 +19,9 @@ export { CodeBlock };
 import ConfirmDelete from "./ConfirmDelete";
 export { ConfirmDelete };
 
+import Euro from "./Euro";
+export { Euro };
+
 import FabFixed from "./FabFixed";
 export { FabFixed };
 
