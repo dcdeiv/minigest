@@ -10,7 +10,7 @@ export const initialCURDresults = {
   results: [],
 };
 
-export const retrieveResulst = {
+export const retrieveResults = {
   getting: true,
   getError: false,
   results: [],
