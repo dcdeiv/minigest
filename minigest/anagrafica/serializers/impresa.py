@@ -4,6 +4,7 @@ from minigest.anagrafica.models import Impresa
 from minigest.fisco.serializers import RegimeFiscaleSerializer
 from .domicilio_fiscale import ImpresaSedeSerializer
 from .domicilio_stabile import ImpresaStabileOrganizzazioneSerializer
+from .soggetto_fiscale import SoggettoFiscaleSerializer
 
 
 class ImpresaRelazioneSerializer(serializers.ModelSerializer):
@@ -19,6 +20,9 @@ class ImpresaSerializer(serializers.ModelSerializer):
     sede = ImpresaSedeSerializer(source="domicilio_fiscale", read_only=True)
     stabile_organizzazione = ImpresaStabileOrganizzazioneSerializer(read_only=True)
     regime_fiscale = RegimeFiscaleSerializer(read_only=True)
+    rappresentante_fiscale_display = SoggettoFiscaleSerializer(
+        source="rappresentante_fiscale", read_only=True
+    )
 
     class Meta:
         model = Impresa
@@ -47,6 +51,7 @@ class ImpresaSerializer(serializers.ModelSerializer):
             "stato_liquidazione",
             "riferimento_amministrazione",
             "rappresentante_fiscale",
+            "rappresentante_fiscale_display",
             "regime_fiscale",
             "utenti",
         )
