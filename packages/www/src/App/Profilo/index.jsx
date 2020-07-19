@@ -4,6 +4,7 @@ import { Typography, Grid, Chip, Box } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { AppHeader, AppContent } from "@minigest/ui";
 import { Info, Accesso } from "./Schede";
+import { LeTueImprese } from "src/Widgets";
 import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 
 const useStyles = makeStyles((theme) => ({
@@ -47,6 +48,10 @@ export function Profilo() {
 
           <Grid item xs={12} sm={6}>
             <Accesso dettagli={user} />
+          </Grid>
+
+          <Grid item xs={12}>
+            <LeTueImprese />
           </Grid>
         </Grid>
       </AppContent>
