@@ -19,7 +19,7 @@ export function Info({ user }) {
   const [open, setOpen] = React.useState(false);
 
   const handleSubmit = function (values) {
-    dispatch(action.utente.put(values));
+    dispatch(action.auth.put(values));
   };
 
   return (

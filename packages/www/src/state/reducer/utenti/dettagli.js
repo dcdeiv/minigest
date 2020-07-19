@@ -1,15 +1,8 @@
+import { initialCURDdetails } from "src/state/initials";
 import * as C from "src/constants";
 
-const initialState = {
-  getting: true,
-  getError: false,
-  putting: false,
-  putError: false,
-  dettagli: {},
-};
-
 // Reducer
-export default function utente(state = initialState, action) {
+export default function dettagliUtente(state = initialCURDdetails, action) {
   let { type, payload } = action;
 
   switch (type) {

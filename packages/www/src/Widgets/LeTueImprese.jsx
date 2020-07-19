@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
 
 export function LeTueImprese() {
   const classes = useStyles();
-  let { dettagli: utente } = useSelector((state) => state.utente.utente);
+  let { dettagli: utente } = useSelector((state) => state.auth);
 
   return (
     <Card>

@@ -15,13 +15,13 @@ import { Imprese } from "./Imprese";
 
 export default function App() {
   const dispatch = useDispatch();
-  let { id } = useSelector((state) => state.utente.auth);
-  let { getting, getError } = useSelector((state) => state.utente.utente);
+  let { id } = useSelector((state) => state.auth);
+  let { getting, getError } = useSelector((state) => state.auth);
 
   // Scarica i dettagli dell'utente
   React.useEffect(() => {
     if (id) {
-      dispatch(action.utente.get(id));
+      dispatch(action.auth.get(id));
     }
   }, [id, dispatch]);
 

@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
 
 export function Profilo() {
   const classes = useStyles();
-  let { dettagli: user } = useSelector((state) => state.utente.utente);
+  let { dettagli: user } = useSelector((state) => state.auth);
 
   return (
     <React.Fragment>

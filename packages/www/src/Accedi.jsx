@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Accedi(props) {
   const history = useHistory();
   const dispatch = useDispatch();
-  const { auth } = useSelector((state) => state.utente);
+  const { auth } = useSelector((state) => state);
   const classes = useStyles();
   const [formError, setFormError] = React.useState(true);
   const [values, setValues] = React.useState({
@@ -93,7 +93,7 @@ export default function Accedi(props) {
       object[k] = o.value;
     });
 
-    dispatch(action.utente.login(object, history));
+    dispatch(action.auth.login(object, history));
   };
 
   return (

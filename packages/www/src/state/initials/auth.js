@@ -4,6 +4,11 @@ let initialState = {
   message: null,
   pwChangeError: false,
   pwChangeSuccess: false,
+  getting: true,
+  getError: false,
+  putting: false,
+  putError: false,
+  dettagli: {},
 };
 
 if (process.env.NODE_ENV === "development") {

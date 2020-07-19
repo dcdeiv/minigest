@@ -22,26 +22,24 @@ export function Accesso({ dettagli: user }) {
   // email
   const [formEmailOpen, setFormEmailOpen] = React.useState(false);
   const handleFormEmailSubmit = function (values) {
-    dispatch(action.utente.put(values));
+    dispatch(action.auth.put(values));
   };
 
   // password
   const [formPasswordOpen, setFormPasswordOpen] = React.useState(false);
   const handleFormPasswordSubmit = function (values) {
-    dispatch(action.utente.pwChange(values));
+    dispatch(action.auth.pwChange(values));
   };
 
   // password dialog
-  let { pwChangeSuccess, pwChangeError } = useSelector(
-    (state) => state.utente.auth
-  );
+  let { pwChangeSuccess, pwChangeError } = useSelector((state) => state.auth);
   const [
     pwChangeDialogDismissOpen,
     setPwChangeDialogDismissOpen,
   ] = React.useState(false);
   const handleDismissPwChange = () => {
     setPwChangeDialogDismissOpen(false);
-    setTimeout(() => dispatch(action.utente.pwChangeDismiss()), 500);
+    setTimeout(() => dispatch(action.auth.pwChangeDismiss()), 500);
   };
 
   React.useEffect(() => {
