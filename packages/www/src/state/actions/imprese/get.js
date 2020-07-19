@@ -1,6 +1,7 @@
 import { actionCreator } from "src/state/actions";
 import * as C from "src/constants";
 import { api } from "src/helpers";
+import { getOptions } from "./options";
 
 export const getStart = () => {
   return actionCreator(C.IMPRESE_GET_START);
@@ -16,6 +17,7 @@ export const getFail = (data) => {
 
 export const get = (id) => {
   return (dispatch) => {
+    dispatch(getOptions());
     dispatch(getStart());
 
     api
