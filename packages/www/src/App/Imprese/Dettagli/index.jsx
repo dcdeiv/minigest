@@ -28,9 +28,7 @@ export function Dettagli() {
   const dispatch = useDispatch();
   let { id } = useParams();
   let { dettagli: impresa } = useSelector((state) => state.imprese);
-  let { imprese: userImprese } = useSelector(
-    (state) => state.utente.utente.dettagli
-  );
+  let { imprese: userImprese } = useSelector((state) => state.auth.dettagli);
   let { options } = useSelector((state) => state.imprese);
   let isStaff = isEmpty(userImprese)
     ? false
