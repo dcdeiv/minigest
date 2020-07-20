@@ -61,17 +61,7 @@ class ImpresaAdmin(admin.ModelAdmin):
     )
 
     fieldsets = (
-        (
-            "Anagrafica",
-            {
-                "fields": (
-                    "titolo",
-                    ("cognome", "nome",),
-                    "denominazione",
-                    "codice_eori",
-                )
-            },
-        ),
+        ("Anagrafica", {"fields": ("titolo", ("cognome", "nome",), "denominazione",)},),
         (
             "Identificativi fiscali",
             {
@@ -79,6 +69,8 @@ class ImpresaAdmin(admin.ModelAdmin):
                     ("id_fiscale_iva_paese", "id_fiscale_iva_codice",),
                     "codice_fiscale",
                     "regime_fiscale",
+                    "codice_eori",
+                    ("rea_ufficio", "rea_numero",),
                 )
             },
         ),
@@ -94,10 +86,6 @@ class ImpresaAdmin(admin.ModelAdmin):
                     "albo_data_iscrizione",
                 ),
             },
-        ),
-        (
-            "Iscrizione REA",
-            {"classes": ("collapse",), "fields": ("rea_ufficio", "rea_numero",),},
         ),
         (
             "Dati Societari",
