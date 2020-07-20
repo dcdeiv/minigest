@@ -62,7 +62,7 @@ export function IdFiscali(props) {
               <TableCellHead>Partita IVA</TableCellHead>
               <TableCell>
                 {id_fiscale_iva_codice && id_fiscale_iva_paese
-                  ? [id_fiscale_iva_codice, id_fiscale_iva_paese].join()
+                  ? [id_fiscale_iva_paese, id_fiscale_iva_codice].join("")
                   : "non specificato"}
               </TableCell>
             </TableRow>
