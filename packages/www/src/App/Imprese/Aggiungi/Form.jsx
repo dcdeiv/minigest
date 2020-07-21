@@ -47,6 +47,7 @@ const CardContent = ({ children, ...rest }) => {
 
 export function Form({ options }) {
   const [stabileOrgDisabled, toggleStabileOrg] = React.useState(true);
+  const [alboProffDisabled, toggleAlboProff] = React.useState(true);
   const initialValues = {
     titolo: {
       ...options.titolo,
@@ -228,6 +229,38 @@ export function Form({ options }) {
       value: "",
       error: false,
     },
+    albo_professionale: {
+      ...options.albo_professionale,
+      name: "albo_professionale",
+      required: alboProffDisabled ? false : true,
+      value: "",
+      error: false,
+      disabled: alboProffDisabled,
+    },
+    albo_provincia: {
+      ...options.albo_provincia,
+      name: "albo_provincia",
+      required: alboProffDisabled ? false : true,
+      value: "",
+      error: false,
+      disabled: alboProffDisabled,
+    },
+    albo_numero_iscrizione: {
+      ...options.albo_numero_iscrizione,
+      name: "alto_numero_iscrizione",
+      required: alboProffDisabled ? false : true,
+      value: "",
+      error: false,
+      disabled: alboProffDisabled,
+    },
+    albo_data_iscrizione: {
+      ...options.albo_data_iscrizione,
+      name: "albo_data_iscrizione",
+      required: alboProffDisabled ? false : true,
+      value: "",
+      error: false,
+      disabled: alboProffDisabled,
+    },
   };
   const [values, setValues] = React.useState(initialValues);
 
@@ -385,6 +418,46 @@ export function Form({ options }) {
         error: isDisabled ? false : true,
         disabled: isDisabled,
         value: isDisabled ? "" : newValues.stabile_organizzazione_nazione.value,
+      },
+    };
+
+    setValues(newValues);
+  };
+
+  const handleToggleAlboProff = () => {
+    const isDisabled = !alboProffDisabled;
+    toggleAlboProff(isDisabled);
+
+    let newValues = { ...values };
+    newValues = {
+      ...newValues,
+      albo_professionale: {
+        ...newValues.albo_professionale,
+        required: isDisabled ? false : true,
+        error: isDisabled ? false : true,
+        disabled: isDisabled,
+        value: isDisabled ? "" : newValues.albo_professionale.value,
+      },
+      albo_provincia: {
+        ...newValues.albo_provincia,
+        required: isDisabled ? false : true,
+        error: isDisabled ? false : true,
+        disabled: isDisabled,
+        value: isDisabled ? "" : newValues.albo_provincia.value,
+      },
+      albo_numero_iscrizione: {
+        ...newValues.albo_numero_iscrizione,
+        required: isDisabled ? false : true,
+        error: isDisabled ? false : true,
+        disabled: isDisabled,
+        value: isDisabled ? "" : newValues.albo_numero_iscrizione.value,
+      },
+      albo_data_iscrizione: {
+        ...newValues.albo_data_iscrizione,
+        required: isDisabled ? false : true,
+        error: isDisabled ? false : true,
+        disabled: isDisabled,
+        value: isDisabled ? "" : newValues.albo_data_iscrizione.value,
       },
     };
 
@@ -686,6 +759,49 @@ export function Form({ options }) {
             <Grid item xs={12} sm={4}>
               <InputField
                 options={values.stabile_organizzazione_nazione}
+                onChange={handleChange}
+              />
+            </Grid>
+          </Grid>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader
+          title="Albo Professionale"
+          action={
+            <Switch
+              checked={!alboProffDisabled}
+              onClick={handleToggleAlboProff}
+            />
+          }
+        />
+        <CardContent>
+          <Grid
+            container
+            direction="row"
+            justify="space-between"
+            alignItems="flex-start"
+            spacing={2}
+          >
+            <Grid item xs={12}>
+              <InputField options={values.albo_professionale} />
+            </Grid>
+            <Grid item xs={12} sm={3}>
+              <InputField
+                options={values.albo_provincia}
+                onChange={handleChange}
+              />
+            </Grid>
+            <Grid item xs={12} sm={9}>
+              <InputField
+                options={values.albo_numero_iscrizione}
+                onChange={handleChange}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <InputField
+                options={values.albo_data_iscrizione}
                 onChange={handleChange}
               />
             </Grid>
