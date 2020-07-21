@@ -12,7 +12,7 @@ import {
   Switch,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import { InputField } from "src/Components";
+import { InputField, RfInputField } from "src/Components";
 
 const useStyles = makeStyles((theme) => ({
   card: {
@@ -96,6 +96,27 @@ export function Form({ options }) {
       required: true,
       value: "",
       error: true,
+    },
+    rea_ufficio: {
+      ...options.rea_ufficio,
+      name: "rea_ufficio",
+      required: false,
+      value: "",
+      error: false,
+    },
+    rea_numero: {
+      ...options.rea_numero,
+      name: "rea_numero",
+      required: false,
+      value: "",
+      error: false,
+    },
+    codice_eori: {
+      ...options.codice_eori,
+      name: "codice_eori",
+      required: false,
+      value: "",
+      error: false,
     },
     sede_indirizzo: {
       ...options.sede.children.indirizzo,
@@ -186,6 +207,12 @@ export function Form({ options }) {
       value: "",
       error: false,
       disabled: stabileOrgDisabled,
+    },
+    regime_fiscale: {
+      name: "regime_fiscale",
+      required: false,
+      value: "",
+      error: false,
     },
   };
   const [values, setValues] = React.useState(initialValues);
@@ -460,6 +487,41 @@ export function Form({ options }) {
               <u>codice partita IVA</u>.
             </Typography>
           </Box>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader title="Altri Identificativi Fiscali" />
+        <CardContent>
+          <Grid
+            container
+            direction="row"
+            justify="space-between"
+            alignItems="flex-start"
+            spacing={2}
+          >
+            <Grid item xs={12} sm={3}>
+              <InputField
+                options={values.rea_ufficio}
+                onChange={handleChange}
+              />
+            </Grid>
+            <Grid item xs={12} sm={9}>
+              <InputField options={values.rea_numero} onChange={handleChange} />
+            </Grid>
+            <Grid item xs={12}>
+              <InputField
+                options={values.codice_eori}
+                onChange={handleChange}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <RfInputField
+                options={values.regime_fiscale}
+                handleChange={handleChange}
+              />
+            </Grid>
+          </Grid>
         </CardContent>
       </Card>
 
