@@ -9,8 +9,9 @@ import {
   Grid,
   Divider,
   Typography,
+  Switch,
 } from "@material-ui/core";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import { InputField } from "src/Components";
 
 const useStyles = makeStyles((theme) => ({
@@ -44,12 +45,8 @@ const CardContent = ({ children, ...rest }) => {
   );
 };
 
-const anagraficaDesc =
-  "Inserisci il nome dell'impresa. " +
-  "Se l'impresa è in realtà un libero professionista senza denominazione (ragione sociale), " +
-  "utilizza i campi titolo, nome e cognome, altrimenti utilizza solo il campo denominazione!";
-
 export function Form({ options }) {
+  const [stabileOrgDisabled, toggleStabileOrg] = React.useState(true);
   const initialValues = {
     titolo: {
       ...options.titolo,
@@ -99,6 +96,96 @@ export function Form({ options }) {
       required: true,
       value: "",
       error: true,
+    },
+    sede_indirizzo: {
+      ...options.sede.children.indirizzo,
+      name: "sede_indirizzo",
+      required: true,
+      value: "",
+      error: true,
+    },
+    sede_numero_civico: {
+      ...options.sede.children.numero_civico,
+      name: "sede_numero_civico",
+      required: false,
+      value: "",
+      error: false,
+    },
+    sede_cap: {
+      ...options.sede.children.cap,
+      name: "sede_cap",
+      required: true,
+      value: "",
+      error: true,
+    },
+    sede_comune: {
+      ...options.sede.children.comune,
+      name: "sede_comune",
+      required: true,
+      value: "",
+      error: true,
+    },
+    sede_provincia: {
+      ...options.sede.children.provincia,
+      name: "sede_provincia",
+      required: false,
+      value: "",
+      error: false,
+    },
+    sede_nazione: {
+      ...options.sede.children.nazione,
+      name: "sede_nazione",
+      required: true,
+      value: "",
+      error: true,
+    },
+    stabile_organizzazione_indirizzo: {
+      ...options.stabile_organizzazione.children.indirizzo,
+      name: "stabile_organizzazione_indirizzo",
+      required: stabileOrgDisabled ? false : true,
+      value: "",
+      error: false,
+      disabled: stabileOrgDisabled,
+    },
+    stabile_organizzazione_numero_civico: {
+      ...options.stabile_organizzazione.children.numero_civico,
+      name: "stabile_organizzazione_numero_civico",
+      required: false,
+      value: "",
+      error: false,
+      disabled: stabileOrgDisabled,
+    },
+    stabile_organizzazione_cap: {
+      ...options.stabile_organizzazione.children.cap,
+      name: "stabile_organizzazione_cap",
+      required: stabileOrgDisabled ? false : true,
+      value: "",
+      error: false,
+      disabled: stabileOrgDisabled,
+    },
+    stabile_organizzazione_comune: {
+      ...options.stabile_organizzazione.children.comune,
+      name: "stabile_organizzazione_comune",
+      required: stabileOrgDisabled ? false : true,
+      value: "",
+      error: false,
+      disabled: stabileOrgDisabled,
+    },
+    stabile_organizzazione_provincia: {
+      ...options.stabile_organizzazione.children.provincia,
+      name: "stabile_organizzazione_provincia",
+      required: false,
+      value: "",
+      error: false,
+      disabled: stabileOrgDisabled,
+    },
+    stabile_organizzazione_nazione: {
+      ...options.stabile_organizzazione.children.nazione,
+      name: "stabile_organizzazione_nazione",
+      required: stabileOrgDisabled ? false : true,
+      value: "",
+      error: false,
+      disabled: stabileOrgDisabled,
     },
   };
   const [values, setValues] = React.useState(initialValues);
@@ -207,6 +294,62 @@ export function Form({ options }) {
     setValues(newValues);
   };
 
+  const handleToggleStabileOrg = () => {
+    const isDisabled = !stabileOrgDisabled;
+    toggleStabileOrg(isDisabled);
+
+    let newValues = { ...values };
+    newValues = {
+      ...newValues,
+      stabile_organizzazione_indirizzo: {
+        ...newValues.stabile_organizzazione_indirizzo,
+        required: isDisabled ? false : true,
+        error: isDisabled ? false : true,
+        disabled: isDisabled,
+        value: isDisabled
+          ? ""
+          : newValues.stabile_organizzazione_indirizzo.value,
+      },
+      stabile_organizzazione_numero_civico: {
+        ...newValues.stabile_organizzazione_numero_civico,
+        disabled: isDisabled,
+        value: isDisabled
+          ? ""
+          : newValues.stabile_organizzazione_numero_civico.value,
+      },
+      stabile_organizzazione_cap: {
+        ...newValues.stabile_organizzazione_cap,
+        required: isDisabled ? false : true,
+        error: isDisabled ? false : true,
+        disabled: isDisabled,
+        value: isDisabled ? "" : newValues.stabile_organizzazione_cap.value,
+      },
+      stabile_organizzazione_comune: {
+        ...newValues.stabile_organizzazione_comune,
+        required: isDisabled ? false : true,
+        error: isDisabled ? false : true,
+        disabled: isDisabled,
+        value: isDisabled ? "" : newValues.stabile_organizzazione_comune.value,
+      },
+      stabile_organizzazione_provincia: {
+        ...newValues.stabile_organizzazione_provincia,
+        disabled: isDisabled,
+        value: isDisabled
+          ? ""
+          : newValues.stabile_organizzazione_provincia.value,
+      },
+      stabile_organizzazione_nazione: {
+        ...newValues.stabile_organizzazione_nazione,
+        required: isDisabled ? false : true,
+        error: isDisabled ? false : true,
+        disabled: isDisabled,
+        value: isDisabled ? "" : newValues.stabile_organizzazione_nazione.value,
+      },
+    };
+
+    setValues(newValues);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -216,8 +359,17 @@ export function Form({ options }) {
       <FabFixed type="save" submit onClick={handleSubmit} />
 
       <Card>
-        <CardHeader title="Anagrafica" subheader={anagraficaDesc} />
+        <CardHeader title="Anagrafica" />
         <CardContent>
+          <Box mb={2}>
+            <Typography variant="body2">
+              Inserisci il nome dell'impresa. Se l'impresa è in realtà un libero
+              professionista senza denominazione (ragione sociale), utilizza i
+              campi titolo, nome e cognome, altrimenti utilizza solo il campo
+              denominazione!
+            </Typography>
+          </Box>
+
           <Grid
             container
             direction="row"
@@ -308,6 +460,127 @@ export function Form({ options }) {
               <u>codice partita IVA</u>.
             </Typography>
           </Box>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader title="Sede" />
+        <CardContent>
+          <Box mb={2}>
+            <Typography variant="body2">
+              Inserire la sede legale dell'azienda. Se l'azienda è estera, e
+              anche se questa dovesse avere una{" "}
+              <em>stabile organizzazione in Italia</em>, inserire comunque
+              l'indirizzo estero!
+            </Typography>
+          </Box>
+
+          <Grid
+            container
+            direction="row"
+            justify="space-between"
+            alignItems="flex-start"
+            spacing={2}
+          >
+            <Grid item xs={12} sm={9}>
+              <InputField
+                options={values.sede_indirizzo}
+                onChange={handleChange}
+              />
+            </Grid>
+            <Grid item xs={12} sm={3}>
+              <InputField
+                options={values.sede_numero_civico}
+                onChange={handleChange}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <InputField
+                options={values.sede_comune}
+                onChange={handleChange}
+              />
+            </Grid>
+            <Grid item xs={12} sm={4}>
+              <InputField options={values.sede_cap} onChange={handleChange} />
+            </Grid>
+            <Grid item xs={12} sm={4}>
+              <InputField
+                options={values.sede_provincia}
+                onChange={handleChange}
+              />
+            </Grid>
+            <Grid item xs={12} sm={4}>
+              <InputField
+                options={values.sede_nazione}
+                onChange={handleChange}
+              />
+            </Grid>
+          </Grid>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader
+          title="Sede Stabile Organizzazione"
+          action={
+            <Switch
+              checked={!stabileOrgDisabled}
+              onClick={handleToggleStabileOrg}
+            />
+          }
+        />
+        <CardContent>
+          <Box mb={2}>
+            <Typography variant="body2">
+              Inserire l'indirizzo italiano della stabile organizzazione
+              dell'impresa estera
+            </Typography>
+          </Box>
+
+          <Grid
+            container
+            direction="row"
+            justify="space-between"
+            alignItems="flex-start"
+            spacing={2}
+          >
+            <Grid item xs={12} sm={9}>
+              <InputField
+                options={values.stabile_organizzazione_indirizzo}
+                onChange={handleChange}
+              />
+            </Grid>
+            <Grid item xs={12} sm={3}>
+              <InputField
+                options={values.stabile_organizzazione_numero_civico}
+                onChange={handleChange}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <InputField
+                options={values.stabile_organizzazione_comune}
+                onChange={handleChange}
+              />
+            </Grid>
+            <Grid item xs={12} sm={4}>
+              <InputField
+                options={values.stabile_organizzazione_cap}
+                onChange={handleChange}
+              />
+            </Grid>
+            <Grid item xs={12} sm={4}>
+              <InputField
+                options={values.stabile_organizzazione_provincia}
+                onChange={handleChange}
+              />
+            </Grid>
+            <Grid item xs={12} sm={4}>
+              <InputField
+                options={values.stabile_organizzazione_nazione}
+                onChange={handleChange}
+              />
+            </Grid>
+          </Grid>
         </CardContent>
       </Card>
     </form>
