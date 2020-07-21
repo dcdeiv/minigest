@@ -118,6 +118,20 @@ export function Form({ options }) {
       value: "",
       error: false,
     },
+    codice_destinatario: {
+      ...options.codice_destinatario,
+      name: "codice_destinatario",
+      required: true,
+      value: "0000000",
+      error: false,
+    },
+    pec: {
+      ...options.pec,
+      name: "pec",
+      required: false,
+      value: "",
+      error: false,
+    },
     sede_indirizzo: {
       ...options.sede.children.indirizzo,
       name: "sede_indirizzo",
@@ -522,6 +536,39 @@ export function Form({ options }) {
               />
             </Grid>
           </Grid>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader title="Sistema di Interscambio" />
+        <CardContent>
+          <Grid
+            container
+            direction="row"
+            justify="space-between"
+            alignItems="flex-start"
+            spacing={2}
+          >
+            <Grid item xs={12} sm={6}>
+              <InputField
+                options={values.codice_destinatario}
+                onChange={handleChange}
+              />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <InputField options={values.pec} onChange={handleChange} />
+            </Grid>
+          </Grid>
+
+          <Box pt={3}>
+            <Typography variant="body2" gutterBottom>
+              Il codice destinatario è obbligatorio specificarlo. Se l'impresa
+              non ha un codice destinatario, riempire il campo con la cifra 0
+              per sette volte (0000000). Attenzione! Per le PA (pubbliche
+              amministrazioni) il codice destinatario è composto da cinque cifre
+              al posto di sette!
+            </Typography>
+          </Box>
         </CardContent>
       </Card>
 
