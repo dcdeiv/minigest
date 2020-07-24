@@ -1,33 +1,38 @@
 import React from "react";
-import moment from "moment";
-import { isEmpty } from "lodash";
-import { TextField } from "@material-ui/core";
-import { KeyboardDatePicker } from "@material-ui/pickers";
+import {
+  TextField,
+  InputLabel,
+  FormControl,
+  Select,
+  MenuItem,
+} from "@material-ui/core";
 
 export default function InputField(props) {
   let { options, onChange } = props;
-  const dateHelper =
-    options.type === "date"
-      ? isEmpty(options.value)
-        ? ""
-        : moment(options.value).format("YYYY-MM-DD")
-      : "";
-  const [selectedDate, setDate] = React.useState(dateHelper);
-  const handleDateChange = (date) => {
-    handleDateChange({ name: options.name, value: date });
-    setDate(date);
-  };
 
-  if (options.type === "date") {
+  if (options.type === "choice") {
     return (
-      <KeyboardDatePicker
-        inputVariant="outlined"
-        label={options.label}
-        format="YYYY-MM-DD"
-        value={selectedDate}
-        InputAdornmentProps={{ position: "start" }}
-        onChange={(date) => handleDateChange(date)}
-      />
+      <FormControl variant="outlined" fullWidth>
+        <InputLabel id={`label-${options.name}`}>{options.label}</InputLabel>
+        <Select
+          labelId={`label-${options.name}`}
+          id={options.name}
+          value={options.value}
+          label={options.label}
+          name={options.name}
+          onChange={onChange}
+        >
+          {options.choices.map((o, i) => {
+            const value = o.value || "";
+            const display = o.display_name || "Non selezionato";
+            return (
+              <MenuItem key={i} value={value}>
+                {display}
+              </MenuItem>
+            );
+          })}
+        </Select>
+      </FormControl>
     );
   } else {
     return (

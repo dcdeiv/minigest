@@ -1,4 +1,5 @@
 import React from "react";
+import moment from "moment";
 import { FabFixed } from "@minigest/ui";
 import { isEmpty } from "lodash";
 import {
@@ -13,6 +14,7 @@ import {
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { InputField, RfInputField } from "src/Components";
+import { KeyboardDatePicker } from "@material-ui/pickers";
 
 const useStyles = makeStyles((theme) => ({
   card: {
@@ -257,9 +259,57 @@ export function Form({ options }) {
       ...options.albo_data_iscrizione,
       name: "albo_data_iscrizione",
       required: alboProffDisabled ? false : true,
-      value: "",
+      value: new Date(),
       error: false,
       disabled: alboProffDisabled,
+    },
+    capitale_sociale: {
+      ...options.capitale_sociale,
+      name: "capitale_sociale",
+      required: false,
+      value: "",
+      error: false,
+      disabled: false,
+    },
+    socio_unico: {
+      ...options.socio_unico,
+      name: "socio_unico",
+      required: false,
+      value: "",
+      error: false,
+      disabled: false,
+    },
+    stato_liquidazione: {
+      ...options.stato_liquidazione,
+      name: "stato_liquidazione",
+      value: "",
+      required: false,
+      error: false,
+      disabled: false,
+    },
+    email: {
+      ...options.email,
+      name: "email",
+      value: "",
+      required: false,
+      error: false,
+      disabled: false,
+    },
+    telefono: {
+      ...options.telefono,
+      name: "telefono",
+      value: "",
+      required: false,
+      error: false,
+      disabled: false,
+    },
+    fax: {
+      ...options.fax,
+      name: "fax",
+      value: "",
+      required: false,
+      error: false,
+      disabled: false,
     },
   };
   const [values, setValues] = React.useState(initialValues);
@@ -269,7 +319,9 @@ export function Form({ options }) {
     let newValues = { ...values };
     let error = newValues[name].error;
 
-    if (newValues[name].max_length) {
+    if (["albo_data_iscrizione"].includes(name)) {
+      error = !moment.isMoment(value);
+    } else if (newValues[name].max_length) {
       let min = newValues[name].min_length || 0;
       error = value.length < min || value.length > newValues[name].max_length;
 
@@ -382,42 +434,46 @@ export function Form({ options }) {
         disabled: isDisabled,
         value: isDisabled
           ? ""
-          : newValues.stabile_organizzazione_indirizzo.value,
+          : initialValues.stabile_organizzazione_indirizzo.value,
       },
       stabile_organizzazione_numero_civico: {
         ...newValues.stabile_organizzazione_numero_civico,
         disabled: isDisabled,
         value: isDisabled
           ? ""
-          : newValues.stabile_organizzazione_numero_civico.value,
+          : initialValues.stabile_organizzazione_numero_civico.value,
       },
       stabile_organizzazione_cap: {
         ...newValues.stabile_organizzazione_cap,
         required: isDisabled ? false : true,
         error: isDisabled ? false : true,
         disabled: isDisabled,
-        value: isDisabled ? "" : newValues.stabile_organizzazione_cap.value,
+        value: isDisabled ? "" : initialValues.stabile_organizzazione_cap.value,
       },
       stabile_organizzazione_comune: {
         ...newValues.stabile_organizzazione_comune,
         required: isDisabled ? false : true,
         error: isDisabled ? false : true,
         disabled: isDisabled,
-        value: isDisabled ? "" : newValues.stabile_organizzazione_comune.value,
+        value: isDisabled
+          ? ""
+          : initialValues.stabile_organizzazione_comune.value,
       },
       stabile_organizzazione_provincia: {
         ...newValues.stabile_organizzazione_provincia,
         disabled: isDisabled,
         value: isDisabled
           ? ""
-          : newValues.stabile_organizzazione_provincia.value,
+          : initialValues.stabile_organizzazione_provincia.value,
       },
       stabile_organizzazione_nazione: {
         ...newValues.stabile_organizzazione_nazione,
         required: isDisabled ? false : true,
         error: isDisabled ? false : true,
         disabled: isDisabled,
-        value: isDisabled ? "" : newValues.stabile_organizzazione_nazione.value,
+        value: isDisabled
+          ? ""
+          : initialValues.stabile_organizzazione_nazione.value,
       },
     };
 
@@ -436,28 +492,28 @@ export function Form({ options }) {
         required: isDisabled ? false : true,
         error: isDisabled ? false : true,
         disabled: isDisabled,
-        value: isDisabled ? "" : newValues.albo_professionale.value,
+        value: isDisabled ? "" : initialValues.albo_professionale.value,
       },
       albo_provincia: {
         ...newValues.albo_provincia,
         required: isDisabled ? false : true,
         error: isDisabled ? false : true,
         disabled: isDisabled,
-        value: isDisabled ? "" : newValues.albo_provincia.value,
+        value: isDisabled ? "" : initialValues.albo_provincia.value,
       },
       albo_numero_iscrizione: {
         ...newValues.albo_numero_iscrizione,
         required: isDisabled ? false : true,
         error: isDisabled ? false : true,
         disabled: isDisabled,
-        value: isDisabled ? "" : newValues.albo_numero_iscrizione.value,
+        value: isDisabled ? "" : initialValues.albo_numero_iscrizione.value,
       },
       albo_data_iscrizione: {
         ...newValues.albo_data_iscrizione,
         required: isDisabled ? false : true,
-        error: isDisabled ? false : true,
+        error: false,
         disabled: isDisabled,
-        value: isDisabled ? "" : newValues.albo_data_iscrizione.value,
+        value: isDisabled ? "" : initialValues.albo_data_iscrizione.value,
       },
     };
 
@@ -800,10 +856,84 @@ export function Form({ options }) {
               />
             </Grid>
             <Grid item xs={12}>
+              <KeyboardDatePicker
+                id="albo_data_iscrizione"
+                name={values.albo_data_iscrizione.name}
+                label={values.albo_data_iscrizione.label}
+                value={values.albo_data_iscrizione.value}
+                error={values.albo_data_iscrizione.error}
+                disabled={values.albo_data_iscrizione.disabled}
+                required={values.albo_data_iscrizione.required}
+                format="YYYY-MM-DD"
+                invalidDateMessage="data non valida"
+                onChange={(date) =>
+                  handleChange({
+                    target: { name: "albo_data_iscrizione", value: date },
+                  })
+                }
+                variant="inline"
+                inputVariant="outlined"
+                margin="normal"
+                fullWidth
+              />
+            </Grid>
+          </Grid>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader
+          title="Dati societari"
+          subtitle="compila solo se l'azienda è una società"
+        />
+        <CardContent>
+          <Grid
+            container
+            direction="row"
+            justify="space-between"
+            alignItems="flex-start"
+            spacing={2}
+          >
+            <Grid item xs={12}>
               <InputField
-                options={values.albo_data_iscrizione}
+                options={values.capitale_sociale}
                 onChange={handleChange}
               />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <InputField
+                options={values.socio_unico}
+                onChange={handleChange}
+              />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <InputField
+                options={values.stato_liquidazione}
+                onChange={handleChange}
+              />
+            </Grid>
+          </Grid>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader title="Contatti" />
+        <CardContent>
+          <Grid
+            container
+            direction="row"
+            justify="space-between"
+            alignItems="flex-start"
+            spacing={2}
+          >
+            <Grid item xs={12}>
+              <InputField options={values.email} onChange={handleChange} />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <InputField options={values.telefono} onChange={handleChange} />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <InputField options={values.fax} onChange={handleChange} />
             </Grid>
           </Grid>
         </CardContent>
